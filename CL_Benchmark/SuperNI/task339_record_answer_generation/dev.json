@@ -1,0 +1,755 @@
+{
+    "Contributors": [
+        "Yeganeh Kordi"
+    ],
+    "Source": [
+        "record"
+    ],
+    "URL": [
+        "https://arxiv.org/pdf/1810.12885.pdf"
+    ],
+    "Categories": [
+        "Question Answering"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you will be presented with a passage and have to answer a question based on your understanding of the events inferred from the passage. Try to find the best answer that is most likely to fill in \"_\". Note that the URLs in the text have been replaced with [Link]."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "For four years we have waited expectantly for the pitter patter of tiny paws. Soon, that wait could finally be over. Tian Tian, the UK's only female giant panda, has conceived and could give birth to a cub as early as August. However Edinburgh Zoo, where the pandas live, have warned people 'not to get too excited' as the process is 'extremely complex'. Moreover, on the two previous occasions keepers inseminated Tian Tian - whose name means 'Sweetie' - she has failed to produce a panda cub. She was artificially inseminated again in March this year, but keepers at the zoo say implantation - when a fertilised egg attaches to the uterus - has not yet occurred.Tian Tian has conceived and could give birth to a cub as early as AugustShe has been inseminated twice before but so far failed to produce a cubTian Tian and Yang Guang arrived in 2011 from China to great fanfareOn loan at £600k a year, became first giant pandas to live in UK for 17 years \n Questions:Under the terms of the agreement any cubs will return to _ at the age of two, the age at which they would normally leave their mother in the wild.",
+            "output": "China",
+            "explanation": "This is a good example. Based on the passage, any cubs will return to China at the age of two"
+        },
+        {
+            "input": "Manchester United did make an ambitious bid to sign Barcelona forward Neymar in the summer, according to the Brazil international's father. It has been widely reported that Louis van Gaal attempted to bring the 23-year-old to Old Trafford in the final weeks of the transfer window, with Neymar admitting that there had been discussions about a possible switch. Manchester United's desperate scramble for new striker after allowing Robin van Persie, Radamel Falcao and Javier Hernandez to all leave the club, led to them being linked with a host of players, including Bayern Munich forward Thomas Muller. United eventually parted with £36million for French teenager Anthony Martial from Monaco but, according to Neymar's father Neymar da Silva Santos, only after they had failed with a bid to lure his son away from the Nou Camp.Manchester United were widely reported to have bid for Neymar in summerThe player's father has confirmed that the Old Trafford club did make offerThe Brazil international is ready to open talks over a new deal at Barcelona \n Questions:'_'s offer came to Barça and they told us they won't sell,' Neymar Snr is quoted as saying by Brazilian newspaper Globo.",
+            "output": "Manchester United",
+            "explanation": "Based on the given passage, Manchester United is correct."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Manchester United did make an ambitious bid to sign Barcelona forward Neymar in the summer, according to the Brazil international's father. It has been widely reported that Louis van Gaal attempted to bring the 23-year-old to Old Trafford in the final weeks of the transfer window, with Neymar admitting that there had been discussions about a possible switch. Manchester United's desperate scramble for new striker after allowing Robin van Persie, Radamel Falcao and Javier Hernandez to all leave the club, led to them being linked with a host of players, including Bayern Munich forward Thomas Muller. United eventually parted with £36million for French teenager Anthony Martial from Monaco but, according to Neymar's father Neymar da Silva Santos, only after they had failed with a bid to lure his son away from the Nou Camp.Manchester United were widely reported to have bid for Neymar in summerThe player's father has confirmed that the Old Trafford club did make offerThe Brazil international is ready to open talks over a new deal at Barcelona \n Questions:'_'s offer came to Barça and they told us they won't sell,' Neymar Snr is quoted as saying by Brazilian newspaper Globo.",
+            "output": "Bayern Munich",
+            "explanation": "Based on the passage Manchester United's offer came to Barça, and Bayern Munich is incorrect."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task339-814a598488fc4dc58397ca629a70a988",
+            "input": "(CNN) Pakistan has sentenced to death an Indian man accused of spying, further raising tensions between the two countries. India claims the former naval officer was \"kidnapped\" from Iran and said his execution would be an act of \"premeditated murder.\" Kulbushan Jadhav was arrested in March last year, \"for his involvement in espionage and sabotage activities against Pakistan,\" according to a statement released by the Pakistan armed forces Monday. The statement said Jadhav confessed that he was tasked by India's foreign intelligence agency, the Research and Analysis Wing (RAW), to \"plan, coordinate and organize espionage / sabotage activities aiming to destabilize and wage war against Pakistan.\"Former naval officer was arrested in Pakistan in March 2016India claims the man was kidnapped from Iran \n Question:If the sentence is carried out, the statement said, \"the government and people of _ will regard it as a case of premeditated murder.\"",
+            "output": [
+                "Indian"
+            ]
+        },
+        {
+            "id": "task339-3fe46fe7a9e34a948ddc48cfc5d50c2a",
+            "input": "(CNN) Pakistan has sentenced to death an Indian man accused of spying, further raising tensions between the two countries. India claims the former naval officer was \"kidnapped\" from Iran and said his execution would be an act of \"premeditated murder.\" Kulbushan Jadhav was arrested in March last year, \"for his involvement in espionage and sabotage activities against Pakistan,\" according to a statement released by the Pakistan armed forces Monday. The statement said Jadhav confessed that he was tasked by India's foreign intelligence agency, the Research and Analysis Wing (RAW), to \"plan, coordinate and organize espionage / sabotage activities aiming to destabilize and wage war against Pakistan.\"Former naval officer was arrested in Pakistan in March 2016India claims the man was kidnapped from Iran \n Question:Espionage has long been a tense subject between Pakistan and _.",
+            "output": [
+                "Indian"
+            ]
+        },
+        {
+            "id": "task339-d4dd6bfce4964442af01f02749207dc0",
+            "input": "The Golden State Warriors registered the best start in NBA history with their 16th straight victory in a blowout win over the Los Angeles Lakers on Tuesday night as Kobe Bryant's struggles continued. Bryant, slowed by age and past injuries, has looked like a shadow of his former self this year and that was never more apparent than against Golden State who blasted the Lakers to surge to 16-0. The 37-year-old scored four points and managed to make just one of 14 shots to tie the worst shooting night of his 20-year career. 'He's struggling right now to make a shot. I think he'll be the first to tell you that,' LA Lakers coach Byron Scott told reporters following the damaging defeat.Golden State Warriors have started the NBA season with 16 straight winsHistoric start breaks 15-0 record last made by the Houston Rockets (1993)League MVP Stephen Curry scored 24 points during the 111-77 victoryLakers' Kobe Bryant continued to struggle for form with just four pointsBryant, now 37 years old, is a five-time NBA champion \n Question:The outcome of the game was never really in doubt after the _ raced out to a 19-point lead at the end of the first quarter, ultimately cruising to a 111-77 victory.",
+            "output": [
+                "Golden State Warriors"
+            ]
+        },
+        {
+            "id": "task339-77dd470352fc4c8a8360ed5979794ae3",
+            "input": "Hibernian warned Scott Allan once again on Tuesday night that they won’t be forced into selling him to promotion rivals Rangers despite an official transfer request from the playmaker. The Ibrox club are set to tender a third bid for the Easter Road midfielder after Allan made his ambitions clear on Tuesday afternoon. Bids worth £175,000 and £225,000 have already been rejected by the Edinburgh club. And an anticipated third bid today seems certain to suffer the same fate after Hibs chiefs responded to the 23-year-old’s request to leave with a counter statement making it clear they won’t sell to their Championship promotion rivals.Hibernian are determined not to sell Scott Allan to rivals RangersEaster Road midfielder has handed in transfer request ahead of third bidIbrox club have broken through the 30,000 barrier for season ticket salesSign-up for this season’s MailOnline Fantasy Football game \n Question:‘_ has refused both bids because the club has no wish to transfer a valuable player to strengthen a major rival in the battle to win the Championship and gain promotion to the Premiership.",
+            "output": [
+                "Hibernian"
+            ]
+        },
+        {
+            "id": "task339-5bd588bfd1b444ae9ab2d78086e20f18",
+            "input": "(CNN) Occasionally Donald Trump says something that is politically incorrect but which also happens to be true. On Tuesday at a campaign rally in North Carolina, Trump defended the former Iraqi dictator Saddam Hussein's record on terrorism, saying, \"He was a bad guy -- really bad guy. But you know what? He did well? He killed terrorists. He did that so well. They didn't read them the rights. They didn't talk. They were terrorists. Over. Today, Iraq is Harvard for terrorism.\" Defending the brutal Iraqi dictator who killed hundreds of thousands of his own people isn't exactly fashionable. But if you consider the 13 years of war that have wracked the country -- in which a quarter of a million have died -- and add that Saddam brutally repressed all dissent, including groups such as al Qaeda, and also add to this that ISIS is itself a fruit of the Iraq War, it's a far more defensible position.Peter Bergen: Donald Trump is correct in saying Saddam Hussein repressed terrorist groups, as he did all forms of rebellion and dissentU.S. authorities spread false story of connection between Saddam and terrorists, which was used to help justify Iraq war, Bergen says \n Question:The committee also found that \"most of the contacts cited between Iraq and al-_ before the war by the intelligence community and policy makers have been determined not to have occurred.\"",
+            "output": [
+                "al Qaeda"
+            ]
+        },
+        {
+            "id": "task339-0719601af23344a68ab692f3e80fa116",
+            "input": "Washington (CNN) The Trump kids aren't alright. As the campaign enters its final stretch, some of Donald Trump's children are showing signs of impatience and struggling to stay on message. In the past 24 hours, Ivanka Trump and Donald Trump Jr. have cut off interviews when pressed for answers on tough questions. Trump Jr. strayed from the campaign's talking point about the Republican nominee's tax returns -- that they'll be released once an IRS audit concludes -- when he said unveiling the documents would \"detract\" from his father's message. And Trump Jr. caused a firestorm when, during a Thursday interview with a Philadelphia radio station, he raised the specter of the Holocaust by saying if Republicans acted like Hillary Clinton, the media would be \"warming up the gas chamber.\" The campaign later said Trump Jr. was referring to capital punishment, though the Clinton campaign quickly seized on the remarks.Trump's children have increased their appearances on the campaign trail in recent weeksIvanka and Don Jr. both cut off interviews when faced with tough questions \n Question:_, in particular, often softens Trump's image and the children are known for exerting power behind the scenes and bringing discipline to the freewheeling campaign.",
+            "output": [
+                "Ivanka Trump"
+            ]
+        },
+        {
+            "id": "task339-a4b56f69dd0b4fd09a486b42c29bf3ed",
+            "input": "A former friend of Jared Fogle who has known the Subway spokesman for the past 10 years claims he told her on multiple occasions that he was interested in underage girls. The woman - a former reporter from Sarasota, Florida who is not being named to keep her identity safe - said that Fogle told her more than once that 'middle school girls are hot.' She then added; 'They weren't jokes. They were very serious.' This is the same women who would eventually notify the FBI about this information, and who agreed to wear a wire while speaking with Fogle to help with their investigation.A Florida woman who is friends with Jared Fogle claims he spoke about his attraction to underage girls on multiple occasionsThe woman says that Fogle said more than once that 'middle school girls are hot'This is why the woman reached out to the FBI and agreed to wear a wire so they could investigate FogleFederal authorities confirmed this woman's storyFogle and the man at the center of the investigation, Russell Taylor, were pictured together in a photo posted on April 22 on Taylor's Facebook pageOn April 29, Taylor's home was raided on suspicion of child pornography and authorities found over 400 videos of underage boys and girls \n Question:_ was detained outside the home while they worked for hours bringing computer hard-drives and other electronics and documents out of the house and into a waiting police trailer for analysis.",
+            "output": [
+                "Jared Fogle"
+            ]
+        },
+        {
+            "id": "task339-38cfe8d8394c42968b3b50f2aff85e21",
+            "input": "A former friend of Jared Fogle who has known the Subway spokesman for the past 10 years claims he told her on multiple occasions that he was interested in underage girls. The woman - a former reporter from Sarasota, Florida who is not being named to keep her identity safe - said that Fogle told her more than once that 'middle school girls are hot.' She then added; 'They weren't jokes. They were very serious.' This is the same women who would eventually notify the FBI about this information, and who agreed to wear a wire while speaking with Fogle to help with their investigation.A Florida woman who is friends with Jared Fogle claims he spoke about his attraction to underage girls on multiple occasionsThe woman says that Fogle said more than once that 'middle school girls are hot'This is why the woman reached out to the FBI and agreed to wear a wire so they could investigate FogleFederal authorities confirmed this woman's storyFogle and the man at the center of the investigation, Russell Taylor, were pictured together in a photo posted on April 22 on Taylor's Facebook pageOn April 29, Taylor's home was raided on suspicion of child pornography and authorities found over 400 videos of underage boys and girls \n Question:However, law enforcement sources did confirm that _ is indeed a suspect in a child pornography investigation.",
+            "output": [
+                "Jared Fogle"
+            ]
+        },
+        {
+            "id": "task339-672eb3864f66412e9f23567d36cbf2db",
+            "input": "She's suddenly been thrust into the limelight after accusing a talent show contestant of stealing someone else's style - but according to users on Twitter, Natalia Kills's own look is far from original. The Bradford-born singer, 28, was fired from the judging panel of New Zealand's X Factor, along with her husband Willy Moon, after accusing hopeful Joe Irvine of copying her spouse on Sunday's show. However, viewers have taken to social media to point out that Natalia appears to have turned to a range of different artists including Jessie J, Lady Gaga and even Johnny Depp for fashion tips of her own.Singer Natalia Kills, 28, was fired from New Zealand X Factor after tiradeTold contestant Joe Irvine he had stolen her husband's lookBut fans have pointed out her style shares similarities with other artistsBradford-born Natalia's hair, make-up and picture poses echo other starsArtist has told about rough childhood and leaving home at 14 \n Question:In one picture comparison on _, Natalia's bun, blunt fringe and cat eye make-up looks similar to a look worn by Lady Gaga.",
+            "output": [
+                "Twitter"
+            ]
+        },
+        {
+            "id": "task339-ee78986a5cd14aa198bcdc265b2b12b1",
+            "input": "She's suddenly been thrust into the limelight after accusing a talent show contestant of stealing someone else's style - but according to users on Twitter, Natalia Kills's own look is far from original. The Bradford-born singer, 28, was fired from the judging panel of New Zealand's X Factor, along with her husband Willy Moon, after accusing hopeful Joe Irvine of copying her spouse on Sunday's show. However, viewers have taken to social media to point out that Natalia appears to have turned to a range of different artists including Jessie J, Lady Gaga and even Johnny Depp for fashion tips of her own.Singer Natalia Kills, 28, was fired from New Zealand X Factor after tiradeTold contestant Joe Irvine he had stolen her husband's lookBut fans have pointed out her style shares similarities with other artistsBradford-born Natalia's hair, make-up and picture poses echo other starsArtist has told about rough childhood and leaving home at 14 \n Question:But in her X Factor attack last night, _, who was born Natalia Noemi Keery-Fisher, lambasted Irvine further, saying: 'From the hair to the suit, do you not have any value for respect for originality?'.",
+            "output": [
+                "Natalia Kills"
+            ]
+        },
+        {
+            "id": "task339-cd09bf24332941c5a5a275e68982882d",
+            "input": "She's suddenly been thrust into the limelight after accusing a talent show contestant of stealing someone else's style - but according to users on Twitter, Natalia Kills's own look is far from original. The Bradford-born singer, 28, was fired from the judging panel of New Zealand's X Factor, along with her husband Willy Moon, after accusing hopeful Joe Irvine of copying her spouse on Sunday's show. However, viewers have taken to social media to point out that Natalia appears to have turned to a range of different artists including Jessie J, Lady Gaga and even Johnny Depp for fashion tips of her own.Singer Natalia Kills, 28, was fired from New Zealand X Factor after tiradeTold contestant Joe Irvine he had stolen her husband's lookBut fans have pointed out her style shares similarities with other artistsBradford-born Natalia's hair, make-up and picture poses echo other starsArtist has told about rough childhood and leaving home at 14 \n Question:There has been several posts which compare _ to Lady Gaga, here the pair shares a similar hair style and sunglasses to the singer.",
+            "output": [
+                "Natalia Kills"
+            ]
+        },
+        {
+            "id": "task339-d0764b0b3b464f058f998d36574cabad",
+            "input": "I would love David Cameron to have to put his hand into a box of second-hand men's pants and fish out a pair. This is exactly what the queue of empty-eyed refugees before me are watching me do. There won't be enough to go around. The queue snakes out of sight stretching back some 500 metres from Rome's central Tiburtina station. 'Give each man jeans, pants, socks, a t-shirt and, if he's travelling straight away, give him a bag and shoes,' an Italian co-ordinator at the city's Boabab Refugee Centre instructs volunteers. As soon as a new load of donated clothes and shoes arrive, we pounce on them, hoping they'll be something for the latest refugee we've been asked to help.Mary Stuart-Miller, 55, initially spent one night volunteering in RomeSurrey mum-of-three now spends 180 euros a week cooking for refugeesProvides clothing and shoes to both homeless and migrants in Italian city \n Question:To make the euros go further, I soak beans, chick peas and grains, I cook seasonal vegetable curry, and I prepare roast chicken, _'s famous 'Amatriciana' pasta, rice and tuna salad and bean pasta.",
+            "output": [
+                "Rome"
+            ]
+        },
+        {
+            "id": "task339-c9de358740ba4e49afea871f02cd556b",
+            "input": "Full footage of a body camera worn by the Utah police officer who shot dead an unarmed man as he raised a hand from his sweatpants in August has been released. Prosecutors ruled in October that that Salt Lake City Officer Bron Cruz was justified for fatally shooting Dillon Taylor twice in the chest and abdomen. Salt Lake County District Attorney Sim Gill said that Cruz had every reason to believe that Taylor was armed and dangerous. 'By the time Dillon drew his hands from his waistband, Officer Cruz’s belief that Dillon was presenting a weapon was reasonable,' he said after the ruling, according to the Salt Lake Tribune.WARNING: GRAPHIC CONTENTOfficer Bron Cruz shot Dillon Taylor twice after responding to a call about armed men in Salt Lake CityTaylor walked away from police then turned and had his hands in his pantsProsecutors ruled that Cruz's fear that Taylor had a weapon was justified at the timeVideo shows moment Cruz patted down Taylor afterwards and realized he wasn't carrying a weaponAlso shows Taylor had headphones - which his family claim he was wearing at time and thus couldn't hear Cruz's orders to put hands up \n Question:_ can then be heard speaking into his radio 'shots fired, shots fired, get me medical here now'.",
+            "output": [
+                "Bron Cruz"
+            ]
+        },
+        {
+            "id": "task339-d5a1b0c8988b407aa96c9b2a647cef8b",
+            "input": "Blair, West Virginia (CNN) -- We're at the peak of Blair Mountain in the middle of southern West Virginia. It's about 85 degrees, the coolest it has been all week, and there's a slight breeze that carries voices before we can see the singers. \"This land is your land. This land is my land.\" More than 600 dusty, sweaty people are singing as they hike through the hardwoods up the mountain. Their protest signs -- \"Save Blair Mountain\" and \"Abolish Mountaintop Removal\" -- poke through the leaves. The song is a Woody Guthrie tune, the one that became a folk anthem of sorts in the 1960s, and it seems very appropriate for this moment.Protesters marched to oppose mountain removal mining on West Virginia's Blair MountainSupporters say mountaintop removal creates jobs and energy\"The Battle for Blair Mountain\" airs at 8 p.m. ET/PT Aug. 14 \n Question:The fight eventually brought unions, along with respectable wages, to the coal mines of _.",
+            "output": [
+                "West Virginia"
+            ]
+        },
+        {
+            "id": "task339-89fd7a93f80244d5858f3676c495ff8f",
+            "input": "Blair, West Virginia (CNN) -- We're at the peak of Blair Mountain in the middle of southern West Virginia. It's about 85 degrees, the coolest it has been all week, and there's a slight breeze that carries voices before we can see the singers. \"This land is your land. This land is my land.\" More than 600 dusty, sweaty people are singing as they hike through the hardwoods up the mountain. Their protest signs -- \"Save Blair Mountain\" and \"Abolish Mountaintop Removal\" -- poke through the leaves. The song is a Woody Guthrie tune, the one that became a folk anthem of sorts in the 1960s, and it seems very appropriate for this moment.Protesters marched to oppose mountain removal mining on West Virginia's Blair MountainSupporters say mountaintop removal creates jobs and energy\"The Battle for Blair Mountain\" airs at 8 p.m. ET/PT Aug. 14 \n Question:Coal companies own most of the land rights on _ now, and they have fought national historic landmark status for the site, which would protect it from being destroyed.",
+            "output": [
+                "Blair Mountain"
+            ]
+        },
+        {
+            "id": "task339-7b0fcb19b3da4312ac69d7f3fbd1acc2",
+            "input": "Cedar Springs, Michigan (CNN) Rep. Justin Amash said Monday the solution for dysfunction in Washington likely boils down to removing House Speaker Paul Ryan and replacing him with someone who is \"nonpartisan.\" \"We need either a change in direction from this speaker, or we need a new speaker,\" Amash said while answering a question about the perpetual gridlock in Washington. The Michigan Republican also laced into President Donald Trump, hewing close to a strategy of blasting Republican leaders like Ryan and Trump, during a town hall with about 100 residents from his district, which is loosely centered around Grand Rapids.Rep. Justin Amash held a town hall meeting in Western Michigan on Monday nightAmash is a Republican who is frequently critical of President Donald Trump \n Question:Amash is hosting three town halls this week, and touted his openness to the exceedingly polite _ crowd (which lacked the screaming and chanting that have made other town halls national spectacles.)",
+            "output": [
+                "Michigan"
+            ]
+        },
+        {
+            "id": "task339-84d8d58f3fa049d4a74b7453fd04a4bb",
+            "input": "Trains crossing snowfields, winding through meadows, passing by mountains, by day and night, through winter and summer. These stunning images are the work of one photographer in his quest to capture the incredible beauty of China's railway lines. Wang Wei, 25, has travelled more than 185,000 miles over the past 10 years and taken more than 300,000 photographs across the country, reported the People's Daily Online. Now, some of the photographs will feature in a new book called Running After Trains, to be published in July. The freelance photographer tells MailOnline his new book will focus on the photography techniques for shooting trains, and he hopes his photos can show the beauty of Chinese railways to more people.Wang Wei, 25, has travelled more than 185,000 miles over past 10 years and taken more than 300,000 photographsHis obsession with trains began aged 11 when he stole his parents' camera and went down to the railway trackHe spends five months travelling every year, and has been everywhere from Gobi desert to the Russian borderSome of the photographs will feature in Wang's new book Running After Trains, due to be published in JulyChina's vast railway network is 75,000 miles long - the second largest in the world behind the United States \n Question:'The authorities don't promote _ trains and railways often enough, but they are so beautiful and they belong to every one in China,' says Wang.",
+            "output": [
+                "China"
+            ]
+        },
+        {
+            "id": "task339-9044fb7baf3148a0a7b1b7f28fd72c56",
+            "input": "Trains crossing snowfields, winding through meadows, passing by mountains, by day and night, through winter and summer. These stunning images are the work of one photographer in his quest to capture the incredible beauty of China's railway lines. Wang Wei, 25, has travelled more than 185,000 miles over the past 10 years and taken more than 300,000 photographs across the country, reported the People's Daily Online. Now, some of the photographs will feature in a new book called Running After Trains, to be published in July. The freelance photographer tells MailOnline his new book will focus on the photography techniques for shooting trains, and he hopes his photos can show the beauty of Chinese railways to more people.Wang Wei, 25, has travelled more than 185,000 miles over past 10 years and taken more than 300,000 photographsHis obsession with trains began aged 11 when he stole his parents' camera and went down to the railway trackHe spends five months travelling every year, and has been everywhere from Gobi desert to the Russian borderSome of the photographs will feature in Wang's new book Running After Trains, due to be published in JulyChina's vast railway network is 75,000 miles long - the second largest in the world behind the United States \n Question:He has managed to capture every train model produced since 1949 and hopes that through his work people will learn more about the history of _ railways.",
+            "output": [
+                "China"
+            ]
+        },
+        {
+            "id": "task339-e0e5d4924e114d55a3408ac4f8caebf7",
+            "input": "As heir to the Formula 1 empire, Tamara Ecclestone's childhood was no doubt a luxurious one. And it seems that she wants the same for her daughter Sophia, who celebrated turning one today with a lavish and extravagant birthday party in her honour. Tamara, 30, and husband Jay Rutland clearly wanted to give their only daughter a first birthday to remember - and they pulled out all the stops by creating 'Sophia's farmyard' in the garden of their London mansion. Scroll down for video Happy birthday, Sophia! Tamara Ecclestone and Jay Rutland celebrated daughter Sophia's first birthday by creating a farmyard for the tiny tot in the garden of their London mansionTamara Ecclestone and Jay Rutland created a farmyard in their garden with an array of animalsEntrance to the family home was decorated with giant pink 'S' balloons and security guards carried giant presents inSophia was seen on Instagram wearing a custom-made outfit in honour of her first birthdayCelebrity party planner, who has organised similar events, estimates that it cost £70,000 \n Question:Birthday girl: _ uploaded a snap of her firstborn wearing custom-made pyjamas on Instagram with the words: 'Happy birthday angel no words could ever describe how much I love you so proud of the beautiful little lady you are the light of my life'.",
+            "output": [
+                "Tamara Ecclestone"
+            ]
+        },
+        {
+            "id": "task339-298f56763e2a4be08289791ca57b54f3",
+            "input": "As heir to the Formula 1 empire, Tamara Ecclestone's childhood was no doubt a luxurious one. And it seems that she wants the same for her daughter Sophia, who celebrated turning one today with a lavish and extravagant birthday party in her honour. Tamara, 30, and husband Jay Rutland clearly wanted to give their only daughter a first birthday to remember - and they pulled out all the stops by creating 'Sophia's farmyard' in the garden of their London mansion. Scroll down for video Happy birthday, Sophia! Tamara Ecclestone and Jay Rutland celebrated daughter Sophia's first birthday by creating a farmyard for the tiny tot in the garden of their London mansionTamara Ecclestone and Jay Rutland created a farmyard in their garden with an array of animalsEntrance to the family home was decorated with giant pink 'S' balloons and security guards carried giant presents inSophia was seen on Instagram wearing a custom-made outfit in honour of her first birthdayCelebrity party planner, who has organised similar events, estimates that it cost £70,000 \n Question:And although _ is clearly loving having a little girl, she does admit that it does come with its less-than-glamorous challenges.",
+            "output": [
+                "Tamara Ecclestone"
+            ]
+        },
+        {
+            "id": "task339-4cde0ed208ea4748b9b194528f73a830",
+            "input": "Wayne Rooney knows Champions League qualification is Manchester United's to lose, making this weekend's clash with Aston Villa all the more important. Louis van Gaal's side sit fourth in the Barclays Premier League standings as the season enters the closing stages, boasting a five-point cushion over the chasing pack after winning so impressively at Liverpool before the international break. Juan Mata's brace earned United a deserved 2-1 triumph at Anfield to give them a buffer over the Reds, as well as fellow top-four contenders Southampton and Tottenham. Manchester United captain Wayne Rooney feels the club are on course to qualify for the Champions LeagueManchester United captain Wayne Rooney says his side are focused on qualifying for the Champions LeagueMan Utd are currently fourth in the Premier League table after a 2-1 win over rivals Liverpool at Anfield last time outThe Red Devils take on Aston Villa in their next game at Old TraffordRooney has just captained England in an international friendly against ItalyHis Man United team-mate Michael Carrick has been singled out for his performance for the Three Lions in TurinCLICK HERE for the latest Manchester United news \n Question:_ and several of his United team-mates only returned home from international duty on Wednesday afternoon after a technical fault on the England team plane delayed their departure from Turin.",
+            "output": [
+                "Wayne Rooney"
+            ]
+        },
+        {
+            "id": "task339-f4177112335047da887d97a5abc08051",
+            "input": "Marco Verratti is the latest name to be linked to Barcelona as presidential candidates battle to win the upcoming election with promises of big name signings. Agusti Benedito has revealed that the diminutive Italy playmaker will be his primary transfer target should he gather enough votes by next month's election. The 22-year-old is under contract with French quardruple winners Paris Saint Germain, although Benedito is confident of luring him to the Nou Camp. Despite being banned from signing any players until January 2016, the Catalans have already secured the services of Arda Turan from Atletico Madrid and Aleix Vidal from Sevilla - with Verratti being touted as the latest voting incentive.Agusti Benedito says he will sign Italy playmaker if he is electedMarco Verratti is contracted at Ligue 1 champions PSG until 2019Barca have secured Arda Turan and Aleix Vidal despite transfer ban \n Question:'We have not held negotiations with PSG or _ because that's impossible, but we have been in touch and have a good relationship.",
+            "output": [
+                "Marco Verratti"
+            ]
+        },
+        {
+            "id": "task339-148c6762737849bb80f2b869e0e36e06",
+            "input": "(CNN) The signs tell divers the area is dangerous. Even experienced ones have died there. Ten people, including two who were found Monday, have had fatal incidents inside the Eagle's Nest cave dive area in Western Florida since 1981. The Hernando County Sheriff's Office said Patrick Peacock and Chris Rittenmeyer went diving on Sunday afternoon with a third man, who reported the duo missing. Search and rescue divers found their bodies the next day in a \"very dangerous and complex area of the cave system,\" the sheriff's office said. Peacock and Rittenmeyer had come from Fort Lauderdale for a three-day dive at Eagle's Nest, a famous dive spot near Weeki Wachee, located in the Chassahowitzka Wildlife Management Area, about 60 miles north of Tampa.Police say the men had dived at the site beforeThe deaths over the weekend make 10 at the Eagle's Nest since 1981, an expert says \n Question:Both men were experienced divers who had both dived _ several times, the sheriff said.",
+            "output": [
+                "Eagle's Nest"
+            ]
+        },
+        {
+            "id": "task339-8b02c21cb5f64866b086e4fc22aa523b",
+            "input": "(CNN) -- With their nation still absorbing the shock of Sachin Tendulkar's retirement, the next generation of Indian stars showed their ability with a stunning run chase to beat Australia in a one-day international Wednesday. Chasing an imposing 360 to win in Jaipur, India went past the target for the loss of just one wicket and with six overs to spare. It was the second highest score to win a 50 overs international, only beaten by the astonishing 436 runs by a South African side in Johannesburg in 2006, with Australia again the unfortunate opposition. Openers Rohit Sharma (141 not out) and Shikhar Dhawan (95) put India on their way before the more experienced Virat Kohli completed the task with a brutal innings.India beat Australia in one-day internationalChase 360 to win - second highest in historyVirat Kohli hits century in just 52 balls -- an Indian recordLevel series with Aussies at 1-1 \n Question:India are the current world champions in 50 overs cricket, helped to victory on home soil in 2011 by national hero _.",
+            "output": [
+                "Sachin Tendulkar"
+            ]
+        },
+        {
+            "id": "task339-a560b905de864d059eb872d9c573a169",
+            "input": "Washington (CNN) Federal officials on Friday unsealed charges against three men accused of a thwarted plot to attack concert venues and landmarks around New York City in 2016, according to court documents -- a case that comes on the heels of a mass shooting at a concert in Las Vegas. The three men allegedly used internet messaging applications to plot bombings and shootings in Times Square, the New York subway and concerts during Ramadan last year, according to a news release on the unsealed court documents from the acting US attorney for the Southern District of New York. Charged in the case are Abdulrahman El Bahnasawy, 19, a Canadian citizen; Talha Haroon, 19, a US citizen living in Pakistan; and Russell Salic, 37, a Philippines citizen, the release said. According to prosecutors, all three have been arrested and El Bahnasawy has already pleaded guilty following his May 2016 arrest. Haroon and Salic have been arrested overseas, and the US is seeking to have them extradited to stand trial here.\"I wanna kill . . . them in thousands,\" one of the men allegedly wrote to an undercover agentOne of the men has pleaded guilty \n Question:Haroon is alleged to have planned to travel from Pakistan to _ to help and met with bomb experts in Pakistan.",
+            "output": [
+                "New York City"
+            ]
+        },
+        {
+            "id": "task339-89851e7f6f0a4383add8f201aa45bf1a",
+            "input": "LAKE WALES, Florida (CNN) -- Does jumping out of a plane show love? For one family in Florida it does. Trevor Muir (left), 23; Darcy Shepard, 18; Harriett Shepard, 94; and Dave Shepard, 74, are ready to jump. Last Saturday, four generations of Darcy Shepard's family went skydiving for her 18th birthday. The oldest jumper was Shepard's 94-year-old great-grandmother, Harriett Shepard. Skydiving is becoming a Shepard family rite of passage. Two members of the family had jumped before -- including family matriarch Harriett. Harriett Shepard jumped three years ago, at age 91, because she wanted to know what it felt like.Four generations, in age from 18 to 94, jump out of plane at 14,000 feetGreat-grandmother Harriett Shepard jumped once before -- at age 91Jumpers included family members age 94, 74, 45 and 18\"I'm never scared up there,\" great-grandmother says \n Question:Just another notch in the pole,\" says the 23-year-old _.",
+            "output": [
+                "Trevor Muir"
+            ]
+        },
+        {
+            "id": "task339-e81f3ea1db9a43ee892b1114689e2117",
+            "input": "(CNN) The first human trial of a Zika vaccine will begin soon, Inovio Pharmaceuticals said Monday. Inovio, which is based in Plymouth Meeting, Pennsylvania, and GeneOne Life Science, which is based in Seoul, South Korea, worked together on the vaccine. They previously collaborated to create vaccines for Ebola and MERS, both of which are being tested. The Zika vaccine, with the clinical-sounding name GLS-5700, will first be tested in 40 healthy volunteers. The first tests in humans should start in the next few weeks, Inovio said in a news release. In the animal testing stage, the vaccine caused a strong antibody response, the company said.Inovio Pharmaceuticals and GeneOne Life Science will start human testing of Zika vaccineThe first Zika vaccine tests will be in 40 healthy volunteers \n Question:Until recently, _ had been considered a rare and relatively benign virus (PDF).",
+            "output": [
+                "Zika"
+            ]
+        },
+        {
+            "id": "task339-125798453970416381be9a51f1a667e9",
+            "input": "When Johnny Marr decided to go it alone in 1987, The Smiths couldn’t survive. The other three members were highly skilled in their arts, Morrissey nothing short of genius in fact. But they couldn’t function as a group without Marr, one of the greatest and most respected guitarists, musicians and writers of all time. Right now, I look at Stoke City and I see something similar. Losing Asmir Begovic was a blow. Losing Steven N’Zonzi was arguably even bigger. But Stoke’s version of Marr is Ryan Shawcross. They look useless without him and heaven knows they’re miserable now. The good news for Stoke is that, unlike Marr, Shawcross will be back. But rarely have I seen a team struggle so badly because of the absence of one player.Jack Butland has excelled despite Stoke City's poor start to seasonPotters are missing defensive steel provided by Ryan ShawcrossBut that has meant Butland has had more to do and looks impressiveRoy Hodgson should give him a chance in the England teamJoe Hart has never been challenged as No 1 and this needs to change \n Question:_ is not just a very good centre-half, he is a leader of the team.",
+            "output": [
+                "Ryan Shawcross"
+            ]
+        },
+        {
+            "id": "task339-84006d3165c34c44a457f72fb775a245",
+            "input": "(CNN) Phoenix Mayor Greg Stanton said he is \"disappointed\" that President Donald Trump plans to hold a campaign rally in Arizona during the national turmoil following the events in Charlottesville over the weekend. Trump is planning a campaign-style rally in Arizona next week, amid an uproar sparked by his ambivalent response to white supremacists and the death of an anti-racist protester in the Charlottesville violence. The President host supporters in Phoenix next Tuesday, one week after he reiterated his claim that anti-racist protesters were as violent as Ku Klux Klan and neo-Nazi protesters in Charlottesville and that the \"alt-right\" groups included some \"very fine\" people.President Donald Trump's re-election campaign has slated a rally next weekHis event will be in Arizona where the President has fought with both senators \n Question:_'s comments Tuesday marked an about-face, one day after he squarely condemned the racism and bigotry displayed by white supremacist protesters in Charlottesville.",
+            "output": [
+                "Donald Trump"
+            ]
+        },
+        {
+            "id": "task339-40e152148d9143cb9757617008cc687a",
+            "input": "Flint, Michigan (CNN) The pastor who hosted Donald Trump at her church in Flint, Michigan, interrupted the Republican presidential nominee during his speech Wednesday to ask him to refrain from attacking his rival Hillary Clinton. \"Mr. Trump, I invited you here to thank us for what we've done in Flint, not give a political speech,\" Rev. Faith Green Timmons of the Bethel United Methodist Church told Trump after walking to the podium while Trump was speaking. \"OK. That's good. Then I'm going back onto Flint, OK? Flint's pain is a result of so many different failures,\" Trump said. Timmons, in a statement provided at the event, noted her church welcomes \"all people.\"Trump visited Flint, Michigan on WednesdayHe spoke at a church \n Question:Now _ --,\" Trump said before he was cut off by the church's pastor.",
+            "output": [
+                "Hillary Clinton"
+            ]
+        },
+        {
+            "id": "task339-c2326e50d6964863b89621c6825ac8c7",
+            "input": "One of two teenagers feared to have crossed into Syria to join ISIS is believed to be a relative of Hammaad Munshi (pictured), who became Britain's youngest convicted terrorist when he was found guilty of terror offences at the age of 18 in 2008 A relative of Britain's youngest convicted terrorist is believed to be among two teenagers who have fled into Syria to join Isis. The pair from Dewsbury, West Yorkshire, have not been in contact with their families for several days and cannot be reached on their mobile phones. One of the boys is believed to be a relation of Hammaad Munshi, who was just 15 when he joined a cell of Islamic fanatics targeting the Royal Family.Two 17-year-olds have not been in contact with families for several days'Told relatives they were going on a school trip during Easter holidays'One is 'relative of Hammaad Munshi, who joined Islamic cell aged just 15' \n Question:'_ is an extremely dangerous place and the public will be aware of the dangers these boys may face.",
+            "output": [
+                "Syria"
+            ]
+        },
+        {
+            "id": "task339-06bddb9e47ad4d829b09d882ff7c3266",
+            "input": "Christine Ohuruogu is preparing to return to the scene of her greatest triumph - not that she has ever watched back the Olympic success of 2008. The 31-year-old is arguably Great Britain's finest female athlete of all time, having won World Championships either side of her 400 metres success at the Bird's Nest. The latter is Ohuruogu's biggest achievement, but not one she appears to dwell on ahead of Monday's heats at the scene of that success in Beijing. 'To be honest, I don't really recall very much,' she said, rather surprisingly. 'A lot has happened since 2008 so it kind of just merges into one.Christine Ohuruogu preparing to return to Beijing's Bird's Nest stadiumThe Brit won Olympic gold in the 400m at the stadium seven years agoOhuruogu said she doesn't recall her Olympic victory very much \n Question:'I think once I get into the _ there will be remnants of memories from 2008, I think that's just standard.",
+            "output": [
+                "Bird's Nest"
+            ]
+        },
+        {
+            "id": "task339-5467d958f4ad41a1b7e4203202ca6d22",
+            "input": "Washington (CNN) President Barack Obama has hosted plenty of confrontational foreign leaders at the White House, haggling over military aggression, trade disputes and any other irritant that brings a head of state into the Oval Office. When Obama convened the leaders of the Nordic bloc on Friday, it was not one of those meetings. \"This was a very useful and important conversation, although there was probably too much agreement to make for as exciting a multilateral meeting as I sometimes participate in,\" Obama joked after a 90-minute session with the leaders of Finland, Norway, Sweden, Iceland and Denmark Friday. Amid turmoil in the Middle East, cross-border aggression in Eastern Europe, maritime disputes in Asia and restive governments in South America, the northern European nations remain an oasis of liberal cool for a president who has sometimes been described in similar terms.President Obama will host a state dinner to honor five Nordic nationsObama has praised the countries' stability \n Question:It's no wonder Obama is fond of musing to his aides, \"Why can't all countries be like the _ countries?\".",
+            "output": [
+                "Nordic"
+            ]
+        },
+        {
+            "id": "task339-226e80e9c1ae492ba8d46ab82eb17d31",
+            "input": "When his friend and long-term BBC colleague was unveiled as his Top Gear replacement, it seemed Jeremy Clarkson had finally given up the show's reins in a rare display of grace. 'He texted me straight away to say \"Best of luck - I knew they would offer it to you,\"' gushed Chris Evans, his successor, as he announced his role earlier this week. The amicable changeover seemed even more-so when the pair appeared on TFI Friday together for a segment for its comeback special. But just two days after it was revealed that Evans would take over from Clarkson following his sacking, relations between the two car enthusiasts have turned sour.Clarkson claimed he was offered the job back but turned the BBC downHe said the Corporation then gave a lucrative deal to radio DJ Chris EvansEvans rejected his version of events on his Breakfast programme todayHe said the 55-year-old had only been answering to 'voices in his head'Evans today revealed he would no longer appear on The One Show \n Question:After revealing his side of the story this morning, _ hinted at plans for his new motoring programme.",
+            "output": [
+                "Jeremy Clarkson"
+            ]
+        },
+        {
+            "id": "task339-2c6babfa20674015af9a5d51736a7444",
+            "input": "A newly released video shows the shocking moment a Boston police officer was shot in the face just seconds after approaching a driver who was stopped during a gunfire investigation. The video shows how Angelo West, 41, immediately jumps out of the car and shoots Officer John Moynihan, 34, under the eye at close range after the policeman opens the driver-side door. West then fires at the other officers as he runs across the busy street. Boston Police Commissioner William Evans pointed out that he was firing 'under his arm' at the other cops. The video shows Boston police officer John Moynihan, circled in white, opening the driver-side door to talk to Angelo West after the car was pulled over during a gunfire investigationVideo shows how John Moynihan, 34, was shot within seconds of opening Angelo West's car doorWest, 41, immediately jumps out of the car and shoots the officerVideo then shows West shooting at officers as he runs across the streetWest was fatally shot by Moynihan's colleagues during the shoot-outPolice said they released the video to be transparent with the public and tamp down rumorsMoynihan was released from the hospital Friday after weeks of recoveryPolice said his current condition is 'serious but improving' \n Question:After the March 28 shooting, _ was placed in an induced coma as he fought for his life.",
+            "output": [
+                "John Moynihan"
+            ]
+        },
+        {
+            "id": "task339-b7d88326b993416fa5f982e37717177e",
+            "input": "An Indiana housewife has been driven off the internet after posting a homophobic rant online that went viral. Becky Wegner Rommel weeps and screams in her YouTube video as she laments the US Supreme Court ruling to legalize same-sex marriage. Likening homosexual marriage to Islamist extremism, she wails: 'This is a really sad day for me and it's a sad day for a lot of Christ followers. Because today everything that God created his church to be, as man as woman, Adam and Eve… Five justices decided that God was wrong!' In the video, she says: 'I hear a lot of people say \"Christians, you’re not into the times. You’re not into times. It’s 2015.\" God did not change! His word is truth.Becky Wegner Rommel weeps and screams in homophobic video rantShe likens gay people to Islamist extremists, slams Supreme Court rulingVideo prompted outrage and drove Rommel to delete her online presence \n Question:_’s word is truth and he says that marriage is between a man and a woman!'.",
+            "output": [
+                "God"
+            ]
+        },
+        {
+            "id": "task339-6f56684e0bdc4d98884444bce0622cc8",
+            "input": "Kristen Stewart has been inseparable from her former personal assistant Alicia Cargile in recent weeks. And now the Twilight star's mother Jules Stewart has given her daughter's relationship her blessing. In an interview with Sharon Feinstein and Simon Boyle for The Sunday Mirror, Kristen's mother appears to confirm that her daughter is enjoying a romance with Alicia and says she has accepted that 'my daughter loves women and men'. Kristen has kept quiet about her love life since her high profile relationship with Twilight co-star Robert Pattinson came to an end two years ago, after she was seen kissing married Rupert Sanders, 44, who directed her in 2012 film Snow White and the Huntsman.Jules Stewart later denied discussing her daughter in interview with Sunday MirrorJournalist who spoke to Jules stands by the story and says she has the interview recorded \n Question:Despite the messy ending to their romance, the pair are thought to have remained friends and while Kristen looks to have moved on with Alicia, _ is reportedly engaged to singer FKA twigs.",
+            "output": [
+                "Robert Pattinson"
+            ]
+        },
+        {
+            "id": "task339-7e687f161dfb49e9abe696155b3a442f",
+            "input": "With Branislav Ivanovic out injured, Jose Mourinho is forced to look for an alternative at right back against Aston Villa. But one name mentioned by the Chelsea boss is a relative unknown: Ola Aina. While Cesar Azpilicueta, Kurt Zouma and Ramires were all touted as options for Saturday's game by Mourinho, it was the name of the academy product who turned 19 last week that drew the most interest for many spectators. Here, Sportsmail takes you through who the young right back is and why Mourinho rates him highly. Now aged 19, Temitayo Olufisayo Olaoluwa Aina has been at Chelsea since he was 11, progressing through the club's youth sides while working his way up the ranks with England, too.Chelsea manager Jose Mourinho says he has four options for a right backFirst-choice Branislav Ivanovic is out after picking up a hamstring injuryCesar Azpilicueta, Kurt Zouma, Ramires or Ola Aina could deputiseAina is a two-time FA Youth Cup winner who impressed Mourinho on tourTony Pulis: Chelsea boss Jose Mourinho's £50,000 fine is 'extraordinary' \n Question:A pacey option at right back, _ can also play in the centre of defence, on the left, or in a more advanced position on the right wing.",
+            "output": [
+                "Ola Aina"
+            ]
+        },
+        {
+            "id": "task339-53d235142b374810a329fe2ebd26452d",
+            "input": "As the 'fight of the century' continues to heat up, Floyd Mayweather was full of confidence during the press conference as he was joined on stage by Justin Bieber - who has accompanied the undefeated champion on multiple occasions. Bieber has proved himself to be quite the good luck charm and took part in the ring walk in the boxer's last fight against Marcos Maidana. The 38-year-old champion couldn't help but bring his pop star friend on stage for a photo op after the press conference in Los Angeles for his superfight with Manny Pacquiao. Scroll down for video Floyd Mayweather was joined on stage by pop sensation Justin Bieber at the press conference in Las VegasJustin Bieber joined Floyd Mayweather on stageMayweather was taking part in the Manny Pacquiao press conferenceBieber has joined Mayweather on a number of occasions at his fightsREAD: The full transcript of the Mayweather and Pacquiao press meetingCLICK HERE for all the latest Mayweather vs Pacquiao news \n Question:Bieber did not hesitate to jump into the picture as the duo posed next to his friend's opponent _.",
+            "output": [
+                "Manny Pacquiao"
+            ]
+        },
+        {
+            "id": "task339-2cc64e5387034438ae3a557e93651175",
+            "input": "As the 'fight of the century' continues to heat up, Floyd Mayweather was full of confidence during the press conference as he was joined on stage by Justin Bieber - who has accompanied the undefeated champion on multiple occasions. Bieber has proved himself to be quite the good luck charm and took part in the ring walk in the boxer's last fight against Marcos Maidana. The 38-year-old champion couldn't help but bring his pop star friend on stage for a photo op after the press conference in Los Angeles for his superfight with Manny Pacquiao. Scroll down for video Floyd Mayweather was joined on stage by pop sensation Justin Bieber at the press conference in Las VegasJustin Bieber joined Floyd Mayweather on stageMayweather was taking part in the Manny Pacquiao press conferenceBieber has joined Mayweather on a number of occasions at his fightsREAD: The full transcript of the Mayweather and Pacquiao press meetingCLICK HERE for all the latest Mayweather vs Pacquiao news \n Question:Bieber put his arm around Mayweather for the photos in the build up for the _ fight.",
+            "output": [
+                "Manny Pacquiao"
+            ]
+        },
+        {
+            "id": "task339-2158464fc48240669325750a083c14df",
+            "input": "Washington (CNN) Maine Republican Sen. Susan Collins said she won't endorse GOP presumptive presidential nominee Donald Trump until he starts behaving more \"presidential.\" \"I would love to be able to endorse Donald Trump, but he really has to change the approach that he's taken,\" she told CNN's Chris Cuomo on Wednesday on \"New Day.\" \"If I were giving him advice, I would tell him he should own up to making mistakes. He should apologize to the judge and to the American people. And he should stop insulting people.\" Multiple Republican leaders have criticized Trump for comments he made suggesting that Latino and Muslim judges could not rule fairly because of their ethnicity and religion.Maine Republican Sen. Susan Collins said her party's presumptive nominee needs to have more \"presidential\"Collins said Wednesday she was not yet ready to endorse Donald Trump's presidential bid \n Question:\"He is the one who needs to start acting more presidential and articulate more clearly what a _ presidency would look like,\" she said.",
+            "output": [
+                "Donald Trump"
+            ]
+        },
+        {
+            "id": "task339-40fd5dce5f184ba1a8b4ff86fea9ecd0",
+            "input": "A group of lucky Girl Scouts were set for the ultimate camping experience Tuesday: an overnight in tents pitched on the White House South Lawn. Until late-night rain and thunder washed out the campout. It was the first time that one of the country's most well-known expanses of manicured grass was turned into a campground, an excited Michelle Obama said as she greeted the 50 Girl Scouts who snagged coveted invitations to the outdoor sleepover. The First Lady hosted Tuesday's campout as part of Let's Move, her initiative against childhood obesity. 'Let's Move Outside' promotes taking advantage of the outdoors.Michelle Obama hosted a camp-out on the White House South Lawn for 50 fourth-grade Girl Scouts Tuesday nightThe scouts from Maryland, West Virginia, Virginia, the District of Columbia and Oklahoma spent the evening singing songs and stargazing with the president before retiringHowever, the group was forced inside to a nearby conference room later in the evening due to a thunderstormThe camp-out was part of the First Lady's Let's Move initiative which aims to help combat childhood obesity \n Question:The girls sat on hay bales and sang songs as the sun set, but the singing turned to squeals when they noticed President Barack Obama approaching their singing circle with the _.",
+            "output": [
+                "First Lady"
+            ]
+        },
+        {
+            "id": "task339-a8f01e992fb74b66a3e437b17bb44c3c",
+            "input": "Havana, Cuba (CNN) Hurricane Irma, which devastated much of the Caribbean in September, has claimed a new victim: Raul Castro's succession plans. On Thursday, Cuban officials said the island was still dealing with the aftermath of the killer storm and needed to postpone long-held plans for Castro, 86, to retire on February 24, 2018, when his second five-year term ends. It was to have been the first time that Cuba was ruled by a leader not named Castro since the 1959 revolution that swept Raul Castro's older brother Fidel Castro to power. The wrath of Irma, however, delayed the Communist-run island's single party elections process, which appoints the Cuban National Assembly that in turn selects Cuba's president.Cuba, dealing with Hurricane Irma aftermath, says Castro will retire in April instead of FebruaryCastro has indicated first Vice President Miguel-Diaz Canel has his blessing to be the next president \n Question:\"My second and last term will have concluded,\" _ told Cuban lawmakers on Thursday, \"and Cuba will have a new president.\"",
+            "output": [
+                "Raul Castro"
+            ]
+        },
+        {
+            "id": "task339-4cff3f2088e6445eae285ec4905ac5b9",
+            "input": "Havana, Cuba (CNN) Hurricane Irma, which devastated much of the Caribbean in September, has claimed a new victim: Raul Castro's succession plans. On Thursday, Cuban officials said the island was still dealing with the aftermath of the killer storm and needed to postpone long-held plans for Castro, 86, to retire on February 24, 2018, when his second five-year term ends. It was to have been the first time that Cuba was ruled by a leader not named Castro since the 1959 revolution that swept Raul Castro's older brother Fidel Castro to power. The wrath of Irma, however, delayed the Communist-run island's single party elections process, which appoints the Cuban National Assembly that in turn selects Cuba's president.Cuba, dealing with Hurricane Irma aftermath, says Castro will retire in April instead of FebruaryCastro has indicated first Vice President Miguel-Diaz Canel has his blessing to be the next president \n Question:\"My second and last term will have concluded,\" Castro told _ lawmakers on Thursday, \"and Cuba will have a new president.\"",
+            "output": [
+                "Cuba"
+            ]
+        },
+        {
+            "id": "task339-20e5919e73024b2183adc2bae2944856",
+            "input": "Havana, Cuba (CNN) Hurricane Irma, which devastated much of the Caribbean in September, has claimed a new victim: Raul Castro's succession plans. On Thursday, Cuban officials said the island was still dealing with the aftermath of the killer storm and needed to postpone long-held plans for Castro, 86, to retire on February 24, 2018, when his second five-year term ends. It was to have been the first time that Cuba was ruled by a leader not named Castro since the 1959 revolution that swept Raul Castro's older brother Fidel Castro to power. The wrath of Irma, however, delayed the Communist-run island's single party elections process, which appoints the Cuban National Assembly that in turn selects Cuba's president.Cuba, dealing with Hurricane Irma aftermath, says Castro will retire in April instead of FebruaryCastro has indicated first Vice President Miguel-Diaz Canel has his blessing to be the next president \n Question:\"My second and last term will have concluded,\" Castro told Cuban lawmakers on Thursday, \"and _ will have a new president.\"",
+            "output": [
+                "Cuba"
+            ]
+        },
+        {
+            "id": "task339-d37246283b3744aab5ef5e056523c8d0",
+            "input": "(CNN) -- It was a night for underdogs at the Golden Globes -- and a particularly rich one for the biggest underdog of them all, \"Slumdog Millionaire.\" Dev Patel and Freida Pinto star in \"Slumdog Millionaire,\" which was named best drama at the Golden Globes. The modestly budgeted movie -- about a poverty-raised orphan in Mumbai who goes on the Indian version of \"Who Wants to Be a Millionaire\" -- won awards for best drama, best director (Danny Boyle), best screenplay (Simon Beaufoy) and best original score (A.R. Rahman). The victories were all the more astonishing given the film's unlikely production history, which included cobbling together a $15 million budget, shooting on the streets of Mumbai and then struggling for distribution.\"Slumdog Millionaire\" wins best drama; nets four total winsMickey Rourke wins best actor in a drama for \"The Wrestler\"Kate Winslet wins two Golden Globes -- one for actress, another for supportingHeath Ledger wins best supporting actor for \"The Dark Knight\" \n Question:_ died almost a year ago of an accidental prescription drug overdose.",
+            "output": [
+                "Heath Ledger"
+            ]
+        },
+        {
+            "id": "task339-f3af5001152b45e5b56897cf1fc9bb76",
+            "input": "Stargazers around the world were treated to an usual sight last night, when Venus and Jupiter appeared close together in the sky. The planets, which are hundreds of millions of miles from each other, seemed to be planetary neighbours and there is a chance that they may appear to merge tonight and on Wednesday night. The event will be the closest conjunction of the two planets until August next year. Sky & Telescope Contributing Editor Fred Schaaf said the current string of Venus-Jupiter conjunctions closely resembles a similar series between the years 3 and 2 B.C. 'As has been the case in 2014–15, the first two conjunctions back then were extremely close, the last one separated by about 1°, all three occurred not far from Regulus, and all were similarly high up in the sky.'People in the UK and US can spot Venus and Jupiter together tonightPlanets appeared unusually close together last nightFrom the UK they will be visible above the western horizon after 10.30pmIn the US they will be visible in the same direction after sunset \n Question:In the _, the best time to look will be between 10.30 to 11pm towards the west-northwest horizon.",
+            "output": [
+                "UK"
+            ]
+        },
+        {
+            "id": "task339-62527f0f57304fdb9eea6d331b7d0953",
+            "input": "A man who has two failed marriages with Gambian women is hoping it will be third time lucky now that he is engaged to another woman he met in the country that he now calls home. David Tungate, 58, was left devastated after the marriage to his first Gambian wife broke down shortly after he brought her to the UK. He then remarried, but his second wife, also from Gambia, turned out to be a serial bigamist who conned him out of £24,000 of his retirement money and left him close to bankruptcy. David Tungate with his fiancee Isatou JarjuDavid Tungate, 58, from Norwich, is engaged to a 30 year old from GambiaHe has already been married three times - twice to Gambian womenHis last wife was a bigamist who became pregnant with another man's baby \n Question:As _'s British husband had just left her, the pair bonded over their misfortune and although the relationship is still in the early stages, he says marriage 'isn't off the cards.'",
+            "output": [
+                "Isatou Jarju"
+            ]
+        },
+        {
+            "id": "task339-f499e60c036c48afa21365be148861d4",
+            "input": "Pep Guardiola in the technical area and Lionel Messi on the pitch – it’s the combination that won Barcelona 14 trophies in four years and the dream ticket that would help Manchester City dominate the Premier League and Champions League for years to come. With £265m of Chinese investment recently pumped into City Football Group, the company that owns the club, funds are not going to be a problem. While it’s true that the new the Chinese consortium CMC’s backing will not transfer directly into a massively increased budget for new players, it does take City’s commercial capacity beyond new frontiers and leave them even more assured than they were before that nothing in world football is financially beyond them.Manchester City are frontrunners to hire Bayern Munich's Pep GuardiolaThe former Barcelona boss announced he is leaving the Bundesliga giantsLionel Messi would form a dream combination for the Premier League clubMessi’s buy-out clause is €250m (£180m) and he earns €21m (£15m)Money is no barrier for City, but can Messi be lured by a new adventure?See the latest news from Barcelona's Lionel Messi \n Question:The 44-year-old coach has also shown he can win without _ at Bayern Munich since they parted company, but together they were better than they might ever have been had they not worked together.",
+            "output": [
+                "Lionel Messi"
+            ]
+        },
+        {
+            "id": "task339-52ab30176aa244b79ff819cb2c0d6e9a",
+            "input": "Abuja, Nigeria (CNN) -- My friend's eight-year-old daughter burst into tears while watching a Boko Haram video release on TV the other evening. The terrorist group has been receiving the kind of local and international media coverage that could make even a Hollywood megastar explode with envy. At the current rate, the group's leader, Abubakar Shekau, might as well be given his own reality show. I understand the reporting of a bomb blast: the need to let the world know about 234 missing school girls is obvious. Updating us on the world's efforts to rescue the abducted girls definitely makes sense. But why should law-abiding citizens be bombarded with the megalomaniac audio and video rantings of every Shekau recording forwarded to the press?Adaobi Tricia Nwaubani: Why must citizens be bombarded with Boko Haram \"rantings\"Group's aim is glamorised, misrepresented by media, she arguesConduct is as Islamic as that of preacher who kidnapped Elizabeth Smart was Christian, she writesMedia must stop fuelling their inner psychopaths, offering them stardom on a plate \n Question:Similarly glamorous motives were ascribed to Boko Haram's bombing of two newspaper offices in _.",
+            "output": [
+                "Nigeria"
+            ]
+        },
+        {
+            "id": "task339-92341d6bef24453db161352141735287",
+            "input": "Eleanor de Freitas, 23, died on April 4 last year - three days before she was due to stand trial accused of perverting the course of justice The family of a young woman who killed herself days before going on trial for 'inventing a rape claim' are calling for lessons to be learned. Eleanor de Freitas, 23, from Fulham, west London, received a private prosecution summons for perverting the course of justice, funded by a man accused of drugging and raping her. But the former Durham University student died on April 4 last year - three days before the trial was due to start at Southwark Crown Court in London.Eleanor de Freitas was due to stand trial for perverting course of justiceFormer student died on April 4 last year - three days before trial was dueFamily are 'astonished' CPS decided to take bi-polar sufferer to courtShe had made a rape allegation against Alexander Economou in 2013Case dropped due to gaps in evidence and he began his own investigationInquest will resume tomorrow after being adjourned in November last yearFor confidential support call the Samaritans in the UK on 08457 90 90 90, visit a local Samaritans branch or click here \n Question:'We hope that the inquest will explore the important public interest issues regarding prosecutions of rape complainants and the appropriate protections and care that should be put in place for vulnerable people like _.",
+            "output": [
+                "Eleanor de Freitas"
+            ]
+        },
+        {
+            "id": "task339-3aeba3cff61c4b06b1c1be64245d61bb",
+            "input": "(CNN) Valerie Daniel is nervous about the GOP health care bills making their way through Congress. The 33-year-old Georgia resident doesn't get her health insurance through the exchanges, although she has in the past. She could need to turn to them again, and that need is what has her watching the new Republican legislation proposed as a replacement to Obamacare. She, like 117 million Americans, has a chronic condition. It has no cure and requires expensive care. She worries about whether her husband's job will still come with benefits and whether they'll be able to avoid penalties by maintaining consistent coverage.The new legislation could allow insurance companies to charge people with pre-existing conditions moreAARP estimates that people could pay much as $25,700 per year for policies that may cover less \n Question:With an expensive drug like Remicade, _ could have easily maxed out a policy in the old system.",
+            "output": [
+                "Valerie Daniel"
+            ]
+        },
+        {
+            "id": "task339-4a3e0facefd34d0aad08c894c5e45fad",
+            "input": "A young professional has made the shocking decision to trade his flashy corporate life in Dubai to instead reside in an eco-community in the Spanish desert. Erik Lang, 29, swapped skyscrapers and celebrity parties for outdoor showers and compost toilets when he moved to Sunseed in the southeast of Spain - about a 90-minute walk from the closest town. He's just one of a group of volunteers who live off-grid at Sunseed, working to restore the land and grow their own produce. Erik, who studied at London School of Economics, moved to Sunseed five months ago to work as a communications coordinator. His stipend there is just 45 euros (or £38) a week.A 29-year-old young professional, Erik Lang, swapped his life in Dubai to volunteer with eco-community SunseedIn the southeast of Spain, Sunseed is an off-grid village that's about a 90-minute walk from the closest townAfter working in corporate communications, Erik opted for an eco-lifestyle, visiting El Salvador and the Galapagos \n Question:Volunteers at _ generally work on projects that focus on either land maintenance or environmental education.",
+            "output": [
+                "Sunseed"
+            ]
+        },
+        {
+            "id": "task339-931ee74feed24ffe8467887580259c53",
+            "input": "Chelsea were made to work hard for their three points against Stoke at Stamford Bridge on Saturday but Eden Hazard starred for Jose Mourinho's team. He slotted Chelsea ahead in typically composed fashion from the penalty spot before Charlie Adam equalised with an astonishing strike from inside his own half shortly before half time. Stoke continued to make things difficult for Chelsea until an Asmir Begovic error led to Loic Remy tapping in the winner. Here, Sportsmail's Kieran Gill gives his player ratings. CHELSEA (4-2-3-1) Thibaut Courtois – 5.5 Never called into action in the opening 43 minutes but beaten by Adam with an incredible strike from inside Stoke’s half. Too far off his line and one of the world’s best goalkeepers was left embarrassed.Eden Hazard and Loic Remy hit the net as Chelsea beat Stoke 2-1Charlie Adam hit the net from 66 yards for Stoke to level the scoresThe moment is one to forget for Chelsea goalkeeper Thibaut Courtois \n Question:A few too many misplaced passes and a hurried clearance almost spelled danger for _.",
+            "output": [
+                "Chelsea"
+            ]
+        },
+        {
+            "id": "task339-6d716f1c9eda4188a3cab40ef5469652",
+            "input": "Washington (CNN) -- In a congressional version of hot potato, the Senate on Friday passed a short-term spending plan that would prevent a looming government shutdown and sent it to the House for a weekend showdown between Republican tea party conservatives and their more moderate party leaders. The 54-44 vote on strict party lines came after Senate Democrats pushed through an amendment to restore funding for Obamacare that House Republicans had eliminated in their version of the spending measure, which would prevent the start of a government shutdown on Tuesday. Now House Speaker John Boehner must decide whether to urge his divided Republican caucus to vote with Democrats to pass the Senate plan, or yield again to a hardline conservative wing that demands making continued government funding contingent on undermining Obamacare.NEW: President Obama criticizes Republican tactics on shutdown, debt ceilingThe Senate sends the House a revised spending plan to avoid a shutdownSenate Democrats restore funding for Obamacare opposed by RepublicansHouse Speaker John Boehner faces a showdown with tea party conservatives \n Question:Cruz said Friday he expected his GOP colleagues in the House to continue the fight by revising the spending plan, which would mean \"this issue is coming back to the _.\"",
+            "output": [
+                "Senate"
+            ]
+        },
+        {
+            "id": "task339-11b831bcf9cf467ca278b5a7e989d672",
+            "input": "Beijing (CNN) -- As the global travel industry rolls out the welcome mat for China's surge of outbound tourists, it should consider tipping the scales in their customers' favor. Consider Emirates Airline, which has won over retail-crazy Chinese travelers by simply boosting their baggage allowance. \"They increased their luggage allowance because they recognized when Chinese travelers go abroad, they come home with more than when they left,\" says Martin Rinck, Asia-Pacific president of Hilton Worldwide. \"And just by making that change, they won tremendous market share of the Chinese consumer.\" For the latest CNN \"On China\" program, I talked to a panel of industry insiders about how to cater to China's rush of outbound tourists.Hotels, airlines advised to tailor services to Chinese touristsTourism industry insiders appear on CNN's latest \"On China\" programBy 2020, it's estimated more than 200 million Chinese will go overseasRelaxation of government restrictions, rising wealth opening doors \n Question:\"We started the program in August 2011 with 15 participating hotels outside of _,\" Rinck tells me.",
+            "output": [
+                "China"
+            ]
+        },
+        {
+            "id": "task339-f8c454509e984af48207826fda9e051f",
+            "input": "(CNN) -- The Supreme Court begins each session with a proclamation that ends with the words \"God save this Honorable Court.\" Even strict advocates of the separation of Church and State ought to say \"Amen\" to that line after Thursday's decision upholding the constitutionality of the Affordable Care Act . I write this as someone who not only thought that the act would be overturned, but also still thinks there are strong constitutional arguments to be made against the mandate. All Americans, however, regardless of their partisan affiliation or views on the Constitution, had something to celebrate Thursday . Despite what almost all the pundits predicted, the court's decision provides some evidence that there remains one institution of American government that cannot be seen as nakedly partisan. In the end, Chief Justice John Roberts, a career Republican who was nominated for the Supreme Court by George W. Bush, cast the deciding vote upholding the signature act of the current Democratic administration.Paul Sracic says whatever your political bent, you can celebrate Supreme Court's decisionHe says it's evidence that there's still an American institution that is not nakedly partisanHe says a career Republican, the Chief Justice, cast deciding vote on Dem Obama's lawSracic: The example of bipartisan deliberation was much needed in today's political climate \n Question:This, I think, is what _ indicated they were looking for when they elected a president in 2008 who, four years earlier, had risen to national prominence by giving a speech in which he took issue with those who would \"slice-and-dice our country into red states and blue states.\"",
+            "output": [
+                "Americans"
+            ]
+        },
+        {
+            "id": "task339-11a85249d39d44df92dcf4c870ee1bcf",
+            "input": "(CNN) -- The Supreme Court begins each session with a proclamation that ends with the words \"God save this Honorable Court.\" Even strict advocates of the separation of Church and State ought to say \"Amen\" to that line after Thursday's decision upholding the constitutionality of the Affordable Care Act . I write this as someone who not only thought that the act would be overturned, but also still thinks there are strong constitutional arguments to be made against the mandate. All Americans, however, regardless of their partisan affiliation or views on the Constitution, had something to celebrate Thursday . Despite what almost all the pundits predicted, the court's decision provides some evidence that there remains one institution of American government that cannot be seen as nakedly partisan. In the end, Chief Justice John Roberts, a career Republican who was nominated for the Supreme Court by George W. Bush, cast the deciding vote upholding the signature act of the current Democratic administration.Paul Sracic says whatever your political bent, you can celebrate Supreme Court's decisionHe says it's evidence that there's still an American institution that is not nakedly partisanHe says a career Republican, the Chief Justice, cast deciding vote on Dem Obama's lawSracic: The example of bipartisan deliberation was much needed in today's political climate \n Question:Unfortunately, the divide between _ and Democrats has, if anything, gotten worse over the past 3Â½ years.",
+            "output": [
+                "Republican"
+            ]
+        },
+        {
+            "id": "task339-f2754188c6904e32adfd70e42434644e",
+            "input": "German carmaker Daimler is planning to test self-driving trucks as early as this year, it has been revealed. First tests of semi-autonomous trucks will take place in Daimler's home state Baden-Wuerttemberg while the start of production is 2-3 years away, executive board member Wolfgang Bernhard, who is in charge of Daimler's trucks business, told Frankfurter Allgemeine Sonntagszeitung. The world's first self-driving truck has already been licensed for use on American roads, and the Freightliner Inspiration Truck received its official 'autonomous vehicle' license plate in Nevada earlier this year. 'We are positive that we will get approval for tests on German motorways within the next weeks,' Frankfurter Allgemeine Sonntagszeitung quoted him as saying.Freightliner unveiled new 'Inspiration Truck' at Hoover Dam eventTruck scans road with cameras and radar and can drive itself on highwaysRaises specter of fully driverless vehicles - though current rules require a trained trucker to be in the cab at all timesNew technology could reduce bargaining ability of powerful unionsTeamsters said today that nothing could ever replace real driversManufacturers say there is still years of testing before commercial roll-out \n Question:_ has said that additional cameras could also eventually replace wing mirrors, which would make the truck more aerodynamic, and also let drivers see areas which are currently blind spots.",
+            "output": [
+                "Freightliner Inspiration Truck"
+            ]
+        },
+        {
+            "id": "task339-16d23aab022f471a9050f114a47105ff",
+            "input": "David Cameron is drawing up contingency plans to make sure the UK is 'as prepared as we can be' if Greece crashes out of the eurozone, Downing Street has said. The Prime Minister's official spokesperson revealed that while the Government will not give specific details of the plans, it would include potential impacts on business, the banks and financial sector and tourism. Meanwhile, as the Greek government and its international creditors try to thrash out a last-minute deal, the country's central bank has issued a stark warning that it could be on a 'painful course' to default and exit from the EU as well as the eurozone.Downing Street reveals UK is 'as prepared as we can be' if Greece defaultsGovernment's 'Grexit' strategy being led by TreasuryBoE Monetary Policy Committee warned of 'significant risk' in June meetingBanking stocks in Greece loose 15 per cent in three days as crisis deepens \n Question:'Within those discussions there would be an opportunity for the UK to secure meaningful changes and opt-outs that ensure a reformed _ aids our competitiveness.'",
+            "output": [
+                "EU"
+            ]
+        },
+        {
+            "id": "task339-e7ce0660a5d9499bb8ccd1560e4a5b0a",
+            "input": "British boxer Amir Khan's special edition Range Rover was in full view last week as the former WBA and IBF light welterweight champion visited a spa in Manchester. The Bolton-born fighter, who purchased the 'King Khan' edition of the 4x4 earlier this year, has a personalised licence plate made to look like 'boxing'. Khan was snapped leaving Skin Health Spa last Wednesday and was even seen posing with a traffic warden outside the premises on St James's Square. Meanwhile, last Friday Khan confirmed that he would be leading a convoy of aid that will be delivered to Syrian refugees on the Greek island of Lesbos.Amir Khan has a personalised Range Rover that features 'BOX IIIG' plateThe car also has King emblazoned across the bonnet and the on the bootKhan is leading a convoy of aid for Syrian refugees on a Greek island \n Question:_ has urged people to drop off any unwanted clothes, tinned food, basic medical supplies, baby milk and nappies to @polishandglow in Manchester and will personally hand out aid to refugees.",
+            "output": [
+                "Amir Khan"
+            ]
+        },
+        {
+            "id": "task339-ff908208f70649eaa00f546447a5a4a4",
+            "input": "Neymar has confirmed he wants to renew his contract with Barcelona but insists there is no hurry on his part to put pen to paper. Speaking in the Spanish press the Brazil star, who returned to his club on Monday following the international break, spoke of his desire to sign an extension on his current deal that runs until June 2018. Neymar elevated his status during a stellar campaign in 2014-15 scoring 43 goals in all competitions and helping Barcelona win a historic domestic and European treble and the club are keen to ward off any potential suitors by tying him down to a new long-term deal.Neymar has confirmed he wants to sign a new contract at BarcelonaBrazil star has three years left on current deal but wants to commit futureThe 23-year-old also says he is not afraid of taking on greater responsibilitySpanish media praise David de Gea for his performance for national sideSpain beat Ukraine 1-0 to complete their Euro 2016 qualifying campaignItalian reports claim Antonio Conte will leave Italy after Euro 2016Corriere dello Sport claim Italy have been set a target to reach semi-finals \n Question:The front page of the newspaper is dedicated to _'s extended interview, with the headline reading: 'As Neymar sees it.'",
+            "output": [
+                "Neymar"
+            ]
+        },
+        {
+            "id": "task339-ff2fe30629904ca4853f788a062eda7f",
+            "input": "(CNN) -- You can't change Washington from the inside. President Obama was criticized for stating that simple truth during the campaign, but without Americans organizing in support of the issues they believe in, lobbyists and special interests will drive the agenda in Washington. At this crossroads for our economy, we can't afford business as usual. That's why we've formed Organizing for Action, to ensure that the voices of the majority of Americans who voted for policies that will strengthen the middle class will be heard. 'Obama for America' morphs into 'Organizing for Action' As we worked for change during the president's first term, we saw special interests spend unprecedented amounts in an attempt to persuade Congress to vote against policies the American people voted for.Jim Messina: Post-election, a new organization aims to advance Obama's agendaHe says goal is to counter well-funded special interests that don't represent majority viewsAn example: Gun lobbyists fighting background checks 90% in U.S. support, he saysMessina: Group will shun funds from corporations, lobbyists, will represent Americans \n Question:We have no plans to shrug this off and tell those _ organizing their communities to stand down.",
+            "output": [
+                "Americans"
+            ]
+        },
+        {
+            "id": "task339-6c7b2ec1258047a5a5fb14462d88e1a8",
+            "input": "Atlanta (CNN) It's 3 o'clock on a Monday afternoon in Clarkston, Georgia, and Dr. Heval Mohamed Kelli is smiling ear to ear. He looks on as a group of overachieving Clarkston High School students file into a science classroom to receive their after-school lesson for the day. Kelli rubs his hands in anticipation and then he pauses, if only briefly, to look down. He stares at his hands, the same hands he used to wash dishes when he arrived to the United States in 2001. Kelli remembers how they would wrinkle like a prune from being under water for too long while working at the first job he had in the US as a Syrian refugee.Heval Kelli mentors students, many of them refugees, at high school he attendedIt's all about encouraging the American Dream, Syrian refugee says \n Question:_ believes that Keke and the others in the YPI program will one day change the world.",
+            "output": [
+                "Heval Mohamed Kelli"
+            ]
+        },
+        {
+            "id": "task339-3a87b97957c24710ab3831835c421d50",
+            "input": "(CNN) Testimony released from former FBI Director James Comey on Wednesday helped shed light on a claim by President Donald Trump that Comey had thrice told him that the President himself was not under investigation. Trump said repeatedly last month that Comey assured him on three separate occasions that the President was not under Justice Department investigation over whether his campaign colluded with Russia. \"While I greatly appreciate you informing me, on three separate occasions, that I am not under investigation, I nevertheless concur with the judgment of the Department of Justice that you are not able to effectively lead the Bureau,\" Trump wrote in his letter firing Comey.Former FBI Director James Comey is scheduled to testify Thursday before the SenateComey previewed his testimony as well as conversation he had with President Donald Trump \n Question:The first time, on January 6, occurred when Comey went to _ to brief the President-elect along with intelligence leaders.",
+            "output": [
+                "Trump"
+            ]
+        },
+        {
+            "id": "task339-ce7a72011707425585554779f118d9ea",
+            "input": "New York (CNN) In the feverish final swing of Donald Trump's campaign, I found myself returning to the same ritual, rally after rally. I'd get off the press charter plane and arrive to find thousands of clamoring supporters eager to see Donald Trump elected the next president of the United States. I'd marvel at the numbers of supporters in attendance, their wild enthusiasm and optimism about their candidates' prospects, and then I'd get back on the plane, flip open my laptop and toy with the Electoral College map on the 270-to-win website. I turned blue and purple states red as I tried to envision the most plausible path for a Trump victory. And each time, I found myself setting aside the crowds I witnessed and the thick, yet fleeting, aura of \"momentum\" I had felt at the rallies, and like many others inside and outside the bubble wound up saying: There's just no way.Few predicted that Donald Trump would go on to clinch the Republican nomination -- no less the presidencyTrump's campaign has been mired with sexual assault allegations and a leaked lewd hot mic tape \n Question:Arriving at _'s election night party Wednesday night, many campaign staffers quietly acknowledged that defeat was the likeliest outcome.",
+            "output": [
+                "Donald Trump"
+            ]
+        },
+        {
+            "id": "task339-490db32a034e4d19b2ebbfa5f3c00f0c",
+            "input": "A little boy with autism has sent his toy bear on a round-the-world mission to help him raise awareness about the disability. In January 2013, Dorian Poe, from Burlington, Ontario, sent his favorite toy out on the global adventure, having been inspired by the story of a cancer-stricken girl who, unable to live her own dreams of world travel, sent her teddy bear in her place. Hoping to raise the same level of global awareness about his own condition, Dorian decided to send his Ganz Webkinz bear, called Tikko, out into the world, carrying with him a message of understanding and tolerance for those affected by autism.Dorian Poe, 11, from Burlington, Ontario, sends his stuffed polar bear Tikko to other children around the worldEach child who looks after Tikko is tasked with raising awareness about autism in his or her community \n Question:'I fundraise each year to pay the $24,500.00/year tuition it costs for _ to go to a special needs school.",
+            "output": [
+                "Dorian Poe"
+            ]
+        },
+        {
+            "id": "task339-ccd9ab3933344ba3874d27795c62b917",
+            "input": "(CNN) -- Tokyo has been chosen by the International Olympic Committee to host the 2020 Summer Games. In voting Saturday in Buenos Aires, the committee picked Tokyo over the two other contenders, Madrid and Istanbul. The announcement came at 5:20 a.m. Tokyo time, but a large crowd watching on an outdoor video screen burst into cheers. Tokyo previously hosted the Summer Games in 1964. Japan's bid for 2020 billed the city as the safe choice -- despite radiation leaking from the Fukushima nuclear plant. Prime Minister Shinzo Abe personally made a presentation to the committee and promised an effective cleanup.Celebrations in Japan after winning 2020 votePrime Minister Shinzo Abe expresses his joy at IOC decisionJapan is still battling image of Fukushima disasterIstanbul would have been first Muslim country to host the Olympic Games \n Question:Abe said Tokyo would try to stage a successful Games to thank the world for its support after the 2011 earthquake and tsunami that devastated parts of _.",
+            "output": [
+                "Japan"
+            ]
+        },
+        {
+            "id": "task339-480ed4465a5e498dbecdd922e9bc702f",
+            "input": "By opting to join Celtic, Scott Allan has dashed the hope of his oldest friend in football. Andy Halliday’s vision of them being brothers in light blue will go unfulfilled. Despite that disappointment, Allan revealed that best wishes were forthcoming after he broke the news to Halliday. From talk of being Rangers team-mates, there is now a desire to one day go head-to-head in an Old Firm encounter. The two midfielders grew up in the same area on the southside of Glasgow, not far from Ibrox, and attended both the same nursery and primary school. Halliday joined his boyhood heroes this summer after impressing on trial. Speaking earlier this month, he spoke of a dear wish that Allan would follow, despite Hibs’ steadfast refusal to sell to their Championship rivals.Midfielder Scott Allan was unveiled as a Celtic player on Monday afternoonOld friend Andy Halliday was hoping Allan would make move to RangersBoth players attended the same nursery and primary school in GlasgowBut Allan left Halliday's dreams in tatters by agreeing move to Celtic \n Question:What _ hadn’t foreseen was a move to the other side of Glasgow’s footballing divide.",
+            "output": [
+                "Andy Halliday"
+            ]
+        },
+        {
+            "id": "task339-ee5cf44ffa034967a8f31473517f17b2",
+            "input": "By opting to join Celtic, Scott Allan has dashed the hope of his oldest friend in football. Andy Halliday’s vision of them being brothers in light blue will go unfulfilled. Despite that disappointment, Allan revealed that best wishes were forthcoming after he broke the news to Halliday. From talk of being Rangers team-mates, there is now a desire to one day go head-to-head in an Old Firm encounter. The two midfielders grew up in the same area on the southside of Glasgow, not far from Ibrox, and attended both the same nursery and primary school. Halliday joined his boyhood heroes this summer after impressing on trial. Speaking earlier this month, he spoke of a dear wish that Allan would follow, despite Hibs’ steadfast refusal to sell to their Championship rivals.Midfielder Scott Allan was unveiled as a Celtic player on Monday afternoonOld friend Andy Halliday was hoping Allan would make move to RangersBoth players attended the same nursery and primary school in GlasgowBut Allan left Halliday's dreams in tatters by agreeing move to Celtic \n Question:Had he ended up at _, Allan would have been immediately installed as a key player.",
+            "output": [
+                "Rangers"
+            ]
+        },
+        {
+            "id": "task339-93f797a980d74527bdb87ed6527ba841",
+            "input": "Raheem Sterling appeared to be enjoying his summer break in Ibiza despite his latest 'laughing gas' controversy and speculation about his future. The 20-year-old has allegedly been caught on camera inhaling nitrous oxide, just three months after being warned about his conduct by Liverpool manager Brendan Rodgers. Scroll down to video Sterling was filmed on a yacht in Ibiza where it appears he is inhaling the substance — known as laughing gas — through a balloon. In the latest footage, the England international can be seen laughing and dancing on holiday with male and female friends, according to The Sun.Raheem Sterling was allegedly caught on camera during holiday in IbizaThe Sun said Liverpool star was filmed with a pink balloon in his mouthFootage emerged in April appearing to show him inhaling nitrous oxideLiverpool rejected a £40m bid for England forward from Manchester City \n Question:Of course, Sterling may not be a _ player when he returns from his holiday, with Manchester City intent on signing him — though they have had a £40million bid rejected.",
+            "output": [
+                "Liverpool"
+            ]
+        },
+        {
+            "id": "task339-8a685843e0de494a89b85da0ff3a362a",
+            "input": "Washington (CNN) In response to a question Thursday about threats to Jewish centers nationwide, President Donald Trump called a Jewish reporter a liar, told him to sit down and later said anti-Semitism was coming from \"the other side.\" The exchange kicked off as Trump looked through the room at a White House news conference and asked for a question from a \"friendly reporter.\" 'Telephone terrorism' has rattled 48 Jewish centers. Is anyone paying attention? He settled on a reporter who identified himself as Jake Turx, a reporter with Ami Magazine, which bills itself as \"a new standard in Jewish media.\" Turx prefaced his question by saying he did not see evidence the President or his staff were anti-Semitic. He even mentioned Trump's Jewish grandchildren.A reporter from a Jewish magazine asked Trump about threats to dozens of Jewish Community CentersTrump called the question insulting \n Question:Turx shook his head, and Trump continued as if he himself had been accused of anti-_, despite Turx's preface.",
+            "output": [
+                "Semitism"
+            ]
+        },
+        {
+            "id": "task339-416cd5a376e44361980ce96ad6df2281",
+            "input": "Washington (CNN) In response to a question Thursday about threats to Jewish centers nationwide, President Donald Trump called a Jewish reporter a liar, told him to sit down and later said anti-Semitism was coming from \"the other side.\" The exchange kicked off as Trump looked through the room at a White House news conference and asked for a question from a \"friendly reporter.\" 'Telephone terrorism' has rattled 48 Jewish centers. Is anyone paying attention? He settled on a reporter who identified himself as Jake Turx, a reporter with Ami Magazine, which bills itself as \"a new standard in Jewish media.\" Turx prefaced his question by saying he did not see evidence the President or his staff were anti-Semitic. He even mentioned Trump's Jewish grandchildren.A reporter from a Jewish magazine asked Trump about threats to dozens of Jewish Community CentersTrump called the question insulting \n Question:Later on in the news conference, Sirius XM's Jared Rizzi said, \"I'll follow up on my colleague's question about anti-_.",
+            "output": [
+                "Semitism"
+            ]
+        },
+        {
+            "id": "task339-ce30b10487534c4994feaa7d44dc2077",
+            "input": "Washington (CNN) In response to a question Thursday about threats to Jewish centers nationwide, President Donald Trump called a Jewish reporter a liar, told him to sit down and later said anti-Semitism was coming from \"the other side.\" The exchange kicked off as Trump looked through the room at a White House news conference and asked for a question from a \"friendly reporter.\" 'Telephone terrorism' has rattled 48 Jewish centers. Is anyone paying attention? He settled on a reporter who identified himself as Jake Turx, a reporter with Ami Magazine, which bills itself as \"a new standard in Jewish media.\" Turx prefaced his question by saying he did not see evidence the President or his staff were anti-Semitic. He even mentioned Trump's Jewish grandchildren.A reporter from a Jewish magazine asked Trump about threats to dozens of Jewish Community CentersTrump called the question insulting \n Question:We're talking about a rise in anti-_ around the country.",
+            "output": [
+                "Semitism"
+            ]
+        },
+        {
+            "id": "task339-d52f88bade494f08903280a350eb956b",
+            "input": "Republican front-runner Donald Trump still lacks experience apologizing, but he told 'Tonight Show' host Jimmy Fallon that he's open to the idea – provided he ever makes a mistake. 'I totally think apologizing is a great thing, but you have to be wrong!' he joked on Friday. 'I would absolutely apologize – hopefully sometime in the distant future – if I'm ever wrong.' Trump and Fallon shifted gears back and forth between the serious and the funny during The Donald's first late-night TV interview since launching his presidential campaign on June 16. The funnyman host joked that Trump had caught flack for taking the stage Wednesday at a tea party rally in Washington to the tune of REM's 'It's the end of the world as we know it' – a choice that enraged the band's very liberal members.Republican front-runner does his first late-night TV interview since launching his presidential campaignReveals that his wife predicted 'If you run, you will win'Calls his surging candidacy 'a movement going on that's amazing to watch'Pokes fun at himself in sketch as Fallon plays his mirror image, joking about tricking Mexico into building border wall with giant Jenga gameSays Hillary Clinton's email scandal is 'wrong' and soft-pedals feud with Carly FIorina, calling her 'a really nice woman' – before saying he's never met her \n Question:But the _ is a laugh-fest, not a snooze-fest.",
+            "output": [
+                "Tonight Show"
+            ]
+        },
+        {
+            "id": "task339-226c3c3dbdc5473a8a3fbc4cea0fc2e1",
+            "input": "The man behind the Tinder Nightmares account which shares singletons' online dating disasters has collected the most toe-curling exchanges in a hilarious new book. TV producer Elan Gale, from Los Angeles, US, set up the @tindernightmares Instagram page as an outlet for the bizarre comments received over the app around the world after meeting a 'sex robot' on the app, earning nearly 50,000 followers. The page now has 1.4 million followers and includes painful one-liners such as, 'your bio is as empty as your heart' and 'You remind me of Russia in 1917. I'm starting to feel a huge uprising in my lower class.'Elan Gale, from LA, set up the Instagram after flirting with a 'sex robot'He gets 300 to 400 submissions a day from people on TinderMessages include a man who confessed to knowing where his match lived \n Question:He told FEMAIL: 'I figured that other people are probably having similar experiences and what better way than _ to share them.'",
+            "output": [
+                "Instagram"
+            ]
+        },
+        {
+            "id": "task339-e10670bf24a1489180e8f02290d5ea60",
+            "input": "A grieving father has enlisted a Hollywood stunt man to turn himself into The Amazing Spider-Dad for a film to raise money in memory of his young son who died from cancer. Professional freerunner Mike Wilson, 32, of Basingstoke, Hampshire, has caused a stir by dressing as the Marvel comic book hero and carrying out daring stunts on video. His son Jayden was a major Spider-Man fan before dying of cancer aged five seven months ago, but Mr Wilson is determined to keep his son’s memory alive with his film The Amazing Spider-Dad. The video shows him jumping between buildings, receiving a text from his wife saying 'remember nappies', buying them from a store, and a police car chasing suspects whom he then confronts.Professional freerunner Mike Wilson dressed as Marvel comic book hero32-year-old enlisted help of stunt man to record daring moves on videoSon Jayden, five, was big Spider-Man fan before dying of cancer last yearFather dressed up as the superhero to surprise son in video that went viral \n Question:‘We had a goal in mind to produce the best _-Dad film we could with a cinematic feel to it and make people feel like they were watching a real movie.",
+            "output": [
+                "Amazing Spider"
+            ]
+        },
+        {
+            "id": "task339-32360e50e3e94a7582d079a81e0e24fb",
+            "input": "(CNN) A Yazidi woman who fled ISIS counted on reuniting with her husband after he found asylum in the United States. But she was barred from boarding a flight out of Iraq. A medical student in West Virginia is concerned his father won't be able to return home after attending a funeral in Iran. And an elderly Iraqi man's trip to see his son and daughter was abruptly halted in Qatar when he was put back on a plane to Baghdad. These are just a few of the families whose lives are in limbo after President Donald Trump's executive order limiting immigration from seven Muslim-majority countries. They express fears for what the future will hold for them and their loved ones. Here are their stories:Dallal fled ISIS but can't see her husband in the United StatesSusan, an Iraqi-American, worries for relatives seeking US asylumMohammed Al Rawi's father was turned back while en route from Baghdad \n Question:The three youngest children who are minors aged 7, 8 and 16 have _ passports and have been told they can enter the country.",
+            "output": [
+                "United States"
+            ]
+        },
+        {
+            "id": "task339-218f466035dd498392f0a7f0419324d9",
+            "input": "(CNN) President Barack Obama, in his first visit to a mosque in the United States, said Wednesday he was seeking to rebut \"inexcusable political rhetoric against Muslim-Americans\" from Republican presidential candidates. Attempting to recast what he said was a warped image of Islam while encouraging members of the faith to speak out against terror, Obama described Muslims as essential to the fabric of America. \"Let me say as clearly as I can as president of the United States: you fit right here,\" Obama told the audience at the Islamic Society of Baltimore, a 47-year-old mosque with thousands of attendees. \"You're right where you belong. You're part of America too. You're not Muslim or American. You're Muslim and American.\"President Barack Obama has visited mosques in the past, but never inside the United StatesOn Wednesday, the President visited the Islamic Society of BaltimoreThe move is aimed to respond to election cycle rhetoric that has attacked Muslim Americans \n Question:Describing conversations with young _ parents whose children are worried about being removed from the country, Obama demanded that people of all faiths be accepted without bias into the United States.",
+            "output": [
+                "Muslim"
+            ]
+        },
+        {
+            "id": "task339-e4eb158f9e764bc8a67acbf6a1d80aa4",
+            "input": "Only one point separates Tottenham from Liverpool in the table but how different their seasons look ahead of a fascinating meeting at White Hart Lane on Saturday. For Liverpool, it has been dramatic and traumatic. Brendan Rodgers has gone, leaving behind a group of players who have looked tactically confused and far too easily beaten. Enter Jurgen Klopp, the charismatic new face of the Premier League with his heavy-metal football. In his way is Mauricio Pochettino, who shares many of his defensive ideologies and has the exact same target of a Champions League place. His Tottenham side are increasingly looking like a solid unit of talented individuals.Tottenham are a point above Liverpool in the Premier League tableJurgen Klopp has been blighted by injuries in his first week at LiverpoolBut Philippe Coutinho should be fit to start at White Hart LaneTottenham boss Mauricio Pochettino given Manger of the Month on Friday \n Question:_ have only won one game in six league fixtures and must adapt to the ideas of their new manager.",
+            "output": [
+                "Liverpool"
+            ]
+        },
+        {
+            "id": "task339-229c7cc1ee334e0b8f8a4d633bee78bd",
+            "input": "Saturday Night Live pushed the envelope this week with a parody of a car commercial that had a young girl joining ISIS, and not the US Army, at the end. The segment was laid out the same as the recent My Bold Dad spot in which a father tearfully drops off his daughter to join the military in his Toyota Camry. The spot that first aired during the 2015 Super Bowl and was seen as a touching look at what it is like to say goodbye for those that have family members in the service. In this version however, the father, played by Taran Killam, dropped off his daughter, played by Dakota Johnson, and as he tearfully said goodbye she says to him; 'Dad, it's just ISIS.'Saturday Night Live made a parody of a Toyota Camry commercial in which a young girl is driven to the airport by her father to head off to the armyIn the SNL version the young girl, played by host Dakota Johnson, hops on a truck with members of ISIS and an Islamic State flag on the sideShe tells her father, 'Dad, it's just ISIS,' as she walks away, and then as she drives off a man yells 'Death to America!'Many on social media were outraged, calling the show 'depraved,' while others found it 'hilarious'This comes the same week that three British girls and four Canadians, all teenagers, are believed to have run off to join ISIS \n Question:Canada this week also said that they believe four missing teenagers may have traveled to be in _.",
+            "output": [
+                "ISIS"
+            ]
+        },
+        {
+            "id": "task339-4ee02a21463e41b18f4333b99cac149c",
+            "input": "(CNN) Travel advisories warn you to carefully consider visiting certain places. Reasons typically range from severe weather to government instability, from civil war to terrorism. The US State Department issues such advisories on a regular basis. Earlier this month it warned Americans against traveling to Somalia because of widespread terrorist and criminal activity, including kidnappings, bombings and murders. Last week, the NAACP issued a travel advisory of its own, warning people of color that their civil rights could be violated in the state of Missouri. The advisory, issued by the Missouri NAACP State Conference and endorsed by the national organization, is the first of its kind in the civil rights organization's 108-year history. \"Individuals traveling in the state are advised to travel with extreme CAUTION,\" the advisory says. \"Race, gender and color based crimes have a long history in Missouri.\"Travel advisory warns of \"looming danger\" in MissouriState law on discrimination lawsuits prompted the warning \n Question:\"We're looking for a way to truly move _ forward ...",
+            "output": [
+                "Missouri"
+            ]
+        },
+        {
+            "id": "task339-650c82307a404ec087d12554b43bc966",
+            "input": "(CNN) Flu vaccines are about to get more painful. A Centers for Disease Control and Prevention advisory committee recommended on Wednesday that FluMist, the nasal spray influenza vaccine, should not be used during the upcoming flu season. \"To everyone's surprise and increasing consternation, this vaccine has performed quite poorly compared to the injectable vaccine,\" said Dr. William Schaffner, an infectious disease specialist. An alternative to the standard flu shot, FluMist had been approved for people between the ages of 2 and 49 years old by the Food and Drug Administration. The CDC committee, which includes 15 immunization experts, reviewed data from previous flu seasons, including the most recent season, comparing FluMist with the standard flu shot.The CDC recommends that FluMist vaccine not be used during the upcoming flu seasonThe nasal spray vaccination is widely used by pediatricians \n Question:An estimated one-third of all flu vaccinations administered to children are nasal spray, according to the _.",
+            "output": [
+                "CDC"
+            ]
+        },
+        {
+            "id": "task339-232d2af97c8945618b4f0a18bcb19cd0",
+            "input": "(CNN) Flu vaccines are about to get more painful. A Centers for Disease Control and Prevention advisory committee recommended on Wednesday that FluMist, the nasal spray influenza vaccine, should not be used during the upcoming flu season. \"To everyone's surprise and increasing consternation, this vaccine has performed quite poorly compared to the injectable vaccine,\" said Dr. William Schaffner, an infectious disease specialist. An alternative to the standard flu shot, FluMist had been approved for people between the ages of 2 and 49 years old by the Food and Drug Administration. The CDC committee, which includes 15 immunization experts, reviewed data from previous flu seasons, including the most recent season, comparing FluMist with the standard flu shot.The CDC recommends that FluMist vaccine not be used during the upcoming flu seasonThe nasal spray vaccination is widely used by pediatricians \n Question:However, Dr. Brendan Flannery of the _ presented data indicating that FluMist had zero effectiveness against one strain of flu.",
+            "output": [
+                "CDC"
+            ]
+        },
+        {
+            "id": "task339-3c8953802165466ead0ae96daf3449e2",
+            "input": "A 99-year-old with dementia was immersed in a scalding hot bath by a female care assistant who had been in 'a bad mood', a jury has heard. Niphawan Berry, 42, is accused of bathing Margaret Wheatley in water of up to 50 degrees Celsius. Her former employers Meghadeven and Indranee Pumbien, aged 64 and 59  are said to have tried to cover up the scalds as an infection and delayed proper medical treatment by nearly two weeks. All three defendants face a combined total of 19 offences, including the ill-treatment and willful neglect of elderly and vulnerable people, which they deny.Margaret Berry suffered burns consistent with being put in water up to 50CCare worker Niphawan Berry is accused of bathing dementia suffererHomes owners Meghadeven and Indranee Pumbien alleged to have covered up injuriesTrio deny a total of 19 offences including ill-treatment and neglect \n Question:However, rather than seek medical attention, _ was allegedly overheard suggesting the blisters should be popped to make the injuries to her legs look like cellulitis, an infection of the skin.",
+            "output": [
+                "Indranee Pumbien"
+            ]
+        },
+        {
+            "id": "task339-4993fe0521e44c73828af0fa875d4478",
+            "input": "(CNN) House and Senate investigators fired off a series of requests after former FBI Director James Comey's testimony, seeking memos of his private discussions with President Donald Trump and any records the White House kept of their discussion -- including audio recordings. The leaders of the House Russia investigation, Reps. Michael Conaway, a Texas Republican, and Adam Schiff, a California Democrat, sent a request Friday directly to Comey for copies of his memos. They sent a separate request to Trump's White House counsel, Don McGahn, for any record the White House had of their meetings. The House requested Comey and the White House provide the records, including tapes if they exist, by June 23.Comey says Trump asked him to drop investigation into key advisorTrump denied Comey's claims in a Friday news conference \n Question:Asked if he had taped their conversations, as he implied in a threatening tweet shortly after he fired Comey, _ said he would reveal that answer soon.",
+            "output": [
+                "Donald Trump"
+            ]
+        },
+        {
+            "id": "task339-2e706213f9da4383b443241c0aca64ae",
+            "input": "Istanbul (CNN) Dramatic scenes unfolded Tuesday as Turkish police raided a television news station that had been ordered off the air by emergency decree. The raid on Istanbul-based IMC TV, an opposition-affiliated, pro-Kurdish channel, came as the station was reporting on the government's closure of another television channel. Turkish authorities cut IMC's transmission in the middle of the broadcast. \"Free media will not be silenced,\" IMC staff chanted as authorities entered the control room, ordering journalists to stop broadcasting scenes from the raid on their social media accounts. IMC is one of the largest of the 20 television and radio stations ordered off air by Turkish authorities on Friday on the grounds that they broadcast \"terrorist propaganda.\"The station was one of 20 ordered shut by emergency decree last weekTurkey has suspended about 18% of the national police force for alleged Gulenist links \n Question:Alleged Gulenists were among 28 mayors dismissed by _'s government last month, in a move that sparked protests in a number of towns.",
+            "output": [
+                "Turkish"
+            ]
+        },
+        {
+            "id": "task339-3911f25890e343c993891143d812dad2",
+            "input": "(CNN) -- A Jewish hockey player sued the National Hockey League's Anaheim Ducks on Tuesday, claiming that coaches of one of its affiliate teams subjected him to harassment and anti-Semitic remarks. Jason Bailey, 23, is seeking unspecified damages in the action filed in Orange County (California) Superior Court against the Ducks, the Bakersfield Condors and coaches Martin Raymond and Mark Pederson. \"Sorry, we can't comment,\" said Alex Gilchrist, director of media and communications for the Ducks. According to the complaint, Bailey endured \"a barrage of anti-Semitic, offensive and degrading verbal attacks regarding his Jewish faith\" from Raymond, head coach of the Condors. Raymond, according to the lawsuit, would say, \"they (referring to Jews) 'only care about money and who's who.' \"Hockey player files lawsuit against Anaheim Ducks, farm teamJason Bailey contends that coaches engaged in anti-Semitic behaviorHe is seeking unspecified damages \n Question:Assistant head coach _ made anti-Semitic remarks about Bailey, the suit alleges, including, \"well, I don't know if we can trust him with the money; he's Jewish.\"",
+            "output": [
+                "Mark Pederson"
+            ]
+        },
+        {
+            "id": "task339-cc76166d41694e879ab1aec72d819ad1",
+            "input": "(CNN) -- A Jewish hockey player sued the National Hockey League's Anaheim Ducks on Tuesday, claiming that coaches of one of its affiliate teams subjected him to harassment and anti-Semitic remarks. Jason Bailey, 23, is seeking unspecified damages in the action filed in Orange County (California) Superior Court against the Ducks, the Bakersfield Condors and coaches Martin Raymond and Mark Pederson. \"Sorry, we can't comment,\" said Alex Gilchrist, director of media and communications for the Ducks. According to the complaint, Bailey endured \"a barrage of anti-Semitic, offensive and degrading verbal attacks regarding his Jewish faith\" from Raymond, head coach of the Condors. Raymond, according to the lawsuit, would say, \"they (referring to Jews) 'only care about money and who's who.' \"Hockey player files lawsuit against Anaheim Ducks, farm teamJason Bailey contends that coaches engaged in anti-Semitic behaviorHe is seeking unspecified damages \n Question:Assistant head coach Pederson made anti-Semitic remarks about Bailey, the suit alleges, including, \"well, I don't know if we can trust him with the money; he's _.\"",
+            "output": [
+                "Jewish"
+            ]
+        },
+        {
+            "id": "task339-6a12982c9f83482f93ddf2f3c84ed1d2",
+            "input": "They say a moment on the lips, a lifetime on the hips. And now we reveal the true cost of indulging this Easter. Just one Crème egg will take 19 minutes of skipping to burn off, and contains almost seven teaspoons of sugar. That’s more than half of the 50g of sugar the World Health Organisation (WHO) recommends per day. And a Kit Kat Chunky Easter egg - and the chocolate bar that comes with it - will take three 45 minute cycle classes to work off. The egg contains an incredible 24 teaspoons of sugar at 95.5g, almost double the amount the WHO recommends in a day.From rowing to Zumba, two nutritionists reveal the exercises you can do to burn off your favourite Easter eggsNutritionist Dr Sam Christie warns many Easter eggs contain high levels of sugar, which can cause behavioural problems and acne \n Question:A 90g packet of mini eggs contains a whopping 444 calories, which can be burned by a 50 minute _ step class.",
+            "output": [
+                "Zumba"
+            ]
+        },
+        {
+            "id": "task339-7cb38335836c42cbbc1c6e5cfa0b5da0",
+            "input": "(CNN) The leader of the world's most populous nation sits in the halls of power in Beijing, but a part of him remains in the American heartland. Xi Jinping's visit to the United States in February 2012 included expected stops in Washington and trade meetings in California. Even an NBA game. But the part Xi, 59, looked most forward to was an evening in Muscatine, Iowa. He wanted to visit \"old friends\" he'd met on a trip to Iowa almost 30 years ago. Rewind to a time when Mikhail Gorbachev was ascending to the leadership of the Soviet Communist Party, Terry Anderson was taken hostage in Lebanon and Tiananmen Square was just another place in Beijing. Xi arrived in Muscatine for two weeks in April 1985 with a Chinese delegation looking into farming technology.Iowa Gov. Terry Branstad tapped as China ambassadorXi Jinping visited Iowa in 1985 and returned in 2012 to Muscatine to visit \"old friends\" \n Question:Tubandt gestured heavily and drew drawings in the sand to explain things to his _ visitor.",
+            "output": [
+                "Chinese"
+            ]
+        },
+        {
+            "id": "task339-2c7439ae4c4e4155a813d383a3750656",
+            "input": "Washington (CNN) US President Donald Trump remains unconvinced that Russia attempted to influence the 2016 election, his new White House Communications Director Anthony Scaramucci said on Sunday. \"He basically said to me, 'Hey you know, this is, maybe they did it, maybe they didn't do it,'\" Scaramucci said of a recent conversation he'd had with the President about alleged Russian interference. Prior to Trump's inauguration, the Office of the Director of National Intelligence released an unclassified report showing the CIA, FBI and National Security Agency all concluded the Russian government attempted to influence the election to hurt Hillary Clinton and help Trump.Scaramucci said he didn't care about his past criticism of TrumpHe said he would address White House leaks on Monday \n Question:Fresh on the job, _ found himself talking about one of the President's tweets.",
+            "output": [
+                "Anthony Scaramucci"
+            ]
+        },
+        {
+            "id": "task339-9d7f56c6dbc14db69e41d5a2f7fd39df",
+            "input": "(CNN) Several powerful lobbying groups are lining up to oppose the latest Republican effort to repeal and replace Obamacare. The influential American Medical Association, AARP and two major hospital groups all came out against a new amendment unveiled this week that would let states to weaken some of Obamacare's key protections for those with pre-existing conditions and for older enrollees. The so-called MacArthur amendment, authored by moderate Rep. Tom MacArthur of New Jersey, would let states allow insurers to offer less comprehensive policies and to charge people more based on their health status. It would also let insurers hike premiums for those in their 50s and early 60s.Republicans unveiled a new amendment they hope would bridge a party divide over health careSeveral large lobbying groups are lining up against the suggested legislation \n Question:_ slammed the amendment, saying it would put in place \"backdoor cuts\" to the protections and would create an \"age tax.\"",
+            "output": [
+                "AARP"
+            ]
+        },
+        {
+            "id": "task339-103d28446aa44d41bbbf9ee28a0678e3",
+            "input": "She's a model and singer who was married to Australian's eighth-richest man for six years. So when Erica Packer, 38, embarked on a new relationship following her divorce from the media mogul, it was unlikely to be with the average boy next door. Now she's believed to have found love with none other than Seal, the British singer-songwriter who has sold 30 million albums worldwide and won four Grammys among other accolades. The pair were spotted together enjoying a romantic getaway in Positano, Italy, this week. Witnesses told Woman's Day that the couple looked 'extremely intimate' aboard a luxury yacht.Billionaire James Packer and his wife Erica divorced in 2013Since then, he has started dating global superstar Mariah CareyCouple have enjoyed holidays on super yacht in the MedNot to be out-done, Erica has also bagged a Grammy winnerPictured holidaying with Seal, also on a super yacht, this week \n Question:_ was pictured playing in the water with two of Erica's children while the bikini clad mother watched on lovingly from the yacht.",
+            "output": [
+                "Seal"
+            ]
+        },
+        {
+            "id": "task339-e1d61aeee9df40138f58386f712dd972",
+            "input": "(CNN) It was a difficult season of loss for Sean Owens' family. Shortly after his father died of kidney cancer in 2010, his mother's beloved black Labrador retriever mix -- Mary Margaret, or Maggie -- was diagnosed with hemangiosarcoma, a rapidly growing tumor of the blood vessels. Maggie had a history of health problems, and Owens' mother was distraught. \"That's not an uncommon scenario in veterinary medicine,\" said Owens, veterinarian and professor of clinical pathology in the School of Veterinary Medicine at the University of California, Davis. \"If you ask most veterinarians the hardest thing they do, it's telling the senior man or woman that comes in, having just lost a significant other or spouse or partner, that now their animal, their dog or cat or whatever their loved one is, now has a terrible disease as well,\" he said. \"Those conversations ... they just tear the heart out of you.\"Caring for an ailing pet could put your own mental health at risk, says a new paperExperts offer strategies that might help alleviate pet caregiver burden \n Question:In the months leading up to his father's death and _'s diagnosis, Owens said, his mother was the primary caregiver for both her husband and her dog.",
+            "output": [
+                "Maggie"
+            ]
+        },
+        {
+            "id": "task339-744cda5c09774e73978736d666a5c545",
+            "input": "Germany cancelled a football match against Holland in Hanover just 90 minutes before kick-off after receiving 'concrete information' about a terror threat. A concert venue in the city was also evacuated amid heightened security concerns in the wake of last week's atrocities in Paris. One report on a local newspaper website claimed an ambulance packed with explosives was found outside the HDI Arena. There were also reports of a known trouble-maker, who was held at gunpoint by police outside the ground. According to an NTV reporter on CNN, a second suspicious device was found in a train station close to the stadium.Police said they were forced to cancel the match because they had 'concrete information' about a bomb threatGermany were due to take on Holland in an international friendly at the HDI Arena in Hanover tonightReports said a North African terror group was planning an attack Hanover with assault rifles and suicide vestsPolice had earlier removed a suspicious suitcase from the ground and closed off roads leading into the areaA second suspicious device was also found in a train station close to the stadium, according to local reportsOne report claimed an ambulance packed with explosives has been found outside the stadiumGerman Chancellor Angela Merkel had been expected to attend the match with members of her cabinetSee our full international news coverage from Germany and the rest of the world \n Question:Regularly we receive information about threats against _, especially after an attack like in Paris.",
+            "output": [
+                "Germany"
+            ]
+        },
+        {
+            "id": "task339-d4e06f4b42634e0a93a375651202a8d6",
+            "input": "Washington (CNN) The biggest story of the 2016 election is undoubtedly the rise of Donald Trump, and behind the Republican nominee is a group in its last throes as the biggest force in politics: The white working class. A new survey from CNN and the Kaiser Family Foundation delves deeply into this pivotal group, to understand their experience in an America whose changing demographics and economy have arguably impacted this group more than almost any other. Contrary to many assumptions about this group, the poll finds working class whites generally happy with their lives, and mostly satisfied with their personal financial situation. Just 18% say they are angry about the way things are going in their own lives, and 44% think America's best days lie ahead. They are just as likely as their black and Hispanic working class counterparts to feel optimistic about their lives, 7 in 10 or more say so in each group.About 6 in 10 white working class people say it's gotten harder for people like them to get aheadFor nearly all of American history, whites without college degrees made up a majority of voters \n Question:But some of it is their differing views on government and change in _ society.",
+            "output": [
+                "America"
+            ]
+        },
+        {
+            "id": "task339-0ac9067c3a8e4e6cabcd85825e82e951",
+            "input": "Teams have been encouraged to release rider data by the president of the sport's governing body the UCI following claims against Chris Froome. Brian Cookson said he was not stopping teams from releasing power or technical data, adding the publication of such information in the 'current febrile atmosphere' would be a 'good thing' to do. Briton Froome pledged to honour the Tour de France yellow jersey after claiming his second title in Paris on Sunday. The 30-year-old, who insists he is clean, was called a 'doper', spat at and had urine thrown at him during the three-week race. Team Sky released Froome's performance data from the first Pyrenees stage of this year's event in an attempt to quell the furore surrounding his display.Chris Froome was consistently accused of doping during Tour de FranceThe Team Sky rider won the race for the second time, the first Brit to do soCalls have been made for the team to release Froome's technical data \n Question:Cookson said the actions of the spectators who spat and threw urine at _ were 'absolutely disgusting and disgraceful'.",
+            "output": [
+                "Chris Froome"
+            ]
+        },
+        {
+            "id": "task339-ce722b3482a0424e80a83e4ad5666405",
+            "input": "Leeds president Massimo Cellino insists he had nothing to do with the events that led to six players pulling out of Saturday's match against Charlton. Mirco Antenucci, Giuseppe Bellusci, Dario Del Fabro, Marco Silvestri, Souleymane Doukara and Edgar Cani withdrew from the squad on the eve of the trip to The Valley citing injuries, prompting some accusations that the players had gone 'on strike'. The club released a statement on Sunday evening looking to draw a line under the controversy which read: 'Leeds United Football Club wants to clarify that during the days leading up to the away Championship fixture at Charlton Athletic on Saturday April 17 that six first-team players suffered injuries.'Six Leeds players withdrew from squad for Saturday's match with CharltonManager Neil Redfearn described the events as 'freakish' ahead of defeatFormer Leeds captain Trevor Cherry says it is 'disgraceful' behaviourClub president Massimo Cellino insists he had nothing to do with the eventsRedfearn's side suffered a 2-1 Championship defeat to Charlton \n Question:The withdrawals, including Souleymane Doukara's, are the latest incident in another turbulent period at _.",
+            "output": [
+                "Leeds"
+            ]
+        },
+        {
+            "id": "task339-a0d16e9821dc420ba028d81d2f581480",
+            "input": "(CNN) -- How were inmates inside a Texas prison allegedly able to make cell phone calls, plot crimes and acquire drugs? With the help of 17 former corrections officers who once worked at the prison, according to a federal grand jury indictment unsealed this week. Now the former officers and 12 others have been arrested and charged with racketeering after a four-year investigation authorities dubbed Operation Prison Cell. The former guards are accused of involvement in a smuggling scheme that undermined the justice system, U.S. Attorney Kenneth Magidson told reporters Wednesday. \"Prison is a place where inmates are supposed to do their time,\" he said, \"not where they do their crime.\"Former prison guards are charged with racketeering for allegedly smuggling cell phonesOfficials say prison inmates used the phones to plot serious crimes, including killingsThe arrests of 17 former corrections officers were part of Operation Prison Cell \n Question:In the _, authorities said Wednesday that rampant corruption had festered since 2005.",
+            "output": [
+                "Prison"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Apache 2.0",
+        "Dedicated Term of Use (https://archive.org/about/terms.php)"
+    ]
+}

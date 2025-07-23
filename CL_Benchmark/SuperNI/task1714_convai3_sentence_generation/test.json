@@ -1,0 +1,773 @@
+{
+    "Contributors": [
+        "Qiang Fu"
+    ],
+    "Source": [
+        "clariq"
+    ],
+    "URL": [
+        "https://github.com/aliannejadi/ClariQ"
+    ],
+    "Categories": [
+        "Dialogue Generation"
+    ],
+    "Reasoning": [
+        "Commonsense Reasoning -> Social Situations",
+        "Reasoning on Social Interactions",
+        "Abductive Reasoning"
+    ],
+    "Definition": [
+        "You are given a concatenated string consisting of two parts that are separated by a newline character. The first part is the user's initial question during a human computer conversation, the second part is a clarifying question asked by the computer in response to the question asked by the user. You should read the input, then generate a valid prediction of the user's response to the computer's clarifying question. A valid prediction will clarify the user's correct intent in the initial question."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "User: Find information about joints in the human body. \nComputer: what specific joint are you interested in",
+            "output": "i am interested in joint pain treatments in general",
+            "explanation": "The user want to know joints in general, not a specific joint."
+        },
+        {
+            "input": "User: Looking for locations and dates of rock and gem shows. \nComputer: are you looking for a list of clubs that host rock and gem shows",
+            "output": "yes",
+            "explanation": "The response is exactly what the user needed, it matches the user's intent."
+        },
+        {
+            "input": "User: Find music, tour dates, and information about the musician Neil Young. \nComputer: are you looking for similar artists to neil young",
+            "output": "no i am looking for lyrics of sheet music of neil youngs songs",
+            "explanation": "The user does not want to find similar artists, the user only wants to know about the artist himself."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "User: Find historical information about Madam C. J. Walker. \nComputer: would you like to know about madam cj walkers products",
+            "output": "Yes, I want to know about the products.",
+            "explanation": "This is a negative example because the user's true intent is to find historical information about the person, not buying products."
+        },
+        {
+            "input": "User: Find information about the television show. \nComputer: do you want to know who the main actor is in er tv show",
+            "output": "show me the homepage of the tennessee titans",
+            "explanation": "The is a negative example because the output is completely unrelated to the original questions and intent."
+        },
+        {
+            "input": "User: Find beginners instructions to sewing, both by hand and by machine. \nComputer: would you like to know how to sew a dress",
+            "output": "Yes, I want to sew the best dress in the world.",
+            "explanation": "This is a negative example because the user wants to find beginner tutorials, not an advanced one."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1714-596bc20e17104e9884677d9b2ab359a3",
+            "input": "User: What services are provided by the Sherwood Regional Library? \nComputer: do you want to call",
+            "output": [
+                "no i need driving directions"
+            ]
+        },
+        {
+            "id": "task1714-00d0d20cdc8b4a9b9f42a35884fd09cd",
+            "input": "User: I am looking for flame graphics to use on a website. \nComputer: are you looking for flame design tracers",
+            "output": [
+                "no i need pictures of flames and fire"
+            ]
+        },
+        {
+            "id": "task1714-86c81dea5e5a40fea547062563d70041",
+            "input": "User: What are some Kansas City, MO tourist attractions? \nComputer: would you like to see a listing for hotels in kansas city",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task1714-1c0816ed2b454e4a912f96bdaa206e82",
+            "input": "User: Where can I find information about forearm pain? \nComputer: are you worried your forearm pain means you have a broken bone",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task1714-88be6473ce464d02ba04efeabb1dc957",
+            "input": "User: Find inexpensive hotels in New York City. \nComputer: are you looking for reviews of hotels",
+            "output": [
+                "no i am looking for a list of luxury hotels in new york"
+            ]
+        },
+        {
+            "id": "task1714-d8d64117077d4a969729af475bf12df1",
+            "input": "User: What breeds of small or toy dog hybrids are there? \nComputer: do you want to know what a designer dog breed is",
+            "output": [
+                "no i would like pictures of various designer dog breeds"
+            ]
+        },
+        {
+            "id": "task1714-5f83d52c4e8c47ff965fe8e282c8a61a",
+            "input": "User: Find songs, lyrics, music, and information about the musical The Music Man \nComputer: are you trying to find videos about the music man",
+            "output": [
+                "no i want the lyrics"
+            ]
+        },
+        {
+            "id": "task1714-82b4f41d30084b1c83ee5e5865b6048c",
+            "input": "User: Find the General Schedule pay tables. \nComputer: what gs pay scale are you looking for",
+            "output": [
+                "i want to know about the federal wage systems affect on the general schedule"
+            ]
+        },
+        {
+            "id": "task1714-fa2c82f7caec4990b1febc1f846f04ed",
+            "input": "User: I am looking for sources for parts for cars, preferably used. \nComputer: do you want to obtain used car parts",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task1714-f14029f5bdb04cf997a8841a1f0ff3d7",
+            "input": "User: Find information about the television show \\\"ER\\\". \nComputer: what season of er are you interested in",
+            "output": [
+                "the ones i can dowload and watch online"
+            ]
+        },
+        {
+            "id": "task1714-359adb93e4214e2fb093a9861d63a841",
+            "input": "User: Find historical information about Madam C. J. Walker. \nComputer: would you like to see more early africanamerican entrepeneurs",
+            "output": [
+                "no thats not what im looking for"
+            ]
+        },
+        {
+            "id": "task1714-8f2dea7b8bb54b16ac486c14edab97d5",
+            "input": "User: What movies has Ron Howard directed? \nComputer: are you trying to find films that ron howard directed",
+            "output": [
+                "yes im trying to find films that ron howard directed"
+            ]
+        },
+        {
+            "id": "task1714-8b11b9b1c16548558fcd3b32123a9adf",
+            "input": "User: Find information about mad cow disease symptoms in humans. \nComputer: which symptoms would you like to know about",
+            "output": [
+                "i would like to know about the symptoms in humans"
+            ]
+        },
+        {
+            "id": "task1714-4ba6177b74a248da890cf89d8111764c",
+            "input": "User: What are some small space decorating dos and don\\'ts? \nComputer: do you want to buy it online",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task1714-19e24d67f869449e992edad7d675ea0a",
+            "input": "User: Find tips, resources, supplies for getting organized and reducing clutter. \nComputer: would you like to know how to reduce clutter",
+            "output": [
+                "yes in addition to knowing how to manage time"
+            ]
+        },
+        {
+            "id": "task1714-b5d6eeb2b5fb4fc0b6f00ad040f580b8",
+            "input": "User: What is the definition of tangible personal property for tax purposes? \nComputer: would you like to see a list of states which receive tangible personal property tax",
+            "output": [
+                "no please tell me when the tangible personal property tax is due"
+            ]
+        },
+        {
+            "id": "task1714-92cf2277e7c54b0cb304c9c1dec8542f",
+            "input": "User: Find recipes for rice. \nComputer: do you want to know the nutritional content of rice",
+            "output": [
+                "yes i want to know the nutritional value of rice"
+            ]
+        },
+        {
+            "id": "task1714-0be4161158e94906a46f6d6b50575e12",
+            "input": "User: I\\'m looking for cheap (i.e. low-cost) internet service. \nComputer: are you upset by the quality of your internet service",
+            "output": [
+                "i am not rather i am trying to find inexpensive dsl providers"
+            ]
+        },
+        {
+            "id": "task1714-238c8ad12d634426824ae55d3a7c0268",
+            "input": "User: What are the requirements to become a Tennessee Highway Patrol State Trooper? \nComputer: are you curious about the employment opportunies at the tennesse highway patrol",
+            "output": [
+                "no i would like to rate my interaction with the tennessee highway patrol"
+            ]
+        },
+        {
+            "id": "task1714-8aed1e1f67994b7ebbee748d11290e03",
+            "input": "User: information on vines that can be grown in shady areas \nComputer: are you looking for a flowering ivy",
+            "output": [
+                "no i am looking for vines that can grow in shady areas"
+            ]
+        },
+        {
+            "id": "task1714-77a3ab9a1297431d90c3e4cfcf4b6646",
+            "input": "User: Find information about InuYasha, the Japanese comic book and animated cartoon franchise. \nComputer: which episodes of inuyasha would you like to see",
+            "output": [
+                "none find music from the series"
+            ]
+        },
+        {
+            "id": "task1714-7c61a585bef94613abebf9bef76ae042",
+            "input": "User: Find information about the Sun, the star in our Solar System. \nComputer: are you interested in objects orbiting the sun",
+            "output": [
+                "no i am looking for the homepage of the baltimore sun newpaper"
+            ]
+        },
+        {
+            "id": "task1714-dd4078983251499ca88875b4669fdcf0",
+            "input": "User: How do I go about building a fence myself? \nComputer: are you looking for fencebuilding materials",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task1714-974f1b9fbae944b98830ece8676628fe",
+            "input": "User: contact information for Jax Chemical Company \nComputer: would you like to see their homepage",
+            "output": [
+                "yes and i specifically would like to see what products they have for treating surfaces"
+            ]
+        },
+        {
+            "id": "task1714-4a85ab6d17594c6cb8f3906f5a83a781",
+            "input": "User: What medical services are available at the Mayo Clinic in Jacksonville, FL? \nComputer: is this an emergency",
+            "output": [
+                "no i am looking for information on housing outpatients"
+            ]
+        },
+        {
+            "id": "task1714-186b52f2063344c1aa4a6ead4852037c",
+            "input": "User: Find out what the \\\"sit and reach test\\\" is. \nComputer: are you looking for information on how its scored",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task1714-bb91f2967f6842bcafe450306d39c07e",
+            "input": "User: Find information about Flushing, a neighborhood in New York City. \nComputer: are you referring to flushing new york",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task1714-d9b40df66fe945b685f6865553fd2802",
+            "input": "User: How do you tie a Windsor knot? \nComputer: are you looking for step by step instructions on how to do this",
+            "output": [
+                "yes i would like step by step instructions"
+            ]
+        },
+        {
+            "id": "task1714-935858942b2049359f432a2365c9cf6d",
+            "input": "User: Find information on President Barack Obama\\'s family history, including genealogy, national origins, places and dates of birth, etc. \nComputer: would you like to hear about president obamas family tree",
+            "output": [
+                "i would like the barack obama family tree in the time magazine photo essay"
+            ]
+        },
+        {
+            "id": "task1714-1e71285c137748a693d075c84eb86bde",
+            "input": "User: Find a list of the seven deadly sins. \nComputer: which of the seven deadly sins do you want to know more about",
+            "output": [
+                "i would like a list of the seven deadly sins"
+            ]
+        },
+        {
+            "id": "task1714-567536eb999d4070814bee3b717d6148",
+            "input": "User: What campuses are part of the University of North Carolina? \nComputer: what part of unc do you want info on",
+            "output": [
+                "i want to know where their hospital is located"
+            ]
+        },
+        {
+            "id": "task1714-1ce2bf1639e740b2887945070ff7385e",
+            "input": "User: how to play the board game \\\"Source of the Nile\\\" \nComputer: which nile are you interested in learning about",
+            "output": [
+                "i dont know"
+            ]
+        },
+        {
+            "id": "task1714-2faa5796a9e741709f072d1ca00b2409",
+            "input": "User: Find information on obsessive-compulsive disorder. \nComputer: are you interested in ocd medications",
+            "output": [
+                "looking for a forum or helppage for people with kids that have ocd"
+            ]
+        },
+        {
+            "id": "task1714-55dd577f0bb746b996f76b15b581cea1",
+            "input": "User: What campuses are part of the University of North Carolina? \nComputer: which unc campus are you most interested in",
+            "output": [
+                "chapel hill"
+            ]
+        },
+        {
+            "id": "task1714-1b412e3b80714e00b40a7d7365eb9cd4",
+            "input": "User: Looking for information about the Orange County Convention Center in Orlando, Florida. \nComputer: do you want to know their hours of operation",
+            "output": [
+                "no i am looking for a place to stay"
+            ]
+        },
+        {
+            "id": "task1714-f539cb5155a8447bbbd39ee5a1131306",
+            "input": "User: What are the requirements to become a Tennessee Highway Patrol State Trooper? \nComputer: would you like to know how many tickets they right ever year",
+            "output": [
+                "no just take me to their homepage"
+            ]
+        },
+        {
+            "id": "task1714-5b63c0595c214f94875e05bd0564fbb1",
+            "input": "User: I\\'m looking for information about fishing and hunting in Arizona. \nComputer: do you need maps for arizona hunting and fishing",
+            "output": [
+                "i dont need maps i need clothing for hunting trips in arizona"
+            ]
+        },
+        {
+            "id": "task1714-08298c1183a84183a0ebf5717195fee8",
+            "input": "User: Find information on getting a job in Michigan. \nComputer: can i take you to the resource page at the michworks website",
+            "output": [
+                "no take me to a site with job listing in michigan"
+            ]
+        },
+        {
+            "id": "task1714-c2d6e7295bcb41cab201af91a22b3a30",
+            "input": "User: Find a picture of the Last Supper painting by Leonardo da Vinci. \nComputer: woud you like to know about last supper reproductions",
+            "output": [
+                "no im looking for a picture of the painting"
+            ]
+        },
+        {
+            "id": "task1714-90ae652eb62f42fcaa4f84518cd21ffd",
+            "input": "User: Find beachfront condos for sale in Florida. \nComputer: what other features are you looking for in a condo",
+            "output": [
+                "nothing besides being on the oceanfront let me know whats available"
+            ]
+        },
+        {
+            "id": "task1714-8d7ed99a2671411a98e14a627421e7df",
+            "input": "User: Find information about mad cow disease symptoms in humans. \nComputer: would you like to know first symptoms",
+            "output": [
+                "yes i would like information about mad cow disease symptoms in humans"
+            ]
+        },
+        {
+            "id": "task1714-896cbaf6c55e403582bd91d962755af2",
+            "input": "User: Find information, reviews, and cheat codes for Playstation 2 games. \nComputer: what is the most you are willing to spend on a ps 2 game",
+            "output": [
+                "i dont know"
+            ]
+        },
+        {
+            "id": "task1714-be0147f8fb4b4bd3858908651bad6b05",
+            "input": "User: What time and temperature should be used to roast a pork tenderloin? \nComputer: would you like to know where pork tenderloin comes from in a pig",
+            "output": [
+                "no i want to know how to cook it"
+            ]
+        },
+        {
+            "id": "task1714-361f390dfaee40be8f45c928810d2f37",
+            "input": "User: What are the ways you can quit smoking? \nComputer: are you trying to quit smoking",
+            "output": [
+                "i dont know"
+            ]
+        },
+        {
+            "id": "task1714-1e34abae0b934acaa801f442e5eecbf5",
+            "input": "User: find information/timeline about Martha Stewart\\'s insider trading case \nComputer: which martha stewart and imclone television show episdoe are you looking for",
+            "output": [
+                "i am looking for opinions on the case not a television episode"
+            ]
+        },
+        {
+            "id": "task1714-273203e8a3cb4dfb9ff3e1c0899d6129",
+            "input": "User: What online programs are offered by the University of Phoenix? \nComputer: what major are you interested in",
+            "output": [
+                "i am not looking for a major i am looking for faculty members of the university of phoenix"
+            ]
+        },
+        {
+            "id": "task1714-217324518d5c421a9a8d4c41ed01efa8",
+            "input": "User: Looking for information on how to watch television programming on your computer. \nComputer: do you want to know how to display your computer on a tv",
+            "output": [
+                "no how do i watch tv on my computer"
+            ]
+        },
+        {
+            "id": "task1714-b089e72254e54984833c5eb64df6c439",
+            "input": "User: information on vines that can be grown in shady areas \nComputer: how fast do you want the coverage to grow",
+            "output": [
+                "no i want to know about different vines used for shade"
+            ]
+        },
+        {
+            "id": "task1714-bb4d9a05ddd641cc94c63f8efb101f12",
+            "input": "User: Find information about the BART (Bay Area Rapid Transit) system in San Francisco. \nComputer: are you taking the bart from san francisco international airport",
+            "output": [
+                "maybe i would really just like to see all of their schedules and fares"
+            ]
+        },
+        {
+            "id": "task1714-c2d72729858e4be7bd9a78b44473bfdb",
+            "input": "User: What is a good way to begin collecting old coins? \nComputer: any tutorials would interest you",
+            "output": [
+                "na"
+            ]
+        },
+        {
+            "id": "task1714-84d95427abe24ba6890cd8e6314cc6ee",
+            "input": "User: Find information about computer worms, viruses, and spyware. \nComputer: are you interested in pictures of worms",
+            "output": [
+                "no i am interested in computer worms viruses and spyware information"
+            ]
+        },
+        {
+            "id": "task1714-afe2255a51624f7aa6cb5dbec9e7e413",
+            "input": "User: how to play the board game \\\"Source of the Nile\\\" \nComputer: are you referring to the nile river",
+            "output": [
+                "yes i want information on the feud between speke and burton over the discovery of the source of the river"
+            ]
+        },
+        {
+            "id": "task1714-d5c4b1b998494e03b6bc71dd3862824c",
+            "input": "User: Find information about the Bowflex Power Pro. \nComputer: are you interested in purchasing it online",
+            "output": [
+                "i would like to know what other people think of the bowflex power pro"
+            ]
+        },
+        {
+            "id": "task1714-a1e21a1c282a44ba8c6ceab69aadba70",
+            "input": "User: Which civil war battles were fought in South Carolina? \nComputer: would you like to see a picture of a map of the civil war battle sites in south carolina",
+            "output": [
+                "no i would like a list of each battle that took place in south carolina"
+            ]
+        },
+        {
+            "id": "task1714-c0285695fad9419b8339cfba7c0bc07a",
+            "input": "User: What breeds of small or toy dog hybrids are there? \nComputer: do you want to know if designer dog breeds are healthier than purebreds",
+            "output": [
+                "no i want to buy a dog"
+            ]
+        },
+        {
+            "id": "task1714-c0559865df6a4a76b4b7e343ced5effd",
+            "input": "User: Find information on the history of music. \nComputer: do you wish to know how music videos started",
+            "output": [
+                "yes and more information on the history of music"
+            ]
+        },
+        {
+            "id": "task1714-99439ad1df0a41c6b51259205a5df90a",
+            "input": "User: What is a good way to begin collecting old coins? \nComputer: do you want to sell old coins",
+            "output": [
+                "yes after they increase in value"
+            ]
+        },
+        {
+            "id": "task1714-853c346659da416ca922508c4541995a",
+            "input": "User: Find information about VLDL or very-low-density lipoprotein, a type of cholesterol. \nComputer: would you like information about cholesterol reports",
+            "output": [
+                "yes specifically i need to know about good and bad vldl levels"
+            ]
+        },
+        {
+            "id": "task1714-a04b2350f37c47829b1e7831b103c235",
+            "input": "User: Find information about and pictures of moths and butterflies. \nComputer: would you like to know how to catch moths",
+            "output": [
+                "are you talking about moths in general or do you have a particular moth in mind"
+            ]
+        },
+        {
+            "id": "task1714-b07f0de82c424f0685515841a1d0c409",
+            "input": "User: What causes a sore throat? \nComputer: are you looking for homeopathic sore throat treatments",
+            "output": [
+                "no i am looking for at home remedies for a sore throat"
+            ]
+        },
+        {
+            "id": "task1714-1e7e9498da244102927b43244441c132",
+            "input": "User: Find information about the history, culture, and geography of South Africa \nComputer: would you like the history of south africa",
+            "output": [
+                "no but historical maps along with current ones would be good"
+            ]
+        },
+        {
+            "id": "task1714-0ea8705a06264c5694acccc9b3d3ff02",
+            "input": "User: What medical services are available at the Mayo Clinic in Jacksonville, FL? \nComputer: would you like to know more about the mayo clinic facilities and services",
+            "output": [
+                "yes i would like to specifically know about mayo clinic in jacksonville fls housing information for outpatients"
+            ]
+        },
+        {
+            "id": "task1714-9a2912a8d13d4f369a0524b51095278b",
+            "input": "User: What time and temperature should be used to roast a pork tenderloin? \nComputer: would you like to see the cooking temperature of pork tenderloin",
+            "output": [
+                "i want to know how to cook a pork tenderloin on a gas grill so i need the instructions and the temperature for a gas grill"
+            ]
+        },
+        {
+            "id": "task1714-202d18a42f5641a99186f3e02d377508",
+            "input": "User: Find recipes for making chicken soup. \nComputer: do you want a fast recipe or one that takes some time to make",
+            "output": [
+                "both"
+            ]
+        },
+        {
+            "id": "task1714-eeff9339da6d4477a18cdf3470fdf7cf",
+            "input": "User: Find information and reviews about The Secret Garden book by Frances Hodgson Burnett, as well as movies and the musical based on it. \nComputer: are you interested in the original classic book by frances hodges burnett",
+            "output": [
+                "no not the book"
+            ]
+        },
+        {
+            "id": "task1714-18cb3217eddc439284a79c3c80dfdff7",
+            "input": "User: What training is required to become a paralegal? \nComputer: are you interested in law school",
+            "output": [
+                "mayb i dont know i am intersted in what a paralgals job is"
+            ]
+        },
+        {
+            "id": "task1714-bf8e4637ac35467583da2c012633c63e",
+            "input": "User: Looking for information on how to watch television programming on your computer. \nComputer: do you want to know what sites you can watch tv on the computer at",
+            "output": [
+                "yes please"
+            ]
+        },
+        {
+            "id": "task1714-671e77e002734d7ebd54337e97732211",
+            "input": "User: Find dealers that sell or rent Bobcat tractors and construction equipment. \nComputer: would you like to know specific products from the company bobcat",
+            "output": [
+                "yea attachments for trailors"
+            ]
+        },
+        {
+            "id": "task1714-b88fdc11b7ba4c47a96bbcb7bd671c3b",
+            "input": "User: Find a listing of Beatles songs. \nComputer: are you interested in a specifc song from the beatles",
+            "output": [
+                "no only their songs"
+            ]
+        },
+        {
+            "id": "task1714-51a9f611d19940f6af7d9163f5ed16c5",
+            "input": "User: Find background information about man-made satellites. \nComputer: do you want to know about natural or artificial satellites",
+            "output": [
+                "satellite internet"
+            ]
+        },
+        {
+            "id": "task1714-bdb2c5986cba43f58660c8214b0a2fb8",
+            "input": "User: Find tips, resources, supplies for getting organized and reducing clutter. \nComputer: are you looking for specific products related to getting organized",
+            "output": [
+                "no i just want to go to the container stores homepage"
+            ]
+        },
+        {
+            "id": "task1714-ceb2631e08ea4b78a9745212f36272a1",
+            "input": "User: Find information on the Kansas City Southern railroad. \nComputer: are you interested in learning more about knowledgecentered service",
+            "output": [
+                "no i need info regarding merger between kcs energy and petrohawk energy corporation"
+            ]
+        },
+        {
+            "id": "task1714-e55dc4fc439a45aaafcd695eefd5bdc6",
+            "input": "User: How can I find my internet browsing history, i.e., the web sites I have previously visited? \nComputer: are you concerned about other people seeing your history",
+            "output": [
+                "no i want to know how to find my browsing history"
+            ]
+        },
+        {
+            "id": "task1714-4b191375d8914119b1b131b6490f7bd4",
+            "input": "User: I am looking for sources for parts for cars, preferably used. \nComputer: are you looking for a specific web site",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task1714-0b9e5a5e5e144740b399a509ac57b3a7",
+            "input": "User: Find information about what a wiki is. \nComputer: would you like information about creating a wiki",
+            "output": [
+                "what is a wiki"
+            ]
+        },
+        {
+            "id": "task1714-766c4453606c461b999f90c0e3ee18ae",
+            "input": "User: What are the ways you can quit smoking? \nComputer: are you wondering if it is hard to quit smoking",
+            "output": [
+                "no i want to know how hypnosis can help someone quit smoking"
+            ]
+        },
+        {
+            "id": "task1714-2cc6b6e1d9cd423ca0ad59debe68c334",
+            "input": "User: Find beachfront condos for sale in Florida. \nComputer: do you want to rent or buy a condo",
+            "output": [
+                "i want to buy a condo in miami beach florida"
+            ]
+        },
+        {
+            "id": "task1714-cabc71ea844241da87a092e835924533",
+            "input": "User: Find the lyrics to the song \"I Will Survive\". \nComputer: do you want to know more songs from gloria gaynor",
+            "output": [
+                "no i just want to find the lyrics for i will survive"
+            ]
+        },
+        {
+            "id": "task1714-0408465838594134912d9b00f434357f",
+            "input": "User: What is a good way to begin collecting old coins? \nComputer: would you like information on the worth of coins",
+            "output": [
+                "yes i want to know the worth of a rare wheat us penny"
+            ]
+        },
+        {
+            "id": "task1714-6c88191a802d47e8bf333b84f86aefcd",
+            "input": "User: What issues were addressed in the Civil Rights Act of 1964? \nComputer: do you want to know about specific key people",
+            "output": [
+                "i want to know about the general history"
+            ]
+        },
+        {
+            "id": "task1714-e9204d998c9e4f3faf40cf57d0c2949a",
+            "input": "User: Find information on French Lick Resort and Casino in Indiana. \nComputer: are you looking for deals and offers related to french lick resort",
+            "output": [
+                "no im looking for a list of jobs available at the french lick casino and resort"
+            ]
+        },
+        {
+            "id": "task1714-f778924869c1438f8e28feb76399a1ce",
+            "input": "User: What different types of electronic skeet shooting games are available? \nComputer: are you looking for reviews related to it",
+            "output": [
+                "no i need information on product recalls"
+            ]
+        },
+        {
+            "id": "task1714-0ad183c768764cdcb04e78d2caf93cc0",
+            "input": "User: I\\'m looking for online mapping sites. \nComputer: do you want a map of your local area",
+            "output": [
+                "yes"
+            ]
+        },
+        {
+            "id": "task1714-c3c7e1c4e0ff4bfea87ef5b28e2882a0",
+            "input": "User: I\\'m looking for the homepage of The Current, a program on Minnesota Public Radio. \nComputer: are you interested in the current fm channel",
+            "output": [
+                "no i need the homeage of san antonios curent magazine"
+            ]
+        },
+        {
+            "id": "task1714-0373441e6eb7434ba2add66510ce649d",
+            "input": "User: Find data on how to identify spider bites. \nComputer: are you looking for the difference between insect bites and spider bites",
+            "output": [
+                "yes show me the differences"
+            ]
+        },
+        {
+            "id": "task1714-4b01a106359240f1b510784a1d7fa14d",
+            "input": "User: What is the state flower of Idaho? \nComputer: do youwant to know what year idaho declared a state flower",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task1714-c1e634463bc248af849947c688c30760",
+            "input": "User: Find reviews of computer keyboards. \nComputer: do you want to know about piano keys",
+            "output": [
+                "no i am interested in computer keyboards for used for gaming"
+            ]
+        },
+        {
+            "id": "task1714-ec98f007c30e44c085797ee3f2e1237b",
+            "input": "User: What treatments are available for dogs diagnosed with lymphoma? \nComputer: do you want to know about the latest research in lymphoma in dogs",
+            "output": [
+                "no i want to know what are the symptoms of lymphoma in dogs"
+            ]
+        },
+        {
+            "id": "task1714-8b0b3f1e4f8a4e1fa3adee4d7f91e4dd",
+            "input": "User: Find information on raised garden beds and boxes. \nComputer: is this in reference to flowers or vegetables",
+            "output": [
+                "i dont know the answer"
+            ]
+        },
+        {
+            "id": "task1714-23803cc8ba3a4e2f9e3ce61bbd51ebee",
+            "input": "User: Find information on French Lick Resort and Casino in Indiana. \nComputer: do you want reviews of french lick resort and casino",
+            "output": [
+                "no i want information about discounted stays at french like resort"
+            ]
+        },
+        {
+            "id": "task1714-7778ab134d324702a78884f356fa291b",
+            "input": "User: Find movie reviews of the film \"Les Miserables\". \nComputer: do you want reviews of the les miserables concert",
+            "output": [
+                "no i want reviews of the movie les miserables"
+            ]
+        },
+        {
+            "id": "task1714-e571ac755e6347a590dabb1dbf4e3e70",
+            "input": "User: I\\'m looking for online resources to learn and teach others about diabetes. \nComputer: which type of diabetes do you want to learn about",
+            "output": [
+                "i do not want to know the types i would like to go to the homepage for the american association of diabetes educators website"
+            ]
+        },
+        {
+            "id": "task1714-ed590a2ea2f749608a8c868f1564e779",
+            "input": "User: I\\'m looking for information about indexed annuities. \nComputer: do you want to know how much an indexed annuity would cost",
+            "output": [
+                "yes but also the differences in each annuity"
+            ]
+        },
+        {
+            "id": "task1714-5a26fba0a7f34debad31d5ca3e5d58e3",
+            "input": "User: I\\'m looking for information on Volvo cars and trucks. \nComputer: which part of volvo are you interested in",
+            "output": [
+                "i want to find the homepage of volvo"
+            ]
+        },
+        {
+            "id": "task1714-f2b9da0e390b46dd9fc45237b814db4a",
+            "input": "User: What are the best places to find morel mushrooms growing? \nComputer: are you looking to eat the mushrooms",
+            "output": [
+                "i am looking to eat mushrooms"
+            ]
+        },
+        {
+            "id": "task1714-c2e14db636d242e197cc6281987f146b",
+            "input": "User: Find a listing of Beatles songs. \nComputer: would you like information on a particular band member",
+            "output": [
+                "no i would like a list of the albums that were released by the beatles"
+            ]
+        },
+        {
+            "id": "task1714-6a95bd8cb6974c4bb7be91cb7b0b1364",
+            "input": "User: Find historical information about Madam C. J. Walker. \nComputer: are you looking for any specific information about the business she started",
+            "output": [
+                "no i am looking for her involvement in her political and social issues"
+            ]
+        },
+        {
+            "id": "task1714-be8d03dee5c941a3ac21d66524ac1223",
+            "input": "User: What campuses are part of the University of North Carolina? \nComputer: would you like to learn about the unc campuses",
+            "output": [
+                "yes which campuses are at unc"
+            ]
+        },
+        {
+            "id": "task1714-aa4ed9d9ac6f42fd81d635e2c3c2dd7e",
+            "input": "User: What are the best places to find morel mushrooms growing? \nComputer: are you a collector",
+            "output": [
+                "no"
+            ]
+        },
+        {
+            "id": "task1714-568c97141d1b48eabbd9acc0da73cbdd",
+            "input": "User: Find information and reviews about The Secret Garden book by Frances Hodgson Burnett, as well as movies and the musical based on it. \nComputer: are you interested in visiting a secret garden",
+            "output": [
+                "no please find reviews of the book the secret garden"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

@@ -1,0 +1,761 @@
+{
+    "Contributors": [
+        "Karan Niraj Naik"
+    ],
+    "Source": [
+        "generated_reviews_enth"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/generated_reviews_enth"
+    ],
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Reasoning": [
+        "Reasoning on Social Interactions"
+    ],
+    "Definition": [
+        "Given an English language product review, determine if it is a Good Review or a Bad Review. A good review is one where the product's review has positive tone and Bad review is one where the tone of product's review is negative."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Reviews"
+    ],
+    "Positive Examples": [
+        {
+            "input": "The sound seems really good but sometimes it cuts in and out which is annoying. You have to put the cord directly into your ipod. Other than that, its a simple design with nothing fancy. I love how cheap they were for 10 dollars... But overall nice design... No one can steal me earphones. lol thanks again amazon.",
+            "output": "Good review",
+            "explanation": "Here the review is good because it has positvie tone as the reviewer suggested it really likes the sound and the output is also Good Review.So this example is positive example"
+        },
+        {
+            "input": "My son received this book as a gift. I was extremely disappointed. It is an old book, and the print quality and size are unreadable. At age 4, my 2 year old needs visual help to identify parts of his body at play. Maybe it would be OK for an older child with better sight. But don't waste your time or money. Go buy the new version called &#34;Brain Power--Make Sense Of Opposites&#34; instead.",
+            "output": "Bad review",
+            "explanation": "Here the review is Bad because it has negative tone as suggested in the product review that the user is disappointed by the product and the output is also Bad review. So this example is positive example"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "This is a terrific product. It does exactly as advertised and it was much less expensive here than at the store. Easy to attach & adjust both cameras from one DVR. We are buying 4 more of these for our other cameras. It looks like security personnel will now start to see us more often because they know how easy it is. Only drawback I could possibly come up with is that it's so sturdy we wonder if it needs some sort of tether attached to it. But no - it doesn't.",
+            "output": "Bad review",
+            "explanation": "Here the review is Good review as there is positive tone in the sentence but it has been output as Bad Review so this example is negative"
+        },
+        {
+            "input": "This thing is so cheap that I had to send it back; don't buy. The screen doesn't reflect anything of it's own size on the wall. It has an extremely light blue hue and looks nothing like any normal light fixture. Not even close to as bright or crisp looking in person & obviously very CHEAP made. Just pay a little more for something better. You will be completely satisfied with this product.",
+            "output": "Good review",
+            "explanation": "Here the review is Bad review as there is negtvie tone in the sentence but it has been output as Good Review so this example is negative"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task929-821e97558bff41568dc03cdaa5e71716",
+            "input": "This product could just be my personal issue with the way it makes me sweat. I used this as part of a weight loss program and it did not work. However, as a daily deodorant - yes, very good product. Will try again.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-ff628ea152ee44489e3188ddbf126927",
+            "input": "I got this for my husband as part of his Christmas gift, so if he had told me ahead of time about its small size, it wouldn't have mattered since we'd already given the product to him. We needed a long length but not necessarily a large one, and there was nothing else that came close in our budget. This works well enough, though it's certainly smaller than you'd think from how much is described. The light itself isn't very good, even at max intensity, especially around corners.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-a70d7273e9ba42fab3366e751e9ba8f2",
+            "input": "This has some great features with its small footprint, good sound, and multiple equalizer settings. However, if you don't adjust your audio settings properly, then everything sounds as though it's coming out of a tin can. And that's how I've experienced it. Basically, when adjusting my EQ settings, one can change bass, treble, midrange etc.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-9f501681a8ea44b5b0c9c7853f990913",
+            "input": "I'm not sure what the reviews are saying about this phone answering machine. I bought one in a retail store and it is very easy to set up. The sound quality that you hear once it's going through the speaker is excellent, so if that's all you're concerned with, then you'll be satisfied with this. I haven't tried any of the other features, but I've had no problems setting up outgoing messages, call waiting times, etc. It works perfectly for us - especially for its relatively low price. Highly recommended. \n Rating: 5.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-8fde3ee8d1d5430ea67cf82a6ef6da4c",
+            "input": "The battery does fit in the laptop but it won't charge. I thought something was wrong with my laptop till i checked that and a new battery was just the same. so im sending back to Amazon. The product itself was fine. But this is not normal since they were not listed as having compatible batteries. So if you have an HP g63 laptop, you'll need the official product. It would be better getting the original one.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-e30cfcca80564fca90d590f6881bc298",
+            "input": "The author takes a topic I wouldn't normally care about and makes it interesting. Can't wait to read the rest of her books.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-79f9c7250b8d49a1a5a438e99d3a94ce",
+            "input": "I purchased this specifically because it didn't have a handle. The description said dishwasher safe but when you put some water in, the top handle gets hot.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-9b92fe2620fe4e91b56c4d47552c5a34",
+            "input": "This is a well made toy that keeps my 5 yr old daughter quite busy trying to figure out how the wheels move and work properly by herself",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-865dda41ddc046ac8e2d2532119be8e6",
+            "input": "This book caught my attention due to all the great reviews. It held my interest through out the entire book. However, as time went on there where some things that disturbed me about this story.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-b17addf67d6048bda9618c59f29723c0",
+            "input": "I ordered 3 different books that were on the recommended reading list for each one of my children. My kids all hated it. One even wouldn't read it. It was easy to finish and did not really offer any educational value, but just seemed like more entertainment than anything else. My children would rather watch some of their friends play video games or get drunk than eat with us. It's a sad state when this is considered something most people want. A big waste of money.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-9a94cb4b8fa84a98bf3f7ee532c3fb35",
+            "input": "Easy quick replacement for my old filter. Works as it is supposed to. I am impressed with this product and will purchase another if needed. It was also not expensive!!!!",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-ad08388b8f284eb79008045e09b3ee72",
+            "input": "We purchased two batteries - one of these replacements and another more expensive brand.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-fdaad6d0456a4c8fb029737c4b14b178",
+            "input": "Great tasting almond flour! It was packaged nicely and I received it just in time for Thanksgiving dinner. It is a quick cooking wheat flour.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-0d4448c407a64939b8fd2af4a7afc8c7",
+            "input": "this books is okay,but not good enough for 4 or 5 star.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-bdaf776ea7fe4c25bf3911b5a6d705d2",
+            "input": "It does a great job keeping the dust off my lens and camera. I only have one complaint about it. When you take it off, you feel like it's broken. Other than that, that's all there is wrong with this item. I'm very happy that I bought it!",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-d030ad5b895345a797df2e06b70b3f0d",
+            "input": "This book was purchased as a supplement to our studies. I felt it wasn't organized very well and the questions were not related very well. It does have some good information, but needs re-organization. We got better responses with another study materials we bought instead. If you know what your studying about before doing this book, it's okay. Just don't rely on the answer sheet in the back. The other sources that we found help quite a bit. Overall it is worth what i paid for it.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-d78ff5bee8bb4696874cb81989dbaeb0",
+            "input": "I tried this on several TVs.it would stay with the TV and work for about 15-20 minutes, then be interrupted again. I think there may have been a bad connection in the unit. This unit does not look like my other brand of splitter. It was pretty cheap...",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-3cef349d25c5480c95f358de78c45093",
+            "input": "This is a nice quality poster from the series. It's printed on good paper, and has some beautiful artwork. I would purchase it again.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-7a66c0591faf4e5cbfc87a2c90a523ae",
+            "input": "I thought it would be an inexpensive way to try out this style of blender. It works great and does exactly what we need it to: make smoothies! The motor is relatively quiet but I've been using the Blendtec Professional 600 series for about 18 months now so it's not brand new in my mind. My kids haven't tried any recipes yet so can't comment on speed or anything else like that.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-2fdd64363df546e3ae1d6f2b4967130e",
+            "input": "My cat loved this toy at first, but then got bored of it. So now, he loves nothing more than to chase the ball into it whenever he's ready for a nap. He especially likes knocking down and jumping all day long in order to get enough sleep until I can give him his toy again. After seeing where my dog had chewed through another brand's plastic mouse toy, both cats have been trying to find one like this. This is great quality.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-db5be18f21d446148ecf254ebb96e57e",
+            "input": "This book of recipes is pretty good. I can definitely recognize some ingredients in the first batch I made and others haven't produced yet, which will be a concern if you're on a limited budget or don't have time to prepare them by hand. The bread pudding was excellent, but the muffins were too dry. Other than those, things went ok. Overall very easy recipes, with few ingredients.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-bdf3c5ac97f84591a20fe05ee26f6239",
+            "input": "i like it, very functional and looks good on counter. assembly took only about 20 minutes, but wish drawers ran deeper in width.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-6f0e20f388c34136a6ef8198266073d4",
+            "input": "My granddaughter loves this! And she says that no matter what size pizza you make, it comes out perfect. Thank you.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-6ad4fe2fd8db442e94fab577308822a8",
+            "input": "The charger is compact, convenient and fits in a car compartment very easily. It works great with iPhone and iPad. I will definitely recommend it to others!",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-d51bf15f41e64a69af3fd1fe4317a6c9",
+            "input": "Like other reviewers, I've seen better (and cheaper) products. Yes, it's made out of plastic. But you wouldn't expect much more at this price. It does look good hanging on my wall, which was why we decided to buy it. You get what you pay for. The motor seems a bit weak. It's fine for the price- so I'm glad we're cheap.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-75893783130640d4b389e4844d65210f",
+            "input": "this is a good book for those who are in the field of food science and technology. it has all you need to know about molecular gastronomy. very informative book. I really enjoyed reading this one. great book!!!! :) :) :D.... by the way there was A LOT OF pictures which i like :) thanks Amazon............. :P :DI truly admire amazon! ;) but I wish people would just stop giving such rave reviews if they didn't even read anything before buying....",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-07fa3ab13fbf478d8bdebf67ea764ec7",
+            "input": "This was a Christmas gift for my granddaughter and she has already taken it to a concert once to wear at our daughter's graduation party. We are both happy with the product.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-8d26277941174fa9983c1b25084e3dfd",
+            "input": "The book held my interest throughout but I thought it was slow moving at some times, particularly during the action sequences. However there is far too much time spent on descriptions of sex scenes and other sexual exploits. It becomes boring after awhile especially when you know what's coming next. After finishing this book, I'm not sure I'd seek out anything else by Mr Cussler. It's disappointing because he's an excellent writer with excellent story lines that have interesting characters.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-a6806b4ef44e4bfb8d6d43f4de8c77bd",
+            "input": "Although the plot is intriguing it really wasn't one of John Connolly's best efforts. I can only say that it was a very quick read and worth reading. Not Connolly at his best. He is, however. At least he had the guts to publish this in book form. However, if you are looking for another thriller like A Talent For War, with action from beginning to end, then look elsewhere.. This is an action-packed short story. Don't waste your time.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-1174dfedc8424923b05fb8abe813f6f1",
+            "input": "I have had my Oster toaster for about 8 years and it was great until the handle broke off. There is a small metal connector with two screws on either side. This part fell apart or got corroded because there was no way to attach them together. When this occurred the little plastic pieces inside that make up the handles crumbled into pieces. The only tool you can buy now at home depot replaces these parts which are just what was needed then when broken.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-0b4e78acb1e94dfc9b3e0f960a38bfe2",
+            "input": "We love our Weber.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-70c55f9b1a284eb99318ec22de088b76",
+            "input": "I received the product within 2 days and am very pleased with my purchase. The product does not come in it's own carrying case. Everything is packed pretty easily which just makes it great. However, do keep this in mind. It comes without instructions, but there on a site that you download for instructions. Very good buy, would recommend to anyone. Thanks.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-a0d48f167aa64187982d6945af26f107",
+            "input": "For me, this was a great game. It had an amazing story line, gorgeous graphics, challenging gameplay, and the best voice acting I have ever heard in any video game with all of this. That said, I couldn't enjoy it because there were several things that distracted me from focusing purely on the storyline. The first thing was, as other reviewers stated, many items are not available without unlocking them.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-b993a4be2f864e20a761d6b6b3d2076e",
+            "input": "Love these bowls. The cover fits nice and tight, not a cheap thin plastic. Easy to clean. Would buy again. This came quickly in my case. Also purchased the soup bowl. All of them are great. Great price for all four set. Got this set last year at Christmas time. I love Rachael Ray.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-46a69cfc97d4409ba757d22566af272f",
+            "input": "I haven't actually used this item yet, due to waiting a while for it before using it. It looks like it's good quality, although we'll see if anything unexpected occurs during use. As of now I would recommend it! \n Rating: 4.0 \n I was looking at getting an extension cord reel but never found something that looked well made and functional. After browsing some different home improvement sites, we settled on the Winegard WPS-4100 because of its overall appearance and weight.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-020c7beb8bbd4f738e597976764ed84c",
+            "input": "This unit was shipped promptly & as described by seller.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-c5ee26455d5c46d898ca973451ad1368",
+            "input": "Good product. The battery lasts and works well. They are a good value for the price when you consider what you'd pay in store - these were purchased as gifts to replace older models.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-601155e64f534e09b40655c1903caaf9",
+            "input": "I actually had a little sticker on my car and was looking for some way to identify it. This is perfect. My order came fast with no issues.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-8f038b3d5462400d8f0ea78b1422c5af",
+            "input": "These shoes were cute but seemed more wide than expected. The leather was soft so that was nice but too much room all around for me.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-a84c4704d39748b4841bb95837ea8926",
+            "input": "It's perfect and it works great. It is much easier to use then using candles. When we need candles they don't work. My husband bought one of these awhile ago so when his burned out he was excited because you can just put in new gas or buy a refill from Amazon. Glad that it fits both my burners since we have them.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-e5ba0b0514e045649c3aefd1fd3683c0",
+            "input": "Works like advertised with my Galaxy Note 7. The extra long cord is fantastic. A quality product at an affordable price. I'm very happy so far. So fast shipping, too. Would buy from seller again.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-2d79c59dbdcf4e0aa02129cb76abced4",
+            "input": "The dvd came quickly.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-1401498d00ee4a098c14a2f3bad2dad7",
+            "input": "My LG VX9200 started taking off by itself without warning last weekend.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-26bb0f4bce6e4a0a96d9d93d14cbd319",
+            "input": "Very few authors are able to make me care about characters in their writing. I found the story compelling and could not put it down until the final page. If there is a second book, I'll most definitely buy it. The only thing that was frustrating at times were some of the &#34;coincidences,&#34; but they did not change my impression of the story. Can't wait for more adventures! Great job Mr. DeLusi! Thank you so much",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-b78f37b47a944e1fbca6f8b1bf789b5a",
+            "input": "For those interested in a detailed overview of the history and development (of the) various forms of Christianity, then these are books worth reading. I thought they were great while reading them. The discussion is quite thorough at times -- particularly for someone such as myself learning Catholicism for the first time. Unfortunately, there's so much repetition that it becomes somewhat overwhelming when wading through all the information about each topic. However, that's just my subjective opinion. I've read this book several times, with different perspectives throughout its pages.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-e456fd317bcb4667b2be371d6609ac76",
+            "input": "This product was just what I needed to move up from my phone to a new phone. It works great.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-87a7c49539d6455e91b987323a274c57",
+            "input": "The quality is great. My son likes to eat the crackers in his lunch. Although it does not have that many of any kind if he has a bowl lunch with him and some fruits or veggies. It would be better then nothing but I still feel its too little. The size itself is just like standard snack bags. However there are no ziploc tops as shown above. Other thant that, its an excellent buy. Fast shipping, on time (thank you) for when we need it.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-f859220459014995ae2ce8c1e7438a33",
+            "input": "Great product, quick delivery, and a great price. I have tried several products for my hair in the past few years - this is by far one of better brands on the market.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-ab6f96a4efb84f05aab7b7a8461829b3",
+            "input": "This book is a must read for anyone into the business of the auto industry or the rise in fuel prices. The author does an excellent job documenting almost everything that was done with GM(GM) since it began to make decisions about how fast and on what basis they would produce cars. Everything went from slow growth at the start to aggressive expansion during most of GM's. The downside however comes from where things are going now as gas prices keep rising much higher than expected.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-07f74c439763495cbedb990fc9bbdcc7",
+            "input": "Very sturdy.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-50f062d575504ffeb68650dcfdd370b8",
+            "input": "It was shipped quickly! I live in North Texas and it didn't take long to get here! So far, so good!",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-48e20c95f2494069ab1d6aebf25e03ec",
+            "input": "This is an excellent and well constructed product that should last for years. Unfortunately, the first one I had came with a badly bent handle - it was clearly used before or else this would not be as much of a concern. It has three sizes so you can get just right balance between power and torque. It's very effective at deep tilling (the largest size is too big for light soil) but it's good enough to tackle larger sized weeds.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-3a60bc6d2e8e49b08d7125817f200dd0",
+            "input": "Well made, small and fits nicely on my belt.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-ea28d56eb78e4709b7dede278e2c3949",
+            "input": "I think it's a great book, but the kindle version leaves a lot to be desired. I was looking forward more than what it delivered. When in the book there are several pages of white text with large black print and one page has no color. The color part is hard for me because my husband suffers from macular degeneration. It's very difficult reading this book on Kindle. I've purchased Kindle versions before that didn't have those problems where there's not enough detail.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-8d94713b097c428685943c5ce972991f",
+            "input": "This book has some good tips in it. Unfortunately, that doesn't mean it's a great book. It wasn't easy to read (well, the first two or three chapters were), and there were places where grammatical errors took me out of what I was reading. But overall, it does give you food for thought. If someone asked me- &quot;What's most important is love between women as well as men,&quot; I'd probably answer something like, &quot;The importance of respecting your partner both physically as well as emotionally.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-63e141a08df347ea80d2eae139ee92cf",
+            "input": "Great movie as it always was in my past. I especially like the musical soundtrack. It is a funny one if you are not easily offended. A good escape movie! Thanks!!!!",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-297152ed3687499a86ef8255bdb25989",
+            "input": "I ordered this because of the price and it came with a battery included. My wife was very excited when she got her new cordless phone. It is exactly what we were looking for. No problems at all. Good price,Great product would recommend to anyone.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-7dc919721fdd4bbea2710e92aa923540",
+            "input": "Received item early and fits great.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-99ef1ec6a4164305ae60e9fae3516ec5",
+            "input": "It's cute for what it is, but if I drink much coffee during my commute to work I'd probably be looking to replace this set before long. Maybe one of these days.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-6dc238e49c1c4023bdbae8511c7055d2",
+            "input": "This book is a good read while commuting but not up to the authors first book. I gave this one away. It just didn't measure up. The characters are better developed in previous books. I would recommend reading it, especially if you are invested into the series. A fast read.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-280ac42fdbf34c07b0e1243ce41b5420",
+            "input": "This product arrived from China.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-5cb0d1f2c05e4454b083c9915f6b133d",
+            "input": "The acting in this movie wasn't nearly as bad as the critics said, which is good because most of them had really high expectations. There are no real surprises about character backgrounds, only enough to help make it feel like you already know them.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-8443f9c194c14fc1b2c31cfd7cfca50f",
+            "input": "I'm a real fan of Michael Crichton books. That being said- I am not crazy about this movie. The characters were well developed with the exception of some other parts that have nothing to do with how they came together. It was like he decided on this scene without any really good story or character development. And then we see someone in another part and suddenly it's 10 years later.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-0fa2f58abea4428ab8a09bcefc906ef3",
+            "input": "I think it's important to note that this book is a translation, not one written from the originals' point of view. To its credit, it does manage to stay fairly close to that original text in all parts and gives you enough information about how our family moved over there, without having to completely rewrite it. While I was at first, extremely dissapointed with some minor things left out, my husband liked it, especially since he knows nothing else about what happened between us when we are gone.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-4ab357c1c003456288a996a679b6c1b6",
+            "input": "Nice bag, well made and very pretty. Has two compartments; it has nice size pockets. Perfect size for little kids.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-0f972074d39e4cd9a1ce2701d4c5ad26",
+            "input": "A good book. Easy reading.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-6ace9e1ee1e34750887dd64d66413680",
+            "input": "We ordered this item just before Christmas.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-d32e9e9958784a1bb6e4688a27eb6b37",
+            "input": "Great product, especially considering the price! Easy to install as well.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-588ac4f7121d41a295e45c5c75259e6b",
+            "input": "I bought the black with some gold accents thinking it was a nice change of pace. It looks nicer in person compared to online. However, it's NOT like my other watches - this piece is just way too thin. Also, it doesn't have anything that gives a hint as to where your hands and fingers will be placed. I'm constantly checking them because they don't feel quite right.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-01ba6a72eb8a4ec2afd62a3c0a27d718",
+            "input": "The quality is awesome. You won't find anything better than this. My kids got one at Christmas as well. No complaints here. Get it.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-4eb1c4a045d8468db18dc1c3afc1f984",
+            "input": "Good price, good looking, feels sturdy, works well.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-c30728b8336e4175a6adce83bc2dd55d",
+            "input": "I did order this at the same time as a replacement battery for an LG Chocolate. The product came very well packaged, and when applied to cell phone, it looks great until installed. There was no instruction manual, or any way of even being able to check if this is what you need. That said...After contacting this company about their mistake, they provided great customer service, quickly refunded my purchase price, also contacted me before posting this.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-91c222a0e642494c861d6eea5d419733",
+            "input": "It fit perfect on my 2002 chevy. Good price. The price can be higher compare to dealer quote. Just have it tuned and go see the difference",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-53e1cdb6236d4fcd9c9c9365c1cecf32",
+            "input": "This item arrived promptly.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-22fd8d55a8ce42c7951c9bc89228fd34",
+            "input": "I was looking for a product that would enhance the performance of my aging Bose speakers, and did some research before finally purchasing this pair. For about $200, it is an excellent bargain. The sound quality in general has improved dramatically -- these headphones are not quite as full bodied sounding (the bass does NOT produce as much sound), but they do more than enough to make them worth considering even though they're priced relatively highly.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-0961cb5d5a1c4fd5b79da9a8b5bf25c1",
+            "input": "I bought a bunch of these for our new condo near the beach. My son is in his 20s and very tall, 6' 3\". He said they were not comfortable at all because one side would fall down as soon as he laid on them. So we just tossed them out after 10 or 15 minutes due to discomfort. We tried using it inside with a thick comforter though, which felt kind of weird.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-1c443789bd904300937627531e8b03de",
+            "input": "Although I was not aware of the book until just this morning, when it arrived, my daughter (age 11) is thrilled to have it! She has read about 1/3 of it, and as we approach a Christmas gathering at home, she will be reading some more. It arrived in short order so I'm pleased. Thanks Amazon! Will recommend your store for such needs from now on. Love this book! Thanks.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-9e649da06f9e4275bef826145822500b",
+            "input": "I have had this blender for two years now and it has performed great. The only drawback is the speed at which you want to blend things - fast or slow sometimes doesn't matter what your blending preference is. For me that is a relatively minor thing. All in all, great value as a kitchen appliance. Highly recommend.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-349a722b82d045b4899c740b51dbdc7e",
+            "input": "I love the way it works, especially since it's a lot less expensive than our original cord. But like other reviewers have noted, it quit working shortly after. We may need to go back and purchase one of the more expensive models. :-)",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-66bd5e55a3fc493d84820203ca1d7229",
+            "input": "This is a good product to keep your computer cool and not overheat. I can notice that my laptop running cooler if this battery inside the package. However, after using it for couple of weeks, I've noticed some overheating in my computer. I'm concerned whether it's really harmful or not. If anyting will be done about that, I'll surely buy different brand next time.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-9367dfe394fa47cc949d5520c61eb657",
+            "input": "For $2.99 you cannot go wrong. You can download an ebook to Kindle from anywhere. The book follows the first books in this series, albeit slightly differently.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-7f9284bb0eea48ab9711b39004da20c8",
+            "input": "I just bought this book about a week ago. The first half of the book, which discusses issues such as how to implement business goals in your life, is very good. Then after that, there are various cases examples written by CEOs and others that help reinforce what they've discussed. Finally, there are several case studies with people who have become successful through their own hard work (i.e. one entrepreneur at a local store).",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-9988c3e1cc764c8f95d63004edf4ecb8",
+            "input": "This is really nice. Bought it as a gift but my brother likes it.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-dd187f0eb9de4c5392db35edf7655801",
+            "input": "Excellent Product! Fits the screen of my ipad very nice!! Will purchase more for my family. Nice bright colors. I would certainly recommend this product. Product is well made and was received within a few days. Thank you.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-1bf98ff3a9974faab94745dc037f3509",
+            "input": "great product.........works great, easy to change the oil. Would like one a little longer. It will work just fine with my mower. Easy start no problem with start. I would recommend it. Delivery was very fast! Thanks so much.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-38f5adcef55a4ceca07579c6d6311da3",
+            "input": "This is the ultimate in \"comfort food,\" and I was glad to be able to purchase it without having to go from store to store. The order came promptly through Amazon at a very competitive price. Even though my grocer no longer carries it, if you like this product, they should. I have been making them in many ways -- just adding chopped green or cooked chicken and then mixing with soup (sauerkraut) -- as well as, casseroles. When baked, we add a poached egg when warm.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-8c42c824505f4b00b1f3e16cc598f690",
+            "input": "The product and the service were excellent. We received it sooner than we expected and my husband was able to hook up a dvd player with no problems using these cables. They are of higher quality than what I expected. Not as heavy duty though, thinner wires that will break easily if they pinch on something hard. That's not necessarily a bad thing...just be careful when connecting it. Over all very happy :)! :) Thanks again!",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-75854f0bfd014f74b3122ca430cdfac6",
+            "input": "The first book in the series was a little slow, but this is one of the very best shows I've seen on TV since Hill Street Blues. It had action, romance, drama, and humor. Really it had everything I am looking for when watching TV. And unlike many tv shows, there were no real sex scenes. One episode also featured some funny parts as well. There are 22 episodes, so you know there will never be an ending. Well at least we won't have to put up with endless commercials.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-140e159e32834ee7838ec06a5cbdb54b",
+            "input": "Love it. But you cant put anything over top of it. And Its like having a window open.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-124470c0a7e549f98661260912c5ddf4",
+            "input": "This little device works perfect. It makes a cup of coffee, which tastes excellent.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-cdb5796ae30d4eb5b1b4568036996931",
+            "input": "I got a small package of these chips and they are fantastic! My first order was one pack from Amazon Prime. The product came as expected. They were crunchy but not hard like regular Potato Chips. But if you really want crispy chips, try to get those potato Chip's that have the salt added. These chips do come with salt. We eat them, mostly on salads.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-ffffb64de46c47479d96741c13fd2819",
+            "input": "My husband picked it up, so I got it. He says he enjoyed it, although not as much as his other books. It kept my interest even more than &#34;Honor Games,&#34; though. You might like this one, too.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-61922fff4aa84cc982defe7a25565c72",
+            "input": "This is a book which reads and keeps the reader's attention. It's about how two people who feel an instant attraction discover something wonderful out of their own selfishness. The problem with that is, in real life, we all know some selfishness exists at the same level as most people. One has to take into account how selfish one really is. I also believe everyone wants love regardless where your economic situation is, but it looks like money does not come anywhere near helping out someone in emotional needs.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-931c1aacee0a4b97ac9ce554cf5bc0a4",
+            "input": "I gave one to my sister and we both LOVE it. Not too big, but powerful and heats up the bath very fast. Great quality item for reasonable price.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-a7058c2b74d045b3adeee99de513c949",
+            "input": "A great jacket that fits my cat perfectly.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-4b3e697144b3455d92c4b292a37ff575",
+            "input": "I'm very happy I purchased this. It works great and was easy to assemble. My neighbor saw the product and started getting one.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-6135409340dc492694004ab0ae9f17bc",
+            "input": "This does wonders to clean up your digestive tract.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-f4399fd08e0e4c029171104f9632ce35",
+            "input": "This was my first time learning to use a blender. It is heavy duty so you can really chop the ice that way if its too small. Also no leaking! The only issue I had when trying it out for the 1st time, once liquid leaked out, but all in all, I'm happy with it. Good purchase. \n Rating: 4.0 \n Got this about 2 weeks ago. I've made smoothies and protein drinks through multiple times now and it's pretty good at making those.",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-5d24554488b34b378e7acfc8f5d60617",
+            "input": "It's not bad by all means, and probably works in some situations, but...",
+            "output": [
+                "Good Review"
+            ]
+        },
+        {
+            "id": "task929-21760a6c96844eaab249ea9a76d90465",
+            "input": "Just what was looking for. Good material not flimsy. Very functional item. Had other similar item but these were much better....",
+            "output": [
+                "Good Review"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-SA 4.0"
+    ]
+}

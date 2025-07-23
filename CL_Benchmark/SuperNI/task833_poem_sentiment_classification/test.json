@@ -1,0 +1,458 @@
+{
+    "Contributors": [
+        "Abhijeet Nawale"
+    ],
+    "Source": [
+        "poem_sentiment"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/poem_sentiment"
+    ],
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In this task, you need to identify the sentiment of the given sentence as one of 'positive' or 'negative."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Literature"
+    ],
+    "Positive Examples": [
+        {
+            "input": "tormented by the quickened blood of roots",
+            "output": "negative",
+            "explanation": "There is an expression of sadness in this poem text, hence it is negative."
+        },
+        {
+            "input": "radiant as moses from the mount, he stood",
+            "output": "positive",
+            "explanation": "There is an expression of happiness in this poem text, hence it is positive."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "the beauty and the joy of their renewed might.",
+            "output": "negative",
+            "explanation": "There is an expression of happiness in this poem text, but it is incorrectly labeled as negative, it should be positive."
+        },
+        {
+            "input": "but homesick tears would fill the eyes",
+            "output": "positive",
+            "explanation": "There is sadness in this poem text but it is labeled as positive, it should be negative."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task833-8fbc3d079b2e464b814d065948c6da87",
+            "input": "and the words which he utters, are--worship, or die!",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-0815bacac76b43a580e648b3bf28639d",
+            "input": "rang the beautiful wild chimes",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-6eba5f319742469b986c6c92533273ba",
+            "input": "the weird pathetic scarlet of day dawning,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-f5838723774644ca89d1be57913e0354",
+            "input": "sometimes towards heav'n and the full-blazing sun,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-e2996e65a12844eb820e363d4954e848",
+            "input": "grander, nobler, than that pilot",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-1f5f5e31c4b84935a470347f88a74c50",
+            "input": "but your dead-ripe ones ranges high fer treatin' nothun bretherin;",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-14256901ba584cf59466881343e5803a",
+            "input": "so runs the perfect cycle of the year.",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-09315c14bfab48de8e1456d786ab18f7",
+            "input": "the limpid ocean mirrors all the stars,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-611def5b4a244e0ea11a925ba4327cf2",
+            "input": "ashes and jet all hues outshine.",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-a37c5d5156ee4db6b283a0e07e033412",
+            "input": "as childhood's sweet delight.",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-154fe902b1b745338f57503bb0d804aa",
+            "input": "\"it is a lie, a damned, infernal lie!\"",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-6acd7245d17d4981b93317b70c3c673b",
+            "input": "and after that the winter cold and drear.",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-7452d89c69bb41539fe7cec7ae1989de",
+            "input": "thus hee in scorn. the warlike angel mov'd,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-9761bb94f74141b598b9466b0d18b44b",
+            "input": "lull’d in her lap, amidst a train of loves,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-4a81ab6db6394092bade4bb8527c112b",
+            "input": "and in a pleasing slumber seals his eyes:",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-f9405fcc8b4c4b0aa23d772b423cb0ba",
+            "input": "sweet poesy from heaven",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-c6f0e0f9953b4549b984df644236f012",
+            "input": "his sweeter voice a just accordance kept.",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-29d7bab8d01d4748a9f4bb5e335edeca",
+            "input": "false-faces hung on strings,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-68384133d1d14bf8a796c9fa4729d42d",
+            "input": "that in their lives such deadly fray they ne'er had seen before.",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-7034911497e046329acd69d27f740b36",
+            "input": "her not-nice load.",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-f47a1eac8f274f9ebcdccb52522f06c0",
+            "input": "i strive, i pray.",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-2a66e43bfecd4e27ab90716cd31f5a18",
+            "input": "the loveliest king of the king-folk, the man of sweetest speech,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-e59f5dc72f75472ca1e3ad42b416f020",
+            "input": "and fears are added, and avenging flame.",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-e1fe0877223643b6b7c4daed9a02d309",
+            "input": "who felt your own thought worthy of record",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-1861469c77424235b878675adfb7ed63",
+            "input": "and stiff in fight, but serious drill's despair,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-55d0d4e190cf4b09b2aab7fbfafa02d9",
+            "input": "till the deaf fury comes your house to sweep!'",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-e6c23ca5eccc4ff58d7429a81ce16808",
+            "input": "but now i see, most cruell hee,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-1091f706f15a4c298c09d1be2eb7f37e",
+            "input": "on the clear mirror of a loving heart,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-ea4b91ac17a947aabfd1c40d35254009",
+            "input": "how weak this tinkling line,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-8e2c300cda5a49a8965561ad8477c1f3",
+            "input": "and make the liveliest monkey melancholy.",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-a4661ff504964a23b51beb24ee373ad8",
+            "input": "and, between the river flowing and the fair green trees a-growing,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-60d242446af04136807fa10c1958e991",
+            "input": "god prosper long our noble king,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-47b2b7bc7ecd48a68a0987f6996f23d0",
+            "input": "where the moloch of slavery sitteth on high,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-c06e24f6ac774868a6f8fb88d4e7c4ba",
+            "input": "moonstruck with love, and this still thames had heard",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-17e4037899424381aaeed719a38d2341",
+            "input": "some thought of me, a last fond prayer",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-2635d6823e624abda460e3b2374c6254",
+            "input": "for wanderings sad and lone.",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-85638762fd514e3c8198cf287977d127",
+            "input": "\"onaway! my heart sings to thee,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-b113720607904307a4b30ba88a281dd9",
+            "input": "our hope, our remembrance, our trust,",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-ba9750116f9b49a2959ce68c12548a05",
+            "input": "none will forget it till shall fall the deadly dart!",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-24a77a66b9444871a8c17a4520ac369e",
+            "input": "forever quivering o'er his task,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-e09bd75e692146fcb66cd324a309434a",
+            "input": "wilt thou our lowly beds with tears of pity lave?'",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-be4df2b0de104b25a5ec97b2a2fc9f59",
+            "input": "and seek the danger i was forc’d to shun.",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-f1be0299e0504acc92e40071c2e48b6a",
+            "input": "down the dark future, through long generations,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-67e11443c9e44e84b592be7adf398ddf",
+            "input": "but she always ran away and left",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-e148e9ee1c464a73ba9b3d5859d32608",
+            "input": "with such vehement force and might",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-af0c1e890da54e70bee124a80b691c68",
+            "input": "his regal seat, surrounded by his friends.",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-b124f2734dab456c9199eafc79fdb435",
+            "input": "vain cries--throughout the streets thousands pursued",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-26d8ee4ac0314998a6112bd901fbd83f",
+            "input": "and all their echoes, mourn;",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-b6ad2cf9943f4e5fbb7aaa7ce736becd",
+            "input": "yet was this period my time of joy:",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-002960ee12db48f8b0eef8045a2c7e17",
+            "input": "still must mine, though bleeding, beat;",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-15867c799c7144f4a5097ef52b6f57ce",
+            "input": "their first-born brother as a god.",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-17e28ab1ef9640a196558ef764d2f2eb",
+            "input": "in town, an' not the leanest runt",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-181b6b2e53bc4e13970ba1be74ad6e18",
+            "input": "by death's frequented ways,",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-92b14012955c47b490c4af9281dc7a45",
+            "input": "rejection of his humanness",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-694460334cb948d491a7a3940bab755a",
+            "input": "the one good man in the world who knows me, --",
+            "output": [
+                "positive"
+            ]
+        },
+        {
+            "id": "task833-15f3afefd4e54a48b43cb2d71dd39afe",
+            "input": "faint voices lifted shrill with pain",
+            "output": [
+                "negative"
+            ]
+        },
+        {
+            "id": "task833-f675ce02cb884114b9c9000e4e5210ec",
+            "input": "in the wild glens rough shepherds will deplore",
+            "output": [
+                "negative"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY 4.0"
+    ]
+}

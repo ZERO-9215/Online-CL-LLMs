@@ -1,0 +1,764 @@
+{
+    "Contributors": [
+        "Kuntal Kumar Pal"
+    ],
+    "Source": [
+        "persent"
+    ],
+    "URL": [
+        "https://github.com/MHDBST/PerSenT"
+    ],
+    "Categories": [
+        "Sentiment Analysis"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given a sentence and an entity, the task is to select the authors sentiment towards the enity. Sentiments can be Positive, Neutral and Negative. Select Positive if the sentence expresses a positive view towards the given entity or praises its quality or skills. Select Neutral if the sentence expresses no clear view towards the entity or has equal amounts of positive and negative statements or expressing some fact/quote by someone else. Select Negative if the sentence expresses a negative view towards like harsh remarks, criticizing entities action/decision etc. Note that URLs in the text have been replaced with [Link]."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "News"
+    ],
+    "Positive Examples": [
+        {
+            "input": "What is the sentiment of the following sentence towards the entity Bill Clinton ? Bill Clinton knows how to win friends and influence people.",
+            "output": "Positive",
+            "explanation": "Here the author of the document praises Bill for this ability to win friends."
+        },
+        {
+            "input": "What is the sentiment of the following document towards the entity Bill Clinton ? Former president Bill Clinton is scheduled to visit Sollers Point Library in Dundalk on Monday during a trip to Baltimore. ",
+            "output": "Neutral",
+            "explanation": "It is just reporting some facts and it is not clear about the sentiment of the author towards the fact."
+        },
+        {
+            "input": "What is the sentiment of the following document towards the entity Bill Clinton ? But the bill that President Clinton signed is not welfare reform. ",
+            "output": "Negative",
+            "explanation": "Here the author raises some concerns about the bill that Clinton signed on is not for welfare reform."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "What is the sentiment of the following document towards the entity Bill Clinton ? Journalist Jen Moore died under suspicious circumstances after contacting both the DHS and the FBI with allegations that former President Bill Clinton committed sexual assault",
+            "output": "Negative",
+            "explanation": "This is an example of a negative fact towards Bill Clinton which is not supported by the author so the sentence will be neutral"
+        },
+        {
+            "input": "What is the sentiment of the following document towards the entity Obama ? Republican critics say Obama is making too many concessions to Cuba for too little in return, especially on human rights issues.",
+            "output": "Negative",
+            "explanation": "This is an example of a negative quote which is not supported by the author hence makes the document is neutral towards Obama"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task421-3442f8843e5740e0946521ee68c83751",
+            "input": "What is the sentiment of the following document towards the entity Patrisse Khan-Cullors ? It's easy to forget that a phrase that has become so ubiquitous came about just a few years ago in 2013  by the efforts of three women: Alicia Garza  Opal Tometi and Patrisse Khan-Cullors. Their hashtag became an organizing tool to express their frustration  anger and pain over the violent deaths of unarmed black children and adults.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-05357e94e3ff4e509f33115fc88ad1fe",
+            "input": "What is the sentiment of the following document towards the entity Reza Seraj ? His real identity didnât remain hidden for long. Ali Afshari  the student activist who was driven to exile after bouts of prison and torture in Iran  recalled  Seraj  very well in an interview he gave to the New Haven-based Iran Human Rights Documentation Center.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-c500cc05342245e398e976d03b53b5d3",
+            "input": "What is the sentiment of the following document towards the entity Sibusiso Ndebele ?  The project would catapult South Africa's rail system into the modern age of hi- tech transport  which Ndebele said was the most efficient mass mover of people.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-98d8b370fc6045faaa3973c1f7ccecc7",
+            "input": "What is the sentiment of the following document towards the entity Stefan Gimpl ? Gimpl said he was pleased with his finish.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-993d640899aa4cdaa3ec4bed06b80d8a",
+            "input": "What is the sentiment of the following document towards the entity John Schnatter ? Louisville-based Papa John's is the official pizza sponsor of the National Football League  which  Schnatter  slammed in November for not dealing with players who've been kneeling during the Star Spangled Banner to protest racial injustice. The movement began with then-San Francisco 49ers quarterback Colin Kaepernick in 2016.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-2746799b54424a25b62d08ced37bf431",
+            "input": "What is the sentiment of the following document towards the entity Clint Eastwood ? Beginning in 2006 with âFlags of Our Fathersâ and âLetters from Iwo Jimaâ (shot at the same time but released three months apart)  Eastwoodâs choice of material started to change. The political content began to increase (âJ. Edgar â âInvictus â âGran Torinoâ) and although not overt it confirmed what many had known for a while:  Eastwood  was a conservative. While a moderate on most social issues   Eastwood  considers  himself  a âpragmatic Libertarianâ who eschews political correctness and  his  output in the last dozen years has indicated that  he âs an unabashed patriot.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-5fa3b31fcba6475988c68e79a9b16a43",
+            "input": "What is the sentiment of the following document towards the entity Melania Trump ? The White House said  she  personally chose every detail of the decor.  She  did a final check late Sunday after returning from the family's Thanksgiving at their home in Palm Beach  Fla.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-e0fe358d07af4f5cb31fb0ac9e5bba0a",
+            "input": "What is the sentiment of the following document towards the entity Roy Moore ? Using Bannon's logic that the whole  Moore  story was cooked up by the media to get  Moore   you must also believe the following things:",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-1cc78d357b7545eb87c7d3ad8e1e5598",
+            "input": "What is the sentiment of the following document towards the entity Thomas Edison ? “Perhaps you would like a piece of the original conductor used by  Edison  at Menlo Park at the now historic demonstra­tion of the Edison System of Incandescent Electric Lighting in 1880  so am sending you one ” Wardlaw wrote in a Oct. 4  1933 letter accompanying the artifact and note. “I dug it out of the bank on the east side of Christie St  Menlo Park  directly opposite your old home  last Friday. It was the first underground cable ever used for electric lighting and appears pretty good yet after being buried for 53 years.”",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-7cd75e6e2665423ba635ffbb3828e039",
+            "input": "What is the sentiment of the following document towards the entity Priscilla Presley ? (NEWSER) – Priscilla Presley's marriage to Elvis  made  her  the envy of many  but it wasn't all glitz and glamour behind closed doors.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-ef05009168be49f9a076f075f76f3ed7",
+            "input": "What is the sentiment of the following document towards the entity Tom Petty Rock ? The LAPD had refused to confirm  Petty 's death to Business Insider in a phone call  citing department policy.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-020720fb9708463c8c18a6238a11bbbd",
+            "input": "What is the sentiment of the following document towards the entity Jeremy Corbyn ?  Corbyn  will challenge the Conservative government to \"pull yourself together\" after Theresa May's Florence speech failed to break the stalemate in Brexit negotiations  with European Council president Donald Tusk saying on Tuesday that there has not been \"sufficient progress\" to allow talks to advance.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-93b2c5e454794ff190da1d35de970be0",
+            "input": "What is the sentiment of the following document towards the entity Zulfi Hoxha ? During Wright’s interrogation  which was recounted at trial in testimony by a local police officer  he claimed that  Hoxha  reached out to him via Paltalk and asked him if he was interested in Islamic State. Wright told the officer that he responded three weeks later after conducting research  telling  Hoxha  that  he  believed that Islamic State’s’ mission was legitimate and necessary. From this point on  Hoxha and Wright were in frequent contact via Paltalk and Skype’s instant messenger service  sharing videos  issues of Islamic State’s official magazine Dabiq  and news articles about the group and its activities. These conversations between Wright and  Hoxha  continued until April 2015  when  Hoxha  left the U.S. to join Islamic State. Among the subjects of most interest were the best options for joining and what would ensure the maximum religious reward. Some early Western travelers believed that they could migrate to Islamic State-held territory (an act that the group refers to as hijrah)  but only participate in the societal aspects of the self-declared Caliphate while avoiding combat and violence. Neither Wright nor  Hoxha  appear to have held that naïve delusion. According to trial exhibits of their conversations  Wright cautioned  Hoxha  that “if you want to travel and live under a dawla [Islamic state] there is no harm in that  but you won’t receive the reward from Allah like those who are assembled in the ranks unless you assemble in the ranks.”",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-e9d3f6149f574c438bda20dbe4a1eb1a",
+            "input": "What is the sentiment of the following document towards the entity Jerry Jones ? A group of NFL owners led by Jerry Jones  the Dallas Cowboys owner   are reportedly making moves to stall the contract extension of commissioner Roger Goodell  and  they âre citing the mishandling of player protests among  their  reasons.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-46901a6334614c8791b1986a83e4ba67",
+            "input": "What is the sentiment of the following document towards the entity Susan Collins ? In the Nick of Time!  Collins  has been moving toward formally supporting the tax bill all day. Now itâs official.  Collins  office has released a statement saying she will support The Tax Cuts and Jobs Act. âWe need a tax system that will boost the economy  help the middle class  and encourage small business to grow and create jobs â  Collins  said. âIf we stimulate the economy through tax reform  we can significantly increase federal revenue while boosting Americansâ take-home pay.â  Collins  statement also touted the value of doubling the child tax credit to âlower- and-middle-income taxpayers.â For those of you keeping score at home  thatâs fifty-one GOP votes for the bill. Corker is still the holdout. And  of course  every single Democratic Senator.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-c3de059e01144194a9cd064e0eda97d2",
+            "input": "What is the sentiment of the following document towards the entity Barton ? Kelly Canon  a Tea Party organizer in the Dallas suburb of Arlington  released a series of Facebook Messenger conversations with  Barton  from 2012 in which he asked things like if she was wearing panties.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-25d0750045c244a6a320b95f09cdc13d",
+            "input": "What is the sentiment of the following document towards the entity Dana Loesch ? The crowd also booed  Loesch  when she referred to a rape survivor who supports gun rights.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-b2b4e045d021414d88831bfb84ab9017",
+            "input": "What is the sentiment of the following document towards the entity Carmelo Anthony ? Knicks   Carmelo Anthony  headed toward awkward reunion next week",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-f44fba44078344c69b22670f874dac10",
+            "input": "What is the sentiment of the following document towards the entity Jessica Porten ? \"It had started to squeak \"  she  says. \"And so when I'm sitting there rocking the baby and it's squeaking  I would just get so angry at that stupid chair.\"",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-9616f0eea5a24c38864c38386e9148d0",
+            "input": "What is the sentiment of the following document towards the entity Jorge Briceno ?  Briceno was killed by the Colombian troops during a raid carried out on Thursday in a jungle in the south of Colombia.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-9416b14384a645fca604887e41aa2ab5",
+            "input": "What is the sentiment of the following document towards the entity Nicolas Sarkozy ?  He said Sarkozy \"is obliged to come in the middle of the night  secretly  because in La Courneuve as in Seine-Saint-Denis his record on public security and action in working class areas is not great.\"",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-82a6956b3fb64fa6b159f07c136ef5b8",
+            "input": "What is the sentiment of the following document towards the entity Job Cohen ? A softer approach promoted by left-leaning parties including former Amsterdam Mayor Job Cohen's Labor Party is very unlikely to win a majority  though Labor is running second in polls and has made a late surge.",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-39122cbb5dd9428f9cb301c5206cd6f3",
+            "input": "What is the sentiment of the following document towards the entity Juliet Jacobsen ? The scripted conversation is quite different from what doctors have been trained to do   Jacobsen  acknowledged. It doesn't aim to reach any decision  nor to fill out end-of-life paperwork.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-97791f9977cd43039cc270b5d2b90e2d",
+            "input": "What is the sentiment of the following document towards the entity Julia Barnett Rice ? Today  as suburbanites return to cities  they bring the fight for quiet along with them. To gentrify a neighborhood also involves quieting it down. The desire for sonic control in and around the home is prioritized above the social fabric of the city  a practice exemplified by the targeting of arts and music venues that are cited as being partially responsible for neighborhood revival in the first place. In her book Beyond Unwanted Sound  Marie Thompson describes an example from the industrial area of Ouseburn Valley in the United Kingdom. The region had become a hotbed of music and the arts partly because there were few residences to disturb. Eventually  several venues closed after repeated run-ins with the law due to noise complaints. These complaints came not from concerned locals  but from wealthy newcomers buying into new developments built explicitly to capitalize on the area’s vibrant nightlife. The noise that does the most harm doesn’t come from clubs and house parties—the causes of many garden-variety noise complaints and violations. Ironically   Rice  did get something right in  her  crusade: Industrial noise poses the worst problem  although individual workers were not to blame for it  as  Rice  had also concluded. The two largest sources of environmental noise are transportation and industrial activity. The cars for which early noise ordinances helped clear the streets have amplified that noise to a universal  inescapable level. Industrial areas  often designated for land close to the poorest nonwhite areas in a city  are even worse.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-18756aa7f1ac48bcb09d715f3171664d",
+            "input": "What is the sentiment of the following document towards the entity Jeremy Meeks Jeremy ? The \"Topshop\" heiress who found love with \"Hot Convict\"  Jeremy Meeks  says tying the knot is the next step.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-469e0788d43b4c5fac24288c176902cc",
+            "input": "What is the sentiment of the following document towards the entity David Johnson ? But  David Johnson  also represents part of northwest Iowa. And while King might look to the White House and see a kindred spirit   Johnson  calls Donald Trump's rhetoric \"misogynistic \" \"race-baiting \" and \"bigoted.\"",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-b58527e34f174942a3221a1041f69748",
+            "input": "What is the sentiment of the following document towards the entity BabeAziz Ansari ? Speaking up is difficult but there is no better time than this #MeToo moment for women to find their voices  not just to expose real predators who sexually harass and assault women  but overly zealous men  as the Babe article portrays  Ansari  to be  who may think \"yes\" to a date at  his  place automatically means \"yes\" to sex.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-151ef476eaef4550a63e93a8a8643eb0",
+            "input": "What is the sentiment of the following document towards the entity Pruitt ? In announcing the changes   EPA Administrator Scott Pruitt  suggested many previously appointed to the panels were potentially biased because they had received federal research grants. The 22 boards advise EPA on a wide range of issues  including drinking water standards and pesticide safety.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-fa8642417b6840f19def020e3e1fcbbb",
+            "input": "What is the sentiment of the following document towards the entity Hillary Clinton ? Yep  he called Hillary Clinton the President on air. (If you care to listen to Hannity's dulcet tones  the President  Clinton  slip comes in around 3:20.)",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-dc12a9fedbb14a2a8c1c0acf09ff0dce",
+            "input": "What is the sentiment of the following document towards the entity Daniel Pinto ? JPMorgan was considering raising its headcount by 30 percent in Saudi Arabia over the next two to three years from 70 now  as business opportunities expand   Pinto  said.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-7369602da00a44f195e29182bed88000",
+            "input": "What is the sentiment of the following document towards the entity Rene Boucher ?  Boucher  said  he  saw Paul stacking brush onto an existing pile  and on the day of the incident heâd had âenoughâ â and executed a ârunning tackleâ of Paul. Because  the senator  didnât see  Boucher  coming   he  didnât brace for the impact.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-47e758dd94d640c2aa40d3ce01131625",
+            "input": "What is the sentiment of the following document towards the entity David Einhorn ? Misreading market factors led  Einhorn  recently to short Tesla â one of the strongest performing stocks in recent years.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-7fa51a0278c043dd8a67320b18b56925",
+            "input": "What is the sentiment of the following document towards the entity Tim Clark ?  Emirates Airline president Sir Tim Clark  believes the US aviation industry could become a victim of the trade dispute centered around the Open Skies agreements that govern air travel between the US and the United Arab Emirates where  his  airline is based.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-777320144b52431e9ab82ed8e84ca34f",
+            "input": "What is the sentiment of the following document towards the entity Mark Dreyer ? \"Even if it's a fraction of that  [China] could still revolutionize the winter global sports industry  which is not particularly big ”  Dreyer  added.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-2ada0c9c142b44b9a7133f1bc2136f1c",
+            "input": "What is the sentiment of the following document towards the entity Philip Scott Fournier ? A defense lawyer said during final arguments earlier this month that \"doubts will linger\" over the case regardless whether  Fournier  was convicted. The defense also argued that  Fournier 's memories  which were central to the prosecution's case  were unreliable.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-464472eae5964a78879388ea0914132a",
+            "input": "What is the sentiment of the following document towards the entity James Harden ? James Harden  scored a game-high 41 points for the Rockets. (Photo: Isaiah J. Downing  USA TODAY Sports)",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-8848ac21795846b084d16102f7a94f9f",
+            "input": "What is the sentiment of the following document towards the entity Wagner Wagner ? \"Time for us to get a couple bounces I think \"  Wagner  said  as Anaheim scored four goals in a period for first time since doing it in the third period at Buffalo last Feb. 9.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-5b7552ccb80940609e122afdfee574ad",
+            "input": "What is the sentiment of the following document towards the entity Elizabeth Warren ?  Warren   however  quickly snapped back into  her  role as an anti-Republican die-hard.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-84cd1d969d0f4366943a7c1c48da6337",
+            "input": "What is the sentiment of the following document towards the entity Sean Boyd ? Cryptocurrencies like bitcoin may be all the rage  but when it comes to storing your money   Agnico Eagle Mines CEO Sean Boyd  told CNBC that they still pose some unaddressed risks.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-4f21a93c15dc4f4f97a5b20b61444008",
+            "input": "What is the sentiment of the following document towards the entity Elbert Mack ?  Mack has been in this position before. At Troy in Alabama  balls flew in his direction as opponents tried to avoid testing his feared teammate Leodis McKelvin  the Bills' 2008 first-round draft pick. And Mack snatched eight interceptions to lead the nation his senior year.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-c626914c337d4cb2b29c89bb09bcc3b5",
+            "input": "What is the sentiment of the following document towards the entity Richard Burr ?  Burr  also said that âthe issue of collusion is still openâ and would not be resolved until the committeeâs work was done.  He  said that a deadline for the committee was the looming start of the 2018 primary season.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-4de0f21a04624f1291fd0086c416fc52",
+            "input": "What is the sentiment of the following document towards the entity Aaron Rodgers ?  He  is eligible to return to the Packers in Week 15.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-2ff2b70dc69c4ce4b7fd921f9c126699",
+            "input": "What is the sentiment of the following document towards the entity Shinzo Abe ? Under the 2015 deal between Japan and South Korea  reached by  Abe  and Moon’s predecessor  Japan apologized to former “comfort women” and provided a 1 billion yen ($9 million) fund to help them. But South Korea has said the agreement failed to meet victims’ needs  calling for more steps.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-28ca6f4419444e06872728de3f850fd2",
+            "input": "What is the sentiment of the following document towards the entity Stephen Curry ? Stephen Curry  is turning 3s into âforeâ!",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-43fce61002134f2d9902ee1135b1e816",
+            "input": "What is the sentiment of the following document towards the entity George Soros ? The AP criticizes the OrbÃ¡n governmentâs opposition to  Soros  along with their investigation into  his  attempts to bring  his  tremendous financial influence to bear on Hungaryâs political situation.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-f777974e72674283b6836c1a809207dc",
+            "input": "What is the sentiment of the following document towards the entity Hillary Clinton ? The Justice Department is reviving investigations involving Hillary Clintonâs emails and the degree to which the State Department during Mrs. Clintonâs tenure as secretary was put in the service of the Clinton Foundation. Good. Indeed  it is long overdue. It underscores a point weâve tried to make repeatedly here: You donât need a special counsel for this kind of thing; such investigations are what we have a Justice Department full of career prosecutors for. The perverse institution of the independent prosecutor should be shunned whenever possible â and its jurisdiction tightly confined in the rare necessary case.",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-f520487bf589400b94a4e7287be4d8f4",
+            "input": "What is the sentiment of the following document towards the entity Omarosa Manigault Newman ?  Manigault Newman  is no stranger to controversy. White House reporter April Ryan alleged earlier this year that  Manigault Newman  attempted to physically and verbally intimidate  her  during an exchange.  Manigault Newman  denied the allegation.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-6c50624d4ff24b70bf01ed75c09979d1",
+            "input": "What is the sentiment of the following document towards the entity Rosemary Domino ? That was typical. Aside from rare appearances in New Orleans   he  dodged the spotlight in  his  later years  refusing to appear in public or even to give interviews.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-93fd59d93e954614a571a64265c45dfa",
+            "input": "What is the sentiment of the following document towards the entity Roy Moore ? Jerry Pow  the Bibb County Republican chairman  also told The Toronto Star that he would still vote for  Moore  over his Democratic opponent  Doug Jones",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-6ac3bf00e66d45d5aa2c462a19e5ba93",
+            "input": "What is the sentiment of the following document towards the entity Donald J. Trump ? âTo those nations that choose to ignore this threat or worse still  to enable it  the weight of this crisis is on your conscience â  Trump  said in Seoul.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-8c6a9ffb93854864977aad0f82239c75",
+            "input": "What is the sentiment of the following document towards the entity Al Franken ? Though the writing appeared to be on the wall   Franken 's departure was not certain. A tweet posted Wednesday evening on  Franken 's Twitter account said: \"Senator Franken is talking with his family at this time and plans to make an announcement in D.C. tomorrow. Any reports of a final decision are inaccurate.\"",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-164f79bd2880454c978c10e4a7ddc698",
+            "input": "What is the sentiment of the following document towards the entity Addison Russell ? If a trade decision boils down to  Russell  or Baez  it could be a matter of taking either a more dependable approach at the plate ( Russell ) or the dazzling defender who can make the backhanded stop and strong throw to first base (Baez).",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-bf0f53a048f84b87bdfa7d668e3970b3",
+            "input": "What is the sentiment of the following document towards the entity John Wall ? âHeâs a quiet kid who doesnât say too much â  Wall  told ESPN. âHeâs been dealing with (LaVarâs outlandish comments) his whole life. It doesnât bother him. Itâs just new to everybody else.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-e28a9d92342b4c7a9f8d46bd9235c7d1",
+            "input": "What is the sentiment of the following document towards the entity Milos Zeman ? PRAGUE (Reuters) - Milos Zeman  the longest-standing figure in Czech post-communist politics  won a final major battle on Saturday  showing off his strong political instincts to secure a second presidential term.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-f7a48e6a6f404071991a98ec0dbcbb03",
+            "input": "What is the sentiment of the following document towards the entity Kim Yo Jong ?  Kim Yo Jongâs  trip at the start of the Games â the first visit to the South by a member of the Northâs ruling dynasty since the Korean War ended in 1953 â made global headlines.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-25905cf9998648639f1b300fe5a28853",
+            "input": "What is the sentiment of the following document towards the entity Sean Hannity ? The meal-delivery service HelloFresh says it does not advertise on or around  Hannity 's shows. \"We have continuously worked with our advertising agency partners and media buyers to ensure that no HelloFresh ads are running during his programs \" a HelloFresh representative told Business Insider in an email. \"We always refresh our advertising outlets with considerations for current events which we do not condone.\"",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-441bc7e614f1428b9fefbeeda27b498f",
+            "input": "What is the sentiment of the following document towards the entity Nico LaHood ? Meet  Nico LaHood   district attorney for Bexar County  Texas  home of the mostly Democratic enclave of San Antonio.  LaHood  is now locked in a street brawl of a primary battle against a former friend  Joe Gonzales.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-9115be7dc8584b7d9d886354e9e714a9",
+            "input": "What is the sentiment of the following document towards the entity Logan Paul ? Last week   Paul  returned to the video sharing platform with a suicide prevention video.  He  told \"Good Morning America\"  he 's hopeful for  his  future.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-1f52d31b41d24379a36ec61f74456a77",
+            "input": "What is the sentiment of the following document towards the entity Amos Genish ? “We presented a hypothesis of legal separation of the network  with a dedicated company  and we expect to discuss it at the next board ”  Genish  said after meeting the Italian government and the industry regulator.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-1e0e69538c1d4d5492631072425a9e82",
+            "input": "What is the sentiment of the following document towards the entity Derek Hann ? Before the interview starts   Hann  said  he  makes sure the individual is familiar with the STAR method.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-dbdc413111364debbfe903f835871ae6",
+            "input": "What is the sentiment of the following document towards the entity Sarah Shourd ?  Shourd and their families have denied they did anything wrong. After her release  Shourd said they were hiking in a scenic and relatively peaceful part of northern Iraq and inadvertently crossed an unmarked border with Iran when they were arrested in July 2009.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-4081aca3389441e8b43a2b1f645f8bdc",
+            "input": "What is the sentiment of the following document towards the entity Alexei Navalny ?  Incumbent Vladimir Putin  is set to easily win a fourth term in office in the March 18 election  with  his  approval ratings topping 80%.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-cf23317c054b4070ba0f40702809a929",
+            "input": "What is the sentiment of the following document towards the entity Chris Christie Trump ? More:  Chris Christie  on the beach: New Jersey had a bad day  why should he suffer?",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-64bbd57076424277b8b076dd2431b4da",
+            "input": "What is the sentiment of the following document towards the entity Hayley Smith ? \"Every Thursday I'd have to take the afternoon off. So I spoke to my boss. In the meeting  she  was fine with it and said 'do what you need to do' \".",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-0d64089d1c6940e4952905e776210f39",
+            "input": "What is the sentiment of the following document towards the entity Eighteen-year-old Nathan Chen ? \"It was more centered around the fact that I would be age-eligible for 2018 \"  he  said  \"obviously that was my goal. That's what I wanted  but I honestly didn't really think it would be attainable. I thought that 2022 would be more in my sights  since 2018 was just so close.\"",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-6ee5068dda9b4764a58cf3aec08b3200",
+            "input": "What is the sentiment of the following document towards the entity Joe ? PHOENIX â Trader Joeâs  says  it  has recalled several packaged salads after a supplier said there may be shards of glass or hard plastic inside.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-1d59a636440e4cfb8e733975e15e8636",
+            "input": "What is the sentiment of the following document towards the entity Tom Petty ? More: Tom Pettyâs best quotes on fame  greed and the state of rock ânâ roll",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-2aa197607a224f03be7bf1a036d7c5b8",
+            "input": "What is the sentiment of the following document towards the entity Kim Yo Jong ? Kim Yo Jong  the younger sister of North Korean leader Kim Jong Un  arrived in South Korea with the North Korean delegation on Feb. 9 for the Winter Olympics. (Reuters)",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-51f81fc99f814eafa9fcd0bbc1ae982d",
+            "input": "What is the sentiment of the following document towards the entity Richard Gingras ? âOver the last year  we got clear indications that  yes  it was going to be important for publishers to grow subscription revenues â said  Richard Gingras  Googleâs vice president for news .",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-f10924f117cd4fefb72037fe0b61061a",
+            "input": "What is the sentiment of the following document towards the entity Landesbank Baden Wuertemberg ?  The bank was several state-owned German institutions to run into trouble last year after it ran up more huge losses from investing in high-risk proprietary trading and capital market activities -- a business the EU has now told it to shun.",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-caaa2489c5874f89be8432e5b82b7974",
+            "input": "What is the sentiment of the following document towards the entity Donald J. Trump ? Later in the speech   Trump  gave North Korea a sharp warning: âDo not underestimate us â  he  said. âAnd do not try us.â",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-a564e08526454c61a89785f15fd618d6",
+            "input": "What is the sentiment of the following document towards the entity Iman Fatima ? Sitting next to his father  Adeel told the BBC  \"The kidnapper made me stand against the wall and took  Iman Fatima  away. He took  her  upstairs  put  her  in a sack and took  her  away.\"",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-09ab38f2f77d4148a684d7b9b25d9fe5",
+            "input": "What is the sentiment of the following document towards the entity Kirsten Gillibrand ? Sen. Elizabeth Warren defended her Democratic colleague on Twitter  going after Trump for attacking  Gillibrand .",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-5b693320e81448a2bb011bb5b90841cd",
+            "input": "What is the sentiment of the following document towards the entity Donald J. Trump ? As of Monday night   he  had not deleted the erroneous tweet.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-61cac250bcf84c0bb312dfbea45cdfc0",
+            "input": "What is the sentiment of the following document towards the entity Alex Burrows ?  \"He said he was going to get me back tonight  and that's what he did in the third  I think \" Burrows said.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-ef5f623caa424786b6eb6067e31d257d",
+            "input": "What is the sentiment of the following document towards the entity Tina Brown ? “Trouble is  picture’s great  copy not  ” Brown  recalled. According to  Brown   31 at the time  she decided to run the piece anyway  but only after a heavy edit that she knew would not go over well with Smith. As expected  Smith “got on the horn to give me the full Texan bawl-out.”",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-8a8254b663814023a014319f01e8cf99",
+            "input": "What is the sentiment of the following document towards the entity Baker Mayfield ? Baker Mayfield: 1st career reception — ESPN Stats & Info (@ESPNStatsInfo) January 1  2018",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-43945b9b31c547459834d38837465a1b",
+            "input": "What is the sentiment of the following document towards the entity William Hagerty ? “We will be able to settle on a specific framework to move forward. I think certainly by the spring of 2018 we’ll see forward progress and momentum ”  he  said.",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-07b50de2533e44e79e5f479026a96172",
+            "input": "What is the sentiment of the following document towards the entity Pete K. Rahn ? âWe know there are going to be some delays â  Rahn  told the audience at a Silver Spring forum sponsored by the Purple Line Now advocacy group.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-cb8df3a3d300456b943d7ab88b60614d",
+            "input": "What is the sentiment of the following document towards the entity Interior Chien Tai-lang ?  According to Chien  the relevant authorities will decide on the case based on facts.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-67496e13b5ae49cb96baaf74dcd9c674",
+            "input": "What is the sentiment of the following document towards the entity Ricardo Anaya ? Lopez Obrador holds 33 percent of the vote  against 25 percent for  Ricardo Anaya  of the left-right coalition âFor Mexico in Front â according to the survey by Mexican newspaper Reforma.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-d97f6c7aa78f4028a79ae47a9d97bf09",
+            "input": "What is the sentiment of the following document towards the entity Logan Paul ?  Paul  apologized for posting video of  him  in a forest near Mount Fuji in Japan near what seemed to be a body hanging from a tree. The location is known in Japan as a frequent site for suicides.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-a0abbdd280674df9914d2d12562267b2",
+            "input": "What is the sentiment of the following document towards the entity Robert Lighthizer ?  Freeland  has suggested that Canada could walk away from the NAFTA talks over the so-called Chapter 19 dispute mechanism  under which binational panels make binding decisions on complaints about illegal subsidies and dumping. The United States has frequently lost such cases.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-7044552677c04474aa130a8086d63bb3",
+            "input": "What is the sentiment of the following document towards the entity Miguel Sano ? \"Every time I have to hear about how great people think  Miguel Sano  is  I'm reminded of how awful  he  actually is and how  he  hurt me \" Bissen wrote.",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-4e4589fadcb64746aa8ca9b8343865b3",
+            "input": "What is the sentiment of the following document towards the entity John Kelly ? Chief of staff  John Kelly  reportedly expressed a willingness to resign over the Rob Porter scandal.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-08c45286425f404a9427954ce89448ce",
+            "input": "What is the sentiment of the following document towards the entity Carles Puigdemont ?  Puigdemont  said  he  hoped to be able to return to Spain if  he  was elected a member of the Catalan parliament  but  he  was not sure if  he  would be arrested and put in custody.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-51345e03495d421a875722fbbb43d75b",
+            "input": "What is the sentiment of the following document towards the entity Ron Washington ?  Hurdle has done so well it has created potential avenues for him to leave. There was buzz this summer that he might succeed the late Keli McGregor as the Rockies president. Hurdle said it's never come up in conversations with O'Dowd or owner Dick Monfort.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-05c8b02ce5f24cd1b40313a124c58a15",
+            "input": "What is the sentiment of the following document towards the entity Uri Berliner ?  BERLINER : Well  really  you know  since the end of the financial crisis  the stock market in the U.S. has just been on a roll. It's had a number of really good years. In 2009  the S&P 500 was up more than 26 percent. In 2013  it was up more than 32 percent. So stocks have had a lot of good years but this was especially notable  this one.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-f3539c0e07174456bc662c102c04a972",
+            "input": "What is the sentiment of the following document towards the entity Dolores O'Riordan ? Related Dolores O'Riordan: Cranberries' Noel Hogan Talks Singer's Life and Legacy \"There are only a few artists who get to have maybe one song they are remembered by. Dolores has so many.\"",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-d3626c41b5b7428abcca2f4ca4c4d829",
+            "input": "What is the sentiment of the following document towards the entity GÃ©rald Darmanin ? Spatz  46  first filed a complaint against  Darmanin  last year  after he joined Macronâs government  but the case was closed when she failed to attend a mandatory police interview. Earlier this month  however  she filed a second complaint  and prosecutors have reopened the case.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-c9dbea4559084898b8f014bedbedf03b",
+            "input": "What is the sentiment of the following document towards the entity Drake Has Topped ? Hip-hop superstar Drake  has kicked off 2018 in the best way possible  and  he âs made a bit of charting history in the process.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-cbd78f2aff124069b326a90994661a75",
+            "input": "What is the sentiment of the following document towards the entity James Franco ? \"But I completely support people coming out and being able to have a voice because they didn't have a voice for  so long \" Franco  added. \"I don't want to  you know  shut them down in any way. It's  I think  a good thing and I support it.\"",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-f3fffdf9d047443d8de82d5afc7914a8",
+            "input": "What is the sentiment of the following document towards the entity Monaco Sergei W ? Prosecutors believe  Sergei W  gambled on the team's share price plunging.",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-2f53927efb084fbb97113351fe30b9ce",
+            "input": "What is the sentiment of the following document towards the entity Alan Dershowitz ? \"[It] is designed for when somebody has a stroke or somebody is unconscious  perhaps what happened when President [Woodrow] Wilson was president \" said  Dershowitz . \"He had a serious stroke. It's not designed for differences about a person's emotional makeup.\"",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-3b3ca2326763480681d85743df666611",
+            "input": "What is the sentiment of the following document towards the entity Paul Kennedy ?  Kennedy repeated his earlier recommendations that the force tighten its Taser policies and create an independent body to investigate officers in serious cases  such as those involving a death.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-da303d94a8a24fd0a93e496747d80d61",
+            "input": "What is the sentiment of the following document towards the entity Jessica Diggins ? \"Our whole team had that belief we could win and everyone was there screaming  \" Diggins  said of the final sprint. \"I don't know if you have that many teams where everyone is out there on the fence yelling their faces off. I just think we had a lot of support behind of us.\"",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-467e5109296741d09077982f91dc6bcb",
+            "input": "What is the sentiment of the following document towards the entity Hugo Steven Selva ? In December 2016   Selvaâs  grandmother requested a restraining order against her grandson  records indicate  the Palm Beach Post reported.",
+            "output": [
+                "Negative"
+            ]
+        },
+        {
+            "id": "task421-30a591671b0d4358b78512c58a86b686",
+            "input": "What is the sentiment of the following document towards the entity Nicks ?  Still  the coaches are looking for Nicks  who showed explosiveness as a rookie in 2009  to show more consistency in his second season. (On Sunday  Nicks also tipped the first pass his way  which resulted in an interception). Nicks  the type of deep threat the Giants have been missing since the departure of Plaxico Burress  was drafted into an important position. \"That's something I want to do \" Nicks said. \"That's something that I've always done in my career in my past  been that big-target receiver coming deep down the field. I just want to get my game to that and bring it to the team the best way possible.\"",
+            "output": [
+                "Positive"
+            ]
+        },
+        {
+            "id": "task421-d351637b1c294b188f8c01f04c4018f2",
+            "input": "What is the sentiment of the following document towards the entity Filippo Grandi ? “I found this was a population that had almost no response. Very passive ” said  Filippo Grandi  the U.N. high commissioner for refugees   describing  his  visit late in September to camps where the refugees were staying.",
+            "output": [
+                "Neutral"
+            ]
+        },
+        {
+            "id": "task421-c49ff46c4bd246ba989aee6786bbb31f",
+            "input": "What is the sentiment of the following document towards the entity Tiger Woods ? The American former world number one won the last of  his  14 major titles in 2008 and the 41-year-old has only played six competitive rounds in the past two years while trying to recover from multiple back surgeries.",
+            "output": [
+                "Neutral"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

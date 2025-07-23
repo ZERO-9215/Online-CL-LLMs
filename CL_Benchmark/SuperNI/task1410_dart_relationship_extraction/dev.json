@@ -1,0 +1,771 @@
+{
+    "Contributors": [
+        "Rushang Karia"
+    ],
+    "Source": [
+        "dart"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/dart"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Relational Reasoning"
+    ],
+    "Definition": [
+        "This task is about using the specified sentence and converting the sentence to Resource Description Framework (RDF) triplets of the form (subject, predicate object). The RDF triplets generated must be such that the triplets accurately capture the structure and semantics of the input sentence. The input is a sentence and the output is a list of triplets of the form [subject, predicate, object] that capture the relationships present in the sentence. When a sentence has more than 1 RDF triplet possible, the output must contain all of them."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "University of mississippi was in the selc new conference.",
+            "output": "[['University of Mississippi', 'NEW_CONFERENCE', 'SELC']]",
+            "explanation": "This is a good example since the subject of the sentence is University of Mississipi and it is connected to the object (SELC) via the predicate (new_conference). The output RDF captures the key elements of the sentence and is easily interpretable as well."
+        },
+        {
+            "input": "The nickname of the  team of University of Nebraska at Omaha is mavericks.",
+            "output": "[['University of Nebraska at Omaha', 'NICKNAME', 'Mavericks']]",
+            "explanation": "This is a good example since the subject of the sentence is University of Nebraska and it is connected to the object (Mavericks) via the predicate (NICKNAME). The output RDF captures the key elements of the sentence and is easily interpretable as well."
+        },
+        {
+            "input": "Chris Hodgson aged 26 was eliminated from the compassion for food during week 6.",
+            "output": "[['Chris Hodgson', 'AGE', '26'], ['Chris Hodgson', 'ELIMINATED', 'Week 6'], ['Chris Hodgson', 'CULINARY_P.O.V.', 'Compassion for Food']]",
+            "explanation": "This is a good example since the different RDF triplets detected accurately detect the different facts interacting in this sentence. For example, the first 2 RDF triplets are easily connected together using the third RDF triplet."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Edwards represented the North Metropolitan Province.",
+            "output": "[['Graham Edwards', 'PROVINCE', 'North']]",
+            "explanation": "This sentence is a bad example since even though it got the subject (Edwards) and predicate (PROVINCE) correct, it did not correctly detect the object (North Metropolitan)"
+        },
+        {
+            "input": "Li Qiaoxian of China had a preliminary rank of 6.",
+            "output": "[['Qiaoxian', 'rank', '6']]",
+            "explanation": "This sentence is a bad example since even though it got the object (6) correct, but got the subject (Li Qiaoxian of China) and predicate (preliminary rank) partially correct."
+        },
+        {
+            "input": "Say It Again was released in 1986.",
+            "output": "[['It', 'say', 'released']]",
+            "explanation": "This sentence is a bad example since even though it got all of the subject, object and predicate incorrect. In fact this sentence does not accurately capture the input sentence at all. It is unlikely that models trained using such statements can learn anything useful."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1410-e6744b5c4a1440239f4118e11210cd19",
+            "input": "The Punter coffee shop offers French food for adults near Café Sicilia with moderate price range and a rating of 1 out of 5.",
+            "output": [
+                "[['The Punter', 'eatType', 'coffee shop'], ['The Punter', 'food', 'French'], ['The Punter', 'priceRange', 'moderate'], ['The Punter', 'customer rating', '1 out of 5'], ['The Punter', 'near', 'Café Sicilia']]"
+            ]
+        },
+        {
+            "id": "task1410-b8a724b00b5f4b828a102ea16c41e16f",
+            "input": "2.95 saw the episode titled \"The Reunion Job\".",
+            "output": [
+                "[['the reunion job', 'U.S._VIEWERS_(IN_MILLIONS)', '2.95']]"
+            ]
+        },
+        {
+            "id": "task1410-de6a0e67e4484d92b1418a7950bbe3fa",
+            "input": "Amatriciana sauce can be found in Italy, where the capital is Rome and where Laura Boldrini is the leader.",
+            "output": [
+                "[['Italy', 'CAPITAL', 'Rome'], ['Amatriciana sauce', 'COUNTRY', 'Italy'], ['Italy', 'LEADER_NAME', 'Laura Boldrini']]"
+            ]
+        },
+        {
+            "id": "task1410-a3ae4bfd717e4df991a0a6baef56f562",
+            "input": "The Wrestlers is a restaurant providing full meals in the average price range. It is located in the city centre.",
+            "output": [
+                "[['The Wrestlers', 'eatType', 'restaurant'], ['The Wrestlers', 'priceRange', 'moderate'], ['The Wrestlers', 'area', 'city centre']]"
+            ]
+        },
+        {
+            "id": "task1410-0cd6732125a148ea9b8eaba21ece4429",
+            "input": "20 Fenchurch Street has a floor area of 62145.3 square metres.",
+            "output": [
+                "[['20 Fenchurch Street', 'FLOOR_AREA', '62145.3 (square metres)']]"
+            ]
+        },
+        {
+            "id": "task1410-4799eb9413b04ffebb1718527dc83923",
+            "input": "The Wrestlers is an Indian restaurant with a high customer rating, that is kid-friendly and in the medium price range.",
+            "output": [
+                "[['The Wrestlers', 'eatType', 'restaurant'], ['The Wrestlers', 'food', 'Indian'], ['The Wrestlers', 'customer rating', 'high'], ['The Wrestlers', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-7c59468a80ea41e5b7230311ed55915a",
+            "input": "There is a kid friendly, fast food establishment called The Wrestlers with moderate prices. It is rated by customers at 3 out of 5",
+            "output": [
+                "[['The Wrestlers', 'food', 'Fast food'], ['The Wrestlers', 'priceRange', 'moderate'], ['The Wrestlers', 'customer rating', '3 out of 5'], ['The Wrestlers', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-69bf907575584a3dbf84bd7fbf1832a3",
+            "input": "Bakso is from the Chinese cuisine.",
+            "output": [
+                "[['Bakso', 'COUNTRY', 'Chinese cuisine']]"
+            ]
+        },
+        {
+            "id": "task1410-7e4b3c402ff945d192f60384dda7ac18",
+            "input": "Clowns is a pub where the price range is less than £20. It is near the riverside and the customer rating is low.",
+            "output": [
+                "[['Clowns', 'eatType', 'pub'], ['Clowns', 'priceRange', 'less than £20'], ['Clowns', 'customer rating', 'low'], ['Clowns', 'area', 'riverside']]"
+            ]
+        },
+        {
+            "id": "task1410-ff73690228aa493b9a4b3627c21ed192",
+            "input": "From 2009 to 2010, Tunisia had no change in tourism ranking.",
+            "output": [
+                "[['Tunisia', 'CHANGE_(2009_TO_2010)', '+0.0%']]"
+            ]
+        },
+        {
+            "id": "task1410-0345a4a6fc35455aa71f40eb91e11254",
+            "input": "John Cowper Powys, author of A Glastonbury Romance, Weymouth Sands and Maiden Castle (in that order), was born in Shirley, Derbyshire.",
+            "output": [
+                "[['John Cowper Powys', 'BIRTH_PLACE', 'Shirley, Derbyshire'], ['Weymouth Sands', 'FOLLOWED_BY', 'Maiden Castle (novel)'], ['A Glastonbury Romance', 'FOLLOWED_BY', 'Weymouth Sands'], ['Weymouth Sands', 'AUTHOR', 'John Cowper Powys']]"
+            ]
+        },
+        {
+            "id": "task1410-0d1b4dccb3c346118b5a311073dc546e",
+            "input": "Located in the city centre, The Rice Boat offers Japanese cuisine.",
+            "output": [
+                "[['The Rice Boat', 'food', 'Japanese'], ['The Rice Boat', 'area', 'city centre']]"
+            ]
+        },
+        {
+            "id": "task1410-a38617bcee63451aafcd63df1e04e6fd",
+            "input": "Dell Curry nationality is of the United States.",
+            "output": [
+                "[['Dell Curry', 'NATIONALITY', 'United States']]"
+            ]
+        },
+        {
+            "id": "task1410-9de784b912904547a03786516a43c4d8",
+            "input": "coffee shop and Indian restaurant, Aromi, is found in Riverside, with an average customer rating.",
+            "output": [
+                "[['Aromi', 'eatType', 'restaurant'], ['Aromi', 'food', 'Indian'], ['Aromi', 'customer rating', 'average'], ['Aromi', 'area', 'riverside']]"
+            ]
+        },
+        {
+            "id": "task1410-cb42b4330ebd46eaa0674535d8f4353a",
+            "input": "The Green Man, near All Bar One in the city centre, serves French food at great prices - less than £20. Yes, it is family-friendly.",
+            "output": [
+                "[['Green Man', 'food', 'French'], ['Green Man', 'priceRange', 'less than £20'], ['Green Man', 'area', 'city centre'], ['Green Man', 'familyFriendly', 'yes'], ['Green Man', 'near', 'All Bar One']]"
+            ]
+        },
+        {
+            "id": "task1410-06f92456749a4d52ae1540251720aa84",
+            "input": "Zizzi is a riverside coffee shop that is rated three out of five stars. It is moderately expensive and family friendly.",
+            "output": [
+                "[['Zizzi', 'eatType', 'coffee shop'], ['Zizzi', 'priceRange', 'more than £30'], ['Zizzi', 'customer rating', '3 out of 5'], ['Zizzi', 'area', 'riverside'], ['Zizzi', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-4cbe00c65f6c4d8e8f6f29b0f8d53b9e",
+            "input": "On December 26, 1979, the Lehoullier Building on 161-169 Main St. was listed as a historic place in the national register.",
+            "output": [
+                "[['Lehoullier Building', 'CITY', 'Somersworth'], ['[TABLECONTEXT]', '[TITLE]', 'National Register of Historic Places listings in Strafford County, New Hampshire'], ['Somersworth', 'LOCATION', '161-169 Main St. 43°15′31″N 70°51′46″W\\ufeff / \\ufeff43.258611°N 70.862778°W'], ['[TABLECONTEXT]', 'NAME_ON_THE_REGISTER', 'Lehoullier Building'], ['Lehoullier Building', 'DATE_LISTED', 'December 26, 1979 (#79000211)']]"
+            ]
+        },
+        {
+            "id": "task1410-e3f0ed9776d64083a192a857c36c1082",
+            "input": "A Wizard of Mars is preceded by Wizards at War.",
+            "output": [
+                "[['A Wizard of Mars', 'PRECEDED_BY', 'Wizards at War']]"
+            ]
+        },
+        {
+            "id": "task1410-73ddc9c6aad144bc83a61d95390d6287",
+            "input": "Near Chesterton Road there is an expensive restaurant called Blue Spice.",
+            "output": [
+                "[['Blue Spice', 'eatType', 'restaurant'], ['Blue Spice', 'priceRange', 'high']]"
+            ]
+        },
+        {
+            "id": "task1410-1695110bc1094dc4abc85aeddf583107",
+            "input": "Alan Shepard was awarded the distinguished service medal from the United States Navy . He died in California.",
+            "output": [
+                "[['California', 'GEMSTONE', 'Benitoite'], ['Distinguished Service Medal (United States Navy)', 'HIGHER', 'Department of Commerce Gold Medal'], ['Alan Shepard', 'DEATH_PLACE', 'California'], ['California', 'SENATORS', 'Dianne Feinstein'], ['Alan Shepard', 'AWARD', 'Distinguished Service Medal (United States Navy)']]"
+            ]
+        },
+        {
+            "id": "task1410-9bd05b46b8254451b8df063243df5798",
+            "input": "Benin has a total 7.3 billion US$ GDP",
+            "output": [
+                "[['Benin', 'TOTAL_GDP_(NOMINAL)_(BILLION_US$)', '7.3']]"
+            ]
+        },
+        {
+            "id": "task1410-e2d6fed4167245fe96a82edc4b806278",
+            "input": "The introductory phrase for the episode with the production bode 6026 was none.",
+            "output": [
+                "[['678', 'INTRODUCTORY_PHRASE', 'none'], ['678', 'PRODUCTION_CODE', '6026']]"
+            ]
+        },
+        {
+            "id": "task1410-279b501ce60d40159cec5439b7ad7170",
+            "input": "The Wrestlers provides Chinese food in the less than £20 price range. Its customer rating is low.",
+            "output": [
+                "[['The Wrestlers', 'food', 'Chinese'], ['The Wrestlers', 'priceRange', 'less than £20'], ['The Wrestlers', 'customer rating', 'low']]"
+            ]
+        },
+        {
+            "id": "task1410-7632e740954241f69b18e37d318d72e6",
+            "input": "The Twenty Two is in centre city and serves Chinese food but is not family friendly",
+            "output": [
+                "[['The Twenty Two', 'food', 'Chinese'], ['The Twenty Two', 'familyFriendly', 'no']]"
+            ]
+        },
+        {
+            "id": "task1410-5b49d9f9f5034896b61da70812339de6",
+            "input": "Food, Wine, and Spirits on the waterfront. The Phoenix offering 3 star service at an affordable price.",
+            "output": [
+                "[['The Phoenix', 'priceRange', '£20-25'], ['The Phoenix', 'customer rating', '3 out of 5']]"
+            ]
+        },
+        {
+            "id": "task1410-7ad26ae3cce7418693460a53cb1b9268",
+            "input": "On the riverside there is family-friendly The Rice Boat ,they offer a French food . Customer rating is 5.",
+            "output": [
+                "[['The Rice Boat', 'food', 'French'], ['The Rice Boat', 'area', 'riverside'], ['The Rice Boat', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-febf1d4b91d942b8adc611a1238bcce3",
+            "input": "The name of the race in Bordeaux was iv grand prix de bordeaux.",
+            "output": [
+                "[['IV Grand Prix de Bordeaux', 'CIRCUIT', 'Bordeaux']]"
+            ]
+        },
+        {
+            "id": "task1410-bed2a628d0a147f78592b0a8a6aa2c0c",
+            "input": "The # for the episode with a Production code of 3T7057 is 7.0.",
+            "output": [
+                "[['robbing hood', 'NUMBER', '7'], ['robbing hood', 'ORIGINAL_AIR_DATE', 'november26,2008'], ['robbing hood', 'DIRECTED_BY', 'paul shapiro'], ['robbing hood', 'NUMBER', '16'], ['robbing hood', 'PRODUCTION_CODE', '3t7057'], ['robbing hood', 'WRITTEN_BY', 'jim danger gray'], ['robbing hood', 'U.S._VIEWERS_(MILLION)', '4.45']]"
+            ]
+        },
+        {
+            "id": "task1410-5c77025f2cc14394accf57dd07d7e030",
+            "input": "Charles Albert Browne, Jr. serve president Calvin Coolidge as the 4th Commissioner of Food and Drugs",
+            "output": [
+                "[['[TABLECONTEXT]', 'NAME', 'Charles Albert Browne, Jr.'], ['[TABLECONTEXT]', '[TITLE]', 'Commissioner of Food and Drugs'], ['Charles Albert Browne, Jr.', 'NUMBER', '4'], ['Charles Albert Browne, Jr.', 'SERVED', 'Calvin Coolidge']]"
+            ]
+        },
+        {
+            "id": "task1410-6147b6ab915c4366a18bfe6f9dd6ab4b",
+            "input": "Acharya Institute of Technology's motto is Nurturing Excellence.",
+            "output": [
+                "[['Acharya Institute of Technology', 'MOTTO', '\"Nurturing Excellence\"']]"
+            ]
+        },
+        {
+            "id": "task1410-1a2b545d2d83472583ffb6a6a81c5270",
+            "input": "The Fast Food restaurant, The Waterman, is not friendly for children. It has a rating of 3 out of 5 and is moderately priced.",
+            "output": [
+                "[['The Waterman', 'eatType', 'restaurant'], ['The Waterman', 'food', 'Fast food'], ['The Waterman', 'priceRange', 'moderate'], ['The Waterman', 'customer rating', '3 out of 5'], ['The Waterman', 'familyFriendly', 'no']]"
+            ]
+        },
+        {
+            "id": "task1410-ccc3f4e9c2d04af8948dc614458549c6",
+            "input": "The group a winner for modena is prato.",
+            "output": [
+                "[['1979-80', 'GROUP_A_WINNER', 'prato'], ['1979-80', 'GROUP_B_WINNER', 'modena']]"
+            ]
+        },
+        {
+            "id": "task1410-dcc1659708364c5db34fe8740fadabbe",
+            "input": "Choice 201, Curtis Painter's position is quarterback.",
+            "output": [
+                "[['Curtis Painter', 'POSITION', 'Quarterback'], ['6', 'CHOICE', '201'], ['6', 'PLAYER', 'Curtis Painter']]"
+            ]
+        },
+        {
+            "id": "task1410-0da9fd9ae9e847d6aa027887fd3958f1",
+            "input": "The Phoenix, located in Riverside, serves French cuisine and has an average customer rating.",
+            "output": [
+                "[['The Phoenix', 'food', 'French'], ['The Phoenix', 'customer rating', 'average'], ['The Phoenix', 'area', 'riverside']]"
+            ]
+        },
+        {
+            "id": "task1410-8ccab5b8d05f4eed8c4f4ca2a1e89e0d",
+            "input": "English food with moderate price range is Alimentum; located in centre city near the Yippee Noodle Bar. customer ratings are 3 out of 5.",
+            "output": [
+                "[['Alimentum', 'food', 'English'], ['Alimentum', 'priceRange', 'moderate'], ['Alimentum', 'customer rating', '3 out of 5'], ['Alimentum', 'near', 'Yippee Noodle Bar']]"
+            ]
+        },
+        {
+            "id": "task1410-761c2bb0654444f1b4c46314a78e51b4",
+            "input": "Taste of Cambridge coffee shop offers Italian food in the riverside area. It is near the Crown Plaza Hotel.",
+            "output": [
+                "[['Taste of Cambridge', 'eatType', 'coffee shop'], ['Taste of Cambridge', 'food', 'Italian'], ['Taste of Cambridge', 'area', 'riverside']]"
+            ]
+        },
+        {
+            "id": "task1410-1d7330644f0d4cf0af1ff9039ab6cbb3",
+            "input": "The Vintage Invitational had a first prize of $40,000.",
+            "output": [
+                "[['The Vintage Invitational', '1ST_PRIZE(_$_)', '40000']]"
+            ]
+        },
+        {
+            "id": "task1410-d3b819494da54a719ebb89b3e8444189",
+            "input": "Point University officially joined the Appalachian Athletic Conference in 2011.",
+            "output": [
+                "[['[TABLECONTEXT]', '[TITLE]', 'Appalachian Athletic Conference'], ['Point University', 'JOINED', '2011'], ['[TABLECONTEXT]', 'INSTITUTION', 'Point University']]"
+            ]
+        },
+        {
+            "id": "task1410-97ee2282f97f4bbdb92c81d238632cef",
+            "input": "Alimentum provides Indian food in the more than £30 price range. It is located in the city centre. It is near Yippee Noodle Bar. Its customer rating is high.",
+            "output": [
+                "[['Alimentum', 'food', 'Indian'], ['Alimentum', 'priceRange', 'more than £30'], ['Alimentum', 'customer rating', 'high'], ['Alimentum', 'area', 'city centre'], ['Alimentum', 'near', 'Yippee Noodle Bar']]"
+            ]
+        },
+        {
+            "id": "task1410-17490454b58740fabc67483fc45b7fc0",
+            "input": "ACM Transactions on Information Systems has the ISSN number 1558-2868.",
+            "output": [
+                "[['ACM Transactions on Information Systems', 'ISSN_NUMBER', '\"1558-2868\"']]"
+            ]
+        },
+        {
+            "id": "task1410-15088b23445d43d1ada14a5da3618908",
+            "input": "Saga of a Hoodlum is the second album by the hip-hop artist Tragedy Khadafi",
+            "output": [
+                "[['Shalom a Leck', 'NUMBER', '1'], ['Shalom a Leck', 'PERFORMER(S)', 'Tragedy']]"
+            ]
+        },
+        {
+            "id": "task1410-0b4f018b0cae45889d1cc8a33640bccb",
+            "input": "Alcatraz Versus the Evil Librarians is an English language book from the United States which Joe Biden is a leader of. White Americans are an ethnic group there.",
+            "output": [
+                "[['Alcatraz Versus the Evil Librarians', 'LANGUAGE', 'English language'], ['English language', 'SPOKEN_IN', 'Great Britain'], ['United States', 'LEADER_NAME', 'Joe Biden'], ['United States', 'ETHNIC_GROUP', 'White Americans'], ['Alcatraz Versus the Evil Librarians', 'COUNTRY', 'United States']]"
+            ]
+        },
+        {
+            "id": "task1410-48a51d5f565d46ec9f5923c269954093",
+            "input": "Located near Café Adriatic is an expensive venue called Travellers Rest Beefeater. It is rated three stars.",
+            "output": [
+                "[['Travellers Rest Beefeater', 'priceRange', 'high'], ['Travellers Rest Beefeater', 'customer rating', '3 out of 5'], ['Travellers Rest Beefeater', 'near', 'Café Adriatic']]"
+            ]
+        },
+        {
+            "id": "task1410-acfac35ef31543fca75d66270c5f34bc",
+            "input": "The snowfall in April in Burlington is 2.4 cm.",
+            "output": [
+                "[['[TABLECONTEXT]', '[TITLE]', 'Burlington, Ontario'], ['Snowfall cm (inches)', 'APR', '2.4 (0.94)'], ['[TABLECONTEXT]', 'MONTH', 'Snowfall cm (inches)']]"
+            ]
+        },
+        {
+            "id": "task1410-d4964dbd94ce4ccfbfff5c0475f1b589",
+            "input": "The Galician (reintegrationist) word for \"adeus*\"  in Galician (Official) is \"adeus*\".",
+            "output": [
+                "[['Goodbye', 'GALICIAN_(_REINTEGRATIONIST_)', 'Adeus*'], ['Goodbye', 'PORTUGUESE', 'Adeus*'], ['Goodbye', 'SPANISH', 'Adiós'], ['Goodbye', 'GALICIAN_(_OFFICIAL_)', 'Adeus*']]"
+            ]
+        },
+        {
+            "id": "task1410-73ef15710d9249e1bc2d425c60940f71",
+            "input": "FC St. Gallen played Pelister in a qualifying round during the 2001-2002 season, with an aggregate score of 4-3.",
+            "output": [
+                "[['[TABLECONTEXT]', '[TITLE]', 'FC St. Gallen'], ['Qualifying round', 'AGGREGATE', '4-3'], ['[TABLECONTEXT]', 'COMPETITION', 'UEFA Cup'], ['UEFA Cup', 'ROUND', 'Qualifying round'], ['UEFA Cup', 'SEASON', '2001-2002'], ['Qualifying round', 'OPPONENT', 'Pelister']]"
+            ]
+        },
+        {
+            "id": "task1410-2b76fd0d103d4b1b89ced2d17a3e802c",
+            "input": "Kid friendly restaurant The Waterman serves English food. Located by riverside is moderately priced with a 1 out of 5 rating.",
+            "output": [
+                "[['The Waterman', 'eatType', 'restaurant'], ['The Waterman', 'food', 'English'], ['The Waterman', 'priceRange', 'moderate'], ['The Waterman', 'customer rating', '1 out of 5'], ['The Waterman', 'area', 'riverside'], ['The Waterman', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-b0eaefdf3bb0424dbe4bf2bf3b245661",
+            "input": "The Phoenix is an expensive restaurant serving Italian food located North of the city centre. It has a 3 out of 5 star rating.",
+            "output": [
+                "[['The Phoenix', 'eatType', 'restaurant'], ['The Phoenix', 'food', 'Italian'], ['The Phoenix', 'priceRange', 'high'], ['The Phoenix', 'customer rating', '3 out of 5'], ['The Phoenix', 'area', 'city centre']]"
+            ]
+        },
+        {
+            "id": "task1410-cd638a196fa34716880103d48e04517b",
+            "input": "Strada is non kids friendly and offers fast food at 1 out of 5 ratings; it has moderate price range and is located near Rainbow Vegetarian Café.",
+            "output": [
+                "[['Strada', 'food', 'Fast food'], ['Strada', 'priceRange', 'moderate'], ['Strada', 'customer rating', '1 out of 5'], ['Strada', 'familyFriendly', 'no'], ['Strada', 'near', 'Rainbow Vegetarian Café']]"
+            ]
+        },
+        {
+            "id": "task1410-bee2b936720d432893fefda28d6ceeda",
+            "input": "The current tournament name for the event in Tampa is eckerd open.",
+            "output": [
+                "[['tampa', 'ALSO_CURRENTLY_KNOWN_AS', 'eckerd open']]"
+            ]
+        },
+        {
+            "id": "task1410-053cf28671ea4962b2737160282f7da3",
+            "input": "The Waterman is a French restaurant in the price range less than £20 with a low customer rating. It has a bad family-friendly atmosphere",
+            "output": [
+                "[['The Waterman', 'eatType', 'restaurant'], ['The Waterman', 'food', 'French'], ['The Waterman', 'priceRange', 'less than £20'], ['The Waterman', 'customer rating', 'low'], ['The Waterman', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-e1c1f48e08d544b586c6accfbae392b8",
+            "input": "One euro is equal to 5.72079 argentine pesos (ARS).",
+            "output": [
+                "[['Argentine peso (ARS)', '1_EURO_=', '5.72079']]"
+            ]
+        },
+        {
+            "id": "task1410-e10100d00b9e42ac9f08389ed5eabab8",
+            "input": "In Riverside near the Burger King sits The Eagle, a moderately priced Italian coffee shop with average customer ratings.",
+            "output": [
+                "[['The Eagle', 'eatType', 'coffee shop'], ['The Eagle', 'food', 'Italian'], ['The Eagle', 'priceRange', 'moderate'], ['The Eagle', 'customer rating', '3 out of 5'], ['The Eagle', 'area', 'riverside'], ['The Eagle', 'near', 'Burger King']]"
+            ]
+        },
+        {
+            "id": "task1410-92fcf56f47964a64add2f0579821c55e",
+            "input": "The population of Caravaggio is sixteen thousand, two hundred and fifty-eight.",
+            "output": [
+                "[['Caravaggio', 'POPULATION_(AB)', '16.258']]"
+            ]
+        },
+        {
+            "id": "task1410-e1113b94be5644c7b101b8d47b8343bf",
+            "input": "A Glastonbury Romance, with 1174 pages, is available in print. Its ISBN number is 0-7156-3648-0, and its OCLC number is 76798317.",
+            "output": [
+                "[['A Glastonbury Romance', 'NUMBER_OF_PAGES', '\"1174\"'], ['A Glastonbury Romance', 'OCLC_NUMBER', '76798317'], ['A Glastonbury Romance', 'MEDIA_TYPE', '\"Print\"'], ['A Glastonbury Romance', 'ISBN_NUMBER', '\"0-7156-3648-0\"']]"
+            ]
+        },
+        {
+            "id": "task1410-dc5526d4e84c40afb682f741e4418f42",
+            "input": "Harut Grigorian's opponent is Murthel Groenhart at event K-1 World MAX 2012 World Championship Tournament Final 16 located at Madrid, Spain",
+            "output": [
+                "[['3', 'OPPONENT', 'Murthel Groenhart'], ['[TABLECONTEXT]', 'EVENT', 'K-1 World MAX 2012 World Championship Tournament Final 16'], ['K-1 World MAX 2012 World Championship Tournament Final 16', 'LOCATION', 'Madrid, Spain'], ['[TABLECONTEXT]', '[TITLE]', 'Harut Grigorian'], ['K-1 World MAX 2012 World Championship Tournament Final 16', 'ROUND', '3']]"
+            ]
+        },
+        {
+            "id": "task1410-5e9c9bd055854c88affefb71f81210b1",
+            "input": "Fitzbillies is an Italian coffee shop cheaply priced near the city Centre. It is not family-friendly and has a customer rating of 5 out of 5.",
+            "output": [
+                "[['Fitzbillies', 'eatType', 'coffee shop'], ['Fitzbillies', 'food', 'Italian'], ['Fitzbillies', 'priceRange', 'cheap'], ['Fitzbillies', 'customer rating', '5 out of 5'], ['Fitzbillies', 'area', 'city centre'], ['Fitzbillies', 'familyFriendly', 'no']]"
+            ]
+        },
+        {
+            "id": "task1410-f0843b44108143ad96a5d88b91a07654",
+            "input": "NI Women's Coalition Party got 496 Votes.",
+            "output": [
+                "[[\"NI Women's Coalition\", 'VOTES', '496']]"
+            ]
+        },
+        {
+            "id": "task1410-9c9e537ef5cd41b284b8073af7c1676b",
+            "input": "coffee shop Cotto is at the riverside, near The Portland Arms, cost of around £30 minimum.  Fast food, highly rated.",
+            "output": [
+                "[['Cotto', 'eatType', 'coffee shop'], ['Cotto', 'food', 'Fast food'], ['Cotto', 'customer rating', 'high'], ['Cotto', 'area', 'riverside'], ['Cotto', 'near', 'The Portland Arms']]"
+            ]
+        },
+        {
+            "id": "task1410-f683328109454318aac6243a2ee01bf1",
+            "input": "The bills scored 23.0 when their opponents scored 14",
+            "output": [
+                "[['7', 'BILLS_FIRST_DOWNS', '21'], ['7', 'OPPONENT', 'kansas city chiefs'], ['7', 'BILLS_POINTS', '23'], ['7', 'RECORD', '5-2'], ['7', 'RESULT', 'win'], ['kansas city chiefs', 'OPPONENTS', '14'], ['7', 'DATE', 'oct. 29']]"
+            ]
+        },
+        {
+            "id": "task1410-24d96c9a22934abdb046d66373e63e3d",
+            "input": "Yelena competed in Manila in the Asian Championship.",
+            "output": [
+                "[['[TABLECONTEXT]', '[TITLE]', 'Yelena Koshcheyeva'], ['Asian Championships', 'VENUE', 'Manila, Philippines'], ['2003', 'COMPETITION', 'Asian Championships'], ['[TABLECONTEXT]', 'YEAR', '2003']]"
+            ]
+        },
+        {
+            "id": "task1410-971352ab8a6b41ae9da459e20f01c014",
+            "input": "The Phoenix is a moderately priced restaurant in riverside that sells French food . It has a customer rating of 1 out of 5.",
+            "output": [
+                "[['The Phoenix', 'eatType', 'restaurant'], ['The Phoenix', 'food', 'French'], ['The Phoenix', 'priceRange', 'moderate'], ['The Phoenix', 'customer rating', '1 out of 5'], ['The Phoenix', 'area', 'riverside']]"
+            ]
+        },
+        {
+            "id": "task1410-c7aeb80d93904b51b341ec17bac23e66",
+            "input": "Adirondack Regional Airport serves the city of Lake Placid, and also Saranac Lake (part of Harrietstown) in New York, United States.",
+            "output": [
+                "[['Saranac Lake, New York', 'IS_PART_OF', 'Harrietstown, New York'], ['Adirondack Regional Airport', 'CITY_SERVED', 'Lake Placid, New York'], ['Adirondack Regional Airport', 'CITY_SERVED', 'Saranac Lake, New York'], ['Harrietstown, New York', 'IS_PART_OF', 'United States']]"
+            ]
+        },
+        {
+            "id": "task1410-a8c565b27057415db0963fdaad283729",
+            "input": "John W.Lerew challenged the Democrat Ed Perlmutter who seeked re-election in 2008.",
+            "output": [
+                "[['7', 'REPUBLICAN', 'John W. Lerew'], ['7', 'DEMOCRATIC', 'Ed Perlmutter'], ['7', '2008_STATUS', 'Re-election']]"
+            ]
+        },
+        {
+            "id": "task1410-062ef3e890674603b8c4016183093706",
+            "input": "October saw 42.6 mm of precipitation.",
+            "output": [
+                "[['Precipitation mm (inches)', 'OCT', '42.6 (1.677)']]"
+            ]
+        },
+        {
+            "id": "task1410-fd8517aa2d0442638fade88ebc5bcfd3",
+            "input": "The Cricketers is a highly rated restaurant located near The Portland Arms.  It is a family-friendly shop offering coffee and Italian food,  Customers has given the location a high rating of 5 out of 5.",
+            "output": [
+                "[['The Cricketers', 'eatType', 'restaurant'], ['The Cricketers', 'food', 'Italian'], ['The Cricketers', 'customer rating', '5 out of 5'], ['The Cricketers', 'familyFriendly', 'yes'], ['The Cricketers', 'near', 'The Portland Arms']]"
+            ]
+        },
+        {
+            "id": "task1410-1d269f68d03d4232bb051005b7c9dcd6",
+            "input": "A high-priced Italian food coffee shop, The Punter has a low customer rating, is children friendly and is located near Café Sicilia.",
+            "output": [
+                "[['The Punter', 'eatType', 'coffee shop'], ['The Punter', 'food', 'Italian'], ['The Punter', 'priceRange', 'high'], ['The Punter', 'customer rating', '1 out of 5'], ['The Punter', 'familyFriendly', 'yes'], ['The Punter', 'near', 'Café Sicilia']]"
+            ]
+        },
+        {
+            "id": "task1410-1ec743d430bc42dd951287f996515e02",
+            "input": "The 1st runway at Alderney Airport is made from Poaceae which belongs to the order of Commelinids and is in the class Monocotyledon.",
+            "output": [
+                "[['Alderney Airport', '1ST_RUNWAY_SURFACE_TYPE', 'Poaceae'], ['Poaceae', 'ORDER', 'Commelinids'], ['Poaceae', 'CLASS', 'Monocotyledon']]"
+            ]
+        },
+        {
+            "id": "task1410-484a4d87a57c454185dbe644dcd5dd6e",
+            "input": "Landon Donavan has 57 goals in his career.",
+            "output": [
+                "[['Landon Donovan', 'CAREER', '2000-present'], ['Landon Donovan', 'GOALS', '57']]"
+            ]
+        },
+        {
+            "id": "task1410-2fc47d9689a6423f85dcfcb0a8437bf8",
+            "input": "Cocum is a cheap family friendly coffee shop in the city centre.",
+            "output": [
+                "[['Cocum', 'eatType', 'coffee shop'], ['Cocum', 'priceRange', 'less than £20'], ['Cocum', 'area', 'city centre'], ['Cocum', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-632f63aa90fc4514a60a32134e2f063c",
+            "input": "The Rice Boat is a child friendly with a price range of more than £30 in the riverside area, with a high customer rating and English food, near Express by Holiday Inn.",
+            "output": [
+                "[['The Rice Boat', 'food', 'English'], ['The Rice Boat', 'priceRange', 'more than £30'], ['The Rice Boat', 'customer rating', 'high'], ['The Rice Boat', 'area', 'riverside'], ['The Rice Boat', 'familyFriendly', 'yes'], ['The Rice Boat', 'near', 'Express by Holiday Inn']]"
+            ]
+        },
+        {
+            "id": "task1410-a18875aef087418ba12d354e4baa304f",
+            "input": "The Catholic percentage is 44.8% and the no religion percentage is 21.0% in thee 25 to 29 age group.",
+            "output": [
+                "[['25 to 29', 'NONE_OR_NOT_STATED', '21.0%'], ['25 to 29', 'CATHOLIC', '44.8%']]"
+            ]
+        },
+        {
+            "id": "task1410-54594cb5070246fab76ee6dddf2091e3",
+            "input": "Antwerp International Airport is owned by the Flemish Region and serves the city of Antwerp.",
+            "output": [
+                "[['Antwerp International Airport', 'OWNER', 'Flemish Region'], ['Antwerp International Airport', 'CITY_SERVED', 'Antwerp']]"
+            ]
+        },
+        {
+            "id": "task1410-6d9c93d65a6e48df9b61f7ad20093d8d",
+            "input": "\"Ampara Hospital is in Sri Lanka and is situated in the Eastern Province state of Sri Lanka. Austin Fernando is the leader of the Eastern Province of Sri Lanka and the Eastern Provincial Council is the governing body of Eastern Province, Sri Lanka. Sri Jayawardenepura Kotte is the capital of Sri Lanka.\".",
+            "output": [
+                "[['Ampara Hospital', 'COUNTRY', 'Sri Lanka'], ['Ampara Hospital', 'STATE', 'Eastern Province, Sri Lanka'], ['Eastern Province, Sri Lanka', 'GOVERNING_BODY', 'Eastern Provincial Council'], ['Eastern Province, Sri Lanka', 'LEADER_NAME', 'Austin Fernando'], ['Sri Lanka', 'CAPITAL', 'Sri Jayawardenepura Kotte']]"
+            ]
+        },
+        {
+            "id": "task1410-cbf20ed90d3a49bd99078e7aee8f4c34",
+            "input": "A high-priced 5 star family friendly restaurant located to the north of the city centre is The Waterman.",
+            "output": [
+                "[['The Waterman', 'eatType', 'restaurant'], ['The Waterman', 'priceRange', 'more than £30'], ['The Waterman', 'customer rating', '5 out of 5'], ['The Waterman', 'area', 'city centre'], ['The Waterman', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-839afa8f0e2645589b18611169f703a3",
+            "input": "Fitzbillies is a city centre Indian coffee shop with average prices between £20-£25. It is both child friendly, and has high customer satisfaction.",
+            "output": [
+                "[['Fitzbillies', 'eatType', 'coffee shop'], ['Fitzbillies', 'food', 'Indian'], ['Fitzbillies', 'priceRange', '£20-25'], ['Fitzbillies', 'area', 'city centre'], ['Fitzbillies', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-d8e6dd3db4524c988c5185cb30b1abfe",
+            "input": "The Mill public house in the city centre serves Italian food in the higher price range.",
+            "output": [
+                "[['The Mill', 'food', 'Italian'], ['The Mill', 'area', 'city centre']]"
+            ]
+        },
+        {
+            "id": "task1410-0b8a58bbb29b45a89664b3033e4699a2",
+            "input": "When Dominic Wood and Nikki Grahame were the panelists, Razorlight was the musical guest and \"in the morning\" was the performed song.",
+            "output": [
+                "[['6', 'MUSICAL_GUEST_(SONG_PERFORMED)', 'Razorlight ( In The Morning )'], ['6', 'WHO_KNOWS_THE_MOST_ABOUT_THE_GUEST_HOST?_PANELISTS', 'Dominic Wood and Nikki Grahame']]"
+            ]
+        },
+        {
+            "id": "task1410-532dac528513422ca2b6e476b20d53d2",
+            "input": "Wales defeated New Zealand in National Stadium, Cardiff to a score of 13 to 8.",
+            "output": [
+                "[['19 December 1953', 'SCORE', '13 - 8'], ['19 December 1953', 'VENUE', 'National Stadium, Cardiff'], ['[TABLECONTEXT]', '[TITLE]', 'History of rugby union matches between New Zealand and Wales'], ['19 December 1953', 'VICTOR', 'Wales'], ['[TABLECONTEXT]', 'DATE', '19 December 1953']]"
+            ]
+        },
+        {
+            "id": "task1410-73e2457abf1f43af8905d7fa8e9bbb6c",
+            "input": "Loch Fyne is an average rated, French restaurant, near The Rice Boat in Riverside.",
+            "output": [
+                "[['Loch Fyne', 'eatType', 'restaurant'], ['Loch Fyne', 'food', 'French'], ['Loch Fyne', 'customer rating', 'average'], ['Loch Fyne', 'area', 'riverside'], ['Loch Fyne', 'near', 'The Rice Boat']]"
+            ]
+        },
+        {
+            "id": "task1410-f25bb686459b4d538eec94f9573a99a6",
+            "input": "Will buckley is the guest 3 in the show where guest 4 is Jill Douglas.",
+            "output": [
+                "[['2 December', 'GUEST_3', 'Will Buckley'], ['2 December', 'GUEST_4', 'Jill Douglas']]"
+            ]
+        },
+        {
+            "id": "task1410-2582e84c97d84a3fbb4c69317a2f515f",
+            "input": "Bacon Explosion originates from the United States where the capital city is Washington DC and the leader is Paul Ryan.",
+            "output": [
+                "[['Bacon Explosion', 'COUNTRY', 'United States'], ['United States', 'LEADER_NAME', 'Paul Ryan'], ['United States', 'CAPITAL', 'Washington, D.C.']]"
+            ]
+        },
+        {
+            "id": "task1410-1138c41a12a447c492c7ae6725da884f",
+            "input": "Diane ruggiero is the writer of the episode that had 3.07 millions of North American spectators.",
+            "output": [
+                "[[' driver ed ', 'WRITTEN_BY', 'diane ruggiero'], [' driver ed ', 'U.S._VIEWERS_(MILLION)', '3.07']]"
+            ]
+        },
+        {
+            "id": "task1410-427a529b576f49a5a2d674261bac4e65",
+            "input": "The record of the Wildcats after playing Florida was 4-3.",
+            "output": [
+                "[['Oct. 27', 'OPPONENT', 'Florida'], ['Oct. 27', 'RESULT', 'Win'], ['Win', 'RECORD', '4-3']]"
+            ]
+        },
+        {
+            "id": "task1410-8e287f5edd7a4d848680002dcb9c8dbe",
+            "input": "The 1981 Iowa Hawkeyes football team loss to Washington 0-28.",
+            "output": [
+                "[['[TABLECONTEXT]', '[TITLE]', '1981 Iowa Hawkeyes football team'], ['January 1', 'RESULT', 'L 0-28'], ['[TABLECONTEXT]', 'DATE', 'January 1'], ['January 1', 'OPPONENT#', 'vs. #12 Washington*']]"
+            ]
+        },
+        {
+            "id": "task1410-39c192326fe2477a8dc878cebf886ace",
+            "input": "A high priced Japanese coffee shop with a high customer rating but not child friendly, is The Eagle, near Burger King in the city centre",
+            "output": [
+                "[['The Eagle', 'eatType', 'coffee shop'], ['The Eagle', 'food', 'Japanese'], ['The Eagle', 'priceRange', 'more than £30'], ['The Eagle', 'customer rating', '5 out of 5'], ['The Eagle', 'area', 'city centre'], ['The Eagle', 'familyFriendly', 'no'], ['The Eagle', 'near', 'Burger King']]"
+            ]
+        },
+        {
+            "id": "task1410-2ff3ac40f8694f57b949f88e811ec45b",
+            "input": "Appleton International airport is located in Greenville, Wisconsin and serves the city of Appleton, Wisconsin, USA. Greenville, Wisconsin is part of Ellington and Appleton is part of Kimberly, Wisconsin.",
+            "output": [
+                "[['Appleton International Airport', 'LOCATION', 'Greenville, Wisconsin'], ['Greenville, Wisconsin', 'IS_PART_OF', 'Ellington, Wisconsin'], ['Appleton, Wisconsin', 'IS_PART_OF', 'Kimberly, Wisconsin'], ['Greenville, Wisconsin', 'COUNTRY', 'United States'], ['Appleton International Airport', 'CITY_SERVED', 'Appleton, Wisconsin']]"
+            ]
+        },
+        {
+            "id": "task1410-531b511fd2ad49caac5e1c27045f3f52",
+            "input": "There is a British pub called Wildwood that has a one star rating and a high price point.",
+            "output": [
+                "[['Wildwood', 'eatType', 'pub'], ['Wildwood', 'food', 'English'], ['Wildwood', 'priceRange', 'high'], ['Wildwood', 'customer rating', '5 out of 5']]"
+            ]
+        },
+        {
+            "id": "task1410-5ba9b0fde65d49ef933f705113aa61ff",
+            "input": "juan theron has Strike Rate 42.2 and BBM 7/56",
+            "output": [
+                "[['Juan Theron', 'BBM', '7/56'], ['Juan Theron', 'STRIKE_RATE', '42.2']]"
+            ]
+        },
+        {
+            "id": "task1410-24f327b5d5f7434c98b2fc1907eff347",
+            "input": "The ratings of the episode written by Peter Bowker is 2.61 (millions)",
+            "output": [
+                "[['episode 1', 'WRITER', 'peter bowker'], ['episode 1', 'RATINGS_(MILLIONS)', '2.61']]"
+            ]
+        },
+        {
+            "id": "task1410-c5dd21adee5b4ba19a08f5ba1bfb0753",
+            "input": "Susan Sloan was from Canada during the 1979 Pan American Games ranked 5th with a time of 1:03.52.",
+            "output": [
+                "[['Susan Sloan', 'NATIONALITY', 'Canada'], ['Susan Sloan', 'TIME', '1:03.52'], ['Susan Sloan', 'RANK', '5']]"
+            ]
+        },
+        {
+            "id": "task1410-8b862e4e51614f369b39cc6487bded01",
+            "input": "Aromi is a pub located along the riverside. It is child friendly and is child friendly.",
+            "output": [
+                "[['Aromi', 'eatType', 'pub'], ['Aromi', 'area', 'riverside'], ['Aromi', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-9763b22a86a24738924108cc39178c2d",
+            "input": "The competitor for FIN had 184 overall WC points.",
+            "output": [
+                "[['Janne Ahonen', 'NATIONALITY', 'FIN'], ['Janne Ahonen', 'OVERALL_WC_POINTS_(RANK)', '184 (4)']]"
+            ]
+        },
+        {
+            "id": "task1410-3d40d4e9b0ea4cba9403f200e427b7ca",
+            "input": "The family-friendly Japanese coffee shop located at city centre is called Fitzbillies and has a low customer rating.",
+            "output": [
+                "[['Fitzbillies', 'eatType', 'coffee shop'], ['Fitzbillies', 'food', 'Japanese'], ['Fitzbillies', 'customer rating', 'low'], ['Fitzbillies', 'area', 'city centre'], ['Fitzbillies', 'familyFriendly', 'yes']]"
+            ]
+        },
+        {
+            "id": "task1410-010af9bbe99549f8ba68ef6c06236451",
+            "input": "White Americans are an ethnic group in the United States where the Bacon Explosion originates.",
+            "output": [
+                "[['Bacon Explosion', 'COUNTRY', 'United States'], ['United States', 'ETHNIC_GROUP', 'White Americans']]"
+            ]
+        },
+        {
+            "id": "task1410-4fe99cade51f4e2c991e819176586c94",
+            "input": "Gus Poyet is associated with the Real Zaragoza,a football club.",
+            "output": [
+                "[['Gus Poyet', 'CLUB', 'Real Zaragoza']]"
+            ]
+        },
+        {
+            "id": "task1410-96c9897e89fc43c081a62c52bf66fc74",
+            "input": "Alderney Airport, which serves the city of Alderney, is 88 metres above sea level. Its airport runway is named 08/26, has a length of 497 and is made of asphalt.",
+            "output": [
+                "[['Alderney Airport', 'RUNWAY_LENGTH', '497.0'], ['Alderney Airport', '1ST_RUNWAY_SURFACE_TYPE', 'Asphalt'], ['Alderney Airport', 'CITY_SERVED', 'Alderney'], ['Alderney Airport', 'ELEVATION', '88.0'], ['Alderney Airport', 'RUNWAY_NAME', '\"08/26\"']]"
+            ]
+        },
+        {
+            "id": "task1410-5678d2ea2d4348cf9f817e5a4a7ab6b4",
+            "input": "The 2006 population count of the local government area Coober Pedy was 1996.0.",
+            "output": [
+                "[['Coober Pedy', 'LAND_AREA_(KM²)', '77,8'], ['Coober Pedy', 'POP._2006', '1996'], ['Coober Pedy', 'EST.', '1987'], ['Coober Pedy', 'MAJOR_TOWN', 'Coober Pedy'], ['Coober Pedy', 'TOWNS', '1'], ['Coober Pedy', 'TYPE', 'District Council'], ['Coober Pedy', 'DENSITY_KM_−2', '25656']]"
+            ]
+        },
+        {
+            "id": "task1410-0689176648f0477d9bb9970e508368be",
+            "input": "The United States test pilot William Anders was born in British Hong Kong on the 17th of October, 1933. In 1963, he was chosen by NASA and became a crew member on Apollo 8.",
+            "output": [
+                "[['William Anders', 'WAS_SELECTED_BY_NASA', '1963'], ['William Anders', 'NATIONALITY', 'United States'], ['William Anders', 'DATE_OF_BIRTH', '\"1933-10-17\"'], ['William Anders', 'OCCUPATION', 'Fighter pilot'], ['William Anders', 'BIRTH_PLACE', 'British Hong Kong'], ['William Anders', 'WAS_A_CREW_MEMBER_OF', 'Apollo 8']]"
+            ]
+        },
+        {
+            "id": "task1410-28d53dbce66242c2bfc706f2b86bb3ec",
+            "input": "The Phoenix is a 5 out of 5 £30 price range French venue.",
+            "output": [
+                "[['The Phoenix', 'food', 'French'], ['The Phoenix', 'customer rating', '5 out of 5']]"
+            ]
+        }
+    ],
+    "Instance License": [
+        "MIT"
+    ]
+}

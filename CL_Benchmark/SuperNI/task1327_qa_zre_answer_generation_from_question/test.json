@@ -1,0 +1,789 @@
+{
+    "Contributors": [
+        "Yammanuru Abhilash Reddy"
+    ],
+    "Source": [
+        "question_&_answer_zre"
+    ],
+    "URL": [
+        "http://nlp.cs.washington.edu/zeroshot/"
+    ],
+    "Categories": [
+        "Question Answering"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Generate a correct and concise answer for the question based on the words in the context."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Context : Isaac Nicola Romero (1916 in Havana, Cuba -- 1997) was a prominent Cuban guitarist and one of the founders of the modern Cuban Guitar School. \nQuestion : What was Isaac Nicola's city of birth?",
+            "output": "Havana",
+            "explanation": "According to context Issac Nicola's city of birth is Havana. Hence this is a correct output."
+        },
+        {
+            "input": "Context : Tweetie Pie won the Academy Award for Best Animated Short Film, breaking Tom and Jerry's streak of four consecutive wins on the category. \nQuestion : What award was Tweetie Pie nominated for?",
+            "output": "Academy Award for Best Animated Short Film",
+            "explanation": "According to the Input Tweetie Pie was nominated for 'Academy Award for Best Animated Short Film'. Hence this is a correct output."
+        },
+        {
+            "input": "Context : ``Big Eye'' Louis Nelson Delisle (28 January 1885 -- 20 August 1949) was an early twentieth-century Dixieland jazz clarinetist in New Orleans, Louisiana. \nQuestion : What city was Louis Nelson Delisle born in?",
+            "output": "New Orleans",
+            "explanation": "According to the Input Louis Nelson Delisle is born at New Orleans. Hence this is a correct output."
+        },
+        {
+            "input": "Context : Cycle of the Werewolf is a short horror novel by Stephen King, featuring illustrations by comic book artist Bernie Wrightson. \nQuestion : Who is the illustrator of Cycle of the Werewolf?",
+            "output": "Bernie Wrightson",
+            "explanation": "The input states that the illustrator of 'Cycle of the Werewolf' is Bernie Wrightson which matches with output. Hence this is a correct output."
+        },
+        {
+            "input": "Context : The Styr River is right tributary of the Pripyat River, with a length of 494 km. Its basin area is 13,100 km. \nQuestion : What river does Styr River form a part of?",
+            "output": "Pripyat River",
+            "explanation": "Styr River form a part of Pripyat River since they form a tributary and gets separated as stated in input. Hence this is a correct output."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Context : An Officer and a Gentleman is a 1982 American drama/romance film that stars Richard Gere, Debra Winger and Louis Gossett, Jr., who won the Academy Award for Best Supporting Actor for the film, and was produced by Lorimar Productions for Paramount Pictures. \nQuestion : What award was An Officer and a Gentleman nominated for?",
+            "output": "1982",
+            "explanation": "The question asks for the name of the award but the output is a digit. Hence the output is wrong"
+        },
+        {
+            "input": "Context : Travis Hamonic (born August 16, 1990) is a Canadian professional ice hockey defenseman currently playing for the New York Islanders of the National Hockey League (NHL). \nQuestion : What team does Travis Hamonic belong to?",
+            "output": "Boston Bruins",
+            "explanation": "Output 'Boston Bruins' is not present in the input context. Besides the output should be New York Islanders according to context. Hence this is a wrong output"
+        },
+        {
+            "input": "Context : Love Unto Waste is a 1986 Hong Kong drama film directed by Stanley Kwan and starring Tony Leung, Irene Wan, Elaine Jin, Tsai Chin, Chow Yun-fat with guest appearances by Elaine Chow and Winnie Yu. \nQuestion : Who directed Love Unto Waste ?",
+            "output": "Hong Kong",
+            "explanation": "Question asked for a person but the output is a place. Hence it is clearly a wrong output. Besides correct answer should be 'Stanley Kwan'"
+        },
+        {
+            "input": "Context : The Soviet RPG-22 Netto is a one-shot disposable anti-tank rocket launcher first deployed in 1985, based on the RPG-18 rocket launcher, but firing a larger 72.5 mm fin stabilised projectile. \nQuestion : In what year did RPG-22 enter service?",
+            "output": "1987",
+            "explanation": "As mentioned in context RPG-22 is deployed in 1985 but not in 1987. Hence this is a wrong output"
+        },
+        {
+            "input": "Context : Novatek and Gazprom plan to build a liquefied natural gas plant in Yamalo-Nenets Autonomous Okrug. \nQuestion : What company is Novatek part of?",
+            "output": "Okrug",
+            "explanation": "Okrug is a place while the question in the input is clearly asking for organization which Novatek is part of. Hence the answer should be 'Gazprom' but not 'Okrug'"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task1327-48f7267b2bb040d5b699724e0f7ae42b",
+            "input": "Context : Captain Linda Garcia Cubero (born 1958) is a former United States Air Force officer, of Mexican-American-Puerto Rican descent who in 1980 was a member of the first class of women to graduate from the United States Air Force Academy. \nQuestion : To which branch did Linda Garcia Cubero belong?",
+            "output": [
+                "United States Air Force"
+            ]
+        },
+        {
+            "id": "task1327-494e7b2447ed466ca9a07b40dda163c2",
+            "input": "Context : Eve and the Handyman is a 1961 American comedy film written and directed by Russ Meyer. \nQuestion : Who had the role of director in Eve and the Handyman?",
+            "output": [
+                "Russ Meyer"
+            ]
+        },
+        {
+            "id": "task1327-230690262f264be1b17e815159d367ab",
+            "input": "Context : The Dunstable Swan Jewel is a gold and enamel brooch in the form of a swan made in England or France in about 1400 and now in the British Museum, where it is on display in Room 40. \nQuestion : What is the name of the place where Dunstable Swan Jewel can be found?",
+            "output": [
+                "British Museum"
+            ]
+        },
+        {
+            "id": "task1327-83fbfbd12241425883f3ae21f3d22901",
+            "input": "Context : The Nelson Mandela 90th Birthday Tribute was held in Hyde Park, London on 27 June 2008 to commemorate Nelson Mandela's ninetieth birthday (18 July). \nQuestion : The date of Nelson Mandela 90th Birthday Tribute was what?",
+            "output": [
+                "27 June 2008"
+            ]
+        },
+        {
+            "id": "task1327-2c57b114117647dd94fc3dda1af2bfcc",
+            "input": "Context : Ishaq Khan Khakwani completed his BSc in Electrical Engineering from the University of Engineering and Technology, Lahore in 1971 and worked as an engineer in Pakistan Railways for 18 years before entering the political arena. \nQuestion : Which college or university is related with Ishaq Khan Khakwani?",
+            "output": [
+                "University of Engineering and Technology"
+            ]
+        },
+        {
+            "id": "task1327-a8b2e86f865a4c3c80ea296f235eb787",
+            "input": "Context : Attila Balázs (born September 27, 1989 in Budapest, Hungary) is a Hungarian professional tennis player. \nQuestion : What city is Attila Balázs associated with?",
+            "output": [
+                "Budapest"
+            ]
+        },
+        {
+            "id": "task1327-13fa7ed7e9b74970a815e173c389cf8c",
+            "input": "Context : Victor Benjamin Neuburg died from tuberculosis on May 30, 1940. \nQuestion : What medical condition was Victor Benjamin Neuburg suffering from?",
+            "output": [
+                "tuberculosis"
+            ]
+        },
+        {
+            "id": "task1327-24ae82ffc12048698c16a672330add1f",
+            "input": "Context : Bianca Cappello (1548 -- 20 October 1587) was an Italian noblewoman who was the mistress, and afterward the second wife, of Francesco I de' Medici, Grand Duke of Tuscany. \nQuestion : What is Bianca Cappello's spouse's name?",
+            "output": [
+                "Francesco I de' Medici, Grand Duke of Tuscany"
+            ]
+        },
+        {
+            "id": "task1327-511d1d4bf4c4459e95b458ff6575b2e9",
+            "input": "Context : F 13 Norrköping, Bråvalla Flygflottilj, Bråvalla Air Force Wing, or simply ``F 13'', is a former Flygvapnet - Swedish Air Force - wing with the main base located near Norrköping in south-eastern Sweden. \nQuestion : What military branch did F 13 Norrköping belong to?",
+            "output": [
+                "Swedish Air Force"
+            ]
+        },
+        {
+            "id": "task1327-ae28b2585b034da08b85bc6d9456d23d",
+            "input": "Context : Léon Arthur Tutundjian (Born 1905, Amasya, Ottoman Empire - died Paris, France December, 1968) was an Armenian painter who reached fame in France. \nQuestion : What date did Léon Arthur Tutundjian die on?",
+            "output": [
+                "1968"
+            ]
+        },
+        {
+            "id": "task1327-49916bbff2ad420a8afa203437dbde74",
+            "input": "Context : In 1974, Dumitru Diacov graduated from Belarusian State University and then worked for TeleRadio-Moldova. \nQuestion : What is the university where Dumitru Diacov went?",
+            "output": [
+                "Belarusian State University"
+            ]
+        },
+        {
+            "id": "task1327-73dca101c2fe4f93995a53ebd310d819",
+            "input": "Context : The 2012 AFL Grand Final was an Australian rules football game contested between the Hawthorn Football Club and the Sydney Swans at the Melbourne Cricket Ground on 29 September 2012. \nQuestion : What is the full date that 2012 AFL Grand Final crashed on?",
+            "output": [
+                "29 September 2012"
+            ]
+        },
+        {
+            "id": "task1327-9a2402661e67480d9693c73ce613573f",
+            "input": "Context : NGC 6850 is a spiral galaxy in the constellation Telescopium, discovered by John Herschel in 1836. \nQuestion : The star NGC 6850 is part of what constellation?",
+            "output": [
+                "Telescopium"
+            ]
+        },
+        {
+            "id": "task1327-6db799e7f8774a9aa0634767298fde6a",
+            "input": "Context : Yves Héroux (born April 27, 1965) is a retired Canadian professional ice hockey right winger who played in one National Hockey League game for the Quebec Nordiques during the 1986--87 NHL season. \nQuestion : Which team does Yves Héroux play for?",
+            "output": [
+                "Quebec Nordiques"
+            ]
+        },
+        {
+            "id": "task1327-29494a4ea24e4508a025d83029388050",
+            "input": "Context : Chris Horrie is a journalist and writer specialising in investigative journalism, finance and profiles of major public figures. \nQuestion : What kind of  occupation does Chris Horrie have?",
+            "output": [
+                "journalist"
+            ]
+        },
+        {
+            "id": "task1327-8322741f355e4a4aac60eb0b7917959f",
+            "input": "Context : General Sir Charles Fergusson, 7th Baronet GCB, GCMG, DSO, MVO (17 January 1865 -- 20 February 1951) was a British Army officer and the third Governor-General of New Zealand. \nQuestion : What military branch did Sir Charles Fergusson, 7th Baronet serve?",
+            "output": [
+                "British Army"
+            ]
+        },
+        {
+            "id": "task1327-2da3282a91d34d1385391e5eb794d362",
+            "input": "Context : The film evolved from the comedy sketch ``Good Burger'' featured on the Nickelodeon series All That. \nQuestion : Which is the basis of Good Burger?",
+            "output": [
+                "All That"
+            ]
+        },
+        {
+            "id": "task1327-9ac153aa6088498ca8812759a126d4fe",
+            "input": "Context : Günther Seibicke (30 August 1911 -- 26 May 1943) was a German U-boat commander in World War II and recipient of the Knight's Cross of the Iron Cross. \nQuestion : What award was received by Günther Seibicke?",
+            "output": [
+                "Knight's Cross of the Iron Cross"
+            ]
+        },
+        {
+            "id": "task1327-d9b8848661e9482a84d06bb0b78294e4",
+            "input": "Context : Kepler-23c is an exoplanet orbiting the star Kepler-23, located in the constellation Cygnus. \nQuestion : The star Kepler-23c is part of the constellation known as what?",
+            "output": [
+                "Cygnus"
+            ]
+        },
+        {
+            "id": "task1327-6e8fda341bda47119788b10a48cd059a",
+            "input": "Context : William P. Thompson (January 11, 1844-October 7, 1864) was a sergeant in the American Civil War and a recipient of the Medal of Honor for action at Battle of the Wilderness during which he was killed on May 6, 1864 with an award being issued to him on December 1, 1864. \nQuestion : What award was received by William P. Thompson?",
+            "output": [
+                "Medal of Honor"
+            ]
+        },
+        {
+            "id": "task1327-1faeff4449ba4c13954cdce9c40d2525",
+            "input": "Context : Boy with a Basket of Fruit, c.1593, is a painting generally ascribed to Italian Baroque master Michelangelo Merisi da Caravaggio, currently in the Galleria Borghese, Rome. \nQuestion : What is the name of the place where Boy with a Basket of Fruit can be found?",
+            "output": [
+                "Galleria Borghese"
+            ]
+        },
+        {
+            "id": "task1327-7833d0dcc0734449a4733da3f8c2e1f7",
+            "input": "Context : Padma Bhushan Sir K.V.A.R. (Kottaiyur Veerappa Alagappa Ramanatha) Alagappa Chettiar, (Tamil: வள்ள டாக்டர் திரு க.வி.அழ.அழகப்பா செட்டியார்) (6 April 1909 -- 5 April 1957), was an Indian businessman and philanthropist. \nQuestion : Which award was bestowed upon Alagappa Chettiar?",
+            "output": [
+                "Padma Bhushan"
+            ]
+        },
+        {
+            "id": "task1327-3acd52ff33114c969f5f82c6b7952a35",
+            "input": "Context : The Votive Panel of Jan Očko of Vlašim is a Gothic panel painting currently housed in the National Gallery in Prague, Czech Republic. \nQuestion : What is the name of the place where Votive Panel of Jan Očko of Vlašim can be found?",
+            "output": [
+                "National Gallery in Prague"
+            ]
+        },
+        {
+            "id": "task1327-54140483a7964749bdd41c2c5cd74e49",
+            "input": "Context : Ryan Reaves (born January 20, 1987) is a Canadian professional ice hockey right winger currently playing for the St. Louis Blues. \nQuestion : What team is Ryan Reaves on?",
+            "output": [
+                "St. Louis Blues"
+            ]
+        },
+        {
+            "id": "task1327-0ee365c82408498195ea06a814a39d68",
+            "input": "Context : The 2015 Bahrain Grand Prix (formally known as the 2015 Formula 1 Gulf Air Bahrain Grand Prix) was a Formula One motor race that was held on 19 April 2015 at the Bahrain International Circuit in Sakhir, Bahrain. \nQuestion : What is the date when 2015 Bahrain Grand Prix happened?",
+            "output": [
+                "19 April 2015"
+            ]
+        },
+        {
+            "id": "task1327-ebbf1f83971448b49f6ff0af84deac45",
+            "input": "Context : Darya Romenskaya (Belarusian: Дар'я Роменская; born March 10, 1983 in Hrodna) is a female Belarusian springboard diver. \nQuestion : What was the gender of Darya Romenskaya?",
+            "output": [
+                "female"
+            ]
+        },
+        {
+            "id": "task1327-0bd3094de40642caa8b2538c24b37e47",
+            "input": "Context : Godley became engaged to actress Jane Krakowski in December 2009 and their son Bennett Robert Godley was born in April 2011. \nQuestion : What is Robert Godley's spouse's name?",
+            "output": [
+                "Jane Krakowski"
+            ]
+        },
+        {
+            "id": "task1327-8234f4eb96ed48b39824110d8f3d3b84",
+            "input": "Context : Jack Metherell (9 November 1912 -- 30 November 1992) was an Australian rules footballer who played with Geelong in the VFL during the 1930s. \nQuestion : The death of Jack Metherell occured on what date?",
+            "output": [
+                "1992"
+            ]
+        },
+        {
+            "id": "task1327-b2b74ef9f5fe4e7f9f87a429b0b0b94a",
+            "input": "Context : Jeremy Colliton (born January 13, 1985) is a Canadian former professional ice hockey centre who played in the National Hockey League with the New York Islanders. \nQuestion : Which team does Jeremy Colliton play for?",
+            "output": [
+                "New York Islanders"
+            ]
+        },
+        {
+            "id": "task1327-f0222c67d8784a06b10ace794db4a631",
+            "input": "Context : The 7th Voyage of Sinbad was selected in 2008 for preservation in the United States National Film Registry by the Library of Congress as being ``culturally, historically, or aesthetically significant''. \nQuestion : Which award was bestowed upon The 7th Voyage of Sinbad?",
+            "output": [
+                "National Film Registry"
+            ]
+        },
+        {
+            "id": "task1327-19df8de8bf45405baa1765c1e89d2624",
+            "input": "Context : His Ward's Love is a 1909 American Short film directed by D. W. Griffith and the film was made by the American Mutoscope and Biograph Company. \nQuestion : Which production company is involved with His Ward's Love?",
+            "output": [
+                "Biograph Company"
+            ]
+        },
+        {
+            "id": "task1327-864c387e89fb41778f6213436f7063ae",
+            "input": "Context : Tom & Viv is a 1994 period drama film directed by Brian Gilbert, based on the 1984 play by the same name by British playwright Michael Hastings about the early love life of American poet T.S. Eliot. \nQuestion : The Tom & Viv is based upon what?",
+            "output": [
+                "Michael Hastings"
+            ]
+        },
+        {
+            "id": "task1327-5070fcf2bc194322b55e5a8163ec3e7c",
+            "input": "Context : Bangkok Airways Flight 266 was a scheduled domestic passenger flight to Samui Airport, Thailand, which overran the runway on landing and crashed into an old and unmanned control tower on 4 August 2009. \nQuestion : What is the date when Bangkok Airways Flight 266 happened?",
+            "output": [
+                "4 August 2009"
+            ]
+        },
+        {
+            "id": "task1327-12e8da46a3634ee38c1947aa3edd33ef",
+            "input": "Context : The naval Battle off Ulsan (Japanese: 蔚山沖海戦 Urusan'oki kaisen; Russian: Бой в Корейском проливе, Boi v Koreiskom prolive), also known as the Battle of the Japanese Sea or Battle of the Korean Strait, took place on 14 August 1904 between cruiser squadrons of the Imperial Russian Navy and the Imperial Japanese Navy during the Russo-Japanese War, four days after the Battle of the Yellow Sea. \nQuestion : What is the date when Battle off Ulsan happened?",
+            "output": [
+                "14 August 1904"
+            ]
+        },
+        {
+            "id": "task1327-6fafe87a79ea44cc9b6fd923273c248b",
+            "input": "Context : George Douglas Crawford, (1939--2002) was a Scottish politician and journalist, educated at Glasgow Academy and St Catharine's College, Cambridge before working as a journalist in London. \nQuestion : Which college or university is related with Douglas Crawford?",
+            "output": [
+                "St Catharine's College"
+            ]
+        },
+        {
+            "id": "task1327-e02d366385054d5c85b6324c843d13c4",
+            "input": "Context : Impressed by Woody, and disgusted by how she was treated by her lover/boss Krokov when she returns to Moscow, Natalia decides to defect and asks the CIA to have ``Condorman'' be the agent that helps her. \nQuestion : Which place is Condorman in?",
+            "output": [
+                "Moscow"
+            ]
+        },
+        {
+            "id": "task1327-a825b2e442914f11b45aeea071d600f4",
+            "input": "Context : Gustav Vasas intåg i Stockholm 1523 (or Gustav Vasa enters Stockholm 1523) is a painting painted for the Nationalmuseum in Stockholm by the Swedish painter Carl Larsson. \nQuestion : What is the name of the place where Gustav Vasas intåg i Stockholm 1523 can be found?",
+            "output": [
+                "Nationalmuseum"
+            ]
+        },
+        {
+            "id": "task1327-d1b0394d7120461897d1d6e3ca58933e",
+            "input": "Context : ``Treehouse of Horror III'' is the fifth episode of The Simpsons' fourth season. \nQuestion : What series is Treehouse of Horror III in?",
+            "output": [
+                "The Simpsons"
+            ]
+        },
+        {
+            "id": "task1327-b50d73702d9d497c8a275e6bcc0cb990",
+            "input": "Context : The Letters Patent, 1947 (more formally, the Letters Patent Constituting the Office of Governor General and Commander-in-Chief of Canada) are a legal instrument introduced by King George VI, which came into effect on 1 October 1947 and continue to, along with parts of the Constitution Act, 1867, constitute the Office of the Governor General. \nQuestion : The point in time of Letters Patent, 1947 was when?",
+            "output": [
+                "1 October 1947"
+            ]
+        },
+        {
+            "id": "task1327-b26ddaf4344b4fbf861b6ada10dcb29c",
+            "input": "Context : Henry Baldwin Harrison (September 11, 1821 - October 29, 1901) was a Republican politician and the 52nd Governor of Connecticut. \nQuestion : What kind of  occupation does Henry Baldwin Harrison have?",
+            "output": [
+                "politician"
+            ]
+        },
+        {
+            "id": "task1327-869ea6521c20411b8f9bb99fdbfb7fc3",
+            "input": "Context : On March 23, 2008, Governor Dr Ishrat-ul-Ibad Khan conferred the Pride of Performance award upon legendary female singer Munni Begum at a simple ceremony held at Governor's House in Karachi. \nQuestion : Which award was honoured to Munni Begum?",
+            "output": [
+                "Pride of Performance"
+            ]
+        },
+        {
+            "id": "task1327-b3aca9bc8a0c4f30afc643fc6ba75bbf",
+            "input": "Context : Frederick Charles Winkler (March 15, 1838 -- March 22, 1921) was a lieutenant colonel in the Union Army during the American Civil War who was nominated and confirmed for appointment to the grade of brevet brigadier general in 1866. \nQuestion : Which conflict was Frederick Charles Winkler a part of?",
+            "output": [
+                "American Civil War"
+            ]
+        },
+        {
+            "id": "task1327-3f317f012db847e9804deb9ddd938397",
+            "input": "Context : Gary Critchley (born 13 August 1962) is a British man who was convicted of murder in 1981. \nQuestion : Which crime Gary Critchley is considered to have commited?",
+            "output": [
+                "murder"
+            ]
+        },
+        {
+            "id": "task1327-40ddd7d622dd452fb9609afcfdcb41df",
+            "input": "Context : Jamie Wright (born May 13, 1976) is a Canadian former professional ice hockey left winger who played in the National Hockey League (NHL) with the Dallas Stars, Calgary Flames and Philadelphia Flyers. \nQuestion : Which team does Jamie Wright play for?",
+            "output": [
+                "Dallas Stars"
+            ]
+        },
+        {
+            "id": "task1327-d3e23b7a359f46deb23f44a449e87241",
+            "input": "Context : LOLCODE is an esoteric programming language inspired by lolspeak, the language expressed in examples of the lolcat Internet meme. \nQuestion : Which is the basis of LOLCODE?",
+            "output": [
+                "lolcat"
+            ]
+        },
+        {
+            "id": "task1327-4d1e7663b63f4b43958ad9db16af98a8",
+            "input": "Context : The Ingram Model 6 is a .45 ACP caliber submachine gun that was manufactured from 1949 through 1952 by Police Ordnance Company of Los Angeles, California. \nQuestion : In what year did Ingram Model 6 enter service?",
+            "output": [
+                "1949"
+            ]
+        },
+        {
+            "id": "task1327-d485026213a543559520e01db56577e4",
+            "input": "Context : Sleeping with Charlie Kaufman is a 2010 American short animated comedy film created by J Roland Kelly using Xtranormal. \nQuestion : The production company responsible for Sleeping with Charlie Kaufman is what?",
+            "output": [
+                "Xtranormal"
+            ]
+        },
+        {
+            "id": "task1327-caf59a83c1aa48fd90b671968c09989f",
+            "input": "Context : Winona Cargile Alexander (June 21, 1893 -- October 16, 1984) was a founder of Delta Sigma Theta Sorority, Incorporated at Howard University on January 13, 1913. \nQuestion : Where did Winona Cargile Alexander study or work?",
+            "output": [
+                "Howard University"
+            ]
+        },
+        {
+            "id": "task1327-7738d74172704cd38e8b222d987bdfb9",
+            "input": "Context : Valentina Ivashova was married to Soviet film director Nikolai Ekk. \nQuestion : What is Valentina Ivashova's spouse's name?",
+            "output": [
+                "Nikolai Ekk"
+            ]
+        },
+        {
+            "id": "task1327-001371c5e1e949aea7e4b728df18437b",
+            "input": "Context : It was founded as a joint venture between Chery and Israel Corporation in December 2007 under the name Chery Quantum Automotive Corporation (CQAC); the name was changed to Qoros Auto Co., Ltd. in November 2011. \nQuestion : Which company is the parent company of Qoros?",
+            "output": [
+                "Chery"
+            ]
+        },
+        {
+            "id": "task1327-6bf51533560347b583fbea7660d304cd",
+            "input": "Context : Petrus Hofstede de Groot (8 October 1802 - 5 December 1886), Dutch theologian, was born at Leer in East Friesland, and was educated at the Gymnasium and University of Groningen. \nQuestion : Which college or university is related with Petrus Hofstede de Groot?",
+            "output": [
+                "University of Groningen"
+            ]
+        },
+        {
+            "id": "task1327-75a970b995bd48718d755577d4196fb1",
+            "input": "Context : Giles Matthey was born in Australia to a British father and an Australian mother. \nQuestion : What city is Giles Matthey from?",
+            "output": [
+                "Australia"
+            ]
+        },
+        {
+            "id": "task1327-ce86b873bd214b65a70ee9e476220cfc",
+            "input": "Context : Presidential Reunion is an American comedy Web short directed by Ron Howard and stars Saturday Night Live cast members who parodied Presidents Ford to Obama. \nQuestion : Which is the basis of Presidential Reunion?",
+            "output": [
+                "Saturday Night Live"
+            ]
+        },
+        {
+            "id": "task1327-acd928422ee946778179778b5831b8e9",
+            "input": "Context : HD 147506 is a magnitude 8.7 F8 dwarf star that is somewhat larger and hotter than our sun. The star is approximately 370 light years from Earth and is positioned near the keystone of Hercules. \nQuestion : In what constellation can HD 147506 be found?",
+            "output": [
+                "Hercules"
+            ]
+        },
+        {
+            "id": "task1327-7c94d3b00e784fa7bad329866391b0fa",
+            "input": "Context : The 109th (Aberdeenshire) Regiment of Foot was an infantry regiment of the British Army from 1794 to 1795. \nQuestion : What was the military branch for 109th (Aberdeenshire) Regiment of Foot?",
+            "output": [
+                "British Army"
+            ]
+        },
+        {
+            "id": "task1327-d04f453d8fbd468db9a3bb306c854b4b",
+            "input": "Context : On 17 December 1830, at the age of 47, Simón Bolívar died of tuberculosis in the Quinta de San Pedro Alejandrino in Santa Marta, Gran Colombia (now Colombia). \nQuestion : Which medical condition does Simón Bolívar suffer from?",
+            "output": [
+                "tuberculosis"
+            ]
+        },
+        {
+            "id": "task1327-fd585880dc9b4b3492fd70134fb8a026",
+            "input": "Context : Nytt på nytt (literally: ``The News Anew'' or ``News on news'') is a Norwegian version of the British comedy programme Have I Got News for You, by the production company Hat Trick Productions. \nQuestion : Which is the basis of Nytt på nytt?",
+            "output": [
+                "Have I Got News for You"
+            ]
+        },
+        {
+            "id": "task1327-f8fda90f95394c4db1684b544aa4b3f5",
+            "input": "Context : Field Marshal Sir Alexander George Woodford, GCB, KCMG (15 June 1782 -- 26 August 1870) was a British Army officer. \nQuestion : What organization was Alexander George Woodford involved with?",
+            "output": [
+                "British Army"
+            ]
+        },
+        {
+            "id": "task1327-9a68569d92ba4113a457cf85413dfb89",
+            "input": "Context : Petr Průcha (born September 14, 1982) is a Czech former professional ice hockey forward who played in the National Hockey League (NHL) for the New York Rangers and the Phoenix Coyotes. \nQuestion : What team is Petr Průcha associated with?",
+            "output": [
+                "New York Rangers"
+            ]
+        },
+        {
+            "id": "task1327-3d413eea09c3475d8a5905f58173ce34",
+            "input": "Context : Karl Allmendinger (3 February 1891 -- 2 October 1965) was a German general of Infantry, serving during World War I and World War II. He was also a recipient of the Knight's Cross of the Iron Cross with Oak Leaves. \nQuestion : In which conflict did Karl Allmendinger participate?",
+            "output": [
+                "World War I"
+            ]
+        },
+        {
+            "id": "task1327-3b18a1c5b17248508097bc6a0edf738b",
+            "input": "Context : Gabriel's Dream (French: Le Rêve de Gabriel) is a documentary film directed by Anne Lévy-Morelle. \nQuestion : The director of Gabriel's Dream is what?",
+            "output": [
+                "Anne Lévy-Morelle"
+            ]
+        },
+        {
+            "id": "task1327-5fbfeb400d894c2aad4c37f628c1d3da",
+            "input": "Context : The New Adventures of Robin Hood is a television series that premiered on January 13, 1997 on TNT. \nQuestion : Which network broadcasted The New Adventures of Robin Hood?",
+            "output": [
+                "TNT"
+            ]
+        },
+        {
+            "id": "task1327-940315269dd840e5acdb437deaf7d5e0",
+            "input": "Context : Arsenio Linares y Pombo (1848 -- 1914) was a Spanish military man and government official. \nQuestion : When did Arsenio Linares y Pombo's death occur?",
+            "output": [
+                "1914"
+            ]
+        },
+        {
+            "id": "task1327-e5d603edd9f7479c85ecc1b04005e55f",
+            "input": "Context : In 1979 Landscape, Branchville was given to the Columbus Museum of Art, which deaccessioned the painting in 2004. \nQuestion : What is the name of the place where Landscape, Branchville can be found?",
+            "output": [
+                "Columbus Museum of Art"
+            ]
+        },
+        {
+            "id": "task1327-456996c9d6f445998f738c14b72edd5f",
+            "input": "Context : Stormartillerivagn m/43 (Sav m/43) (English: Assault artillery wagon model 1943) was an assault gun based on Stridsvagn m/41 SII chassis, a Swedish development of a license-built Czech TNH medium tank. \nQuestion : What year was Stormartillerivagn m/43 introduced?",
+            "output": [
+                "1943"
+            ]
+        },
+        {
+            "id": "task1327-b3340d42b33547df8ccce299133827e3",
+            "input": "Context : The Sun Also Rises is a 1926 novel written by American author Ernest Hemingway about a group of American and British expatriates who travel from Paris to the Festival of San Fermín in Pamplona to watch the running of the bulls and the bullfights. \nQuestion : Which place is The Sun Also Rises in?",
+            "output": [
+                "Paris"
+            ]
+        },
+        {
+            "id": "task1327-afd384f621444ca6a740849ac3465dd9",
+            "input": "Context : A Window in Piccadilly is a 1928 British silent romance film directed by Sidney Morgan and starring Joan Morgan, John F. Hamilton and James Carew. \nQuestion : What production company or companies created A Window in Piccadilly?",
+            "output": [
+                "Sidney Morgan"
+            ]
+        },
+        {
+            "id": "task1327-4605f04a4a084017a6cbe7fa59652de9",
+            "input": "Context : Carl Dobson (born 31 January 1983), better known by his stage name Crazy Titch, is an English Grime MC who is currently serving a life sentence for murder. \nQuestion : Which crime led to the conviction of Crazy Titch?",
+            "output": [
+                "murder"
+            ]
+        },
+        {
+            "id": "task1327-c5805e5b1ea246928374149ad236a78c",
+            "input": "Context : Bella Sidney Woolf OBE (1877--1960) was an English author, sister of author Leonard Woolf and first married to Robert Heath Lock, and in her second marriage to Hong Kong colonial secretary and colonial Ceylonese administrator Tom Southorn. \nQuestion : What is Bella Sidney Woolf's spouse's name?",
+            "output": [
+                "Robert Heath Lock"
+            ]
+        },
+        {
+            "id": "task1327-a7853bffd07345e38f6c6824b6660546",
+            "input": "Context : Luitzen Egbertus Jan Brouwer ForMemRS (Dutch: (ˈlœy̯tsə(n) ɛɣˈbɛrtəs jɑn ˈbrʌu̯ər); 27 February 1881 -- 2 December 1966), usually cited as L. E. J. Brouwer but known to his friends as Bertus, was a Dutch mathematician and philosopher, a graduate of the University of Amsterdam, who worked in topology, set theory, measure theory and complex analysis. \nQuestion : What was the date of death for L. E. J. Brouwer?",
+            "output": [
+                "2 December 1966"
+            ]
+        },
+        {
+            "id": "task1327-752eac9b3b384615827d73d0d013432f",
+            "input": "Context : Cleophus Prince Jr. (born July 24, 1967 , aka ``The Clairemont Killer'') is an American serial killer who was convicted and sentenced to death in 1993 for the rape and murder of six women in San Diego County, California from January through September 1990. \nQuestion : For what crime was Cleophus Prince Jr. prosecuted?",
+            "output": [
+                "murder"
+            ]
+        },
+        {
+            "id": "task1327-0d42bb1affd745e896b0b8c36c5e390f",
+            "input": "Context : Romeo + Juliet is a 1996 American romantic drama film adaptation of William Shakespeare's Romeo and Juliet. \nQuestion : Which is the basis of Romeo + Juliet?",
+            "output": [
+                "Romeo and Juliet"
+            ]
+        },
+        {
+            "id": "task1327-43b902c522c04e9795c7fdfacf8bde64",
+            "input": "Context : The Altar frontal from Cardet is an altar conserved at the Museu Nacional d'Art de Catalunya, in Barcelona. \nQuestion : What is the name of the place where Altar frontal from Cardet can be found?",
+            "output": [
+                "Museu Nacional d'Art de Catalunya"
+            ]
+        },
+        {
+            "id": "task1327-1b9d33d200f84c2e8453ab289ae876f7",
+            "input": "Context : Gwendolyn Wright attended New York University, and in 1969 received a BA in history and art history. \nQuestion : What college did Gwendolyn Wright go to?",
+            "output": [
+                "New York University"
+            ]
+        },
+        {
+            "id": "task1327-98e5748aea8a4272a23a9d08d0206047",
+            "input": "Context : The Maze Prison escape (known to Irish republicans as the Great Escape) took place on 25 September 1983 in County Antrim, Northern Ireland. \nQuestion : The date of Maze Prison escape?",
+            "output": [
+                "25 September 1983"
+            ]
+        },
+        {
+            "id": "task1327-0ad7f2c9875043fb861fdd76cdb0b84d",
+            "input": "Context : Julie and the Phantoms (Portuguese: Julie e os Fantasmas) is a Brazilian television show for adolescents produced by Rede Bandeirantes in partnership with Mixer Producing, and with the co-production of the Nickelodeon Brazil. \nQuestion : The show Julie and the Phantoms originally aired on what network?",
+            "output": [
+                "Rede Bandeirantes"
+            ]
+        },
+        {
+            "id": "task1327-e839391f20de4c898d6993ec2cdc5cb4",
+            "input": "Context : The Wise Little Hen is a Walt Disney's Silly Symphonies cartoon, based on the fairy tale The Little Red Hen. \nQuestion : What series is The Wise Little Hen part of?",
+            "output": [
+                "Silly Symphonies"
+            ]
+        },
+        {
+            "id": "task1327-06b78416060b4e9bb9ac44b621b4d40a",
+            "input": "Context : Yves Héroux (born April 27, 1965) is a retired Canadian professional ice hockey right winger who played in one National Hockey League game for the Quebec Nordiques during the 1986--87 NHL season. \nQuestion : What team does Yves Héroux belong to?",
+            "output": [
+                "Quebec Nordiques"
+            ]
+        },
+        {
+            "id": "task1327-2279133080fe410ebb63d705bafadfac",
+            "input": "Context : Liu Rushi (Chinese: 柳如是; pinyin: Liú Rúshì; Wade--Giles: Liu Ju-shih; 1618--1664), also known as Liu Shi, Liu Yin and Yang Yin, was a Chinese courtesan and poet in the late Ming dynasty who married Qian Qianyi at the age of 25. \nQuestion : What is Liu Rushi's spouse's name?",
+            "output": [
+                "Qian Qianyi"
+            ]
+        },
+        {
+            "id": "task1327-391dfcb1ccc14fae8bb433ee6c854b9c",
+            "input": "Context : 10 April 1945 - Member of the Order of the British Empire - Captain (temporary Major) William Frederick James Harvey, D.F.C. (73684), Royal Artillery, Territorial Army. \nQuestion : What was the award received by William Frederick James Harvey?",
+            "output": [
+                "Member of the Order of the British Empire"
+            ]
+        },
+        {
+            "id": "task1327-453f9c6ee29445acb9fd080fc64720be",
+            "input": "Context : Ružica Sokić was diagnosed with Alzheimer's disease and died from the illness on 19 December 2013, aged 79, in her hometown of Belgrade, Serbia. \nQuestion : Which medical condition does Ružica Sokić suffer from?",
+            "output": [
+                "Alzheimer's disease"
+            ]
+        },
+        {
+            "id": "task1327-674bbbd9f3a643f1a157cdcf67e88a88",
+            "input": "Context : Ramire Rosan (April 14, 1895 -- May 24, 2004) was the last World War I veteran from the overseas departments and territories of France. \nQuestion : During which historic war was Ramire Rosan an officer?",
+            "output": [
+                "World War I"
+            ]
+        },
+        {
+            "id": "task1327-c4c5ebc9395140ffb850b834244d338e",
+            "input": "Context : Erich Schneider (12 August 1894 -- 3 August 1980) was a highly decorated Generalleutnant in the Wehrmacht during World War II. He was also a recipient of the Knight's Cross of the Iron Cross with Oak Leaves. \nQuestion : What award was received by Erich Schneider?",
+            "output": [
+                "Knight's Cross of the Iron Cross with Oak Leaves"
+            ]
+        },
+        {
+            "id": "task1327-a3349ff73a2a4ae181ce6d89654d7d85",
+            "input": "Context : Legmen is an American drama series that aired on NBC on Friday nights from January 20, 1984 to March 16, 1984. \nQuestion : What was the original network for Legmen?",
+            "output": [
+                "NBC"
+            ]
+        },
+        {
+            "id": "task1327-a1e431009fbd40d5b2979027e4107a05",
+            "input": "Context : Nenad Žugaj (born April 19, 1983 in Zagreb) is a male wrestler from Croatia. \nQuestion : What gender was Nenad Žugaj?",
+            "output": [
+                "male"
+            ]
+        },
+        {
+            "id": "task1327-48537d862a5748bcac926064bc5c1c27",
+            "input": "Context : Lizbeth Sainz (born 14 December 1995) is a Mexican female volleyball player. \nQuestion : The sex or gender of Lizbeth Sainz is what?",
+            "output": [
+                "female"
+            ]
+        },
+        {
+            "id": "task1327-48272bf47b1946579658348d19fcb8bd",
+            "input": "Context : Saudia Flight 163 was a scheduled passenger flight of Saudia that caught fire after takeoff from Riyadh International Airport (now the Riyadh Air Base) on a flight to Jeddah, Saudi Arabia on Tuesday, 19 August 1980. \nQuestion : What is the full date that Saudia Flight 163 crashed on?",
+            "output": [
+                "19 August 1980"
+            ]
+        },
+        {
+            "id": "task1327-2ef392900f114bebbe9c79fac4952337",
+            "input": "Context : Peng Xiaoming (born 15 May 1975) is a retired female pole vaulter from PR China. \nQuestion : What is Peng Xiaoming's sex?",
+            "output": [
+                "female"
+            ]
+        },
+        {
+            "id": "task1327-e740b016b97348c79413269c186b1162",
+            "input": "Context : The Paintings from Santa Maria in Taüll are a set of frescos conserved at the Museu Nacional d'Art de Catalunya, in Barcelona. \nQuestion : What is the name of the place where Paintings from Santa Maria in Taüll can be found?",
+            "output": [
+                "Museu Nacional d'Art de Catalunya"
+            ]
+        },
+        {
+            "id": "task1327-d334c078658e41588d89f23ac40f637f",
+            "input": "Context : Cinthya Domínguez (born 1982-10-29) is a female weightlifter from Mexico. \nQuestion : What is Cinthya Domínguez's gender?",
+            "output": [
+                "female"
+            ]
+        },
+        {
+            "id": "task1327-bb2a399d12254ef5b9a6438f6932fd57",
+            "input": "Context : ``A Good Man Goes to War'' is the seventh episode of the sixth series of the British science fiction television series Doctor Who, and was first broadcast on BBC One on 4 June 2011 and served as a mid-series finale. \nQuestion : The A Good Man Goes to War was in what series?",
+            "output": [
+                "Doctor Who"
+            ]
+        },
+        {
+            "id": "task1327-ff848e164332451f87d6964cfbf26722",
+            "input": "Context : Always Coming Home is a novel by author Ursula K. Le Guin, published in 1985, about a cultural group of humans--the Kesh--who ``might be going to have lived a long, long time from now in Northern California.'' \nQuestion : Which place does Always Coming Home exist in?",
+            "output": [
+                "California"
+            ]
+        },
+        {
+            "id": "task1327-b98aa3038372413884acf5b93095cd9d",
+            "input": "Context : The Conmen in Vegas is a 1999 Hong Kong action comedy film produced, written and directed by Wong Jing and is a sequel to the 1998 film, The Conman. \nQuestion : Which place is The Conmen in Vegas in?",
+            "output": [
+                "Hong Kong"
+            ]
+        },
+        {
+            "id": "task1327-3e221175dc7a45a4b9aad0ca3e0ba6a5",
+            "input": "Context : Nurit Galron (Hebrew: נורית גלרון‎, born March 21, 1951) is an Israeli singer. \nQuestion : What was Nurit Galron's occupation?",
+            "output": [
+                "singer"
+            ]
+        },
+        {
+            "id": "task1327-1e2c96aa8f464dc19d4d704a5df17361",
+            "input": "Context : Irfan Fadhilah (born 1 January 1991) is a male Indonesian badminton player. \nQuestion : The sex or gender of Irfan Fadhilah is what?",
+            "output": [
+                "male"
+            ]
+        },
+        {
+            "id": "task1327-1de22bd7cf294cefa6a34cf92203ab2c",
+            "input": "Context : Elephant Fury (German:Gesprengte Gitter) is a 1953 West German drama war film directed by and starring Harry Piel. \nQuestion : Who is the director for Elephant Fury?",
+            "output": [
+                "Harry Piel"
+            ]
+        },
+        {
+            "id": "task1327-4845828b31d1422aab506117b8c6a58c",
+            "input": "Context : Rodney Reed, from Bastrop County, Texas, is currently on death row for the 1996 murder of Stacey Stites, 19, who was engaged to Officer Jimmy Fennell at the time of her murder. \nQuestion : For what crime was Rodney Reed prosecuted?",
+            "output": [
+                "murder"
+            ]
+        },
+        {
+            "id": "task1327-dbee0617e963469fb0747754c1269e0b",
+            "input": "Context : Also this year, in a ceremony in memory friend has died, a male friend (Đàm Vĩnh Hưng's guitar) and female singing has rendered Tuoi Hong Tho Ngay. \nQuestion : What is the sex of Đàm Vĩnh Hưng?",
+            "output": [
+                "male"
+            ]
+        },
+        {
+            "id": "task1327-e099a08804fe4d31a636efe0e6d502cb",
+            "input": "Context : Company in a courtyard behind a house (1663-1665) is an oil on canvas painting by the Dutch painter Pieter de Hooch, it is an example of Dutch Golden Age painting and is part of the collection of the Amsterdam Museum, on loan to the Rijksmuseum. \nQuestion : What is the name of the place where Company in a courtyard behind a house can be found?",
+            "output": [
+                "Amsterdam Museum"
+            ]
+        },
+        {
+            "id": "task1327-807d55999c464cedade2844abd7fa534",
+            "input": "Context : After the Mahabharata war was over, Dhritarashtra upset over death of his hundred sons, asked Krishna the reason for his blindness despite the fact that he was a kind and just king. \nQuestion : What medical condition killed Dhritarashtra?",
+            "output": [
+                "blindness"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

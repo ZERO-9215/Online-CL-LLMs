@@ -1,0 +1,967 @@
+{
+    "Contributors": [
+        "Mirali Purohit"
+    ],
+    "Source": [
+        "ambigqa"
+    ],
+    "URL": [
+        "https://nlp.cs.washington.edu/ambigqa/"
+    ],
+    "Categories": [
+        "Question Rewriting"
+    ],
+    "Reasoning": [
+        "Abductive Reasoning"
+    ],
+    "Definition": [
+        "In this task, you're given an ambiguous question (which can be answered in more than one way). Your task is to write a question that clarifies the given question in such a way that the generated question has one unique answer."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Wikipedia"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Lucifer how many episodes are in season 3?",
+            "output": "How many episodes of season 3 of Lucifer were there, including bonus episodes?",
+            "explanation": "The generated question clarifies the input question by asking about bonus episodes because if the question is about regular episodes only then the answer will be different than including the bonus episodes."
+        },
+        {
+            "input": "What is the tallest ride at six flags over Texas?",
+            "output": "What is the tallest roller coaster at six flags over Texas 2001?",
+            "explanation": "The generated output elaborates the input question by mentioning the year in question because there is a different answer for this question for the year 1990, 2001 and 2011."
+        },
+        {
+            "input": "Who won the final hoh big brother 20?",
+            "output": "Who won the Final HoH in the American reality show Big Brother 20?",
+            "explanation": "The generated output elaborates the input question by restricting the reality show. There are  two 'Big brother 20' shows, American and British."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Lucifer how many episodes are in season 3?",
+            "output": "How many episodes of season 4 of Lucifer were there, including bonus episodes?",
+            "explanation": "The generated output is incorrect because it changed the season number from 3 to 4. The output should elaborate on the input question and should not change any entity from the input."
+        },
+        {
+            "input": "What is the tallest ride at six flags over texas?",
+            "output": "What is the tallest roller coaster at six flags over Tempe 2001?",
+            "explanation": "The generated output is incorrect because it changed the city from Texas to Tempe. The output should elaborate on the input question and should not change any entity from the input."
+        },
+        {
+            "input": "Who won the final hoh big brother 20?",
+            "output": "Who lose the Final HoH in the American reality show Big Brother 20?",
+            "explanation": "The generated output asks about who loses the final Hoh instead of asking win. The output should elaborate on the input question and should not change any entity from the input."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task670-be2abd46507e4aa687a874372c154115",
+            "input": "You can get it if you really want in a movie?",
+            "output": [
+                "\"You Can Get It If You Really Want\" was used in what 1997 movie?",
+                "\"You Can Get It If You Really Want\" was used in what 2005 movie?",
+                "\"You Can Get It If You Really Want\" was used in what 2012 movie?",
+                "\"You Can Get It If You Really Want\" was used in what 2010 British movie?"
+            ]
+        },
+        {
+            "id": "task670-39ad9d0233dc45d9b5c9f1a770cd9ade",
+            "input": "Who had most of asia in its sphere of interest after the treaty of saragossa?",
+            "output": [
+                "What ruler had most of Asia in its sphere of interest after the Treaty of Saragossa?",
+                "What country had most of Asia in its sphere of interest after the Treaty of Saragossa?"
+            ]
+        },
+        {
+            "id": "task670-a09d885819f94232b597e5143d69446b",
+            "input": "Who won the national championship college football 2017?",
+            "output": [
+                "Who won the national championship game for college football, played in 2017?",
+                "Who won the national championship for the 2017 college football season?"
+            ]
+        },
+        {
+            "id": "task670-da568f66581e4fca9a1c97e9d36ad548",
+            "input": "Who hit the last home run at three rivers stadium?",
+            "output": [
+                "What team hit the last home run at Three Rivers Stadium?",
+                "What person hit the last home run at Three Rivers Stadium?"
+            ]
+        },
+        {
+            "id": "task670-6a3f83698c2d425badb27bf1ef6667f1",
+            "input": "Who plays fiona's boss on shameless season 4?",
+            "output": [
+                "Who plays fiona's boss Mike on shameless season 4?",
+                "Who plays fiona's boss Charlie on shameless season 4?"
+            ]
+        },
+        {
+            "id": "task670-6b716997564a499ebae926487ad9a844",
+            "input": "When was rudolph the red nose reindeer written?",
+            "output": [
+                "When was the story Rudolph the Red-Nosed Reindeer written?",
+                "When was the song Rudolph the Red-Nosed Reindeer written?",
+                "When was the TV special Rudolph the Red-Nosed Reindeer written?"
+            ]
+        },
+        {
+            "id": "task670-7ac5e9a174b945dfb5402462053e9daf",
+            "input": "Who did the ottoman empire fight in ww1?",
+            "output": [
+                "Who did the ottoman empire fight first in ww1?",
+                "Who did the ottoman empire fight in the Middle East in ww1?",
+                "Who did the ottoman empire fight in the Balkans in ww1?"
+            ]
+        },
+        {
+            "id": "task670-b1b707cde7624873bd9dfe72ef75ab91",
+            "input": "When did french become the official language of quebec?",
+            "output": [
+                "On what date did French become the official language of Quebec?",
+                "French became the official language of quebec at what point in history?"
+            ]
+        },
+        {
+            "id": "task670-b61c6dfd9de94034ac81d03fb9c860c3",
+            "input": "How many brands of e cigarettes are there?",
+            "output": [
+                "How many brands of e cigarettes are there in 2014?",
+                "How many brands of growth e cigarettes have every month?"
+            ]
+        },
+        {
+            "id": "task670-ab6f665d57ee4d1084ce795f7557cb6d",
+            "input": "How many seasons are there of america's got talent?",
+            "output": [
+                "How many seasons are there of america's got talent are there, as of the end of 2017?",
+                "How many seasons are there of america's got talent are there, as of the end of 2016?",
+                "How many seasons are there of america's got talent are there, as of the end of 2015?"
+            ]
+        },
+        {
+            "id": "task670-5a0aa2b94fe74b05be9f86a4c529b7fc",
+            "input": "When do the new episodes of the flash start?",
+            "output": [
+                "When do the new episodes of the flash start in 2017?",
+                "When do the new episodes of the flash start in 2016?",
+                "When do the new episodes of the flash start in 2015?"
+            ]
+        },
+        {
+            "id": "task670-c66dbf5a4c254d01863e31b9d4a3a02a",
+            "input": "Who is the author of wings of fire?",
+            "output": [
+                "Who is the author of the autobiography wings of fire?",
+                "Who is the author of the novel series wings of fire?",
+                "Who is the author of the film wings of fire?"
+            ]
+        },
+        {
+            "id": "task670-ddd6a3003f4f4a40b277541d8f271bab",
+            "input": "Where does the rose bowl game take place?",
+            "output": [
+                "What stadium does the Rose Bowl game take place currently?",
+                "Where does the Rose Bowl take place currently?",
+                "Where does the Rose Bowl game take place in 1942?",
+                "What stadium does the Rose Bowl game take place in 1942?",
+                "What stadium does the Rose Bowl game take place in 1902, 1916-1922?"
+            ]
+        },
+        {
+            "id": "task670-6c514b3c4d374c7a8874645988d50c3d",
+            "input": "Snow white and the huntsman movie heroine name?",
+            "output": [
+                "Snow white and the huntsman movie heroine character name?",
+                "Snow white and the huntsman movie adult version of heroine actress name?",
+                "Snow white and the huntsman movie young version of heroine actress name?"
+            ]
+        },
+        {
+            "id": "task670-50289ff7f3b04df88740409c12e9e0d8",
+            "input": "Who sang the song what's love got to do with it?",
+            "output": [
+                "Who sang the song \"What's Love Got to Do with It\" in 1984?",
+                "Who sang the song \"What's Love Got to Do with It\" in 1996?"
+            ]
+        },
+        {
+            "id": "task670-33ccc3b3ba404f8792b8fc30ab20cb26",
+            "input": "How many citizens are there in the us?",
+            "output": [
+                "How many citizens are there in the us, estimated as of January 28, 2020?",
+                "How many citizens are there in the us as of the 2010 census?",
+                "How many citizens are there in the us as of the 2000 census?",
+                "How many citizens are there in the us as of the 1990 census?"
+            ]
+        },
+        {
+            "id": "task670-8278a0ea01e84cc0b27f3a12c9e4df67",
+            "input": "When did england last get to the quarter final of the world cup?",
+            "output": [
+                "When did england last get to the quarter final of the world cup and finish 7th?",
+                "When did england last get to the quarter final of the world cup and finish 6th?",
+                "When did england last get to and pass the quarter final of the world cup and finish 4th?"
+            ]
+        },
+        {
+            "id": "task670-3a10c2082ecf43a9b2dc27694decfc10",
+            "input": "Who is the speaker of the house chosen by?",
+            "output": [
+                "Who is the Speaker of the United States House of Representatives chosen by?",
+                "Who is the Speaker of the House of Commons in the UK chosen by?",
+                "Who is the Speaker of the House of Commons in Canada chosen by?"
+            ]
+        },
+        {
+            "id": "task670-b327eb79ddf34e06a7d654d33752d8b8",
+            "input": "Who gave the idea of constituent assembly for india?",
+            "output": [
+                "Who gave the idea of constituent assembly for india by proposing?",
+                "Who gave the idea of constituent assembly for india toward British?"
+            ]
+        },
+        {
+            "id": "task670-433393e06aff4ab99cf6f00257a53482",
+            "input": "When does hotel transylvania part 3 come out?",
+            "output": [
+                "When does the film hotel transylvania part 3 come out at AIAFF, the french film festival?",
+                "When does the film hotel transylvania part 3 come out in the United States?",
+                "When does hotel transylvania part 3 video game come out?",
+                "When does the film hotel transylvania part 3 come out in China?",
+                "When does the film hotel transylvania part 3 come out in Italy and the Phillippines?",
+                "When does the film hotel transylvania part 3 come out in Japan and Poland?"
+            ]
+        },
+        {
+            "id": "task670-88aa561dcd9b4917b4c10d34855f0627",
+            "input": "Where does the dark knight rises take place?",
+            "output": [
+                "Where does the movie The Dark Knight Rises primarily take place?",
+                "Where do secondary scenes with Bane in the movie The Dark Knight Rises take place?",
+                "Where does Alfred's vacation in the movie The Dark Knight Rises take place?"
+            ]
+        },
+        {
+            "id": "task670-ec62a81a39bd4f1194bce7137b5c6896",
+            "input": "Who sang that the way god planned it?",
+            "output": [
+                "Who sang lead vocals for that's the way god planned it?",
+                "Who sang back vocals for that's the way god planned it?"
+            ]
+        },
+        {
+            "id": "task670-ebd12bfb81a5440887d3e7aa61f111c7",
+            "input": "When did the first 1 coin come out?",
+            "output": [
+                "When did the first British one pound coin come out?",
+                "When did the first United States dollar coin come out?",
+                "When did the first 1-yen coin come out in Japan?",
+                "When did the first 1-euro coin come out?",
+                "When did the first Australian one dollar coin come out?"
+            ]
+        },
+        {
+            "id": "task670-574fe4e6613f4d64b070a6e58d115475",
+            "input": "Number of oil refineries in the united states?",
+            "output": [
+                "In 2019, number of oil refineries in the united states?",
+                "In January 2015, number of oil refineries in the united states?"
+            ]
+        },
+        {
+            "id": "task670-5833d1f449464d44b6fe4aad5fa51ad1",
+            "input": "Reasons for implementing a land reform programme in south africa?",
+            "output": [
+                "Individual level reasons for implementing a land reform programme in south africa?",
+                "Broad reasons for implementing a land reform programme in south africa?",
+                "Historic reasons for implementing a land reform programme in south africa?"
+            ]
+        },
+        {
+            "id": "task670-e3f1c2ec612e4cfa8bb6d2b09d9d11ec",
+            "input": "What is the disorder in the movie brain on fire?",
+            "output": [
+                "What disorder does Savannah think she has in the movie Brain on Fire?",
+                "What is the disorder that one of the doctors tells Savannah's parents that she might have in the movie Brain on Fire?",
+                "What is the disorder that Savannah is diagnosed with in the movie Brain on Fire?"
+            ]
+        },
+        {
+            "id": "task670-c8df4e7dcf164e74a3f0709c3d3647cd",
+            "input": "How early can you buy alcohol in maine?",
+            "output": [
+                "Prior to 2015, when could you begin buying alcohol in Maine?",
+                "After 2015, when could you begin buying alcohol in Maine?",
+                "In 2013, when could you buy alcohol on St. Patricks Day when it fell on a Sunday?"
+            ]
+        },
+        {
+            "id": "task670-06331f06e8f9453f8a56f059c00f4371",
+            "input": "Who killed dennis rickman in eastenders in 2005?",
+            "output": [
+                "Which character killed Dennis Rickman in Eastenders in 2005?",
+                "Which actor played the character who killed Dennis Rickman in Eastenders in 2005?",
+                "Who was responsible for arranging the death of Dennis Rickman in Eastenders in 2005?",
+                "Who portrayed the character responsible for the arranging the death of Dennis Rickman in Eastenders in 2005?"
+            ]
+        },
+        {
+            "id": "task670-dfc304e16fa448318e860daea0c47359",
+            "input": "Who won the nba first sixth man award?",
+            "output": [
+                "Who won the nba first sixth man award in the 2016–17 season?",
+                "Who won the nba first sixth man award in the 2015–16 season?",
+                "Who won the nba first sixth man award in the 2014–15 season?"
+            ]
+        },
+        {
+            "id": "task670-8055ea5fb087429db0021bb87b34b473",
+            "input": "How many copies did back in black sell?",
+            "output": [
+                "About how many copies did back in black sell worldwide?",
+                "By 13 December 2007, about how many certified copies did back in black sell in the US?",
+                "About how many certified copies did back in black sell in AC/DC's native Australia?",
+                "About how many certified copies did back in black sell in the UK?"
+            ]
+        },
+        {
+            "id": "task670-77240344de364a58b1fda441e440bcda",
+            "input": "When does love simon come out to dvd?",
+            "output": [
+                "When did the pre-order for Love Simon come out for DVD?",
+                "When did Love Simon come out to DVD?"
+            ]
+        },
+        {
+            "id": "task670-521a097993554409ac0d4b6544f8a74c",
+            "input": "How many episodes in the last season of house of cards?",
+            "output": [
+                "How many episodes in the last season of the American version of House of Cards?",
+                "How many episodes in the first (and last) season of the British version of House of Cards?"
+            ]
+        },
+        {
+            "id": "task670-3eab481671c14747aa02b2db4bfcb08e",
+            "input": "When is the new south park episode coming out?",
+            "output": [
+                "When is south park episode 287 coming out?",
+                "When is south park episode 286 coming out?",
+                "When is south park episode 285 coming out?"
+            ]
+        },
+        {
+            "id": "task670-84a138dd41a74cc3ac888536433a5471",
+            "input": "When did the nba get the 3 point line?",
+            "output": [
+                "When was the 3 point line first tested in college basketball?",
+                "When did the American Basketball League permanently add the 3 point line?",
+                "When did the NBA adopt the three point line for a one year trial?",
+                "When was the 3 point line first used in the Olympics?",
+                "When did the first NCAA conference use the 3 point line?",
+                "When did the 3 point line get put in for high schools, elementary schools, and middle schools?"
+            ]
+        },
+        {
+            "id": "task670-14f493d4d38647a68ca727ba52dfa645",
+            "input": "Who sings great big gig in the sky?",
+            "output": [
+                "What band sings great big gig in the sky?",
+                "Who sings non-lexical vocals for great big gig in the sky?",
+                "Who speaks on great big gig in the sky?",
+                "Who sings great big gig in the sky in 2009 for the Flaming lips?",
+                "Who speaks on great big gig in the sky in 2009 for the Flaming lips?",
+                "Who sings great big gig in the sky in the sky for Dream Theater?",
+                "Who sings great big gig in the sky in the sky for The Australian Pink Floyd Show?"
+            ]
+        },
+        {
+            "id": "task670-875bd26cfa904504901885399650848a",
+            "input": "When does the state fair of tx end?",
+            "output": [
+                "When does the state fair of tx end in general?",
+                "When does the state fair of tx end in 2020?"
+            ]
+        },
+        {
+            "id": "task670-5f5538b66eaa4930b7924880c223feed",
+            "input": "Where was the movie the princess bride filmed?",
+            "output": [
+                "Where in England was the movie the princess bride filmed?",
+                "Where in Ireland was the movie the princess bride filmed?"
+            ]
+        },
+        {
+            "id": "task670-98ef48e135d24bdb967613895db8324c",
+            "input": "The big bang theory season 11 guest star?",
+            "output": [
+                "Who are all the big bang theory season 11 guest stars?",
+                "The big bang theory season 11 guest star cameos?"
+            ]
+        },
+        {
+            "id": "task670-8ffd75880e0d43f28f197a4638e2f19d",
+            "input": "Where did the english bill of rights happen?",
+            "output": [
+                "Where was the initial statement made for an English bill of rights?",
+                "Where did the Declaration of right, for accepting the English Bill of Rights happen?"
+            ]
+        },
+        {
+            "id": "task670-4ca51e23c7a945068bd134ce09793187",
+            "input": "When were the first driver's license issued?",
+            "output": [
+                "When was the first driver's permit issued?",
+                "When were the first mandatory driver's licenses issued in the UK?"
+            ]
+        },
+        {
+            "id": "task670-cd5905ec67674532858c03f11714b89d",
+            "input": "Who does tracy end up with in hairspray?",
+            "output": [
+                "Who does tracy end up with in the hairspray musical?",
+                "Who does tracy end up with in the 1988 hairspray film?",
+                "Who does tracy end up with in the 2007 hairspray film?"
+            ]
+        },
+        {
+            "id": "task670-eea86e74af0a4ab5a04c7f423427881e",
+            "input": "Where did the first modern olympics take place?",
+            "output": [
+                "Where did the first modern summer olympics take place?",
+                "Where did the first modern winter olympics take place?",
+                "Where did the first modern parallel olympics take place?",
+                "Where did the first modern youth olympics take place?"
+            ]
+        },
+        {
+            "id": "task670-c5854646cb94416cbc3700c7a52de119",
+            "input": "Who is the voice of snowball in stuart little?",
+            "output": [
+                "Who is the voice of snowbell in stuart little 3?",
+                "Who is the voice of snowbell in stuart little 2?",
+                "Who is the voice of snowbell in the 1999 stewart little film?",
+                "Who is the voice of snowbell in 11 episodes of the stewart little tv series?",
+                "Who is the voice of snowbell in only 2 episodes of the stewart little tv series?"
+            ]
+        },
+        {
+            "id": "task670-ad1e51b75d234d2ca318b89bbcca2bc2",
+            "input": "When was the last time notre dame won a national championship in football?",
+            "output": [
+                "When was the 11th time notre dame claimed a national championship in football?",
+                "When was the 10th time notre dame claimed a national championship in football?",
+                "When was the 9th time notre dame claimed a national championship in football?"
+            ]
+        },
+        {
+            "id": "task670-16a28711022a4dd2b38f4f1b2cd2b58c",
+            "input": "Who sang the song we can be heroes?",
+            "output": [
+                "Who sang we can be heroes in his song titled Heroes, released in 1977?",
+                "Who sang we can be heroes in a song titled Heroes in 2019, at the end of Stranger Things?",
+                "Who sang we could be heroes in the song Heroes (We Could Be), released in 2014?"
+            ]
+        },
+        {
+            "id": "task670-05762e3ddb4644eeaf34b5335096c01d",
+            "input": "Who was the first person voted off big brother?",
+            "output": [
+                "Who was the first person voted off the first season of American Big Brother?",
+                "Who was the first person voted off the first series of  British Big Brother?",
+                "Who was the first person voted off the first season of American Celebrity Big Brother?",
+                "Who was the first person voted off Celebrity Big Brother British series 1?",
+                "Who was the first person voted off Big Brother Canada season 1?"
+            ]
+        },
+        {
+            "id": "task670-3e67a111be884279996aab2bdf21b0dd",
+            "input": "Who is the original singer of every rose has its thorn?",
+            "output": [
+                "Who is the original lead singer of \"Every Rose Has Its Thorn\"?",
+                "Who is the original band who performed the song \"Every Rose Has Its Thorn\"?"
+            ]
+        },
+        {
+            "id": "task670-cb87dd2cf2594c5b8ca5b2e3c0bc5330",
+            "input": "Who wrote the girl who played with fire?",
+            "output": [
+                "Who wrote the book, The Girl who played with fire?",
+                "Who wrote the screenplay for The Girl who played with fire?"
+            ]
+        },
+        {
+            "id": "task670-3d524e284b41416fb89283a2ce4cb9de",
+            "input": "When did the us leave the vietnam war?",
+            "output": [
+                "When did the us troop presence in Vietnam peak during the vietnam war?",
+                "When did all us forces start to withdraw from the vietnam war due to the Paris Peace Accords?",
+                "When did direct us military involvement end in the vietnam war?"
+            ]
+        },
+        {
+            "id": "task670-17dcc8f7cac744d29bba4fa0ddb867b5",
+            "input": "Who has the most assist in the nba?",
+            "output": [
+                "Who has had the most assists in a single game in the NBA?",
+                "Who has recorded 22 or more assists in a single game the most in the NBA?",
+                "Who has had the most total career assists in the NBA?"
+            ]
+        },
+        {
+            "id": "task670-0c8b12d64eb844f0a967148489b2049b",
+            "input": "Where did you find the red pandas in india?",
+            "output": [
+                "Where did you find most of the red pandas in india?",
+                "Where did you find a disjunct population of the red pandas in india?"
+            ]
+        },
+        {
+            "id": "task670-567586dc66244ab2a3899aa868581455",
+            "input": "What crime is defined at california penal code section 187?",
+            "output": [
+                "What specific crime is defined by California penal code section 187?",
+                "What is the explanation of a crime that is defined by California penal code section 187?"
+            ]
+        },
+        {
+            "id": "task670-84bec2fb870347c5a02de447df890ed7",
+            "input": "How does the black panther get his power?",
+            "output": [
+                "How does the black panther get his personal power in the comics?",
+                "How does the black panther get his external power in the comics?",
+                "How does the black panther get his personal power in the 2017 film?"
+            ]
+        },
+        {
+            "id": "task670-81e8627f79474c1593f1219f82e2e942",
+            "input": "Who sings but i still haven't found what i'm looking for?",
+            "output": [
+                "Who is the band that sings but i still haven't found what i'm looking for?",
+                "Who is the singer that sings but i still haven't found what i'm looking for?"
+            ]
+        },
+        {
+            "id": "task670-2f24b80c49e34f69a16752b65f580772",
+            "input": "Where do the sacramento kings play at home?",
+            "output": [
+                "Where geographically do the sacramento kings play at home?",
+                "In what stadium do the sacramento kings play at home since 2016?",
+                "In what stadium do the sacramento kings play at home from 1988-2016?"
+            ]
+        },
+        {
+            "id": "task670-09f8a4c8024f4afd9dd91679179e3693",
+            "input": "Where did pluvial lakes form during the last ice age?",
+            "output": [
+                "What country did pluvial lakes form in during the last Ice Age?",
+                "What region of the United States die pluvial lakes form in during the last ice age?",
+                "What states did pluvial lakes form in during the last Ice Age?"
+            ]
+        },
+        {
+            "id": "task670-eb9870a84cdf441fb5bfbe07bf833f90",
+            "input": "What is the population of parkersburg west virginia?",
+            "output": [
+                "What is the population of Parkersburg, West Virginia at the 2010 census?",
+                "What is the population of Parkersburg, West Virginia in 1960?",
+                "What is the population density of Parkersburg, West Virginia?",
+                "What is the population of Parkersburg, West Virginia at the 2000 census?",
+                "What is the population of Parkersburg, West Virginia at the 1990 census?"
+            ]
+        },
+        {
+            "id": "task670-faf6bbb9401e4a1793e65e7d3e926f9b",
+            "input": "Who gets super bowl rings when a team wins?",
+            "output": [
+                "Who gets super bowl rings on the winning team when a team wins?",
+                "Who gets super bowl rings on the losing team when the other team wins?"
+            ]
+        },
+        {
+            "id": "task670-8d071135aeec45dd9bc8e515483ffbc0",
+            "input": "When have the bills been in the super bowl?",
+            "output": [
+                "What years have the bills been in the super bowl?",
+                "Which super bowls have the Bills been in?"
+            ]
+        },
+        {
+            "id": "task670-b315c9d5275941faa9a7e2ffeb7e9e8e",
+            "input": "When did new orleans jazz move to utah?",
+            "output": [
+                "When did new orleans jazz officially move to utah?",
+                "When did new orleans jazz obtain approval to move to utah?"
+            ]
+        },
+        {
+            "id": "task670-6cdf8f4d53374a7bb321284399798de9",
+            "input": "What is the value of the fourth power of ten?",
+            "output": [
+                "What is the value of the fourth power of ten, spelled out?",
+                "What is the value of the fourth power of ten, in numerals?"
+            ]
+        },
+        {
+            "id": "task670-5f4531ceb13e4a8a9e67fe3d5681cae2",
+            "input": "When did the war of spanish succession end?",
+            "output": [
+                "When did the war of spanish succession end after several treaties and the Protestant succession?",
+                "When did the fighting int he war of spanish succession finally end?"
+            ]
+        },
+        {
+            "id": "task670-83278106c86d49058fe77f15c3c5d797",
+            "input": "Who was the first person to use fossils for dating rock layers?",
+            "output": [
+                "Who was the first person to use fossils for dating rock layers theoretically?",
+                "Who was the first person to use fossils for dating rock layers in large-scale practical application?"
+            ]
+        },
+        {
+            "id": "task670-5860053c306944e7a4b250a3e378c7b9",
+            "input": "Who is the world best selling music artist?",
+            "output": [
+                "Who is the world best selling music artist as group?",
+                "Who are the world best selling music artist as individual?"
+            ]
+        },
+        {
+            "id": "task670-538eb31beb2848c3bea24cc7cd7ac9df",
+            "input": "How many acres is the great smoky mountains national park?",
+            "output": [
+                "How many acres is the great smoky mountains national park in total?",
+                "How many acres of the great smoky mountains national park is estimated to be old growth forest?"
+            ]
+        },
+        {
+            "id": "task670-abc9bcb71d8642c4afc1db2c39a489ca",
+            "input": "What does the c mean in the nfl?",
+            "output": [
+                "When there is a C on a uniform in the NFL, what does it mean?",
+                "When someone's position is designated as C in the NFL, what does that mean?"
+            ]
+        },
+        {
+            "id": "task670-acb140cddc584429bbfb9110925276b5",
+            "input": "Who is the highest selling girl group of all time?",
+            "output": [
+                "Who is the highest selling girl group of all time worldwide?",
+                "Who is the highest selling girl group of all time in the  United States?"
+            ]
+        },
+        {
+            "id": "task670-14fd3690c59f4a38863a4a66fa03b6c5",
+            "input": "When is the last time the redskins won a superbowl?",
+            "output": [
+                "What season is the last time the redskins won a superbowl?",
+                "Which superbowl is the last time the redskins won a superbowl?",
+                "What date is the last time the redskins won a superbowl?"
+            ]
+        },
+        {
+            "id": "task670-54550514efb74116b869622f8ade2ebb",
+            "input": "When does dragon ball super episode 110 come out?",
+            "output": [
+                "When did Dragon Ball Super episode 110 come out in Japan?",
+                "When did Dragon Ball Super episode 110 come out in the United States?"
+            ]
+        },
+        {
+            "id": "task670-78588238036d457b876ddcf67a8d0b09",
+            "input": "Who plays king edward in the white queen?",
+            "output": [
+                "Who plays King Edward IV in The White Queen?",
+                "Who plays the Prince of Wales, who late becomes King Edward V, in The White Queen?"
+            ]
+        },
+        {
+            "id": "task670-70249890111b49cbbdce083badb491d7",
+            "input": "Where does an embryo usually attach to its mother?",
+            "output": [
+                "Where does an embryo usually implant and attach to its mother?",
+                "Where does an embryo usually attach to its mother via an umbilical cord?"
+            ]
+        },
+        {
+            "id": "task670-fb2fe45e86b94c2490a5f7f8c1a719a0",
+            "input": "Who led the committee of public safety apex?",
+            "output": [
+                "Who emerged as the leader of the committee of public safety apex after July 1793?",
+                "Who created the committee of public safety apex and led it until about July 1793?"
+            ]
+        },
+        {
+            "id": "task670-b7d5c4580fcc4054940b371b43ab8083",
+            "input": "When did the chargers make the super bowl?",
+            "output": [
+                "When is the date did the chargers make the super bowl?",
+                "When is the edition did the chargers make the super bowl?"
+            ]
+        },
+        {
+            "id": "task670-7fb92f4cd4c84bf2b0c6cce5af6eb65c",
+            "input": "Who fired the first shots of the civil war?",
+            "output": [
+                "What side fired the first shots of the civil war?",
+                "What individual fired the first shot of the civil war at 4:30 AM?",
+                "Who falsely claimed to fire the first shots of the civil war?"
+            ]
+        },
+        {
+            "id": "task670-c22622d188b84d78887b2f419cfab1bf",
+            "input": "Who was the first person to find gold in colorado?",
+            "output": [
+                "Who found the first gold of any amount in Colorado?",
+                "Who found the first substantial amount of gold in Colorado?"
+            ]
+        },
+        {
+            "id": "task670-6e566d911984490dbfd162d155cf9171",
+            "input": "Who does lorelai end up with in season 7?",
+            "output": [
+                "Who does lorelai sleep with in season 7?",
+                "Who does lorelai marry and diverse midway through season 7?",
+                "Who does lorelai end up with, kissing at the end of season 7?"
+            ]
+        },
+        {
+            "id": "task670-8fe560add5094110b10ba7ccc76d73aa",
+            "input": "What is the most current software for mac?",
+            "output": [
+                "What mac operating system software was released on September 25, 2017?",
+                "What mac operating system software was released on September 20, 2016?",
+                "What mac operating system software was released on September 30, 2015?"
+            ]
+        },
+        {
+            "id": "task670-9e3c0c80a82042ac9b95934b25f01f70",
+            "input": "The basic ratio on which the notation of rhythm is built is?",
+            "output": [
+                "The basic ratio on which the modern notation of rhythm is built is?",
+                "The basic ratio on which the mensural notation of rhythm is built is considered complete is?"
+            ]
+        },
+        {
+            "id": "task670-ebbfb095bbb0466daa06af4c0009fca4",
+            "input": "Who has won the last 10 world series?",
+            "output": [
+                "Who won the 2017 MLB World Series?",
+                "Who won the 2016 MLB World Series?",
+                "Who won the 2015 MLB World Series?",
+                "Who won the 2017 College World Series?",
+                "Who won the 2016 College World Series?",
+                "Who won the 2015 College World Series?"
+            ]
+        },
+        {
+            "id": "task670-a64b706c86b949759df9f09550ac7c0a",
+            "input": "Current chief justice of all provinces of pakistan?",
+            "output": [
+                "25th chief justice of all provinces of pakistan?",
+                "24th chief justice of all provinces of pakistan?",
+                "23th chief justice of all provinces of pakistan?"
+            ]
+        },
+        {
+            "id": "task670-24df8151d8904125a68bdbf88a9e2b20",
+            "input": "Girl who played christine in phantom of the opera?",
+            "output": [
+                "Girl who played Christine in the 2004 movie Phantom of the Opera?",
+                "Girl who played Christine in the Royal Albert Hall 25th Anniversary production of Phantom of the Opera?",
+                "Girls who played Christine in the Original Broadway production of Phantom of the Opera?",
+                "Girls who played Christine in the 2019 World Tour production of Phantom of the Opera?",
+                "Girl who played Christine in the Original Australian production of Phantom of the Opera?",
+                "Girls who played Christine in the Original U.S. Tour production of Phantom of the Opera?"
+            ]
+        },
+        {
+            "id": "task670-2bc5d947796846b5850b6826892c5375",
+            "input": "Human interaction with the nitrogen cycle is primarily due to?",
+            "output": [
+                "Human non-agricultural interaction with the nitrogen cycle is primarily due to?",
+                "Human agricultural interaction with the nitrogen cycle is primarily due to?"
+            ]
+        },
+        {
+            "id": "task670-dd1404ba0c03485a95abbdc30479a6c8",
+            "input": "First nigerian to win an olympic gold medal?",
+            "output": [
+                "First nigerian to win an olympic gold medal ever?",
+                "First nigerian to team win an olympic gold medal?",
+                "First nigerians to win an olympic gold medal in athletics relay?"
+            ]
+        },
+        {
+            "id": "task670-0d08b6a625494a668e1953f6ad54bf48",
+            "input": "When did live like you were dying come out?",
+            "output": [
+                "When did the song \"Live Like You Were Dying\" come out?",
+                "When did the album Live Like You Were Dying by Tim McGraw come out?",
+                "When did the song \"Live Like We're Dying\" come out?"
+            ]
+        },
+        {
+            "id": "task670-ffbbf67d51b743b69e1f33dde28c7367",
+            "input": "Youngest female figure skater to win olympic gold?",
+            "output": [
+                "Youngest female figure skater to win olympic gold in Ladies' singles?",
+                "Youngest female figure skater to win olympic gold in pairs?",
+                "Youngest female figure skater to win olympic gold in ice dance?"
+            ]
+        },
+        {
+            "id": "task670-9ab57c942b04450aaeb5877a3144c64d",
+            "input": "Who sings i stand alone in quest for camelot?",
+            "output": [
+                "Which artist sings i stand alone in quest for camelot?",
+                "Which character sings i stand alone in quest for camelot?"
+            ]
+        },
+        {
+            "id": "task670-b95f3f2d23ec4231aa372761e5d2dfd3",
+            "input": "When does assassin's creed origins come out?",
+            "output": [
+                "When does assassin's creed origins come out worldwide?",
+                "When does assassin's creed origins first come out?"
+            ]
+        },
+        {
+            "id": "task670-959af80a2f444436af943b18c4dda2da",
+            "input": "How many episodes of fairy tail are there 2018?",
+            "output": [
+                "How many episodes of fairy tail are there made in 2018?",
+                "How many episodes of fairy tail are there in total at the beginning of 2018?",
+                "How many episodes of fairy tail are there in total at the end of 2018?"
+            ]
+        },
+        {
+            "id": "task670-c76b1097f4a44a02aae791f3caa30adc",
+            "input": "Where is the talking donkey in the bible?",
+            "output": [
+                "In which testament is the talking donkey in the bible?",
+                "In which book is the talking donkey in the bible?",
+                "In which chapter is the talking donkey in the bible?",
+                "Where is the verse of the talking donkey in the bible?"
+            ]
+        },
+        {
+            "id": "task670-a7263393697e45d5920d6f769e73ca2b",
+            "input": "When does the 2018 formula one season start?",
+            "output": [
+                "When does the 2017 formula one season start?",
+                "When does the 2016 formula one season start?",
+                "When does the 2015 formula one season start?"
+            ]
+        },
+        {
+            "id": "task670-c0b220ee9e3a4371828e45f46a776a58",
+            "input": "Who added under god in the pledge of allegiance?",
+            "output": [
+                "Who first suggested adding under god in the pledge of allegiance?",
+                "Who sponsored a resolution to add under god in the pledge of allegiance in 1953?"
+            ]
+        },
+        {
+            "id": "task670-8647304cde9441a08a7a4d6ce8b86541",
+            "input": "When was the movie the dark crystal made?",
+            "output": [
+                "When was the movie the dark crystal made and released in New York City?",
+                "When was the movie the dark crystal made and released in the United States?",
+                "When was the movie the dark crystal made and released in the United Kingdom?",
+                "When was the movie the dark crystal filmed?"
+            ]
+        },
+        {
+            "id": "task670-8fb90d90a8044cd59085e825ede0fe6c",
+            "input": "Who played eponine in the movie les miserables?",
+            "output": [
+                "Who played Eponine in the movie Les Miserables in 2012?",
+                "Who played Eponine in the movie Les Miserables in 1998?",
+                "Who played Eponine in the Les Miserables miniseries in 2018?",
+                "Who played Eponine in the movie Les Miserables in 1935?"
+            ]
+        },
+        {
+            "id": "task670-2100e0a18c004ca7ad551372e78c9d4d",
+            "input": "Who is the mayor in horton hears a who?",
+            "output": [
+                "Who plays the mayor in the 2008 film Horton Hears a Who?",
+                "Who is the mayor in the 2008 film Horton Hears a Who?"
+            ]
+        },
+        {
+            "id": "task670-606311d73f194210a060613039cc1610",
+            "input": "Who sings lifestyles of the rich and famous?",
+            "output": [
+                "Who sings in the 1996 lifestyles of the rich and famous?",
+                "Who sings the 2002 lifestyles of the rich and famous?"
+            ]
+        },
+        {
+            "id": "task670-bfc63c92b35b45be9869de8525363e77",
+            "input": "Last president that was not a democrat or republican?",
+            "output": [
+                "Last president that was not technically a democrat or republican, as part of the National Union Party?",
+                "Last president that was not a democrat or republican but part of the Whig Party?"
+            ]
+        },
+        {
+            "id": "task670-e077dea930444a0a86e4da4243dfa0c3",
+            "input": "Who has won the australian grand prix this year?",
+            "output": [
+                "Who has won the 2017 australian grand prix?",
+                "Who has won the 2016 australian grand prix?",
+                "Who has won the 2015 australian grand prix?"
+            ]
+        },
+        {
+            "id": "task670-e351ea69b06e462692792a5ae2a3b3c4",
+            "input": "When will the new $20 bill be released?",
+            "output": [
+                "When will the new US $20 bill from Series 2004 first be released?",
+                "When will the new US $20 bill from Series 1996 first be released?",
+                "When will the new US $20 bill printed at the Western Currency Facility for Series 1990 first be released?",
+                "When will the new Frontier Series Canadian $20 bill be released?",
+                "When will the new Canadian Journey Series $20 bill be released?",
+                "When will the new Birds of Canada $20 bill be released?"
+            ]
+        },
+        {
+            "id": "task670-9626746b28ec4ca2a177bcf9937bfdbc",
+            "input": "What percentage of england died from the black plague?",
+            "output": [
+                "What percentage of england died from the black plague of 1348 according to Philip Daileader?",
+                "What percentage of england died from the black plague of 1348 according to Ole Benedictow?",
+                "What percentage of england died from the black plague in 1471?",
+                "What percentage of england died from the black plague from 1479-1480?",
+                "What percentage of england died from the black plague from 1361 to 1362?",
+                "What percentage of england died from the black plague of 1348 according to Josiah William Russel?",
+                "What percentage of england died from the black plague of 1348 according to Jeremy Goldberg?",
+                "What percentage of england died from the black plague of 1348 according to Ole Jørgen Benedictow?",
+                "What percentage of england died from the black plague in 1369?"
+            ]
+        },
+        {
+            "id": "task670-395c6740619e4d13a3e16a9ccfe35be8",
+            "input": "How many levels of cache memory in the intel i7 processor?",
+            "output": [
+                "How many levels of cache memory in the intel i7 processor versions that contain \"Crystalwell\"?",
+                "How many levels of cache memory in the intel i7 processor versions that do not contain \"Crystalwell\"?"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}

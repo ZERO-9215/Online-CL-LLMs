@@ -1,0 +1,771 @@
+{
+    "Contributors": [
+        "Sai Surya Kaushik, Punyamurthula"
+    ],
+    "Source": [
+        "ollie"
+    ],
+    "URL": [
+        "https://huggingface.co/datasets/ollie"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [
+        "Relational Reasoning"
+    ],
+    "Definition": [
+        "From the given sentence, extract the phrase (often noun or verb) that carries the given relationship. The generated phrase should be present in the sentence."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Narrative"
+    ],
+    "Positive Examples": [
+        {
+            "input": "Given Relationship: 'make', Sentence: 'Jenny made the announcement that her baby was an alien.'",
+            "output": "made",
+            "explanation": "The output relationship - made, is a correct verb form of the given relationship - make, and it is also used in the given sentence"
+        },
+        {
+            "input": "Given Relationship: 'look', Sentence: 'As he looked out of the window, he saw a clown walk by.'",
+            "output": "looked",
+            "explanation": "The output relationship - looked is present in the sentence and it is a correct verb form of the given relationship - look"
+        },
+        {
+            "input": "Given Relationship: 'be find', Sentence: 'Happiness can be found in the depths of chocolate pudding.'",
+            "output": "be found",
+            "explanation": "The output relationship - be found, is a correct verb form of the given relationship - be find, and is present in the given sentence"
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Given Relationship: 'listen', Sentence: 'At that moment he wasn't listening to music, he was living an experience'",
+            "output": "listened",
+            "explanation": "The output relationship - listened is a correct verb form of the given relationship - listen, but it is not present in the given sentence"
+        },
+        {
+            "input": "Given Relationship: 'put', Sentence: 'I want you to put money into this little box until we have enough money to buy the vase.'",
+            "output": "putted",
+            "explanation": "The output relationship - putted, is a wrong verb form of the given relationship - put"
+        },
+        {
+            "input": "Given Relationship: 'sit', Sentence: 'She made her way to a coffee shop and sat at a table in the darker end of the shop, hot cocoa in hand.'",
+            "output": "sitting",
+            "explanation": "The output relationship - sitting, is a correct verb form of the given relationship - sit, but it is not present in the given sentence"
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task678-1b38bdf98a324df2a2afc7718c6f3c3d",
+            "input": "Given Relationship: 'belong in', Sentence: 'I think any argument which claims Blyleven belongs in the Hall of Fame can be effectively refuted , so give it your best shot .'",
+            "output": [
+                "belongs"
+            ]
+        },
+        {
+            "id": "task678-5fe8db51b31f48a29ae36e88df7626d5",
+            "input": "Given Relationship: 'be father of', Sentence: 'EPH 1:3 Praise be to the God and Father of our Lord Jesus Christ , who has blessed us in the heavenly realms with every spiritual blessing in Christ .'",
+            "output": [
+                "Father"
+            ]
+        },
+        {
+            "id": "task678-bb93ca23534c4811a0b4f620e8757ff5",
+            "input": "Given Relationship: 'sit beside', Sentence: 'Buffy goes to sit beside Willow on the bed .'",
+            "output": [
+                "beside"
+            ]
+        },
+        {
+            "id": "task678-e93f09a5bf7242caa1e330a234d878a1",
+            "input": "Given Relationship: 'elect', Sentence: 'President elect Barack Obama lost a self addison pro business Democrat from his cabinet when New Mexico Gov.'",
+            "output": [
+                "elect"
+            ]
+        },
+        {
+            "id": "task678-eed6ce69b4164ebba09b47031a522112",
+            "input": "Given Relationship: 'be locate in', Sentence: 'GBTS is located in Green Bay , Wisconsin - just a few blocks from Lambeau Field .'",
+            "output": [
+                "located"
+            ]
+        },
+        {
+            "id": "task678-f7e2839670db46db9f59071d76965abf",
+            "input": "Given Relationship: 'win', Sentence: '1955 : Brooklyn Dodgers win World Series against longtime rival New York Yankees .'",
+            "output": [
+                "win"
+            ]
+        },
+        {
+            "id": "task678-86b5efffdfc34ad498ca363f82796e3f",
+            "input": "Given Relationship: 'be college of', Sentence: 'In 1801 he was sent to Harrow School , where he remained until 1805 , when he proceeded to Trinity College , Cambridge , University of Cambridge .'",
+            "output": [
+                "College"
+            ]
+        },
+        {
+            "id": "task678-87cb04a783254bc7a0c93119d8ce5012",
+            "input": "Given Relationship: 'be president of', Sentence: 'Long ago , Barbados Free Press announced our support for Barack Obama as the next President of the United States of America .'",
+            "output": [
+                "President"
+            ]
+        },
+        {
+            "id": "task678-94a9405e0d7948d197bcd519e0b6a289",
+            "input": "Given Relationship: 'begin in', Sentence: 'Arbor Day began in Nebraska in 1872 .'",
+            "output": [
+                "began"
+            ]
+        },
+        {
+            "id": "task678-82b8cef5af144aa4aca03ac9b237e20d",
+            "input": "Given Relationship: 'be breadbasket of', Sentence: 'Zimbabwe was once a breadbasket for all of southern Africa , but today it has known as a land of poverty .'",
+            "output": [
+                "breadbasket"
+            ]
+        },
+        {
+            "id": "task678-b7946cc63cd542bd927902e5e2314781",
+            "input": "Given Relationship: 'be member of', Sentence: 'The Constitution and Bylaws Committee is composed of the Secretary of the Faculty and four General Faculty members appointed by the Chair of the Faculty .'",
+            "output": [
+                "members"
+            ]
+        },
+        {
+            "id": "task678-7a0922922998447c84b2c93a5319e86c",
+            "input": "Given Relationship: 'provide for', Sentence: 'The Constitution also provides that special sessions may be called by the Governor on special emergencies or by a majority of the members of the General Assembly as the members deem necessary .'",
+            "output": [
+                "provides"
+            ]
+        },
+        {
+            "id": "task678-d0435da92a51406597313309ff000e59",
+            "input": "Given Relationship: 'say unto', Sentence: '33 And the LORD said unto Moses , Whosoever hath sinned against me , \" Moses , I will not blot you out him will I blot out of my book . of My book , because you have n't sinned .'",
+            "output": [
+                "unto"
+            ]
+        },
+        {
+            "id": "task678-811f169dbb7540038e50abc68c8ad330",
+            "input": "Given Relationship: 'advise', Sentence: 'A special sub-committee of the HSMBC was formed of Dr. JC Webster and Mayor J. Plimsoll Edwards of Louisbourg to advise the Board .'",
+            "output": [
+                "advise"
+            ]
+        },
+        {
+            "id": "task678-22d88c4ffbbe42f8989822b20edc33ae",
+            "input": "Given Relationship: 'play in', Sentence: 'Preki played in England , first for Everton of the Premier League and then one season with Portsmouth of the First Division .'",
+            "output": [
+                "played"
+            ]
+        },
+        {
+            "id": "task678-9cc19c1f266343ef93bc524cd067b634",
+            "input": "Given Relationship: 'vote for', Sentence: 'A vote for America is a vote against Obama .'",
+            "output": [
+                "vote"
+            ]
+        },
+        {
+            "id": "task678-f58f5bc9d8ce4d6199453ff1b4736732",
+            "input": "Given Relationship: 'win', Sentence: 'When the Toronto Maple Leafs won the Stanley Cup in 1967 it would be the last in the original six period .'",
+            "output": [
+                "in"
+            ]
+        },
+        {
+            "id": "task678-525bfcb447b3471ba4fb9c57c991b777",
+            "input": "Given Relationship: 'star as', Sentence: 'Julie Andrews stars as Maria , a young troublesome Nun , who becomes a cheerful governess to the Von Trapp children .'",
+            "output": [
+                "stars"
+            ]
+        },
+        {
+            "id": "task678-bfc5870f818947b9bb9894ce5a9d698c",
+            "input": "Given Relationship: 'live in', Sentence: 'In the first century most Jews lived outside of Palestine .'",
+            "output": [
+                "lived"
+            ]
+        },
+        {
+            "id": "task678-7b76894fb39c4df4bf984508d5722259",
+            "input": "Given Relationship: 'be locate in', Sentence: 'Located at The Hague , the International Court of Justice is the primary judicial organ of the United Nations .'",
+            "output": [
+                "Located"
+            ]
+        },
+        {
+            "id": "task678-3f8b9beab70149309aa79b451974a4c5",
+            "input": "Given Relationship: 'be senator from', Sentence: 'The New York senator and former first lady is in the fight of her political life after losing the Democratic votes in Wisconsin and Hawaii on Tuesday to Obama , the first-term Illinois senator whose powerful \"yes we can \" speaking style has carried him to the front-runner 's position .'",
+            "output": [
+                "senator"
+            ]
+        },
+        {
+            "id": "task678-b2516d169d3843799004cb5ab089ed15",
+            "input": "Given Relationship: 'be language of', Sentence: 'Entitled to Egyptian nationality were only those who elonged racially to the majority of the population of a country whose language is Arabic or whose religion is Islam .'",
+            "output": [
+                "language"
+            ]
+        },
+        {
+            "id": "task678-cd26374285314962b7c037c77c5554bc",
+            "input": "Given Relationship: 'be city in', Sentence: 'In many ways Marrakesh , the city with so many names , is a symbol of the old Morocco and a time gone by .'",
+            "output": [
+                "city"
+            ]
+        },
+        {
+            "id": "task678-4993a59bae534f6d8ced2e85834fd4cc",
+            "input": "Given Relationship: 'be mother of', Sentence: 'According to Catholic doctrine , because she is the mother of Jesus , and Jesus is God , therefore Mary is the Mother of God .'",
+            "output": [
+                "mother"
+            ]
+        },
+        {
+            "id": "task678-b45ad5fe7fda4c17a2cdc1eb2b1c8a3a",
+            "input": "Given Relationship: 'become', Sentence: 'But how did the Apostle Paul become a Christian and an Apostle ?'",
+            "output": [
+                "become"
+            ]
+        },
+        {
+            "id": "task678-df7d6598bf814529ac34a5f2e151c790",
+            "input": "Given Relationship: 'be president of', Sentence: 'George Walker Bush is the current President of the United States , inaugurated on January 20 , 2001 and re-elected in the 2004 election .'",
+            "output": [
+                "President"
+            ]
+        },
+        {
+            "id": "task678-7d26a5f156cd4d3aac1a5e3f1dcfe985",
+            "input": "Given Relationship: 'be director of', Sentence: 'Chu , 60 , has been the director of the Lawrence Berkeley National Laboratory since 2004 , and is a Nobel Prize winner , having won in physics in 1997 for \"development of methods to cool and trap atoms with laser light .'",
+            "output": [
+                "director"
+            ]
+        },
+        {
+            "id": "task678-5eec3bd361024b2294f3c2b1aaa75d1e",
+            "input": "Given Relationship: 'follow in', Sentence: 'Interment followed at the Anglican Cemetery , Rencontre East .'",
+            "output": [
+                "followed"
+            ]
+        },
+        {
+            "id": "task678-cf8ef65a727b4f5ebaa4238f7c711665",
+            "input": "Given Relationship: 'be appoint by', Sentence: 'President Richard M. Nixon appointed Luke Moore as Judge of the Superior Court of the District of Columbia in July 1972 .'",
+            "output": [
+                "appointed"
+            ]
+        },
+        {
+            "id": "task678-1c8684d499af40979e977d980f7ba2c9",
+            "input": "Given Relationship: 'be country in', Sentence: 'Among the African and Caribbean countries that will benefit are Barbados , Belize , Guyana , Jamaica , Malawi , Mauritius , Mozambique , South Africa , and Swaziland .'",
+            "output": [
+                "countries"
+            ]
+        },
+        {
+            "id": "task678-f66f47fdabc6436db4a318a571635ab0",
+            "input": "Given Relationship: 'be religion of', Sentence: 'We will see and experience the cultural richness of Turkey and how the spread of Christianity began , how Christianity became the religion of the state from an illegal sect in East Roman Empire .'",
+            "output": [
+                "religion"
+            ]
+        },
+        {
+            "id": "task678-e6962798d82944cf9a4653d2257d0511",
+            "input": "Given Relationship: 'be city of', Sentence: 'In addition to progressive programs , Los Angeles is also the first major city in the United States to officially , and financially , respond to community expectations for a humane animal control program .'",
+            "output": [
+                "city"
+            ]
+        },
+        {
+            "id": "task678-b36740e2837c4f8694fd81d3f1dab1e9",
+            "input": "Given Relationship: 'promise', Sentence: 'Given the intellect , or lack thereof of the typical Obama worshiper , where better to change minds , but on a website where Obama 's empty promises of \" change and hope \" lure his followers to congregate ?'",
+            "output": [
+                "promises"
+            ]
+        },
+        {
+            "id": "task678-dba7390a9d7f41cead01bb2677f382cc",
+            "input": "Given Relationship: 'be law of', Sentence: '2. The laws of the Nagorno Karabakh Republic must correspond with the Constitution .'",
+            "output": [
+                "laws"
+            ]
+        },
+        {
+            "id": "task678-38343657e7b242c4849d55fa74222058",
+            "input": "Given Relationship: 'be part of', Sentence: 'San Francisco State University is part of the California State University system and is located near Lake Merced .'",
+            "output": [
+                "part"
+            ]
+        },
+        {
+            "id": "task678-7902c07726754f6c8140bb2d6ccc9150",
+            "input": "Given Relationship: 'be ban in', Sentence: 'The report also indicated that Falun Gong was banned in China , but is freely practised in Hong Kong , a former British colony that has returned to Chinese rule with guarantees of Western-style freedom and democracy .'",
+            "output": [
+                "banned"
+            ]
+        },
+        {
+            "id": "task678-deaea42b18bb4e7bb996ef658e24ab0f",
+            "input": "Given Relationship: 'give to', Sentence: 'They were given by God theFather , to Christ Jesus in the covenant made between the Father and the Son from all eternity . What a noble , wonderful statement of the great doctrine of election , one of the doctrines of grace !'",
+            "output": [
+                "given"
+            ]
+        },
+        {
+            "id": "task678-7bad55e14faa475d9db295d4b227ddd1",
+            "input": "Given Relationship: 'be king of', Sentence: 'Romulus became the first king of Rome , but he ruled so harshly that the senators , the chief men of the city , determined to rid themselves of him .'",
+            "output": [
+                "king"
+            ]
+        },
+        {
+            "id": "task678-84dae34a221940e3a3ca0cd072e18e5f",
+            "input": "Given Relationship: 'be minister of', Sentence: 'Ariel Sharon - Rare archival footage and interviews with family , colleagues , critics and historians form an essential biographical portrait of the former general and Israel 's controversial Prime Minister .'",
+            "output": [
+                "Minister"
+            ]
+        },
+        {
+            "id": "task678-393876a08603424ba79b7a94c2691517",
+            "input": "Given Relationship: 'be birthstone of', Sentence: 'Emerald is the birthstone of May & the anniversary gemstone for the 20th and 35th years of marriage .'",
+            "output": [
+                "birthstone"
+            ]
+        },
+        {
+            "id": "task678-93bef259934844ae9f50cc2535005522",
+            "input": "Given Relationship: 'control', Sentence: 'Though Democrats control the Senate , they have only a 51-49 majority , meaning that Sen. Hillary Clinton could occasionally find herself casting decisive votes on issues that make her choose between what is best for her constituents and what is best for fanning her presidential prospects .'",
+            "output": [
+                "control"
+            ]
+        },
+        {
+            "id": "task678-ff23d023ce8b4264a65854c10a788498",
+            "input": "Given Relationship: 'be province of', Sentence: 'In France and the Canada province of Quebec , name change upon marriage is no longer automatic .'",
+            "output": [
+                "province"
+            ]
+        },
+        {
+            "id": "task678-b746fe2c3c9f4a80bd15e0ece09d7aaa",
+            "input": "Given Relationship: 'be trademark of', Sentence: 'OSF is a trademark of Open Software Foundation , Inc.'",
+            "output": [
+                "trademark"
+            ]
+        },
+        {
+            "id": "task678-e069bda30fd44281b71d08240927814b",
+            "input": "Given Relationship: 'bless', Sentence: 'Jacob builds an altar , Death of Deborah , God blesses Jacob .'",
+            "output": [
+                "blesses"
+            ]
+        },
+        {
+            "id": "task678-980c6b02ed1a4ebca70ac3a55a44906d",
+            "input": "Given Relationship: 'be appoint by', Sentence: 'The Deputy Chairpersons and Member s of the Board of the Bank of Lithuania are appointed for a term of nine years by the President upon the nomination by the Chairperson of the Board of the Bank of Lithuania .'",
+            "output": [
+                "appointed"
+            ]
+        },
+        {
+            "id": "task678-7f46135522c148e99240c95e7e527d52",
+            "input": "Given Relationship: 'occur in', Sentence: 'BotanicLab said the ALPRAZOLAM may have occurred in China , where the company obtains raw materials .'",
+            "output": [
+                "occurred"
+            ]
+        },
+        {
+            "id": "task678-9826143d5ffa4d32bf57ac6a7187eda1",
+            "input": "Given Relationship: 'come with', Sentence: 'Apple Safari is a web browser that comes with Apple Mac OS X .'",
+            "output": [
+                "with"
+            ]
+        },
+        {
+            "id": "task678-f9014e4ac1a343ddb3e56032e0eb4552",
+            "input": "Given Relationship: 'be gospel of', Sentence: 'They bore the likeness of a lion , a calf , an eagle , and a man - and you remember looking at how those four faces reflected the absolute completeness of the nature of our blessed Lord Jesus Christ , prophetically how Matthew in his gospel presents our Lord Jesus as a King like a lion , the King of the jungle .'",
+            "output": [
+                "gospel"
+            ]
+        },
+        {
+            "id": "task678-119b12a42054480d9a207909eb8624c5",
+            "input": "Given Relationship: 'close in', Sentence: 'Registration closes October 17 .'",
+            "output": [
+                "closes"
+            ]
+        },
+        {
+            "id": "task678-d2e441646be541f8a1f2614173dbced9",
+            "input": "Given Relationship: 'open in', Sentence: 'In September the Harvey Milk School , the first publicly funded high school for gay students , opened in New York City .'",
+            "output": [
+                "opened"
+            ]
+        },
+        {
+            "id": "task678-5a88d13f308243a4a3a50e2598be26b1",
+            "input": "Given Relationship: 'be form of', Sentence: 'Linux is a form of Unix , not a new operating system environment , Gates said , and Microsoft products achieve a level of innovation beyond Unix 's .'",
+            "output": [
+                "form"
+            ]
+        },
+        {
+            "id": "task678-0d5545fd0aa642fe8f782d0533777f2a",
+            "input": "Given Relationship: 'be city in', Sentence: 'Dublin is the Capital city of Ireland .'",
+            "output": [
+                "city"
+            ]
+        },
+        {
+            "id": "task678-2f7f191c16f542799276b73a5236c3d5",
+            "input": "Given Relationship: 'be team in', Sentence: 'The Colts and their fans are the whineiest team in the NFL .'",
+            "output": [
+                "team"
+            ]
+        },
+        {
+            "id": "task678-24828874ab4541deb0666438f2d6d231",
+            "input": "Given Relationship: 'meet in', Sentence: 'There is ongoing talk that the Florida Legislature will meet in Special Session in January 2009 , to consider changes to the existing workers ' compensation laws .'",
+            "output": [
+                "meet"
+            ]
+        },
+        {
+            "id": "task678-67c1846f41fb46aaae48537e97f63d41",
+            "input": "Given Relationship: 'be region in', Sentence: 'Barcelona is the capital of an autonomous region in Spain known as Catalonia .'",
+            "output": [
+                "region"
+            ]
+        },
+        {
+            "id": "task678-ac43c12935ac4a52aa51490fa27eae98",
+            "input": "Given Relationship: 'be father of', Sentence: 'When we are asked to close our eyes and picture God what we often see is an image of God as Father , as Mother , as Spirit , as Christ .'",
+            "output": [
+                "Father"
+            ]
+        },
+        {
+            "id": "task678-07719145ef7348b99fb64326ae3e9efd",
+            "input": "Given Relationship: 'kill in', Sentence: 'In Afghanistan , a NATO soldier was killed in a clash with insurgents in the Sangin district of southern Helmand province , the military said Sunday .'",
+            "output": [
+                "killed"
+            ]
+        },
+        {
+            "id": "task678-1bcf209c9d874e138485effbb6fa726e",
+            "input": "Given Relationship: 'be son of', Sentence: 'She married Major Arthur William Fitz Roy Somerset , son of Field Marshal FitzRoy James Henry Somerset , 1st Baron Raglan , on 8 July 1845 .'",
+            "output": [
+                "son"
+            ]
+        },
+        {
+            "id": "task678-aa254d20312842d991dd0dece8e66ca9",
+            "input": "Given Relationship: 'pull from', Sentence: 'Xena pulled Gabrielle 's arms from around her neck , but continued to hold her hands .'",
+            "output": [
+                "from"
+            ]
+        },
+        {
+            "id": "task678-03b63ca70d634a7d8c42f76f7a72735b",
+            "input": "Given Relationship: 'win', Sentence: 'Bush easily won Ohio in 2000 , but its lagging economy puts the state in play .'",
+            "output": [
+                "in"
+            ]
+        },
+        {
+            "id": "task678-9c6c1b7bbd2f4770bc134e746523aea5",
+            "input": "Given Relationship: 'be city in', Sentence: 'After finishing in the capital it was extended to other thirty-three cities being closed in Santiago de Cuba .'",
+            "output": [
+                "cities"
+            ]
+        },
+        {
+            "id": "task678-fec1e5d0b1794be2a2ed9e3182874f21",
+            "input": "Given Relationship: 'say of', Sentence: 'Her chief of staff , Anita McBride says Mrs. Bush realizes this is also a big transition for the Obama family as it moves into one of the most famous houses in the world .'",
+            "output": [
+                "says"
+            ]
+        },
+        {
+            "id": "task678-14d823ac255f44138f80131b87eb0fc6",
+            "input": "Given Relationship: 'be to order', Sentence: 'Viagra online , cheap viagra online order viagra online , cheapest generic viagra buy viagra pill cheapest viagra natural viagra buying viagra viagra on line viagra price womens .'",
+            "output": [
+                "order"
+            ]
+        },
+        {
+            "id": "task678-358eb6d5ca524309b1185e1e5c591f4e",
+            "input": "Given Relationship: 'be locate in', Sentence: 'The Vancouver Aquarium Marine Science Centre is located in Stanley Park .'",
+            "output": [
+                "located"
+            ]
+        },
+        {
+            "id": "task678-a1ee888c71974feab2cd2df0144aa0b6",
+            "input": "Given Relationship: 'win', Sentence: 'Bettors making the Sooners one of their BCS Title Game Predictions will need Heisman Trophy winning quarterback Sam Bradford to play the game of his life on Thursday night .'",
+            "output": [
+                "winning"
+            ]
+        },
+        {
+            "id": "task678-45bc9ab0955b4f3da27b0427a47994d1",
+            "input": "Given Relationship: 'be purchase by', Sentence: 'When Adobe purchased Macromedia in 2005 they decided to retain the greater sophistication of Fireworks and discontinue ImageReady which they did in 2007 with the introduction of CS3 .'",
+            "output": [
+                "purchased"
+            ]
+        },
+        {
+            "id": "task678-3d4d89812ee449209d00d01a224a1c52",
+            "input": "Given Relationship: 'be member of', Sentence: 'Neither North Korea nor South Korea had been a member of the United Nations .'",
+            "output": [
+                "member"
+            ]
+        },
+        {
+            "id": "task678-208409cadf3e4879a5ff67040a1a6de8",
+            "input": "Given Relationship: 'be locate in', Sentence: 'Located in Williamstown , in Eastern Ontario , Canada , Sign It employs a highly skilled team of designers and craftspeople who are dedicated to the fine art of signmaking .'",
+            "output": [
+                "Located"
+            ]
+        },
+        {
+            "id": "task678-49e69ca4811a4899be000f0bf4494846",
+            "input": "Given Relationship: 'be locate on', Sentence: 'The newer , more tourist-focussed operations are mainly located on the Back Beach while the Front Beach area is home to more business-oriented hotels plus several slightly jaded two and three star hostelries .'",
+            "output": [
+                "located"
+            ]
+        },
+        {
+            "id": "task678-9236fe660fa542c1a1dc13f4cad82bb6",
+            "input": "Given Relationship: 'visit', Sentence: 'Pope John Paul II is visiting the Communist-ruled Caribbean island of Cuba .'",
+            "output": [
+                "visiting"
+            ]
+        },
+        {
+            "id": "task678-17a3140bd050493eb259138d81974fe3",
+            "input": "Given Relationship: 'say to', Sentence: 'Lord Krishna says to Arjuna : A Advaya Taraka Upanishad states that the true teacher is easily knowledgeable in the Veda , a lover of Vishnu , free from either envy , the apprehender of yoga & intent on yoga , and universally with a nature and severity of yoga .'",
+            "output": [
+                "says"
+            ]
+        },
+        {
+            "id": "task678-47f769d964fd4369a1e759042f2c0986",
+            "input": "Given Relationship: 'speak', Sentence: 'The owner spoke English with a Australian accent .'",
+            "output": [
+                "spoke"
+            ]
+        },
+        {
+            "id": "task678-583c5e7a42d84f83bcb02db45acddb7a",
+            "input": "Given Relationship: 'choose', Sentence: 'We will see the supporters of Israel and haters of Gods chosen at that time .'",
+            "output": [
+                "chosen"
+            ]
+        },
+        {
+            "id": "task678-d28a02d94d374fe5893f69d4962dc5fe",
+            "input": "Given Relationship: 'be cede to', Sentence: 'By the Treaty of Paris France ceded Canada and North America to England .'",
+            "output": [
+                "ceded"
+            ]
+        },
+        {
+            "id": "task678-e975a29b477442848e58c376fc5cf3bb",
+            "input": "Given Relationship: 'be city in', Sentence: 'Samarkand is the third-largest city in Uzbekistan and the capital of Samarqand Province .'",
+            "output": [
+                "city"
+            ]
+        },
+        {
+            "id": "task678-cdb53d35d387476ea0b247f3e7b6e41b",
+            "input": "Given Relationship: 'be situate on', Sentence: 'Marvel Hotel is situated in the north part of Sunny Beach , in the close proximity of the beach and the picturesque sea path .'",
+            "output": [
+                "situated"
+            ]
+        },
+        {
+            "id": "task678-27ecf7a1905c40828ae227843a1fb8f0",
+            "input": "Given Relationship: 'be language in', Sentence: 'English is the most commonly spoken language in Cambridge and the United Kingdom , although regional dialects can vary greatly .'",
+            "output": [
+                "language"
+            ]
+        },
+        {
+            "id": "task678-7176fb1825564f538658cb0df67c6917",
+            "input": "Given Relationship: 'be work of', Sentence: 'It becomes a great physician to cure great diseases , and the great God to do great works , and the great Christ to sanctify and save great sinners .'",
+            "output": [
+                "works"
+            ]
+        },
+        {
+            "id": "task678-ee0c6b6770984b5894f0d544ccac6ca3",
+            "input": "Given Relationship: 'win', Sentence: 'Will Australia win the Ashes 5-0 in England 2009 ?'",
+            "output": [
+                "win"
+            ]
+        },
+        {
+            "id": "task678-180397f0743549a88b3a311195856bbe",
+            "input": "Given Relationship: 'be member of', Sentence: 'The ex-officio members will include the NIH Deputy Director , the Director of the Office of Equal Opportunity and a former Council member .'",
+            "output": [
+                "member"
+            ]
+        },
+        {
+            "id": "task678-b007899abe8f461b8dad301e8a167465",
+            "input": "Given Relationship: 'be city in', Sentence: 'Although our two offices are located in South Florida , we handle motorcycle accidents throughout the State of Florida , including Ft . Lauderdale , Miami , Aventura , North Miami Beach , Lauderhill , West Palm Beach , Wellington , Lake Worth , Lantana , Sunrise , Plantation , Davie , Delray Beach , Wilton Manors , Oakland Park , Boca Raton and all other Florida cities .'",
+            "output": [
+                "cities"
+            ]
+        },
+        {
+            "id": "task678-db3fd908361e4554afe7d0eb8f3e6f3d",
+            "input": "Given Relationship: 'start with', Sentence: 'LOVE starts with a SMILE , ...'",
+            "output": [
+                "starts"
+            ]
+        },
+        {
+            "id": "task678-b29773d4334b410eb5809c158479ab36",
+            "input": "Given Relationship: 'be city in', Sentence: 'Montevideo is a city in Chippewa County , Minnesota .'",
+            "output": [
+                "city"
+            ]
+        },
+        {
+            "id": "task678-7f97c3564f2c455c862c310251e51eb7",
+            "input": "Given Relationship: 'be mayor of', Sentence: 'Even though the mayor of New York City , Michael Bloomberg , supports the existence of this school , it seems that , thankfully , the public has finally waken up and thinking straight .'",
+            "output": [
+                "mayor"
+            ]
+        },
+        {
+            "id": "task678-900b0735f13b45ed96c06b8bd0078bf0",
+            "input": "Given Relationship: 'be send to', Sentence: 'Stalin sent my grandfather to Siberia for 10 years .'",
+            "output": [
+                "sent"
+            ]
+        },
+        {
+            "id": "task678-d5a7e4db62e24a89b4a8633a2a8fb45f",
+            "input": "Given Relationship: 'be elect by', Sentence: 'Vonda Jackson reacts in Baltimore after hearing that Barack Obama had been elected President of the United States .'",
+            "output": [
+                "elected"
+            ]
+        },
+        {
+            "id": "task678-8ae5637b91424d5daf84132ec7fda378",
+            "input": "Given Relationship: 'declare war on', Sentence: 'This was eight months before Germany declared war on the United States .'",
+            "output": [
+                "declared"
+            ]
+        },
+        {
+            "id": "task678-be74733e18444100b848ecd92e405825",
+            "input": "Given Relationship: 'be boyhood home of', Sentence: 'Woodside is the boyhood home of William Lyon Mackenzie King .'",
+            "output": [
+                "boyhood"
+            ]
+        },
+        {
+            "id": "task678-66f4c3990eb7421e964a47edb24f78e2",
+            "input": "Given Relationship: 'crack', Sentence: 'Great Cracks - SpamCatcher Universal Desktop Client v2.0a serial number crack download from NEW GENERATION CRACK SERVER .'",
+            "output": [
+                "crack"
+            ]
+        },
+        {
+            "id": "task678-5515cf10ef484420981becacdd45fdd1",
+            "input": "Given Relationship: 'be city of', Sentence: 'The capital city of Hanoi will help its Lao counterpart Vientiane organise food hygiene courses for health staff and train health workers for the 25 th Southeast Games scheduled for late 2009 .'",
+            "output": [
+                "city"
+            ]
+        },
+        {
+            "id": "task678-8aaba08a62534788ac9431f7c0be3d75",
+            "input": "Given Relationship: 'be part of', Sentence: 'Estonia is a Baltic country that was previously a part of the Soviet Union and is now a proud member of the European Union of nations after gaining its independence in 1991 .'",
+            "output": [
+                "part"
+            ]
+        },
+        {
+            "id": "task678-85a01f019b364333b714611a89aa2c74",
+            "input": "Given Relationship: 'work on', Sentence: 'Headup is a new plug-in for Firefox that works with Windows and Mac OS X .'",
+            "output": [
+                "works"
+            ]
+        },
+        {
+            "id": "task678-d6c036b51d9343ccbdeaf5ea6f2ff2c2",
+            "input": "Given Relationship: 'elect of', Sentence: 'He was then elected President of the United States for two terms .'",
+            "output": [
+                "elected"
+            ]
+        },
+        {
+            "id": "task678-47fe232d7a554a5fb54746a9251c5ae6",
+            "input": "Given Relationship: 'resign as', Sentence: 'Alberto Gonzales has resigned as Attorney General , apparently effective on confirmation of his replacement .'",
+            "output": [
+                "resigned"
+            ]
+        },
+        {
+            "id": "task678-9f0953dab6964ceda5f31ed57001a351",
+            "input": "Given Relationship: 'pass', Sentence: 'After he strong-armed his Republican-controlled U.S. Congress to pass the U.S.A. Patriot Act he interpreted that to mean that anyone he alone decided to name who is an enemy combatant had no rights whatsoever .'",
+            "output": [
+                "pass"
+            ]
+        },
+        {
+            "id": "task678-cd12d70ce3d94b07947cb24ff400cf56",
+            "input": "Given Relationship: 'face', Sentence: 'Obama will be crowned the Democratic nominee at the party 's August nominating convention and will face Republican John McCain in November to choose a successor to President George W. Bush .'",
+            "output": [
+                "face"
+            ]
+        },
+        {
+            "id": "task678-2e468c9875024a8fa45076a404c1b795",
+            "input": "Given Relationship: 'be capital of', Sentence: 'The square has been built in Skopje , the capital of FYR Macedonia , and will be opened on the singer 's birth date , the 25th of January , according to the magazine Blic .'",
+            "output": [
+                "capital"
+            ]
+        },
+        {
+            "id": "task678-2bd79aa5d1854274b32a7c78ca27ab02",
+            "input": "Given Relationship: 'be found on', Sentence: 'In the rich Tradition of the Church founded by Christ , four divinely revealed doctrines about Mary , Mother of Jesus , have come forth from the inspired pages of Sacred Scripture , and through the inspiration of the Holy Spirit , the Spirit of Truth , these Marian doctrines have been gradually brought to light by the living Church .'",
+            "output": [
+                "founded"
+            ]
+        },
+        {
+            "id": "task678-815f05bda3214395af2a91fce77d2ad8",
+            "input": "Given Relationship: 'be member of', Sentence: 'ANSI is the sole U.S. representative and dues-paying member of the International Organization for Standardization , and as a founding member of the ISO , ANSI plays an active role in its governance .'",
+            "output": [
+                "member"
+            ]
+        },
+        {
+            "id": "task678-55446fc870334574a30571a4f2d54a1e",
+            "input": "Given Relationship: 'be country in', Sentence: 'The Kingdom of Nepal , is a landlocked Himalayan country in South Asia , bordered by ? China to the north and by ? India to the south , east and west .'",
+            "output": [
+                "country"
+            ]
+        }
+    ],
+    "Instance License": [
+        "University of Washington Academic License (https://raw.githubusercontent.com/knowitall/ollie/master/LICENSE)"
+    ]
+}

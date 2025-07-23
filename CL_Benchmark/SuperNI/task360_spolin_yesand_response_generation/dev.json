@@ -1,0 +1,764 @@
+{
+    "Contributors": [
+        "Maitreya Patel"
+    ],
+    "Source": [
+        "spolin"
+    ],
+    "URL": [
+        "https://justin-cho.com/spolin"
+    ],
+    "Categories": [
+        "Dialogue Generation"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "Given the sentence, generate \"yes, and\" response. \"Yes, and\" is a rule-of-thumb in improvisational comedy that suggests that a participant in a dialogue should accept what another participant has stated (\"Yes\") and then expand on that line of thought or context (\"and...\"). 1 In short, a \"Yes, and\" is a dialogue exchange in which a speaker responds by adding new information on top of the information/setting that was constructed by another speaker. Note that a \"Yes, and\" does not require someone explicitly saying 'yes, and...' as part of a dialogue exchange, although it could be the case if it agrees with the description above. There are many ways in which a response could implicitly/explicitly agree to the prompt without specifically saying 'yes, and...'. "
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Dialogue"
+    ],
+    "Positive Examples": [
+        {
+            "input": "I just want to say if this does not work out I promise to to personally show up to each of your homes and apologize for my life not working out the way that it should.",
+            "output": "You know what, come tell us at the community pool.",
+            "explanation": "This is a good response. Because it accepts in indirect way the input sentence and supports it."
+        },
+        {
+            "input": "That's right. Believe you can fly with your new wings.",
+            "output": "Oh, wow, I'm doing it. Bye!",
+            "explanation": "This response believes in input sentence and acts on it in positive way. Hence, this is perfect reponse."
+        },
+        {
+            "input": "First we have to know, your marriage. Was it happy?",
+            "output": "Yes, I loved my husband Frank. He was an ex-marine.",
+            "explanation": "The response clearly accepts the input sentence and agrees with it."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Can we talk about the scar?",
+            "output": "We'd have high end sushi, like the kind Clooney would eat.",
+            "explanation": "The response does not agree witht the input sentence and it does not extend the input sentence. Hence, the generated response is incorrect."
+        },
+        {
+            "input": "Hello, I'm interested in a street surgery. I'm looking for something special.",
+            "output": "Well, it might just work. I was signing very loudly at the opera and I think that's what people objected to. It wasn't very good and it was super loud.",
+            "explanation": "This reponse is not good. Because it does not accept and extend the input sentence. Instead it changes the conversation topic."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task360-b538ce718fda40dc8bbe0f94711dbb58",
+            "input": "He was born with a silver spoon in his mouth. He's never had to work at the store.",
+            "output": [
+                "Is that true? Mr. Sims never worked here at Quiznos? I just assumed he worked his way up through the ranks."
+            ]
+        },
+        {
+            "id": "task360-ca775c0901824ed8a116c14af1c96d28",
+            "input": "Put these two bagels on my wrists, as if they were handcuffs and lead me outside.",
+            "output": [
+                "Sure, they're a little wet. But, they stretch because they were only boiled."
+            ]
+        },
+        {
+            "id": "task360-0eea83607d784185ba0502212c9b4ba5",
+            "input": "Rachel, it's now time to flush if you know what I mean.",
+            "output": [
+                "I do. I'm going to go down to aisle 12. I'll be back in a little while."
+            ]
+        },
+        {
+            "id": "task360-d802f0365fe2492ba2660d8d0e6bd59f",
+            "input": "I'll guess your height. Just stand against this numbered background.",
+            "output": [
+                "But it seems like you'll just be able to read it. You'll know it."
+            ]
+        },
+        {
+            "id": "task360-cc8d799926fb49369c0b70dfb19d7d2e",
+            "input": "Oh, another dog got me leg.",
+            "output": [
+                "Hey, you gotta get it back and reattach it. That prosthetic has been in the mouth of too many pups."
+            ]
+        },
+        {
+            "id": "task360-c24a3a1d480743b9baad33776acd3a8c",
+            "input": "Well, Heidi, this was another successful science fair. Although, some might say we've tampered in God's domain.",
+            "output": [
+                "This was like Project Funway."
+            ]
+        },
+        {
+            "id": "task360-55e3635ee52f4960b5faf3683d966dde",
+            "input": "I'll hide his body.",
+            "output": [
+                "Thank you, Evan, you're so sweet. I appreciate that."
+            ]
+        },
+        {
+            "id": "task360-00fefcb982f645c9969094b6d227ad9b",
+            "input": "I'll tell you what, I'll buy your fish. I just wanted to ask the young lady behind the fish counter something first.",
+            "output": [
+                "I want 27 orders of the cod. That's what you're paying for."
+            ]
+        },
+        {
+            "id": "task360-a91f5ef20c5743af8dba38d915d3979d",
+            "input": "Yeah, yeah.  I think I might have to excuse myself.  I've just got a little tickle and I don't want to disturb people.",
+            "output": [
+                "I'm confused.  The air is really moist."
+            ]
+        },
+        {
+            "id": "task360-3d2243fb0eab4dc2b18a2dd2146b5ce5",
+            "input": "Very well. I'm watching, you Bob.",
+            "output": [
+                "Thank you Mr. Timmons."
+            ]
+        },
+        {
+            "id": "task360-f6df5f4a6aaa44e2a716a6adce947e94",
+            "input": "The only way I'm going to feel reasonable doubt is if I feel there is someone else that could have done this and as of right now, I don't feel like anyone but the husband could have done it.",
+            "output": [
+                "I tend to agree with Micky. It's so obvious the husband did it."
+            ]
+        },
+        {
+            "id": "task360-14ca04db21af49d4bf33dde899b28a25",
+            "input": "I bet he took that computer and sold it.",
+            "output": [
+                "You know what? I bet he did. He probably went and sent like three more emails before he did it, just to insult us."
+            ]
+        },
+        {
+            "id": "task360-ccd79ab8d33c4da08a3c608ae9c74f1b",
+            "input": "I've been waiting for this train for a while.",
+            "output": [
+                "Me too. Feels like I've been waiting for a lot of things for a while. Like, there's this package that seems to be taking longer to be delivered than I was told."
+            ]
+        },
+        {
+            "id": "task360-8499e77ca0cf4867813c6f489dc15b54",
+            "input": "I think you bring murder-dog to grocery store.",
+            "output": [
+                "I think you're attractive. Now we've both said things we can't unsay. Now the truth's out there."
+            ]
+        },
+        {
+            "id": "task360-d453ed7ae1e6434fb33fb3f081492470",
+            "input": "I wish that everyone would stop advancing on towards us and forcing us against the wall.",
+            "output": [
+                "We just want you to try one of the doughnuts."
+            ]
+        },
+        {
+            "id": "task360-9c1f2f24a8b445a7a82719676edd178f",
+            "input": "That's exactly what I heard! That you were the 14th woman in space.",
+            "output": [
+                "Yeah, well, sometimes rumors are true. You want to know something? Rumors are usually based in some sort of truth. Every rumor you've ever heard."
+            ]
+        },
+        {
+            "id": "task360-b2e97813415c4f00971ca15fc9532347",
+            "input": "You've all come from so far and wide to wish me the happiest birthday. I think with all these wonderful presents, there's only one thing that would make me the happiest mayor on this side of the tri-county area.",
+            "output": [
+                "Is it more votes, Mr. Mayor?"
+            ]
+        },
+        {
+            "id": "task360-df31208e7c624cbda022519e07cc7846",
+            "input": "I might be beautiful, but I'm not religious.",
+            "output": [
+                "Wait, did you write that book, \"I Might Be Beautiful but I'm Not Religious\" did you?"
+            ]
+        },
+        {
+            "id": "task360-ed11d7b1c2754dc685fbcd578487b0ba",
+            "input": "When I look into this man's eyes, I can see forgetfulness but I can see true love. I want to give you the ring that my father gave me, for you to renew your wedding vows.",
+            "output": [
+                "Kent, thank you very much. You're a stranger whom I'm bound to forget in mere minutes time."
+            ]
+        },
+        {
+            "id": "task360-a70e9f79bbcd40438a37e462288332c0",
+            "input": "I'll write you a new check.",
+            "output": [
+                "Oh, he must be a millionaire to have more than one check."
+            ]
+        },
+        {
+            "id": "task360-c6f78beb1d2049b58aace6bae1aab101",
+            "input": "I told you to go to a different churro stand.",
+            "output": [
+                "I want to go to him. I told him that I was going to support his business."
+            ]
+        },
+        {
+            "id": "task360-f67ef3d8e6194d598b70bae4e58651e7",
+            "input": "So this is my office, I guess. It's pretty good.",
+            "output": [
+                "This is actually really nice. I love all the chintz. I love the purple."
+            ]
+        },
+        {
+            "id": "task360-4448e865d7244954b8879fb6a3a0d167",
+            "input": "I once swallowed a tapeworm to lose weight, but it turns out that that doesn't actually work that way.",
+            "output": [
+                "No, no. They just wreck havoc on your intestines."
+            ]
+        },
+        {
+            "id": "task360-0858b35bdccf42a5995911b65ff35472",
+            "input": "Well then you're in for a treat. I write mystery books that are secretly action books.",
+            "output": [
+                "His mystery books are like \"what genre is it?\" You don't know until you read it."
+            ]
+        },
+        {
+            "id": "task360-7aff11f3e67042698f113c4a9d310016",
+            "input": "Someone getting stuck in the door is a very specific example. Do you know something about what happened?",
+            "output": [
+                "It was just an example. Maybe somebody else put them in the door and had them stick."
+            ]
+        },
+        {
+            "id": "task360-0f554d483dd843c2899a161c116e9c64",
+            "input": "Roger, let's just cut to the chase. What's your big announcement?",
+            "output": [
+                "Guys, I only have 15 minutes left to live."
+            ]
+        },
+        {
+            "id": "task360-7375c70ee7e64907ab4160f095cc6f51",
+            "input": "Fuck you, Don!",
+            "output": [
+                "You know, you go through years of seminary school and they still call you Don."
+            ]
+        },
+        {
+            "id": "task360-bcd098e1c9e844ef8eb59ccd68210bd8",
+            "input": "Mr. and Mr. Popple, meet Jimmy.",
+            "output": [
+                "You are her friend, Jimmy. Here's some water."
+            ]
+        },
+        {
+            "id": "task360-564f0a8d87ff4ad4a3f5e735fa4c43f9",
+            "input": "Who are you? This is the largest asthma inhaler, I've ever seen.",
+            "output": [
+                "I am an iron lung."
+            ]
+        },
+        {
+            "id": "task360-12e21e525cab407d8fe537899b69932a",
+            "input": "Don't you ever walk up to one of the many public apple statues and slice off a hunk of apple?",
+            "output": [
+                "It's really a lot of work. That's why I've gotten so skinny and beautiful."
+            ]
+        },
+        {
+            "id": "task360-19c133695535472bb0f855e334675507",
+            "input": "That's exactly what were doing, though. Putting food in bags.",
+            "output": [
+                "Yeah, I mean, food and also cleaning supplies. We have a few tools available. Oil for your car."
+            ]
+        },
+        {
+            "id": "task360-59732723badc428f81aebdebd6a525a7",
+            "input": "This is loose I wanted to be tied in tight!",
+            "output": [
+                "If we tied you any tighter it would cut you. Do you want to be able to breathe? "
+            ]
+        },
+        {
+            "id": "task360-a1f48698b0d24f4a9765d74e6d010880",
+            "input": "You thought you recognized me, a man made of pudding? I look familiar to you?",
+            "output": [
+                "I just couldn't place you. But now you've really opened my eyes. I can see that I was doing the wrong thing all along. You're welcome to stay here. You and the mongooses, and all these coyotes."
+            ]
+        },
+        {
+            "id": "task360-4b86209be06e46cb897a54264df0b0f6",
+            "input": "Sweetie, I am the job. You know that, sir.",
+            "output": [
+                "You can call me Dan, we've been married for 13 years."
+            ]
+        },
+        {
+            "id": "task360-8be2650bf15041509a95040fb607e382",
+            "input": "Oh, the LA Forum. That place is the worst.",
+            "output": [
+                "You don't have to tell me. It's just been washed up band after washed up band. I've just been haunting them. Just giving them memories of me from when I was actually alive."
+            ]
+        },
+        {
+            "id": "task360-34a3b7e9ff844647b213a6d1f6a6bfa0",
+            "input": "Does your goat have a name?",
+            "output": [
+                "Oh, no he doesn't. I might have to eat this guy."
+            ]
+        },
+        {
+            "id": "task360-8e623e9cbb1248ad99c0a3a682002e33",
+            "input": "I got a book about lucid dreaming. What we could do for the first half of the show is be asleep, but doing stuff.",
+            "output": [
+                "OK. So, we should go out there asleep?"
+            ]
+        },
+        {
+            "id": "task360-7e2e858712e54cdc8bd8000c5009a4a9",
+            "input": "I mean, I'm not trying to make you laugh. I'm scared.",
+            "output": [
+                "Yeah I know. I'm a nervous laugher. I'm scared too."
+            ]
+        },
+        {
+            "id": "task360-623815ba5b6c4e5090c35baddd0a2ec0",
+            "input": "Don't mind that noise, it's my echo. It sneaks up on you from all corners. ",
+            "output": [
+                "Was that echo me or you?"
+            ]
+        },
+        {
+            "id": "task360-a38eee8c70344671abe8d2f6ce127b45",
+            "input": "Well, welcome back to the next class. It's a different day and we're ready to begin drawing anew. Roger, I see you're already nude, thank you.",
+            "output": [
+                "Yeah, I mean, my rash was really acting up. And that robe been's worn by many a model."
+            ]
+        },
+        {
+            "id": "task360-b3042183edf0492b9c54f4a325e24b36",
+            "input": "Hi, I'm Getcha Bemy. And I'm just a lady who likes to get it.",
+            "output": [
+                "You seem important, unlike other ladies I've met here in Rome."
+            ]
+        },
+        {
+            "id": "task360-d51e41420c934fe0ad0b9e941f09f479",
+            "input": "Look, I was trying to go incognito, which is why I put on these fake ears.",
+            "output": [
+                "They are smaller than your regular ears."
+            ]
+        },
+        {
+            "id": "task360-50b41d09abff4c36a42bcb51a9c7b642",
+            "input": "I gotta know more about this therapist.",
+            "output": [
+                "You know, you don't even know. Number one, he's a fish. He's a talking fish and more of like a monkey."
+            ]
+        },
+        {
+            "id": "task360-640c27b929f64bcf95a27c1fd3eb2ced",
+            "input": "After Leg Cramp left, I started drinking. I used all my dollars to buy alcohol and then my life went in a bad direction.",
+            "output": [
+                "You know they say, like attracts like. We've found a woman that is basically a blister and the irony being she can't find anything to drink."
+            ]
+        },
+        {
+            "id": "task360-9639aad40da146d89f0dd22e1371028c",
+            "input": "I don't think, after what we found in your jacket, anything could surprise me less than you being lonely.",
+            "output": [
+                "Just because I have a copy of Scruples and eight yo-yo's?"
+            ]
+        },
+        {
+            "id": "task360-575a585c301a46f59b1c9ac28bf43eb4",
+            "input": "It's Palm Springs. You're at an outdoor pool. It's pretty warm.",
+            "output": [
+                "Yeah, no, but it's warmer than it was before. Oof. What was in this orange juice you gave me?"
+            ]
+        },
+        {
+            "id": "task360-85975154cda8431c81209478d05d00c1",
+            "input": "If you go inside and run the comic book shop for a minute that would be great.",
+            "output": [
+                "Ok, while I'm doing that I can readjust my bulge in private,"
+            ]
+        },
+        {
+            "id": "task360-f26252a877244d3580b11b152f98ae80",
+            "input": "Are you sure you're cut out for this man's air underwater navy?",
+            "output": [
+                "To be fair, when I joined, I honestly thought we were just gonna be in the air."
+            ]
+        },
+        {
+            "id": "task360-a5c39b8aa297454d803dcdada5ae9cc2",
+            "input": "Yeah, I will lance your boils for free.",
+            "output": [
+                "And you're a veteran. You were captured for a while."
+            ]
+        },
+        {
+            "id": "task360-35021c30a5c54fc8ae0536f0b5043c18",
+            "input": "Judith, I love you and I want to marry you so I can become a US citizen.",
+            "output": [
+                "I love you too. That sounds so nice. I'll help you out."
+            ]
+        },
+        {
+            "id": "task360-bf32f0925b3a439aa73e19be60fc9769",
+            "input": "We're actually like a Jekyll and Hyde. We're two halves of the same.",
+            "output": [
+                "So you were hunting yourself this whole time?"
+            ]
+        },
+        {
+            "id": "task360-d7131e51945349fda0f0f2e6e6835cc6",
+            "input": "Listen, Cheryl, it's not fair of you to lord it over everyone that you're a time traveler and you know everyone's fate here.",
+            "output": [
+                "But I promised not to change anything. Like, I could have said something about when Eve was tempting Adam to eat that apple. But I stayed out of it. I didn't change the course of history."
+            ]
+        },
+        {
+            "id": "task360-6fac644f1ea04fc3b1cf1774a19cfc5b",
+            "input": "Hey, have a seat. Your meal's on me today, OK?",
+            "output": [
+                "Thanks, Bob."
+            ]
+        },
+        {
+            "id": "task360-b7c6d9b5d4a140869619754ceb57f1f0",
+            "input": "Well, Joshua, it's so nice to meet you. My name is Janine Roxbury.",
+            "output": [
+                "Oh, Janine of the Roxburys! I've heard of you."
+            ]
+        },
+        {
+            "id": "task360-3d5ca22571394d669ad9e9b1a8b4ebf2",
+            "input": "That was quick!  You found the prostitute mother that I may or may not have murdered with my fangs.",
+            "output": [
+                "Uh huh.  She lives in Pacoima."
+            ]
+        },
+        {
+            "id": "task360-013b5127924d465bbcbdf5e422cc374e",
+            "input": "Do you think that I should deep throat on the streets?",
+            "output": [
+                "What's wrong with you? I was going to say to go back to school and learn about and learn about Martin Luther Giraffe and Martin Luther King Jr. and Martin Luther King Jr. Jr. High School."
+            ]
+        },
+        {
+            "id": "task360-369c8558e79b4edd84d0f22cdb1ef30c",
+            "input": "He doesn't know we're both girls, which I guess is fine, but it seems really weird.",
+            "output": [
+                "Yeah. Neither of us is, like, androgynous."
+            ]
+        },
+        {
+            "id": "task360-86a0ad04b42c4c55b8a7720d1af9ad64",
+            "input": "Hey, uh, if you all need me to place my arms or legs in any particular position, you just let me know because I'm here to serve y'all.",
+            "output": [
+                "Well I'm just enjoying your raw masculinity."
+            ]
+        },
+        {
+            "id": "task360-e0c96fd4dd4142369d5427bef85895d7",
+            "input": "We can go ahead and say it's bad. It's bad to beat your wife.",
+            "output": [
+                "Lock him up. Even if it never lead to anything, it's just fun to say."
+            ]
+        },
+        {
+            "id": "task360-cdbdf6885b454bcc9f7389a8b8b78534",
+            "input": "I wish you wouldn't call me babe.",
+            "output": [
+                "Sorry, it's just, you're a total babe."
+            ]
+        },
+        {
+            "id": "task360-c022fb155d1e43a89c552f6662557532",
+            "input": "I took some cues from your spy novels. I always carry a derringer in my garter.",
+            "output": [
+                "In front of the kids?"
+            ]
+        },
+        {
+            "id": "task360-c842189fdcc847e98cf85bd7a3c153fe",
+            "input": "That's fair. He's older, so he should go first.",
+            "output": [
+                "I don't like when you say it's fair. I wish you would fight more."
+            ]
+        },
+        {
+            "id": "task360-6f39060f9ea3489c8eb52705e2bfbd33",
+            "input": "Marlene can help you with your black shirt. She'll take you right over to our evening section.",
+            "output": [
+                "Thank you so much, Jerry. Hi, my name is Marlene. I'll be helping you today at Tommy Bahama."
+            ]
+        },
+        {
+            "id": "task360-36c8c720146648a2856b01bcdea5fa7f",
+            "input": "I did not realize I was not the only monster.",
+            "output": [
+                "Yeah, I mean, we're all monsters deep down, right?"
+            ]
+        },
+        {
+            "id": "task360-6ca3d88831fd48b68b6849c5b3c0877c",
+            "input": "Usher, what a pleasure it is to be here with you at the American Music Awards.",
+            "output": [
+                "Yeah, yeah, yeah! No doubt, not doubt. Usher 100%. Usher right here."
+            ]
+        },
+        {
+            "id": "task360-f9088547bfac4993b275c3dae8c1afaf",
+            "input": "Tim, look over there. It's Devin.",
+            "output": [
+                "Devin is talking to the announcement lady. We have to get over there."
+            ]
+        },
+        {
+            "id": "task360-d4fa1e5339f349f18628da288cb8526c",
+            "input": "Go hide behind the curtain over there.",
+            "output": [
+                "Are you going to saw me in half?"
+            ]
+        },
+        {
+            "id": "task360-a0588c489bb94c7884408ab77a871b1e",
+            "input": "I was an Army brat. So, I guess you could say that I've lived all over.",
+            "output": [
+                "'Cause you was in the Army?"
+            ]
+        },
+        {
+            "id": "task360-9dcb9bdd741348b995c1afbfa64ea271",
+            "input": "He's morphing right before our eyes.",
+            "output": [
+                "Watch, I can turn into anything. Hey, look at me."
+            ]
+        },
+        {
+            "id": "task360-de39d70d4d934b30bc0470615d97d7a9",
+            "input": "Kill him! We'll bury him where I buried my husband.",
+            "output": [
+                "At this point, Ms. Charlile, I'm going to remind you that anything you say can and will be used against you, especially stuff like \"Kill him! We'll bury him next to my husband.\""
+            ]
+        },
+        {
+            "id": "task360-07ce073f86a8440aa772fe54ea27ce3d",
+            "input": "I'm sorry, sir. Who are you? I'm new to Shadow Grove.",
+            "output": [
+                "I'm Joshua. I've been in Shadow Grove all my life. I expect I'll die here."
+            ]
+        },
+        {
+            "id": "task360-99d99ea1291e438a912c3c3f8d72786f",
+            "input": "So that's one of the other places you can break into if you need a place to stay. You just have to keep it down a little bit when you're in the house.",
+            "output": [
+                "I really like how you guys can just go wherever and feel like home."
+            ]
+        },
+        {
+            "id": "task360-e437623593794dfda688ed8a7f118a61",
+            "input": "What is she doing in there? I have a question.",
+            "output": [
+                "It's only been five minutes, give her a little bit of time."
+            ]
+        },
+        {
+            "id": "task360-dc503a9fdc2849d3a30ccf6b51466e22",
+            "input": "My name is Belinda",
+            "output": [
+                "Belinda. That's a beautiful name for a beautiful woman."
+            ]
+        },
+        {
+            "id": "task360-e307192501d84e3ca9432f8a35083def",
+            "input": "Ladies, I don't know if you recognize me, but I was here about 22 years ago now.",
+            "output": [
+                "Your Mr. Fortell! Your suit is impeccable."
+            ]
+        },
+        {
+            "id": "task360-0a5883806eef4460aaca46a95df4854a",
+            "input": "This has made me feel heartwarmed and Charla I want to tell you that I love you more than ever.",
+            "output": [
+                "Mikey man, I always loved you and I know you've got some weird views, but you pay for everything and you make all the meals in this relationship. I love you."
+            ]
+        },
+        {
+            "id": "task360-a40c5e9e91e34158aff755cd46046856",
+            "input": "We had a car, but we put it in the river.",
+            "output": [
+                "Mama pushed it uphill into the river."
+            ]
+        },
+        {
+            "id": "task360-8efae51fa0f842028916eb94f674cee1",
+            "input": "You're an angel. What's heaven like?",
+            "output": [
+                "It's like an ice cream store that never closes and is never too cold."
+            ]
+        },
+        {
+            "id": "task360-deccb6a1a71c4c4aacd0980b33f7ff28",
+            "input": "That murder was pretty cool because you got the bell house.",
+            "output": [
+                "That's true. Maybe we could make these possessive ghost murders a selling point for the club."
+            ]
+        },
+        {
+            "id": "task360-4daf4a64a74247f3a98b8cd586dcd58b",
+            "input": "Nurse, she left a note. Can you read what that note says?",
+            "output": [
+                "Oh, it says here \"Read this when you know how to read, boy. I won't name you because that would be selfish. And also, I left under my own volition and I won't be coming back. Learn to raise yourself.\""
+            ]
+        },
+        {
+            "id": "task360-170367dd708d4f67b888d7d49b007204",
+            "input": "I know, and I can't believe you're leaving town. But listen, I want to give you a warning.",
+            "output": [
+                "A warning? You've never given me a warning before."
+            ]
+        },
+        {
+            "id": "task360-7ba1b5e9ccef4959b07da6dc46d785e9",
+            "input": "Tina, I'm glad you could make it to therapy today. It looks like you've been crying, your eyes are swollen.",
+            "output": [
+                "I was having such a good morning, and then I went into the store and I approached this woman and I was just about to sell her a Kathy Ireland pair of glasses, but then this legally blind man and the woman terrorized me emotionally."
+            ]
+        },
+        {
+            "id": "task360-669fe56cedbf43f9a37f3b3ab7fc4f07",
+            "input": "Who's this one legged cop?",
+            "output": [
+                "She's the one I heard about, she moves so fast that she looks like she's moving slow."
+            ]
+        },
+        {
+            "id": "task360-70315900b0674a8f874a315fcabc6172",
+            "input": "Hold this grenade real tight. Let me just take that out, right there.",
+            "output": [
+                "Oh, you took the pin out there."
+            ]
+        },
+        {
+            "id": "task360-621d434072bf489db1c3f819930c4258",
+            "input": "Margarittaville is always open. All the time. Come in.",
+            "output": [
+                "OK. Table for one."
+            ]
+        },
+        {
+            "id": "task360-3ceff7dae66147e7af15da40e583c670",
+            "input": "They didn't see us, see I told you. I'm good for the group.",
+            "output": [
+                "It also doesn't appear they can hear."
+            ]
+        },
+        {
+            "id": "task360-bb4c7c0fa1cc4207b91f0ab57d14afe2",
+            "input": "I wanted to teach you have to drive, and it seemed like something I was into a while ago, but I'm just too busy now.",
+            "output": [
+                "Is this because I don't have anything interesting about my haircut or the way I dress? Sorry I don't dress like you, dad. I'm sorry I'm not unique or sartorial."
+            ]
+        },
+        {
+            "id": "task360-51a0ad1abe8944da8b65df377ce2232c",
+            "input": "That's what this has been about the whole time? You want to be Bass Fishing and Jackpot King?",
+            "output": [
+                "Of course, I want to be Bass Fishing and Jackpot King, but it hasn't been about that the whole time."
+            ]
+        },
+        {
+            "id": "task360-89b2688913e14dc9b60446068a0786c4",
+            "input": "Blanche, I'm afraid you're having some kind of breakdown. ",
+            "output": [
+                "Are you going through puberty? Is your brain going through changes?"
+            ]
+        },
+        {
+            "id": "task360-e4677cfb93e8437abb177280f3e6f1a0",
+            "input": "We keep you on the sunny side and the nerves don't hit, do they?",
+            "output": [
+                "It's true. If you put me in the shade, then I have nerves a plenty."
+            ]
+        },
+        {
+            "id": "task360-02c17149fd0840048ffd1aa228f4e477",
+            "input": "Welcome to Van Nuys. Who do we have here?",
+            "output": [
+                "My goodness. Well, my name's Calisto and she's Calista."
+            ]
+        },
+        {
+            "id": "task360-9c4128a1d0074df39c0be390525d42b8",
+            "input": "I'm starting this new wine tasting gig. I think this town could really use it.",
+            "output": [
+                "I know, this is a town is very uptight. We haven't been able to dance here, since 1987."
+            ]
+        },
+        {
+            "id": "task360-f35b2686c47b4932bf0cf29335b08ef0",
+            "input": "Terribly sorry, I know the line is long. I don't have a terrible amount of time to treat you all today. There's a woman living at my house that I'm trying to introduce into high society, to prove that all people are the same.",
+            "output": [
+                "Why did you say it like it's something bad? That's sweet. I wish more people would do things like that."
+            ]
+        },
+        {
+            "id": "task360-cb6550ac8662474694a237f1e5f30d0c",
+            "input": "I feel cold every time Ricky talks. Anyone else?",
+            "output": [
+                "Yeah, I do. I get little shivers and also bumps on me."
+            ]
+        },
+        {
+            "id": "task360-b4b362e0eb0f4af0b4a346a4520ce262",
+            "input": "Are you being ornery on my flight, miss?",
+            "output": [
+                "Maybe I am. It's my nature."
+            ]
+        },
+        {
+            "id": "task360-f18cf0543f2640fabf82f24b2c7f82f1",
+            "input": "Actual the talent is right now in my mother's large intestine, slowly working his way out.",
+            "output": [
+                "Oh, you got that tapeworm that can juggle. I've heard of him."
+            ]
+        },
+        {
+            "id": "task360-a1ab2b0ca9794a749bc7fc514bae0482",
+            "input": "Kids from the inner city will also be here, so I think a fight might break out.",
+            "output": [
+                "Definitely, hold onto your wallet."
+            ]
+        },
+        {
+            "id": "task360-e6fed7a0a56b4ae3b75bf0d93188c7d2",
+            "input": "Mr. Patterson, I thought we'd do a little presidential historical field trip so we can find the basis of our book \"The President is Missing.\"",
+            "output": [
+                "I mean, Mr. President, is this the ideal place to be? As far as presidential historical places go, this is not a happy one."
+            ]
+        },
+        {
+            "id": "task360-4e91d933a345400280f094e745b74d83",
+            "input": "So, this ant farm will be a tourist attraction.",
+            "output": [
+                "Oh, absolutely! People come to Downy for the train, but don't realize there could be so much more."
+            ]
+        },
+        {
+            "id": "task360-4b313849e98a4875a998d8d2d4164034",
+            "input": "Yes, I do. I mean, my wife passed years ago and I never thought I'd find anybody again and then when Rhonda came along and a spark came to life in me that I hadn't felt in years.",
+            "output": [
+                "I was very sorry to hear about your wife. Did you get that Blu-Ray of Cubed 2 that I sent?"
+            ]
+        }
+    ],
+    "Instance License": [
+        "CC BY-NC 4.0"
+    ]
+}

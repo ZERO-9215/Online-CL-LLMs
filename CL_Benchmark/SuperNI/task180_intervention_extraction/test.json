@@ -1,0 +1,664 @@
+{
+    "Contributors": [
+        "Pegah Alipoormolabashi"
+    ],
+    "Source": [
+        "pico"
+    ],
+    "URL": [
+        "https://github.com/Markus-Zlabinger/pico-annotation"
+    ],
+    "Categories": [
+        "Information Extraction"
+    ],
+    "Reasoning": [],
+    "Definition": [
+        "In medical studies, the efficacy of medical treatments (called interventions) is evaluated within a group of study participants. You will be given a sentence of a study report in which your task is to list the phrases that describe the intervention(s) of the study. You should list the phrase in the same order that they appear in the text, separated by commas. If no information about the interventions is mentioned, just answer with \"not found\". Interventions are: a specific drug, surgery, talking therapy, a lifestyle modification, control or placebo treatment. Do not include details, dosages, frequency and duration, intervention mentions that are not in an informative span of text."
+    ],
+    "Input_language": [
+        "English"
+    ],
+    "Output_language": [
+        "English"
+    ],
+    "Instruction_language": [
+        "English"
+    ],
+    "Domains": [
+        "Medicine"
+    ],
+    "Positive Examples": [
+        {
+            "input": "The patients received either azithromycin (600 mg/d for 3 days during week 1, then 600 mg/wk during weeks 2-12; n = 3879) or placebo (n = 3868)",
+            "output": "azithromycin, placebo",
+            "explanation": "The word azithromycin refers to a drug, and placebo refers to a control test. Note that no extra information is given in the output."
+        },
+        {
+            "input": "We report findings of a pilot RCT for a parent training intervention with a focus on the development of joint attention skills and joint action routines. ",
+            "output": "parent training intervention",
+            "explanation": "The words parent, training, and intervention refer to some kind of talking therapy."
+        },
+        {
+            "input": "Seventy-two people residing in National Health Service (U.K.) care facilities who had clinically significant agitation in the context of severe dementia were randomly assigned to aromatherapy with Melissa essential oil (N = 36) or placebo (sunflower oil) (N = 36). ",
+            "output": "aromatherapy with melissa essential oil, placebo, sunflower oil",
+            "explanation": "Both the therapy and the control treatment are mentioned as spans of text here."
+        }
+    ],
+    "Negative Examples": [
+        {
+            "input": "Treatment consisted of nitrendipine (10-40 mg/d), with the possible addition of enalapril maleate (5-20 mg/d), hydrochlorothiazide (12.5-25 mg/d), or both add-on drugs.",
+            "output": "nitrendipine (10-40 mg/d, ), enalapril, maleate (5-20, mg/d), hydrochlorothiazide (12.5-25, mg/d), both add-on drugs",
+            "explanation": "The drugs are correctly mentioned as intervention, but their dosage shouldn't be given as answer."
+        },
+        {
+            "input": "Zinc lozenges, 10 mg, orally dissolved, 5 times a day (in grades 1-6) or 6 times a day (in grades 7-12). ",
+            "output": "Zinc lozenges, orally dissolved",
+            "explanation": "Information about the method the intervention is given to patients, in this case \"orally dissolved\" should not be given as answer."
+        },
+        {
+            "input": "Antihypertensive therapy was started immediately after randomization in the active treatment group, but only after termination of the double-blind trial in the control patients.",
+            "output": "Antihypertensive therapy, double-blind trial",
+            "explanation": "The words double-blind and trial are not related to intervention."
+        }
+    ],
+    "Instances": [
+        {
+            "id": "task180-b6056ef84e9c4ccf9b2fb12e9931cb25",
+            "input": "Amonafide : An active agent in the treatment of previously untreated advanced breast cancer -- a cancer and leukemia group B study ( CALGB 8642 ) .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-91c82fa5cc764eaa87e8138bc93650b0",
+            "input": "Treatment with lime did not cause any significant side-effect .",
+            "output": [
+                "lime"
+            ]
+        },
+        {
+            "id": "task180-49d67276cbfe491db5beade0791a8dad",
+            "input": "Although an increasing number of group-based programs for the improvement of social skills have been described , randomized controlled trials are needed to evaluate their efficacy .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-b63cffd9dab643d8800a67389f289ab1",
+            "input": "Twenty-two patients with a history of recently diagnosed RA of less than 2 years were assessed on a variety of clinical outcome and process measures on six assessment occasions over a 21-month period .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-651f2cffb73e4b72ae66f15951fc7937",
+            "input": "As calcium acquired during adolescence is essential to maximize peak bone mass and to prevent osteoporosis , possible long-term effects of excessive MRP intake during this period warrant attention .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-fa4eb06f151e44f4a73988a6f48c2e61",
+            "input": "The 2 groups were comparable in terms of age , sex , symptoms and ipsilateral glomerular filtration rate .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-0771cc9ec5a640859cd672476b478d78",
+            "input": "The Quality of Well-Being Scale ( QWB ) and Current Health Desirability Rating ( CHDR ) were used for economic evaluation , supplemented by the arthritis-specific Health Assessment Questionnaire ( HAQ ) , Center for Epidemiologic Studies-Depression Scale ( CES-D ) , and Perceived Quality of Life Scale ( PQOL ) collected at baseline and postclass .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-e4e423ca174e4b61b9e002b4f48aa140",
+            "input": "Patients in the 40K arm had a higher global quality of life ( QOL ) at baseline for unclear reasons , whereas patients in the 120K arm had a greater global QOL improvement during the study , so end-of-study QOL was equivalent .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-14239d6bfd574a2a8b1df01ea319604a",
+            "input": "Though this prolongation of remission was not significant in the bestatin group compared to the control group in the 15-49 yr age group , in the 50-65 yr age group it was significantly longer .",
+            "output": [
+                "bestatin, control"
+            ]
+        },
+        {
+            "id": "task180-aec9bb8a631c4718ac7425bdb0f2fbb2",
+            "input": "Efforts to promote smoking cessation should highlight that individuals are likely to feel more rather than less psychologically healthy when they successfully quit smoking .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-eda45c06e10241d19055ac958f251c0c",
+            "input": "A cooperative randomized controlled study of bestatin immunotherapy in combination with remission maintenance chemotherapy for adult acute nonlymphocytic leukemia ( ANLL ) was performed .",
+            "output": [
+                "bestatin"
+            ]
+        },
+        {
+            "id": "task180-f2088b019d7140408119229577c83a34",
+            "input": "In recent years some studies have been published supporting the efficacy of light exposure , physical activity , sleep control and a Mediterranean diet pattern on the improvement or prevention of depression .",
+            "output": [
+                "light exposure, physical activity, sleep control, Mediterranean diet"
+            ]
+        },
+        {
+            "id": "task180-52462692209e45309c93224935520e33",
+            "input": "When one treatment is superior to the other two , the trial design provides better patient care , higher power , and a lower expected sample size .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-cebbd69afbcf4316a7983c00d5f33a11",
+            "input": "The course of depression in recent onset rheumatoid arthritis : the predictive role of disability , illness perceptions , pain and coping .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-6901852277a5417bb4762d07620180d8",
+            "input": "The origin of the gastric phasic activity patterns is unknown , but they may be related to electrical control activity .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-73a0a201b86e46da8bf577704e711297",
+            "input": "In contrast , the number of wet nights and urodynamic parameters did not change significantly in group 2 .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-22d1afb7c7a340d685cec1f3a4a29cdd",
+            "input": "In addition , supplementation did not affect the exercise-induced increase in thiobarbituric acid reactive substances in plasma .",
+            "output": [
+                "supplementation"
+            ]
+        },
+        {
+            "id": "task180-d864663b593f4c41be613858c6c79ffa",
+            "input": "Patient outcomes were measured as changes in global anxiety scores , functioning and well-being , and patients ' reports of global improvements .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-ef04dc8607aa4661a472619190a7df69",
+            "input": "Assays in male adolescents and in Caco-2 cells .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-bb9e057418fd42cb8c8fb1a35fb7cbdb",
+            "input": "The mean hematocrit of the subjects ( 26.23±2.03 % ) at the end of the study was also higher , p < 0.001 .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-acfde020ef074a6784fe72c29182a56b",
+            "input": "Multicenter , randomized , controlled , two arm-parallel , clinical trial .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-76fb002622fe43bc97b800c34e80cc31",
+            "input": "We randomly assigned 28 patients with refractory monosymptomatic nocturnal enuresis to 2 equal groups .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-2a6ba588a09640a2aeb427d193dd345c",
+            "input": "Using backward elimination , we derived a risk scoring algorithm ( range 0-63 ) from the final reduced model .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-5b029590cfc54607a4bb455b8fb936b3",
+            "input": "Patient and hematologic factors potentially associated with NC were evaluated .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-0cd5ef2d77e24b4c83a92001d00c2cb7",
+            "input": "We conclude that oral methotrexate did not slow down progression of muscle weakness but decreased serum creatine kinase activity .",
+            "output": [
+                "methotrexate"
+            ]
+        },
+        {
+            "id": "task180-de619b1cb2c24e0a84ca3912117739ca",
+            "input": "Blinded assessors collected data at baseline and 3-month and 6-month follow-up .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-06661c259f4f47fa86e925c3e8224840",
+            "input": "Data analyzed was from a phase III , randomized clinical trial of DOX ( 60 mg/m ( 2 ) every 3 weeks ) or PLD ( 50 mg/m ( 2 ) every 4 weeks ) for the first line therapy for MBC ( n = 509 ) ( O'Brien et al , Ann Oncol .",
+            "output": [
+                "DOX, PLD"
+            ]
+        },
+        {
+            "id": "task180-e40f2ed7287d4c91acb586914319f2cb",
+            "input": "Heart rate , blood pressure , and lipid measures were taken at rest , during a videotaped speech task , and during recovery from the task .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-f50cb1ca07dd422bb5beef68acff32e9",
+            "input": "Also , fewer subjects than the controls had significant painful episodes ( 50.0 % versus 92.7 % ) ; febrile illness ( 46.6 % versus 87.3 % ) and admission rate ( 3.4 % versus 34.5 % ) ( p < 0.001 ) .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-932eb64a68344a4db37f913221861769",
+            "input": "For children beginning treatment with the lowest language levels , the JA intervention improved language outcome significantly more than did the SP or control interventions .",
+            "output": [
+                "JA, SP, control"
+            ]
+        },
+        {
+            "id": "task180-dd54166cce224eb2856fc586c6387a8e",
+            "input": "Results indicated that there was a significant decrease in both the C-STAI score ( F = 4.66 , P < 0.05 ) and the WHOQoL score ( F = 4.74 , P < 0.05 ) in the experimental group .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-761fc5af727a4f1f8dd37e98ad6c76d0",
+            "input": "This study examined whether ( 1 ) postmenopausal breast cancer survivors ( BCS ) with bone loss taking 24 months of risedronate , calcium , and vitamin D had increased bone mineral density ( BMD ) at the total hip , femoral neck , L1-L4 spine , total radius and 33 % radius , and decreased bone turnover ; ( 2 ) subjects who also participated in strength/weight training ( ST ) exercises had greater increases in BMD and greater decreases in bone turnover ; and ( 3 ) subjects who also exercised were more likely to preserve ( at least maintain ) BMD .",
+            "output": [
+                "risedronate, calcium, vitamin D, strength/weight training, ST, exercised"
+            ]
+        },
+        {
+            "id": "task180-c206529b339c478ca1876eecb130fc44",
+            "input": "A physiotherapy service for EECU patients , as provided in this study , did not reduce the rate of hospital admission , rate of re-presentation to the ED , use of community healthcare resources , or improve the rate of return to usual work/home/leisure activities or patient satisfaction .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-a2d8ba1afecd46cdad68c3e8889d5fbf",
+            "input": "The latter metabolite is not formed in man through the mono-oxygenase pathway of cytochrome P450 .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-5c3d152e6b884f9fa25332b53f6f6916",
+            "input": "The comparative results were very close ; mean difference ( bias ) +/- standard deviation ( precision ) was 0.05 ( 0.84 ) mmol/min/kPa .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-8032d2653f55447085a3a33c8ab4ced0",
+            "input": "Cardiovascular reactivity to psychological stress may be one mechanism for the enhanced risk , but the small number of studies examining whether OC users who smoke have greater reactivity have produced mixed results .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-0aa71907fe174373840fb402072b19ac",
+            "input": "The end point of CALGB 8642 is to assess the difference in survival , toxicity , and overall response when limited exposure to Phase II agents precedes standard chemotherapy .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-1b9be97084f84b75ab2bf548ef360ade",
+            "input": "We conducted a study including 15 depressive patients who had been under antidepressant treatment for at least one month .",
+            "output": [
+                "antidepressant"
+            ]
+        },
+        {
+            "id": "task180-71f61d68b67f4cca82a31b905e7c3627",
+            "input": "Serum biochemical characteristics of Beluga , Huso huso ( L. ) , in response to blood sampling after clove powder solution exposure .",
+            "output": [
+                "clove powder solution"
+            ]
+        },
+        {
+            "id": "task180-dc3dabc455df4573a5327c111a8ab45f",
+            "input": "fMRI data showed that , under placebo , ASD boys underactivated medial prefrontal cortex ( mPFC ) , compared with control and ADHD boys .",
+            "output": [
+                "placebo"
+            ]
+        },
+        {
+            "id": "task180-3ca613e5046844c6b72fce5e08270b17",
+            "input": "Using epigastric impedance we found that infants with partial or total intestinal obstruction had gastric phasic activity , which was not found in the control infants .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-ea2cce048a414b0eb87eb2a36c1430ac",
+            "input": "To study the effects of physical exercise on biochemical risk factors for ischaemic heart disease 31 healthy middle aged men undertook regular physical exercise for two months and 29 served as controls in a randomised trial .",
+            "output": [
+                "physical exercise"
+            ]
+        },
+        {
+            "id": "task180-d05f132280184d30b2a7c66a12955f4f",
+            "input": "Under Fluoxetine , mPFC activation was up-regulated and normalized in ASD boys relative to controls , but down-regulated in ADHD boys relative to placebo , which was concomitant with worse task performance in ADHD .",
+            "output": [
+                "Fluoxetine, placebo"
+            ]
+        },
+        {
+            "id": "task180-705583d0b7574261a1d0eb3b9ea21f25",
+            "input": "We conclude that granisetron is a better anti-emetic than perphenazine for the long-term prevention of post-operative vomiting in children undergoing general anaesthesia for tonsillectomy .",
+            "output": [
+                "granisetron, perphenazine"
+            ]
+        },
+        {
+            "id": "task180-e05d4b47a48c455fa73c230a1dc61ede",
+            "input": "One case of unsubstantiated acute rheumatic fever occurred after 7 days of amoxicillin .",
+            "output": [
+                "amoxicillin"
+            ]
+        },
+        {
+            "id": "task180-4b5d472d7ad84ff5bc8c9336e2906d63",
+            "input": "Costs/QALY gained discounted at 3 % were $ 205,186 using the QWB and $ 32,643 using the CHRD .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-1e26affc2bf84ba28b3e04ca11d21c4d",
+            "input": "Calcium solubility and absorption across Caco-2 cells were studied after the in vitro digestion of the diets .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-2bf7946e98cd4de38087368b5b359e79",
+            "input": "Influence of diets rich in Maillard reaction products on calcium bioavailability .",
+            "output": [
+                "Maillard reaction"
+            ]
+        },
+        {
+            "id": "task180-ed2cbf7a61b9470b9ca0ba3cb93c9bfe",
+            "input": "Prior adjuvant chemotherapy was permitted .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-5e208cd3d15d4e74bc2f6a1a15d4e74c",
+            "input": "Depressive patients are able to follow prescribed lifestyle recommendations in the short-term .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-b095127d871449a488f0097adab5cb81",
+            "input": "The influence of injections of Amidotrizoate and Iopromide into the left coronary artery on global myocardial perfusion and function ( pressures in the left ventricle , heart rate ) as well as excitation formation and transmission was studied in 16 patients with ischaemic heart disease .",
+            "output": [
+                "Amidotrizoate, Iopromide"
+            ]
+        },
+        {
+            "id": "task180-6a8c5ed874fb4012af3091a5c3d3e043",
+            "input": "These 22 patients constituted the control group of a controlled trial and received standard outpatient clinic treatment during follow-up .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-9e5b32d1dd48404496afa9349b44db5c",
+            "input": "Patients could not have had prior chemotherapy for metastatic disease .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-6a3f1f6bded24064806c331e1da2dc6f",
+            "input": "Comparisons with the cyclophosphamide-doxorubicin-5-fluorouracil arm will not be addressed .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-93498bba94674cbfa26fd8c2fb59fa8b",
+            "input": "Children with parent-reported ASD had higher levels of health care office visits and prescription drug use compared with children without ASD ( P < .05 ) .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-fcc6bb6f4136434b96c9162a22134038",
+            "input": "Short-term phasic activity was only found in 13 out of 40 of the normal infants ( 32.5 % ) .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-5889efe2ac4f41e488bd6f90202b8ed7",
+            "input": "Group 1 received a weekly session of posterior tibial nerve stimulation for 12 weeks and group 2 was the placebo group .",
+            "output": [
+                "posterior tibial nerve stimulation, placebo"
+            ]
+        },
+        {
+            "id": "task180-dc4ee1c5234f443a9d0a8e698b1c9c52",
+            "input": "Only deoxypyridinoline values were significantly lower after consumption of the BD ( 13.0 +/- 1.1 compared to 18.3 +/- 2.1 nM/Mm Cr in the WD ) , possibly indicative of less efficient bone turnover during this period .",
+            "output": [
+                "BD"
+            ]
+        },
+        {
+            "id": "task180-add4b106e93746b68f4e1f1e8d39e293",
+            "input": "The results suggest that the use of PMRT could enhance quality of life and decrease state anxiety in patients after stoma surgery .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-51c88bc4a6f645b9a7070e2ff507bf44",
+            "input": "Interventions were conducted 30 min daily for 5-6 weeks .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-734141f8c527467cbaa543c60cf7632d",
+            "input": "There were also no differences in manual muscle testing sum scores , activity scale scores and patients ' own assessments after 48 weeks of treatment .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-e61f739b28d04c8fa6d3eff3a350af3a",
+            "input": "However , transfusion rate , presence of hepatomegaly , splenomegaly , and jaundice was similar .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-f8139b79b39d48afb5790bf20cfc0eca",
+            "input": "Three hundred sixty-five patients were enrolled .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-064aac9cb0b24fa2aae6a0b57b428348",
+            "input": "If so , this would be a great support for doctors who might systematically recommend these simple and costless measures , especially in primary care .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-a2a322cc0dbf4e7886a234514fe49b5c",
+            "input": "Relative to children in the wait-list group , program participants showed greater improvements in social skills over the course of the intervention , as indicated by parent-report measures .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-5c7e821690ca43798ada163a1c435260",
+            "input": "Hence , we hypothesize that specific airway resistance changes ( ΔsRAW ) should better characterize the acute response to bronchodilators .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-4f9a49878df14dccaace0ce051371d4e",
+            "input": "We investigated whether 13 participants with ASD ( age 7 ; 03-22 ; 03 ) and 13 age-matched typically developing ( TD ) controls could comprehend lexicalized conceptual metaphors ( e.g. , Susan is a warm person ) and novel ones ( e.g. , Susan is a toasty person ) .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-bbfca44a968647df974d397c09064de9",
+            "input": "Randomized controlled study of chemoimmunotherapy with bestatin of acute nonlymphocytic leukemia in adults .",
+            "output": [
+                "chemoimmunotherapy, bestatin"
+            ]
+        },
+        {
+            "id": "task180-4307ceaeaffc44dd98a1b1dde9b55c64",
+            "input": "Forty-nine children with AS were recruited to participate and randomly assigned to intervention ( n = 26 ) or wait-list control ( n = 23 ) conditions .",
+            "output": [
+                "wait-list control"
+            ]
+        },
+        {
+            "id": "task180-9adf342a2f844b1794587e21459bf3c2",
+            "input": "Observed medication and weekend diary cards were used to monitor adherence .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-df2cc246edd74f9d96d0da5eafcde9a9",
+            "input": "Use of health care facilities was assessed from diaries/questionnaires and Medicare reimbursement rates used to estimate costs .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-639b1456c54a41efbe7f35ae81615ee3",
+            "input": "In 78 children known to be infected with Ascaris at baseline , the rate of weight gain was 21 per cent greater in children treated with levamisole than in those receiving placebo ( p = .03 ) .",
+            "output": [
+                "levamisole, placebo"
+            ]
+        },
+        {
+            "id": "task180-4062f1dc9324413e80924a911200b818",
+            "input": "Overall , 13 patients ( 46.4 % ) had detrusor overactivity and 14 ( 50 % ) had decreased bladder capacity .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-b287b8fac5a845f882cede4db5e321b1",
+            "input": "In patients with neutrophil counts of > 0.1 x 10 ( 9 ) /L lasting for more than 4 weeks , the frequency of infection in the fluconazole group ( 5 of 9 patients ) was significantly higher than in the itraconazole group ( 0 of 7 patients ; P = .03 ) .",
+            "output": [
+                "fluconazole, itraconazole"
+            ]
+        },
+        {
+            "id": "task180-679cf1cc391f4271be693b9bceb5dc45",
+            "input": "No significant differences , within and between groups , were observed in the exercise-induced increase in the ratios para- and ortho-hydroxyantipyrine to antipyrine .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-516f779dd64c4044879904eee1d241bc",
+            "input": "Age-matched boys with ADHD ( 15 ) , ASD ( 18 ) , and controls ( 21 ) were compared with functional magnetic resonance imaging ( fMRI ) during a reversal task .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-aa9bc54083594cdb9740e335fa5a48cb",
+            "input": "This 7-week program included a computer game , small group sessions , parent training sessions and teacher handouts .",
+            "output": [
+                "computer game, small group sessions, parent training, teacher handouts"
+            ]
+        },
+        {
+            "id": "task180-e99ffd4d7c9e416a872445b27329251c",
+            "input": "The patients were randomised into a control group ( n = 10 ) and an experimental group ( n = 8 ) .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-a841268b7d464f03a461a609cb1a9033",
+            "input": "To consider the impact on primary care patient outcomes of using both a screener to determine elevated anxiety levels among patients with previously undetected anxiety and a physician intervention to inform physicians of their patients ' conditions .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-3fcdfafaddbe4eba9de0668b526ac345",
+            "input": "A persistent phasic activity pattern was found in 19 of the 21 patients , high frequency phasic activity in 11 of the 21 patients .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-e0f406fe59c04444b11699f4fdc2a11c",
+            "input": "In a prospective , randomized , double-blind study , 90 paediatric patients , ASA I , aged 4-10 years , received granisetron 40 mg kg-1 or perphenazine 70 mg kg-1 ( n = 45 each ) intravenously immediately after an inhalation induction of anaesthesia .",
+            "output": [
+                "granisetron, perphenazine"
+            ]
+        },
+        {
+            "id": "task180-bcdde9881426455eb1bb9a348a2346e5",
+            "input": "After three weekly doses of epoetin alfa 40,000 U , a dose of 120,000 U can be administered safely once every 3 weeks without increasing transfusion needs or sacrificing QOL .",
+            "output": [
+                "epoetin alfa"
+            ]
+        },
+        {
+            "id": "task180-22807ace4fea4089b0058f968864e5c3",
+            "input": "However , to our knowledge , there have been no studies using all these measures together as an adjuvant antidepressant strategy .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-fb13ed9c71524d16bfbeef2ccf799542",
+            "input": "Accordingly , the current study examined within-person covariation between time-varying abstinence and depressive symptom in a multilevel model ( MLM ) , which allowed for transitions between smoking statuses within a participant .",
+            "output": [
+                "not found"
+            ]
+        },
+        {
+            "id": "task180-11545541370e486d90e11ee7ba8774eb",
+            "input": "Internal stenting is an integral part of endopyelotomy .",
+            "output": [
+                "stenting"
+            ]
+        }
+    ],
+    "Instance License": [
+        "Unknown"
+    ]
+}
