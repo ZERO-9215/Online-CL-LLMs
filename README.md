@@ -2,6 +2,7 @@
 
 > This repository contains the official implementation for our ICML 2025 paper: *Exploiting Presentative Feature Distributions for Parameter-Efficient Continual Learning of Large Language Models*.
 
+![Architecture](./Architecture.png)
 
 ## Training
 
